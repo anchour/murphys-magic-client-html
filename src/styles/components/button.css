@@ -1,26 +1,67 @@
 .btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 40px 12px;
-  gap: 10px;
-
-  position: absolute;
-  width: 213px;
-  height: 64px;
-  left: 363px;
-  top: 20px;
-
-  /* Primary/Dove */
-
-  background: #ffffff;
-  border-radius: 100px;
+  border: 2px solid #2b2b2b;
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-button);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.3333333333;
+  text-align: center;
+  transition: 0.15s ease-in-out;
 }
 
+.btn + .btn {
+  margin-left: 1rem;
+}
+
+.btn__icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentcolor;
+  margin-left: 1rem;
+  position: relative;
+  bottom: 0.125rem;
+}
+
+/* Modifiers */
 .btn--primary {
+  background: var(--color-secondary-water);
+  border-color: var(--color-secondary-water);
+  color: var(--color-primary-dove);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-primary-dove);
+    border-color: var(--color-primary-dove);
+    color: var(--color-secondary-water);
+  }
 }
+
 .btn--secondary {
+  background: var(--color-primary-dove);
+  border-color: var(--color-primary-smoke);
+  box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-smoke);
+  color: var(--color-primary-smoke);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-primary-smoke);
+    border-color: var(--color-primary-dove);
+    color: var(--color-primary-dove);
+  }
 }
+
 .btn--secondary.btn--dark {
+  background: var(--color-primary-smoke);
+  border-color: var(--color-primary-mmoke);
+  box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
+  color: var(--color-primary-dove);
+
+  &:hover,
+  &:focus {
+    background: var(--color-primary-dove);
+    box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
+    color: var(--color-primary-smoke);
+  }
 }
