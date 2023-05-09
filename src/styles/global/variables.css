@@ -7,7 +7,7 @@
   --color-primary-midnight: #000000;
   --color-primary-smoke: #2b2b2b;
   --color-primary-bone: #dad3c6;
-  --color-primary-dove: ##ffffff;
+  --color-primary-dove: #ffffff;
   
   /* Secondary */
   --color-secondary-water: #0a4de2;
@@ -25,4 +25,5 @@
   --font-pitch-sans: 'Pitch Sans', sans-serif;
   --font-sans: var(--font-founders-grotesk);
   --font-heading: var(--font-alternate-gothic);
+  --font-button: var(--font-sans);
 }

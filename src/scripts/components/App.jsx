@@ -1,5 +1,5 @@
+import Accordion from './Accordion.jsx'
 import Button from './Button.jsx'
-import SectionHeading from './SectionHeading.jsx'
 import Typography from './Typography.jsx'
 
 export function App() {
@@ -7,11 +7,25 @@ export function App() {
     <>
       <div className="container">
 
-        <SectionHeading size='large'>Typography</SectionHeading>
-        <Typography />
+        <Accordion header="Typography">
+          <Typography />
+        </Accordion>
 
-        <SectionHeading>Buttons</SectionHeading>
-        <Button />
+        <Accordion header="Buttons" open>
+          <div className="py-8 px-6">
+            <Button />
+            <Button small="true" />
+            <Button variant="secondary" />
+            <Button variant="secondary" />
+          </div>
+
+          <div className="bg-smoke py-8 px-6">
+            <Button dark="true" />
+            <Button dark="true" small="true" />
+            <Button variant="secondary" dark="true" />
+            <Button variant="secondary" dark="true" size="small" />
+          </div>
+        </Accordion>
       </div>
     </>
   )

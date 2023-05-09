@@ -45,22 +45,22 @@ export default function () {
 
       <div>
         {/* General body typography */}
-        <SectionHeading>Body XL</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body XL</SectionHeading>
         <p className="typography-body-xl">{lorem.generateParagraphs(1)}</p>
         
-        <SectionHeading>Body LG</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body LG</SectionHeading>
         <p className="typography-body-lg">{lorem.generateParagraphs(1)}</p>
         
-        <SectionHeading>Body MD</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body MD</SectionHeading>
         <p className="typography-body-md">{lorem.generateParagraphs(1)}</p>
         
-        <SectionHeading>Body SM</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body SM</SectionHeading>
         <p className="typography-body-sm">{lorem.generateParagraphs(1)}</p>
         
-        <SectionHeading>Body XS</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body XS</SectionHeading>
         <p className="typography-body-xs">{lorem.generateParagraphs(1)}</p>
         
-        <SectionHeading>Body 2XS</SectionHeading>
+        <SectionHeading className="mt-8 mb-4">Body 2XS</SectionHeading>
         <p className="typography-body-2xs">{lorem.generateParagraphs(1)}</p>
       </div>
     </div>

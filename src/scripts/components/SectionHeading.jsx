@@ -1,26 +1,26 @@
 
-export default function SectionHeading({ size = 'normal', children }) {
-  let styles = {
+export default function SectionHeading({ size = 'normal', children, className }) {
+  let style = {
     fontFamily: 'var(--font-family-sans)',
     fontSize: '0.875rem',
     fontWeight: 'semibold',
-    marginTop: '2rem',
-    marginBottom: '0.5rem',
     letterSpacing: '0.0625rem',
     lineHeight: 1,
     textTransform: 'uppercase',
   }
-  
-  if (size == 'large')
-  {
-    styles.fontSize = '1.25rem'
-    styles.letterSpacing = '0.125rem'
-    styles.fontWeight = 'bold';
+
+  if (size == 'large') {
+    style.fontSize = '1.25rem'
+    style.letterSpacing = '0.125rem'
+    style.fontWeight = 'bold';
+  }
+
+  const props = {
+    style,
+    className
   }
 
   return (
-    <p
-      style={styles}
-    >{children}</p>
+    <div {...props}> {children}</div>
   )
 }
