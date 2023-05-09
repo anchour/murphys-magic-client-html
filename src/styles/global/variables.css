@@ -1,0 +1,20 @@
+:root {
+  /*
+   * Colors
+   */
+   
+  /* Primary */
+  --color-primary-midnight: #000000;
+  --color-primary-smoke: #2b2b2b;
+  --color-primary-bone: #dad3c6;
+  --color-primary-dove: ##ffffff;
+  
+  /* Secondary */
+  --color-secondary-water: #0a4de2;
+  --color-secondary-light: #c9f327;
+  --color-secondary-earth: #8c6741;
+
+  /* Miscellaneous/background colors */
+  --color-background-bone: #F8F6F4;
+  /* Fonts */
+}
