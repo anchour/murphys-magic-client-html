@@ -1,0 +1,71 @@
+# Button Component Documentation
+
+The `Button` component is a flexible and reusable button component designed for a Preact application. It provides a customizable appearance and behavior, along with an optional icon and copy functionality.
+
+## Usage
+
+To use the `Button` component, simply import it into your Preact component and provide the desired props:
+
+```jsx
+import Button from './Button';
+
+// In your component render method
+<Button variant="secondary" small>
+  Click me!
+</Button>
+```
+
+## Props
+
+The `Button` component accepts the following props:
+
+### `variant` (optional)
+
+- Type: `string`
+- Default: `'primary'`
+
+Determines the visual style of the button. The default value is `'primary'`, which will apply the primary styling to the button. Other possible values include `'secondary'`, `'success'`, `'danger'`, etc. The provided value will be used to generate the corresponding class name, e.g., `'btn--secondary'`.
+
+### `children` (optional)
+
+- Type: `string` or `ReactNode`
+- Default: `'Button text'`
+
+Sets the text or content to be displayed inside the button. If not provided, the default value will be `'Button text'`.
+
+### `small` (optional)
+
+- Type: `boolean`
+- Default: `false`
+
+Determines whether the button should have a smaller size. If set to `true`, the button will have a smaller size. By default, the value is `false`.
+
+### `icon` (optional)
+
+- Type: `boolean`
+- Default: `true`
+
+Determines whether the button should display an icon. If set to `true`, the button will display an icon on the right side. By default, the value is `true`.
+
+### `dark` (optional)
+
+- Type: `boolean`
+- Default: `false`
+
+Determines whether the button should have a dark theme. If set to `true`, the button will have a dark theme. By default, the value is `false`.
+
+## Event Handlers
+
+The `Button` component exposes an event handler for the copy functionality:
+
+### `handleClick`
+
+This event handler is triggered when the copy icon is clicked. When the handler is executed, the outer HTML of the button is copied to the user's clipboard. This functionality is provided by the `CopyComponent`.
+
+## Dependencies
+
+The `Button` component has the following dependencies:
+
+- `classnames`: A utility for conditionally joining class names together.
+- `preact/hooks`: A library for using React hooks in Preact.
+- `./CopyComponent`: A custom component used to handle copy functionality.
