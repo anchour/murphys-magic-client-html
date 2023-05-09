@@ -6,20 +6,9 @@ import tailwindcss from "tailwindcss";
 
 export default defineConfig({
   plugins: [preact()],
-
   css: {
     postcss: {
       plugins: [nesting, tailwindcss],
-    },
-  },
-
-  build: {
-    // generate manifest.json in outDir
-    manifest: true,
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.php"),
-      },
     },
   },
 });
