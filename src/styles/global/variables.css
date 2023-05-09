@@ -16,5 +16,13 @@
 
   /* Miscellaneous/background colors */
   --color-background-bone: #F8F6F4;
+
   /* Fonts */
+  
+  /* Font families */
+  --font-founders-grotesk: 'Founders Grotesk', sans-serif;
+  --font-alternate-gothic: 'Alternate Gothic', sans-serif;
+  --font-pitch-sans: 'Pitch Sans', sans-serif;
+  --font-sans: var(--font-founders-grotesk);
+  --font-heading: var(--font-alternate-gothic);
 }
