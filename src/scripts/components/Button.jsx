@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { useRef, useEffect, useState } from 'preact/hooks'
+import { useRef } from 'preact/hooks'
 import CopyComponent from './CopyComponent';
 
 export default function Button({ variant = 'primary', children = 'Button text', small = false, icon = true, dark = false }) {
