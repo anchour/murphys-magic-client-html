@@ -53,9 +53,23 @@ export default function Tags() {
     <>
       <div className="my-4 space-x-2">
 
-        <Tag href="#" onClick={e => e.preventDefault()} >Recent orders</Tag>
+        <Tag variant={'lg'} href="#" onClick={e => e.preventDefault()} >Recent orders</Tag>
 
-        <Tag href="#" onClick={e => e.preventDefault()} variant="has-thumbnail">
+        <Tag variant={'lg has-thumbnail'} href="#" onClick={e => e.preventDefault()}>
+          <div className="tag__thumbnail">
+            <img src={thumbnail} loading="lazy" width={150} height={150} role="presentation" />
+          </div>
+
+          Card Magic
+        </Tag>
+
+      </div>
+
+      <div className="my-4 space-x-2">
+
+        <Tag variant={'md'} href="#" onClick={e => e.preventDefault()} >Recent orders</Tag>
+
+        <Tag variant={'md has-thumbnail'} href="#" onClick={e => e.preventDefault()}>
           <div className="tag__thumbnail">
             <img src={thumbnail} loading="lazy" width={150} height={150} role="presentation" />
           </div>
