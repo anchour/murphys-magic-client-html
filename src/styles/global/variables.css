@@ -2,29 +2,30 @@
   /*
    * Colors
    */
-   
+
   /* Primary */
   --color-primary-midnight: #000000;
   --color-primary-smoke: #2b2b2b;
   --color-primary-bone: #dad3c6;
   --color-primary-dove: #ffffff;
-  
+
   /* Secondary */
   --color-secondary-water: #0a4de2;
   --color-secondary-light: #c9f327;
   --color-secondary-earth: #8c6741;
 
   /* Miscellaneous/background colors */
-  --color-background-bone: #F8F6F4;
+  --color-background-bone: #f8f6f4;
 
-  --drop-shadow-default: 4px 4px 0px 0px #2B2B2B;
-  --drop-shadow-active: 0px 0px 20px 0px #C9F32799;
+  --drop-shadow-dimensions: 0.25rem 0.25rem 0 0;
+  --drop-shadow-default: 0.25rem 0.25rem 0 0 #2b2b2b;
+  --drop-shadow-active: 0 0 1.25rem 0 #c9f32799;
   /* Fonts */
-  
+
   /* Font families */
-  --font-founders-grotesk: 'Founders Grotesk', sans-serif;
-  --font-alternate-gothic: 'Alternate Gothic', sans-serif;
-  --font-pitch-sans: 'Pitch Sans', sans-serif;
+  --font-founders-grotesk: "Founders Grotesk", sans-serif;
+  --font-alternate-gothic: "Alternate Gothic", sans-serif;
+  --font-pitch-sans: "Pitch Sans", sans-serif;
   --font-sans: var(--font-founders-grotesk);
   --font-heading: var(--font-alternate-gothic);
   --font-button: var(--font-sans);

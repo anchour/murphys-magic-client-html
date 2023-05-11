@@ -28,6 +28,7 @@
 .btn--sm {
   font-size: 1rem;
   padding: 0.25rem 1.25rem 0.35rem;
+  box-shadow: none;
 }
 
 .btn--primary {
@@ -38,7 +39,7 @@
   &:hover,
   &:focus-visible {
     background: var(--color-primary-dove);
-    border-color: var(--color-primary-dove);
+    border-color: var(--color-primary-water);
     color: var(--color-secondary-water);
   }
 }
@@ -46,28 +47,39 @@
 .btn--secondary {
   background: var(--color-primary-dove);
   border-color: var(--color-primary-smoke);
-  box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-smoke);
   color: var(--color-primary-smoke);
 
   &:hover,
   &:focus-visible {
     background: var(--color-primary-smoke);
-    border-color: var(--color-primary-dove);
+    border-color: var(--color-primary-smoke);
     color: var(--color-primary-dove);
   }
 }
 
+.btn--secondary:not(.btn--sm) {
+  box-shadow: var(--drop-shadow-default);
+}
+
 .btn--secondary.btn--dark {
   background: var(--color-primary-smoke);
-  border-color: var(--color-primary-mmoke);
-  box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
+  border-color: var(--color-primary-dove);
   color: var(--color-primary-dove);
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: var(--color-primary-dove);
-    box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
+    border-color: var(--color-primary-dove);
     color: var(--color-primary-smoke);
+  }
+}
+
+.btn--secondary.btn--dark:not(.btn--sm) {
+  box-shadow: var(--drop-shadow-dimensions) var(--color-primary-dove);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
   }
 }
 
@@ -98,13 +110,15 @@
     transform-origin: right;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     border: 0 none;
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
+    color: var(--color-secondary-water);
+
     &::before,
     &::after {
       transition: 0.25s ease-in-out transform;
