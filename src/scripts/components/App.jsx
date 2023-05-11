@@ -1,6 +1,6 @@
 import Router from 'preact-router';
-import Home from './Home.jsx';
-import Components from './Components.jsx';
+import Home from '../pages/Home.jsx';
+import Components from '../pages/Components.jsx';
 import { useState } from 'preact/hooks';
 
 export function App() {
