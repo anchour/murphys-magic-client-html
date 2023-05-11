@@ -30,6 +30,11 @@ export default function Buttons() {
         <Button dark="true" small={true} icon={false} />
         <Button variant="secondary" dark="true" small={true} icon={false} />
       </div>
+
+      <div className="flex flex-wrap items-center gap-8 px-6 pt-8">
+        <Button variant="link" />
+        <Button variant="link" dark={true} />
+      </div>
     </>
   )
 }

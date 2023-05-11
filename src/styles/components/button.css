@@ -70,3 +70,48 @@
     color: var(--color-primary-smoke);
   }
 }
+
+.btn--link {
+  border: 0 none;
+  padding: 0;
+  font-size: 1.125rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 2px);
+    height: 2px;
+    content: "";
+    background: currentcolor;
+    width: 100%;
+  }
+
+  &::before {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &::after {
+    transform: scaleX(100%);
+    transform-origin: right;
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transition: 0.25s ease-in-out transform;
+    }
+
+    &::before {
+      transform: scaleX(100%);
+      transition-delay: 0.2s;
+    }
+
+    &::after {
+      transform: scaleX(0);
+    }
+  }
+}

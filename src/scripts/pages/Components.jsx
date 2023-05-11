@@ -7,7 +7,7 @@ export default function Components() {
     <>
       <div className="container">
 
-        <Accordion header="Typography">
+        <Accordion header="Typography" open>
           <Typography />
         </Accordion>
 
