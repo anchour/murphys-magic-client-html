@@ -1,46 +1,54 @@
-import Accordion from './Accordion.jsx'
-import Button from './Button.jsx'
-import Typography from './Typography.jsx'
+import Router from 'preact-router';
+import Home from './Home.jsx';
+import Components from './Components.jsx';
+import { useState } from 'preact/hooks';
 
 export function App() {
-  return (
-    <>
-      <div className="container">
+  const [navOpen, setNavOpen] = useState(false)
 
-        <Accordion header="Typography">
-          <Typography />
-        </Accordion>
+  function MenuToggle({ invertColors = false, extraClasses = null, status = null, children }) {
+    let className = 'absolute px-4 py-2 font-semibold tracking-wider uppercase transition-all rounded-full shadow-md appearance-none hover:shadow-lg focus:shadow-lg top-4 left-4'
 
-        <Accordion header="Buttons" open>
-          <div className="pt-8 px-6 flex flex-wrap gap-8 items-center">
-            <Button />
-            <Button variant="secondary" />
-            <Button small={true} />
-            <Button variant="secondary" small={true} />
-          </div>
+    if (invertColors === true) {
+      className += ' bg-white text-water'
+    } else {
+      className += ' bg-water text-white'
+    }
 
-          <div className="py-8 px-6 flex flex-wrap gap-8 items-center">
-            <Button icon={false} />
-            <Button variant="secondary" icon={false} />
-            <Button small={true} icon={false} />
-            <Button variant="secondary" icon={false} small={true} />
-          </div>
+    if (extraClasses) {
+      className += ' ' + extraClasses
+    }
 
-          <div className="bg-smoke pt-8 px-6 flex flex-wrap gap-8 items-center">
-            <Button dark="true" />
-            <Button variant="secondary" dark="true" />
-            <Button dark="true" small={true} />
-            <Button variant="secondary" dark="true" small={true} />
-          </div>
+    return <button
+      className={className}
+      onClick={() => {
+        setNavOpen(status ? status : !navOpen)
+      }}
+    >{children}</button>
+  }
 
-          <div className="bg-smoke py-8 px-6 flex flex-wrap gap-8 items-center">
-            <Button dark="true" icon={false} />
-            <Button variant="secondary" dark="true" icon={false} />
-            <Button dark="true" small={true} icon={false} />
-            <Button variant="secondary" dark="true" small={true} icon={false} />
-          </div>
-        </Accordion >
-      </div >
-    </>
-  )
+  return <>
+    <div className='sm:pt-[76px]'>
+      <MenuToggle status={true}>Open Menu</MenuToggle>
+
+      {navOpen &&
+        <nav className='absolute top-0 left-0 flex flex-col flex-wrap w-full p-4 pt-24 space-x-3 text-white sm:items-center sm:justify-center sm:py-6 sm:flex-row bg-water'>
+          <MenuToggle extraClasses={'sm:top-1/2 sm:transform sm:-translate-y-1/2'} invertColors={true} status={false}>Close Menu</MenuToggle>
+
+          <a href="/" className='inline-block text-lg '>
+            Home
+          </a>
+
+          <a href="/components/" className='inline-block text-lg '>
+            Components
+          </a>
+        </nav>
+      }
+
+      <Router>
+        <Home path="/" />
+        <Components path="/components/" />
+      </Router>
+    </div>
+  </>
 }
