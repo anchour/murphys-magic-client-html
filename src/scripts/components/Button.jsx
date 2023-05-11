@@ -2,10 +2,10 @@ import classnames from 'classnames';
 import { useRef } from 'preact/hooks'
 import CopyComponent from './CopyComponent';
 
-export default function Button({ variant = 'primary', children = 'Button text', small = false, icon = true, dark = false }) {
+export default function Button({ className, variant = 'primary', children = 'Button text', small = false, icon = true, dark = false }) {
   const elProps = {
     href: '#',
-    className: classnames(['btn', variant ? `btn--${variant}` : false, small ? `btn--sm` : false, dark ? 'btn--dark' : false]),
+    className: classnames(['btn', variant ? `btn--${variant}` : false, small ? `btn--sm` : false, dark ? 'btn--dark' : false, className]),
   };
 
   let button = useRef(null);
