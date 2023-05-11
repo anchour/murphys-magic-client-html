@@ -1,0 +1,17 @@
+.mailing-list {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr 135px;
+}
+
+.mailing-list__input {
+  border-radius: 9999px 0 0 9999px;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.mailing-list__submit {
+  border-radius: 0 9999px 9999px 0;
+  padding: 1rem 1.5rem;
+}

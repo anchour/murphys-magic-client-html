@@ -2,6 +2,7 @@ import Accordion from '../components/Accordion.jsx'
 import Buttons from '../components/Buttons.jsx';
 import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.jsx';
+import MailingList from '../../styles/components/MailingList.jsx';
 
 export default function Components() {
   return (
@@ -26,6 +27,10 @@ export default function Components() {
             <li className="py-1">
               <a href="#Tags">Tags</a>
             </li>
+            
+            <li className="py-1">
+              <a href="#MailingList">Mailing List</a>
+            </li>
           </ul>
         </div>
 
@@ -43,6 +48,12 @@ export default function Components() {
           <a name="Tags"></a>
           <Accordion header="Tags" open>
             <Tags />
+          </Accordion>
+
+          {/* Mailing list signup */}
+          <a name="MailingList"></a>
+          <Accordion header="Mailing List" open>
+            <MailingList />
           </Accordion>
         </div >
       </div>
