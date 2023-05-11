@@ -17,6 +17,8 @@
   /* Miscellaneous/background colors */
   --color-background-bone: #F8F6F4;
 
+  --drop-shadow-default: 4px 4px 0px 0px #2B2B2B;
+  --drop-shadow-active: 0px 0px 20px 0px #C9F32799;
   /* Fonts */
   
   /* Font families */

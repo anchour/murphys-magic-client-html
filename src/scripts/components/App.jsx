@@ -28,7 +28,7 @@ export function App() {
   }
 
   return <>
-    <div className='sm:pt-[76px]'>
+    <div className='pt-[76px]'>
       <MenuToggle status={true}>Open Menu</MenuToggle>
 
       {navOpen &&
