@@ -1,3 +1,5 @@
+import thumbnail from '../../images/button-thumbnail-example.jpg';
+
 import classNames from "classnames";
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
@@ -55,7 +57,7 @@ export default function Tags() {
 
         <Tag href="#" onClick={e => e.preventDefault()} variant="has-thumbnail">
           <div className="tag__thumbnail">
-            <img src="/src/images/button-thumbnail-example.jpg" loading="lazy" width={150} height={150} role="presentation" />
+            <img src={thumbnail} loading="lazy" width={150} height={150} role="presentation" />
           </div>
 
           Card Magic
