@@ -5,6 +5,7 @@
 @import "./src/styles/global/fonts.css";
 @import "./src/styles/global/typography.css";
 @import "./src/styles/global/a11y.css";
+@import "./src/styles/global/display.css";
 @import "./src/styles/global/colors.css";
 
 /* Components */
@@ -15,6 +16,8 @@
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
+@import "./src/styles/layouts/header.css";
+/* @import "./src/styles/layouts/header-v2.css"; */
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
