@@ -1,9 +1,13 @@
 import { times } from "lodash-es"
 import { AsteriskVector } from "../components/Tags"
+import { useRef } from "preact/hooks"
+import CopyComponent from "../components/CopyComponent"
 
 export function AnnouncementBar() {
-  return <>
-    <div className="super-header">
+  const ref = useRef(null)
+
+  return <div className="relative">
+    <div className="super-header" ref={ref}>
       <div className="super-header__marquee typography-heading color-secondary-light sm:hidden"
         role="presentation"
         aria-hidden="true"
@@ -31,8 +35,13 @@ export function AnnouncementBar() {
           <li><a href="#">Make a Payment</a></li>
         </ul>
       </nav>
-    </div >
-  </>
+
+    </div>
+
+    <CopyComponent onClick={() => {
+      navigator.clipboard.writeText(ref.current.outerHTML)
+    }} />
+  </div>
 }
 
 export default function Layouts() {
