@@ -1,9 +1,13 @@
 @import "tailwindcss/base";
 
+/* Globals */
 @import "./src/styles/global/variables.css";
 @import "./src/styles/global/fonts.css";
 @import "./src/styles/global/typography.css";
 @import "./src/styles/global/a11y.css";
+@import "./src/styles/global/colors.css";
+
+/* Components */
 @import "./src/styles/components/button.css";
 @import "./src/styles/components/tag.css";
 @import "./src/styles/components/mailing-list.css";
