@@ -4,12 +4,20 @@ import classNames from "classnames";
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
 
-export function Tag({ component = 'a', variant, children, href }: { component?: string, variant: string, children: any, href?: string }) {
+interface TagProps {
+  component?: string,
+  variant: string,
+  children: any,
+  href?: string,
+  disableCopy?: boolean,
+}
+
+export function Tag({ component = 'a', variant, children, href = '', disableCopy = false }: TagProps) {
   const TagComponent: string = component ? component : 'a';
   const tagVariants = variant.replace(' ', ',').split(',').map(v => `tag--${v}`);
   const elementProps = {
     className: classNames('tag', tagVariants),
-    href: TagComponent === 'a' && href ? href : null,
+    href: TagComponent === 'a' && href.length > 0 ? href : null,
   };
 
   let button = useRef(null);
@@ -23,7 +31,7 @@ export function Tag({ component = 'a', variant, children, href }: { component?: 
         {children}
       </TagComponent>
 
-      <CopyComponent onClick={handleClick} />
+      {!disableCopy && <CopyComponent onClick={handleClick} />}
     </div>
   )
 }
