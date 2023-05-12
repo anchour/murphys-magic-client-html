@@ -80,6 +80,14 @@
   transform-origin: left;
 }
 
+.super-header__text {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+}
+
 .utility-nav {
   display: inline-block;
 }
