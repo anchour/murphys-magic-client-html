@@ -114,3 +114,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.4285714286;
 }
+
+/* Color helpers */
+.color-secondary-light {
+  color: var(---color-secondary-light);
+}
