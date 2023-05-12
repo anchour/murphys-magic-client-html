@@ -4,14 +4,9 @@ import classNames from "classnames";
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
 
-function Tag({ component = 'a', variant, children, href }) {
-
-  if (variant && typeof variant === 'string') {
-    variant = variant.split(' ');
-  }
-
-  const TagComponent = component ? component : 'a';
-  const tagVariants = variant ? variant.map(v => `tag--${v}`) : null;
+export function Tag({ component = 'a', variant, children, href }: { component?: string, variant: string, children: any, href?: string }) {
+  const TagComponent: string = component ? component : 'a';
+  const tagVariants = variant.replace(' ', ',').split(',').map(v => `tag--${v}`);
   const elementProps = {
     className: classNames('tag', tagVariants),
     href: TagComponent === 'a' && href ? href : null,
@@ -20,7 +15,7 @@ function Tag({ component = 'a', variant, children, href }) {
   let button = useRef(null);
 
   const handleClick = () =>
-    navigator.clipboard.writeText(button.current.outerHTML);
+    button.current && navigator.clipboard.writeText(button.current.outerHTML);
 
   return (
     <div className="relative inline-block group">
@@ -57,23 +52,23 @@ export default function Tags() {
     <>
       <div className="my-4 space-x-2">
 
-        <Tag variant={'lg'} href="#" onClick={e => e.preventDefault()} >Recent orders</Tag>
+        <Tag variant='lg' href="#" >Recent orders</Tag>
 
-        <Tag variant={'lg has-thumbnail'} href="#" onClick={e => e.preventDefault()}>
+        <Tag variant='lg has-thumbnail' href="#">
           <div className="tag__thumbnail">
             <img src={thumbnail} loading="lazy" width={150} height={150} role="presentation" />
           </div>
 
           Card Magic
-        </Tag>
+        </Tag >
 
       </div>
 
       <div className="my-4 space-x-2">
 
-        <Tag variant={'md'} href="#" onClick={e => e.preventDefault()} >Recent orders</Tag>
+        <Tag variant='md' href="#" >Recent orders</Tag>
 
-        <Tag variant={'md has-thumbnail'} href="#" onClick={e => e.preventDefault()}>
+        <Tag variant='md,has-thumbnail' href="#">
           <div className="tag__thumbnail">
             <img src={thumbnail} loading="lazy" width={150} height={150} role="presentation" />
           </div>
@@ -84,9 +79,9 @@ export default function Tags() {
       </div>
 
       <div className="flex flex-row">
-        <div class="p-4">
-          <Tag variant={['label', 'invert']} component="div" href="#" onClick={e => e.preventDefault()} >
-            <TagLabelDecoration direction="left" />
+        <div className="p-4">
+          <Tag variant='label,invert' component="div" href="#" >
+            < TagLabelDecoration direction="left" />
 
             Trending Now
 
@@ -94,8 +89,8 @@ export default function Tags() {
           </Tag>
         </div>
 
-        <div class="bg-smoke p-4">
-          <Tag variant="label" component="div" href="#" onClick={e => e.preventDefault()} >
+        <div className="p-4 bg-smoke">
+          <Tag variant="label" component="div" href="#">
             <TagLabelDecoration direction="left" />
 
             Trending Now
@@ -105,7 +100,7 @@ export default function Tags() {
         </div>
 
         <div className="p-4">
-          <Tag variant={['label', 'secondary']} component="div" href="#" onClick={e => e.preventDefault()} >
+          <Tag variant='label,secondary' component="div" href="#">
             New
           </Tag>
         </div>
