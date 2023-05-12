@@ -1,6 +1,7 @@
 import Router from 'preact-router';
 import Home from '../pages/Home.jsx';
 import Components from '../pages/Components.jsx';
+import Layouts from '../pages/Layouts.jsx';
 import { useState } from 'preact/hooks';
 
 export function App() {
@@ -42,11 +43,16 @@ export function App() {
           <a href="/components/" className='inline-block text-lg '>
             Components
           </a>
+          
+          <a href="/layouts/" className='inline-block text-lg '>
+            Layouts
+          </a>
         </nav>
       }
 
       <Router>
         <Home path="/" />
+        <Layouts path="/layouts/" />
         <Components path="/components/" />
       </Router>
     </div>
