@@ -11,7 +11,9 @@
   position: relative;
   white-space: nowrap;
   transition: 0.15s ease-in-out;
+}
 
+a.tag {
   &:hover,
   &:focus-visible {
     box-shadow: var(--drop-shadow-active);
@@ -49,7 +51,7 @@
 .tag--label {
   font-size: 0.875rem;
   font-family: var(--font-heading);
-  letter-spacing: 0.02em;;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   padding: 0.25rem 1.25rem;
   box-shadow: none;
