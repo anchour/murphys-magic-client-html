@@ -13,7 +13,7 @@
 @import "./src/styles/components/mailing-list.css";
 
 /* Layouts */
-@import "./src/styles//layouts/super-header.css";
+@import "./src/styles/layouts/super-header.css";
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
