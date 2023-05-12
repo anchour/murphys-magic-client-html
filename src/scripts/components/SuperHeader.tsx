@@ -1,6 +1,6 @@
 import { useRef } from "preact/hooks"
 import { times } from "lodash-es"
-import CopyComponent from "./CopyComponent.jsx"
+import CopyComponent from "./CopyComponent"
 import { AsteriskVector } from "./Tags.js"
 
 export default function SuperHeader() {
