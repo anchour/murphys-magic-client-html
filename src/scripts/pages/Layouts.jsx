@@ -2,6 +2,7 @@ import { times } from "lodash-es"
 import { AsteriskVector } from "../components/Tags"
 import { useRef } from "preact/hooks"
 import CopyComponent from "../components/CopyComponent"
+import TextImageSplit from '../components/TextImageSplit';
 
 export function AnnouncementBar() {
   const ref = useRef(null)
@@ -48,6 +49,9 @@ export default function Layouts() {
   return <>
     <AnnouncementBar />
     <h1>Page layouts</h1>
+    
+    <TextImageSplit />
+    <TextImageSplit order="image-first" />
   </>
 
 }

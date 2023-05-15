@@ -1,7 +1,58 @@
+.bg-primary-midnight {
+  background-color: var(--color-primary-midnight);
+}
+.bg-primary-smoke {
+  background-color: var(--color-primary-smoke);
+}
+.bg-primary-bone {
+  background-color: var(--color-primary-bone);
+}
+.bg-primary-dove {
+  background-color: var(--color-primary-dove);
+}
+
+/* Secondary */
+.bg-secondary-water {
+  background-color: var(--color-secondary-water);
+}
+.bg-secondary-light {
+  background-color: var(--color-secondary-light);
+}
+.bg-secondary-earth {
+  background-color: var(--color-secondary-earth);
+}
+
+/* Miscellaneous/background colors */
+.bg-background-bone {
+  background-color: var(--color-background-bone);
+}
+
+/* Text colors */
+.color-primary-midnight {
+  color: var(--color-primary-midnight);
+}
+.color-primary-smoke {
+  color: var(--color-primary-smoke);
+}
+.color-primary-bone {
+  color: var(--color-primary-bone);
+}
+.color-primary-dove {
+  color: var(--color-primary-dove);
+}
+
+/* Secondary */
+.color-secondary-water {
+  color: var(--color-secondary-water);
+}
 .color-secondary-light {
   color: var(--color-secondary-light);
 }
+.color-secondary-earth {
+  color: var(--color-secondary-earth);
+}
 
-.color-secondary-water {
-  color: var(--color-secondary-water);
+/* Miscellaneous/background colors */
+.color-background-bone {
+  color: var(--color-background-bone);
 }

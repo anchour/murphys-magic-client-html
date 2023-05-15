@@ -12,9 +12,11 @@
 @import "./src/styles/components/button.css";
 @import "./src/styles/components/tag.css";
 @import "./src/styles/components/mailing-list.css";
+@import "./src/styles/components/actions.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
+@import "./src/styles/layouts/text-image-split.css";
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
