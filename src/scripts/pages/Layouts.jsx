@@ -6,10 +6,10 @@ export default function Layouts() {
   return <>
     <h1>Page layouts</h1>
     
-    <TextImageSplit />
-    <TextImageSplit order="image-first" />
     <SuperHeader />
     <Header />
+    <TextImageSplit />
+    <TextImageSplit order="image-first" />
     <CollectionGrid />
   </>
 }
