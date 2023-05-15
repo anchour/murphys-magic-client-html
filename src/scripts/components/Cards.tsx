@@ -2,6 +2,17 @@ import { useRef } from "preact/hooks"
 import { Tag } from "./Tags"
 import CopyComponent from "./CopyComponent.jsx"
 
+interface CardProps {
+  showTags?: boolean,
+  cardTags?: any,
+  title?: string,
+  image?: string,
+  description?: string,
+  priceWholeSale?: number,
+  priceRetail?: number,
+  showCopyComponent?: boolean
+}
+
 export function CardTags({ tags }: { tags: string[] }) {
   return (
     <div className="card__tags">
@@ -10,7 +21,16 @@ export function CardTags({ tags }: { tags: string[] }) {
   )
 }
 
-export function Card({ showTags = false, cardTags = null }: { showTags?: boolean, cardTags?: any }) {
+export function Card({
+  showTags = false,
+  cardTags = null,
+  title = null,
+  image = null,
+  description = null,
+  priceWholeSale = null,
+  priceRetail = null,
+  showCopyComponent = true
+}: CardProps) {
   const ref = useRef(null)
 
   return <div className="relative group" ref={ref}>
@@ -22,27 +42,27 @@ export function Card({ showTags = false, cardTags = null }: { showTags?: boolean
       </div>
 
       <div className="card__content">
-        <h3 className="card__title typography-body-lg">Card title</h3>
-        <p className="card__description">Card description</p>
+        <h3 className="card__title typography-body-lg">{title ? title : 'Card title'}</h3>
+        <p className="card__description">{description ? description : 'Card description'}</p>
 
         {/* Card prices */}
         <div className="flex space-x-3 card__price typography-body-sm">
-          <span className="color-secondary-light">
+          {priceWholeSale && <span className="color-secondary-light">
             Wholesale $19.99
-          </span>
+          </span>}
 
-          <span aria-hidden role="presentation">|</span>
+          {priceRetail && priceWholeSale && <span aria-hidden role="presentation">|</span>}
 
-          <span>
-            Retail $29.99
-          </span>
+          {priceRetail && <span> Retail $29.99 </span>}
         </div>
 
         {showTags && <CardTags tags={['Type', 'Skill Level']} />}
       </div>
     </a>
 
-    <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
+    {showCopyComponent &&
+      <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
+    }
   </div>
 }
 

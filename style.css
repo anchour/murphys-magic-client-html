@@ -11,10 +11,12 @@
 @import "./src/styles/components/card.css";
 @import "./src/styles/components/button.css";
 @import "./src/styles/components/tag.css";
+@import "./src/styles/components/forms.css";
 @import "./src/styles/components/mailing-list.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
+@import "./src/styles/layouts/collection-grid.css";
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
