@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-export default function CopyComponent({ onClick, children = 'Copy code' }) {
+export default function CopyComponent({ onClick, children = 'Copy code' }): JSX.Element {
   const defaultText = children;
   const [clicked, setClicked] = useState(false)
   const [text, setText] = useState(children)

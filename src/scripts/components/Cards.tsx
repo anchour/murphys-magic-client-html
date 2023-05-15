@@ -1,6 +1,6 @@
 import { useRef } from "preact/hooks"
 import { Tag } from "./Tags"
-import CopyComponent from "./CopyComponent.jsx"
+import CopyComponent from "./CopyComponent"
 
 interface CardProps {
   showTags?: boolean,
