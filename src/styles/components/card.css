@@ -16,6 +16,11 @@
   padding: 1.5rem;
 }
 
+.card__description {
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+
 .card__thumbnail {
   aspect-ratio: 31/29;
   position: relative;

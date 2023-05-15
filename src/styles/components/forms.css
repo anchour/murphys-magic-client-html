@@ -1,0 +1,12 @@
+.form-control {
+}
+
+select.form-control {
+  appearance: none;
+  background: var(--color-primary-dove) svg-load("icons/CheveronDown.svg", stroke=#2b2b2b, fill=none) no-repeat right 1rem center;
+  border: 1px solid var(--color-primary-smoke);
+  display: block;
+  height: 3.75rem;
+  padding: 1rem 1.25rem;
+  width: 100%;
+}
