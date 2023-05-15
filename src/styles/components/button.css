@@ -45,7 +45,8 @@
 }
 
 .btn--secondary {
-  background: var(--color-primary-dove);
+  /* background: var(--color-primary-dove); */
+  background-color: transparent;
   border-color: var(--color-primary-smoke);
   color: var(--color-primary-smoke);
 
