@@ -3,8 +3,9 @@ import AccountIcon from './Icons/Account.svg';
 import CartIcon from './Icons/Cart.svg';
 import SearchIcon from './Icons/Search.svg';
 import ScreenReaderText from './ScreenReaderText';
-import { useRef } from 'preact/hooks';
+import { useEffect, useState, useRef } from 'preact/hooks';
 import CopyComponent from './CopyComponent';
+import MobileNavigation from './MobileNavigation';
 
 export function DropdownCaret(): JSX.Element {
   return (
@@ -16,8 +17,18 @@ export function DropdownCaret(): JSX.Element {
   )
 }
 
+const classes = {
+  NAV_OPEN: 'is-mobile-nav-open'
+}
+
 export default function Header(): JSX.Element {
   const headerRef = useRef<HTMLHeadElement>(null);
+
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList[mobileNavOpen ? 'add' : 'remove'](classes.NAV_OPEN)
+  }, [mobileNavOpen]);
 
   return (
     <div className="relative group">
@@ -33,6 +44,19 @@ export default function Header(): JSX.Element {
                   <DropdownCaret />
                 </a>
 
+                <ul className="header__nav__menu__dropdown">
+                  <li className="header__nav__menu__dropdown__item">
+                    <a href="#" className="header__nav__menu__dropdown__link">Product 1</a>
+                  </li>
+                  <li className="header__nav__menu__dropdown__item">
+                    <a href="#" className="header__nav__menu__dropdown__link">Product 2</a>
+
+                  </li>
+                  <li className="header__nav__menu__dropdown__item">
+                    <a href="#" className="header__nav__menu__dropdown__link">Product 3</a>
+                  </li>
+                </ul>
+
               </li>
               <li className="header__nav__menu__item">
                 <a href="#" className="header__nav__menu__link">Features</a>
@@ -44,10 +68,13 @@ export default function Header(): JSX.Element {
             </ul>
 
             <div className="flex header__nav__menu-toggle lg:hidden">
-              <button type="button" className="header__nav__menu-toggle-button -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <button type="button" className="header__nav__menu-toggle-button -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileNavOpen(!mobileNavOpen)}
+              >
                 <span className="sr-only">Open main menu</span>
-                <svg className="w-6 h-6 header__nav__menu-toggle-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+
+                <svg width="16" height="12" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 2.83374H16V0.83374H0V2.83374ZM0 11.8337H16V9.83374H0V11.8337Z" />
                 </svg>
               </button>
             </div>
@@ -74,8 +101,10 @@ export default function Header(): JSX.Element {
             </a>
           </div>
         </nav>
+
         <div className="header__mobile-menu lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-0 z-10 header__mobile-menu--backdrop"></div>
+
           <div className="fixed inset-y-0 left-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white header__mobile-menu--content">
             <div className="flex items-center justify-between header__mobile-menu--header">
               <div className="flex flex-1 header__mobile-menu--header--menu-button">
@@ -103,9 +132,7 @@ export default function Header(): JSX.Element {
         </div>
       </header >
 
+      <MobileNavigation closeButtonClick={() => setMobileNavOpen(false)} />
     </div>
-
-
-
   )
 }
