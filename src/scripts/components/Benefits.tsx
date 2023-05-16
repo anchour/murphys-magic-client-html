@@ -29,11 +29,10 @@ export function Benefit({
   
 }
 
-export default function Cards() {
+export default function Benefits() {
   return <>
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
       <Benefit identifier="01"/>
-
       <Benefit identifier="02"/>
     </div >
   </>
