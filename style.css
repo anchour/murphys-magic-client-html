@@ -15,12 +15,14 @@
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/mailing-list.css";
 @import "./src/styles/components/actions.css";
+@import "./src/styles/components/benefit.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
 @import "./src/styles/layouts/text-image-split.css";
 @import "./src/styles/components/mobile-search-form.css";
 @import "./src/styles/components/mobile-navigation.css";
+@import "./src/styles/layouts/benefits-grid.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";

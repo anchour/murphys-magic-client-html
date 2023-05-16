@@ -1,0 +1,14 @@
+.benefit__title {
+  color: var(--color-primary-smoke);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.benefit__identifier {
+  margin-bottom: 0;
+}
+
+.benefit__description { 
+  color: var(--color-primary-midnight);
+}

@@ -3,6 +3,7 @@ import Buttons from '../components/Buttons.jsx';
 import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
+import Benefit from '../components/Benefits.tsx';
 import MailingList from '../../styles/components/MailingList.jsx';
 
 export default function Components() {
@@ -37,6 +38,11 @@ export default function Components() {
             <li className="py-1">
               <a href="#MailingList">Mailing List</a>
             </li>
+
+            <li className="py-1">
+              <a href="#Benefits">Benefits</a>
+            </li>
+            
           </ul>
         </div>
 
@@ -65,6 +71,11 @@ export default function Components() {
           <a name="MailingList"></a>
           <Accordion header="Mailing List" open>
             <MailingList />
+          </Accordion>
+
+          <a name="Benefits"></a>
+          <Accordion header="Benefits" open>
+            <Benefit />
           </Accordion>
         </div >
       </div>
