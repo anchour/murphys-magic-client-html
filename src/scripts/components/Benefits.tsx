@@ -5,26 +5,30 @@ interface BenefitProps {
   identifier?: string,
   title?: string,
   description?: string,
-  showCopyComponent?: boolean
 }
 
 export function Benefit({
   identifier = null,
   title = null,
   description = null,
-  showCopyComponent = true
 }: BenefitProps) {
+  
   const ref = useRef(null)
-  return <div className="benefit" ref={ref}>
-    <h3 className="benefit__title typography-body-lg">
-      <span className="benefit__identifier typography-h1">{identifier ? identifier : '00'}</span>
-      {title ? title : 'Benefit title'}
-    </h3>
-    <p className="benefit__description typography-body-sm">{description ? description : 'Card description'}</p>
 
-    {showCopyComponent &&
-      <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
-    }
+  const handleClick = () =>
+  navigator.clipboard.writeText(ref.current.outerHTML);
+  
+  return  <div className="relative group">
+    <div className="benefit" ref={ref}>
+      <h3 className="benefit__title typography-body-lg">
+        <span className="benefit__identifier typography-h1">{identifier ? identifier : '00'}</span>
+        {title ? title : 'Benefit title'}
+      </h3>
+      
+      <p className="benefit__description typography-body-sm">{description ? description : 'Card description'}</p>
+    </div>
+
+    <CopyComponent onClick={handleClick} />
   </div>
   
 }
