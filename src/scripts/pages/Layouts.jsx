@@ -3,6 +3,7 @@ import CollectionGrid from '../components/CollectionGrid';
 import Header from '../components/Header';
 import TextImageSplit from '../components/TextImageSplit';
 import BenefitsGrid from '../components/BenefitsGrid';
+import IconsGrid from '../components/IconsGrid';
 
 export default function Layouts() {
   return <>
@@ -14,5 +15,6 @@ export default function Layouts() {
     <TextImageSplit order="image-first" />
     <CollectionGrid />
     <BenefitsGrid />
+    <IconsGrid />
   </>
 }

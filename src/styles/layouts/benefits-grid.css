@@ -1,3 +1,8 @@
+.benefits-grid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .benefits-grid__benefits {
   display: grid;
   gap: 2rem;
@@ -22,22 +27,32 @@
 }
 
 @media (min-width: 1024px) {
+  .benefits-grid {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .benefits-grid__benefits {
     grid-template-columns: repeat(3, 1fr);
-    width: 83.33%;
-    margin-left: auto;
-    margin-right: auto;
     column-gap: 4rem;
     row-gap: 5.25rem;
   }
 
   .benefits-grid__title {
+    margin-bottom: 5.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .benefits-grid__benefits {
     width: 83.33%;
     margin-left: auto;
     margin-right: auto;
   }
 
   .benefits-grid__title {
-    margin-bottom: 5.25rem;
+    width: 83.33%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

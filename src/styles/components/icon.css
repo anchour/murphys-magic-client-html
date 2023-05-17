@@ -1,10 +1,10 @@
-.icon__svg {
-  margin-bottom: 42px;
-}
-
-.icon__svg svg {
-  margin-left: auto;
-  margin-right: auto;
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
 }
 
 .icon__description {

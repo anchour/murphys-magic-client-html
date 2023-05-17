@@ -2,7 +2,7 @@ import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
 import SVGViewer from "./SVGViewer";
 
-const Icon = ({ icon = null, description = null, svgClass = null }) => {
+export const Icon = ({ icon = null, description = null, svgClass = null,  showCopyComponent = true}) => {
   const ref = useRef(null);
 
   const handleClick = () => {
@@ -21,18 +21,23 @@ const Icon = ({ icon = null, description = null, svgClass = null }) => {
           {description ? description : "Icon description"}
         </p>
       </div>
-      <CopyComponent onClick={handleClick} />
+
+      {showCopyComponent &&
+        <CopyComponent onClick={handleClick} />
+      }
     </div>
   );
 };
 
 export default function Icons() {
-  return <>
-    <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 md:grid-cols-4">
-      <Icon />
-      <Icon />
-      <Icon />
-      <Icon />
-    </div >
-  </>
+  return (
+    <>
+      <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 md:grid-cols-4">
+        <Icon />
+        <Icon />
+        <Icon />
+        <Icon />
+      </div>
+    </>
+  );
 }
