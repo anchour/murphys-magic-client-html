@@ -17,6 +17,8 @@
 @import "./src/styles/components/mailing-list.css";
 @import "./src/styles/components/actions.css";
 @import "./src/styles/components/benefit.css";
+@import "./src/styles/components/hero.css";
+@import "./src/styles/components/breadcrumbs.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";

@@ -6,7 +6,7 @@ import CopyComponent from "./CopyComponent";
 
 interface TagProps {
   component?: string,
-  variant: string,
+  variant: string, 
   children: any,
   href?: string,
   disableCopy?: boolean,
