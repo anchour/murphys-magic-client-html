@@ -24,9 +24,6 @@
 @import "./src/styles/components/mobile-search-form.css";
 @import "./src/styles/components/mobile-navigation.css";
 @import "./src/styles/layouts/benefits-grid.css";
-
-/* Layouts */
-@import "./src/styles/layouts/super-header.css";
 @import "./src/styles/layouts/collection-grid.css";
 @import "./src/styles/layouts/header.css";
 @import "./src/styles/layouts/mobile-menu.css";
