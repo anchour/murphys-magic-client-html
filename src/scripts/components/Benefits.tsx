@@ -25,7 +25,7 @@ export function Benefit({
         {title ? title : 'Benefit title'}
       </h3>
       
-      <p className="benefit__description typography-body-sm">{description ? description : 'Card description'}</p>
+      <p className="benefit__description typography-body-sm">{description ? description : 'Benefit description'}</p>
     </div>
 
     <CopyComponent onClick={handleClick} />
