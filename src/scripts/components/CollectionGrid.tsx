@@ -2,6 +2,7 @@ import { LoremIpsum } from "lorem-ipsum"
 import { times } from 'lodash-es'
 import { Card } from "./Cards";
 import CollectionFilters from "./CollectionFilters";
+import Pagination from "./Pagination";
 
 const lipsum = new LoremIpsum()
 let products = []
@@ -33,6 +34,10 @@ export default function CollectionGrid() {
             showTags={true}
           />
         )}
+      </div>
+
+      <div className="container">
+        <Pagination />
       </div>
     </section>
   )
