@@ -4,6 +4,7 @@ import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
 import Benefits from '../components/Benefits.tsx';
+import Icons from '../components/Icons.tsx';
 import MailingList from '../../styles/components/MailingList.jsx';
 
 export default function Components() {
@@ -42,6 +43,10 @@ export default function Components() {
             <li className="py-1">
               <a href="#Benefits">Benefits</a>
             </li>
+
+            <li className="py-1">
+              <a href="#Icons">Icons</a>
+            </li>
             
           </ul>
         </div>
@@ -76,6 +81,12 @@ export default function Components() {
           <a name="Benefits"></a>
           <Accordion header="Benefits" open>
             <Benefits />
+          </Accordion>
+
+
+          <a name="Icons"></a>
+          <Accordion header="Icons" open>
+            <Icons />
           </Accordion>
         </div >
       </div>
