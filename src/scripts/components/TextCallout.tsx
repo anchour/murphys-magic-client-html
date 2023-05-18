@@ -1,26 +1,24 @@
 interface TextCalloutProps {
   text?: string,
-  children: JSX.Element | null,
-  buttonUrl: string,
-  buttonText: string,
+  buttonUrl?: string,
+  buttonText?: string,
 }
 
-const TextCallout = (props: TextCalloutProps): JSX.Element => {
-
+const TextCallout = ({ text = 'Help make the world a little more wondrous.', buttonUrl = '#', buttonText = "Apply Now" }: TextCalloutProps): JSX.Element => {
   return <section className="text-callout bg-primary-bone">
 
     <div className="container">
       <div className="text-callout__content">
         <div className="text-callout__text">
-          <h2 className="typography-quote">{props.text || 'Help make the world a little more wondrous.'}</h2>
+          <h2 className="typography-quote">{text}</h2>
         </div>
 
         <div className="text-callout__button">
 
           {
-            props.buttonUrl &&
-            <a href={props.buttonUrl} className="btn btn--secondary btn--lg">
-              {props.buttonText ? props.buttonText : 'Learn More'}
+            buttonUrl &&
+            <a href={buttonUrl} className="btn btn--secondary btn--lg">
+              {buttonText ? buttonText : 'Learn More'}
             </a>
           }
 
@@ -36,7 +34,7 @@ const TextCallout = (props: TextCalloutProps): JSX.Element => {
           <div>
 
             <h3 className="text-callout__benefit-title typography-body-lg">Create Value</h3>
-            <p className="typography-body-sm">Murphy’s always looks to help our Dealers create value. We’re looking for partners ready to grow, together.</p>
+            <p className="typography-body-sm">Murphy&rsquo;s always looks to help our Dealers create value. We&rsquo;re looking for partners ready to grow, together.</p>
           </div>
 
         </div>
