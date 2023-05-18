@@ -10,6 +10,7 @@
 @import "./src/styles/global/colors.css";
 @import "./src/styles/global/grid.css";
 @import "./src/styles/global/utilities.css";
+@import "./src/styles/global/sections.css";
 
 /* Components */
 @import "./src/styles/components/card.css";
