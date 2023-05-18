@@ -13,7 +13,7 @@ const Hero = ({ title = "Murphy's Magic", breadcrumbs = null, description = "Whe
 
         <div className="hero__background">
           {style === "dark" ?
-            <img className="hero__background--image" src={DarkHeroBG} alt="Become a Dealer" width={1789} height={1289} loading='lazy' />
+            <img className="hero__background--image" src={DarkHeroBG} alt="Become a Dealer" width={1729} height={973} loading='lazy' />
            : 
            <LightHeroBG />}
         </div>
