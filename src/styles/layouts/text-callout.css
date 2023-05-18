@@ -1,0 +1,89 @@
+/* Prevent issues with overflow on images for screens >= 1280px. */
+.text-callout {
+  overflow: hidden;
+}
+
+.text-callout__content {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.text-callout__image {
+  position: relative;
+}
+
+.text-callout__image > img {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  max-width: none;
+}
+
+.text-callout__content > *:not([hidden]):not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.text-callout__benefits {
+  margin-top: 4rem;
+}
+
+.text-callout__benefits > div:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.text-callout__benefit-title {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .text-callout__benefits,
+  .text-callout .container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .text-callout__benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text-callout__benefits > div:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .text-callout__image > img {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-callout .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    align-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-callout .container {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .text-callout__content {
+    grid-column: span 6 / span 6;
+  }
+
+  .text-callout__image {
+    grid-column: 9 / span 4;
+  }
+
+  .text-callout__image > img {
+    max-width: none;
+    margin: 0;
+    width: calc((100vw - (1280px / 3)) / 2);
+  }
+
+  .text-callout__benefits {
+    margin-top: 6rem;
+  }
+}
