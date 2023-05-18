@@ -12,7 +12,7 @@ const tags = [
 
 const CollectionHero = ({ title = 'Magic Tricks', breadcrumbs = null, description = 'Wizardry at your fingertips' }: CollectionHeroProps) => {
   return <>
-    <section className="hero hero--collection">
+    <section className="hero hero--collection hero--light">
       <div className="hero__inner">
 
         <div className="hero__background">
