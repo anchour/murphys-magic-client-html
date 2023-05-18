@@ -1,6 +1,7 @@
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
 import SVGViewer from "./SVGViewer";
+import Placeholder from "/src/images/icons/ico-placeholder.svg";
 
 export const Icon = ({ icon = null, description = null, svgClass = null,  showCopyComponent = true}) => {
   const ref = useRef(null);
@@ -14,7 +15,7 @@ export const Icon = ({ icon = null, description = null, svgClass = null,  showCo
       <div className="icon" ref={ref}>
         <SVGViewer
           svgClass={svgClass ? svgClass : "icon__svg"}
-          filePath={icon ? icon : "/src/images/icons/ico-placeholder.svg"}
+          filePath={icon ? icon : Placeholder}
         />
 
         <p className="icon__description typography-body-lg">
