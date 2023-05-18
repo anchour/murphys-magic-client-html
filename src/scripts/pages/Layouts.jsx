@@ -5,6 +5,7 @@ import TextImageSplit from '../components/TextImageSplit';
 import BenefitsGrid from '../components/BenefitsGrid';
 import CollectionHero from '../components/CollectionHero';
 import Breadcrumbs from '../components/Breadcrumbs';
+import TextCallout from '../components/TextCallout';
 
 export default function Layouts() {
   return <>
@@ -17,5 +18,6 @@ export default function Layouts() {
     <CollectionGrid />
     <BenefitsGrid />
     <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
+    <TextCallout text='Help make the world a little more wondrous.' buttonUrl='#' buttonText='Apply Now' />
   </>
 }
