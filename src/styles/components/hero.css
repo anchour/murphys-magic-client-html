@@ -1,4 +1,5 @@
 .hero {
+  overflow: hidden;
   padding-bottom: 2rem;
   padding-top: 2rem;
   text-align: center;
@@ -26,10 +27,10 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 1rem 0;
-
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
   overflow-y: hidden;
   overflow-x: scroll;
 }
@@ -38,17 +39,40 @@
   margin-left: 1.5rem;
 }
 
+.hero__tag {
+  display: inline-block;
+}
+
+.hero__tags-outer {
+  overflow: auto;
+  /* padding-left: ; */
+}
+
+.hero__tags {
+  overflow: visible;
+  width: 100%;
+}
+
 .hero .container {
+  overflow: visible;
   display: grid;
   gap: 1rem 2rem;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  min-height: 454px;
-  height: 25vw;
   position: relative;
   z-index: 10;
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 454px;
+  height: 25vw;
 }
 
 .hero__breadcrumbs {
