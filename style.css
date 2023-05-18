@@ -8,6 +8,8 @@
 @import "./src/styles/global/a11y.css";
 @import "./src/styles/global/display.css";
 @import "./src/styles/global/colors.css";
+@import "./src/styles/global/grid.css";
+@import "./src/styles/global/utilities.css";
 
 /* Components */
 @import "./src/styles/components/card.css";
@@ -17,6 +19,8 @@
 @import "./src/styles/components/mailing-list.css";
 @import "./src/styles/components/actions.css";
 @import "./src/styles/components/benefit.css";
+@import "./src/styles/components/hero.css";
+@import "./src/styles/components/breadcrumbs.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
