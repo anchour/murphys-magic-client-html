@@ -50,12 +50,12 @@ body {
 .typography-heading-lg,
 .typography-h2,
 .h2 {
-  font-size: clamp(3.5rem, 4vw, 5rem);
-  line-height: 1.1667;
+  font-size: clamp(3.5rem, 5.3vw, 5rem);
+  line-height: calc(48 / 56);
   letter-spacing: 0.02em;
 
-  @media (min-width) {
-    line-height: 1.25;
+  @media (min-width: 1024px) {
+    line-height: calc(64 / 80);
   }
 }
 
