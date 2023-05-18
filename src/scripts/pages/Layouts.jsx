@@ -5,6 +5,7 @@ import TextImageSplit from '../components/TextImageSplit';
 import BenefitsGrid from '../components/BenefitsGrid';
 import CollectionHero from '../components/CollectionHero';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Hero from '../components/Hero';
 
 export default function Layouts() {
   return <>
@@ -17,5 +18,7 @@ export default function Layouts() {
     <CollectionGrid />
     <BenefitsGrid />
     <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
+    <Hero title="Become a Dealer" description="Grow your business, change the world" style="dark"/>
+    <Hero />
   </>
 }
