@@ -5,17 +5,23 @@ const SVGViewer = ({ filePath, svgClass }) => {
 
   useEffect(() => {
     fetch(filePath)
-      .then((response) => response.text())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('SVG file not found');
+        }
+        return response.text();
+      })
       .then((svgContent) => {
         setSvgContent(svgContent);
       })
       .catch((error) => {
         console.error('Error fetching SVG file:', error);
+        setSvgContent('404');
       });
   }, [filePath]);
 
-  if (!svgContent) {
-    return <div>Loading...</div>;
+  if (svgContent === '404') {
+    return <div>SVG file not found</div>;
   }
 
   return (

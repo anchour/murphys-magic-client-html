@@ -5,10 +5,8 @@ export default function IconGrid() {
     <section className="icons-grid">
       <div className="container">
         <div className="row">
-          <div className="icons-grid__title">
-            <h2>What sets Murphy’s Magic apart?</h2>
-          </div>
-          
+          <h2 className="icons-grid__title">What sets Murphy’s Magic apart?</h2>
+
           <div className="icons-grid__icons">
             <Icon
               icon="../src/images/icons/ico-top_magicians.svg"
