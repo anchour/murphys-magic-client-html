@@ -30,6 +30,7 @@
 @import "./src/styles/components/mobile-navigation.css";
 @import "./src/styles/layouts/benefits-grid.css";
 @import "./src/styles/layouts/text-callout.css";
+@import "./src/styles/layouts/mailing-list-signup.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
