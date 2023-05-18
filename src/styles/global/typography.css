@@ -13,6 +13,10 @@ body {
 .h4,
 .h5,
 .h6,
+.typography-heading-xl,
+.typography-heading-lg,
+.typography-heading-md,
+.typography-heading-sm,
 .typography-h1,
 .typography-h2,
 .typography-h3,
@@ -22,7 +26,10 @@ body {
   font-family: var(--font-heading);
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 0.5em;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
 }
 
 /* Font sizes are based on 16px base font size, so 1rem = 16px */
@@ -43,12 +50,12 @@ body {
 .typography-heading-lg,
 .typography-h2,
 .h2 {
-  font-size: clamp(3.5rem, 4vw, 5rem);
-  line-height: 1.1667;
+  font-size: clamp(3.5rem, 5.3vw, 5rem);
+  line-height: calc(48 / 56);
   letter-spacing: 0.02em;
 
-  @media (min-width) {
-    line-height: 1.25;
+  @media (min-width: 1024px) {
+    line-height: calc(64 / 80);
   }
 }
 
@@ -117,6 +124,15 @@ body {
 .typography-body-2xs {
   font-size: 0.875rem;
   line-height: 1.4285714286;
+}
+
+.typography-quote {
+  font-size: clamp(1.75rem, 4.3vw, 4rem);
+  line-height: 1.1428571429;
+
+  @media (min-width: 1280px) {
+    line-height: 1.0625;
+  }
 }
 
 /* Color helpers */
