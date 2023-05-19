@@ -5,7 +5,7 @@ import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
 import Benefits from '../components/Benefits.tsx';
 import Icons from '../components/Icons.tsx';
-import MailingList from '../../styles/components/MailingList.jsx';
+import MailingList from '../components/MailingList.jsx';
 
 export default function Components() {
   return (
