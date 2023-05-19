@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import nesting from "postcss-nesting";
+import nesting from "tailwindcss/nesting";
 import preact from "@preact/preset-vite";
 import tailwindcss from "tailwindcss";
 import inlineSvg from "postcss-inline-svg";
