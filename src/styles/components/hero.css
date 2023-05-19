@@ -162,6 +162,10 @@
   .hero--align-left .container {
     grid-template-columns: repeat(2, 6fr); 
   }
+
+  .hero--align-left .container {
+    min-height: 500px;
+  }
 }
 
 @media (min-width: 1280px) {

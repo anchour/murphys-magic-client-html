@@ -31,6 +31,8 @@ export default function Layouts() {
         style="dark"
         alignment="left"
         hasCTA
+        headingLevel="h2"
+        buttonText="Apply now"
       />
     </>
   );
