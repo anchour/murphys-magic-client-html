@@ -14,7 +14,7 @@ const MailingListSignup = (props: MailingListSignupProps) => {
       <div className="mailing-list-signup__form-wrapper">
         <div className='mailing-list-signup__form-outer'>
           <p className='typography-body-sm'>Get info about new releases, promotions, and updates right to your inbox — never be in the dark about what&rsquo;s new and next.</p>
-          <MailingList />
+          <MailingList disableCopy />
         </div>
       </div>
     </div>
