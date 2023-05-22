@@ -36,8 +36,25 @@ export function Tag({ component = 'a', variant, children, href = '', disableCopy
   )
 }
 
-export function AsteriskVector() {
-  return <svg width="7" height="6" viewBox="0 0 7 6" xmlns="http://www.w3.org/2000/svg">
+interface AsteriskVectorProps {
+  fill?: string,
+}
+
+export function AsteriskVector(props: AsteriskVectorProps) {
+  type SvgProps = JSX.IntrinsicElements['svg'];
+
+  let elementProps: SvgProps = {
+    width: "7",
+    height: "6",
+    viewBox: "0 0 7 6",
+    xmlns: "http://www.w3.org/2000/svg",
+  };
+
+  if (props.fill) {
+    elementProps.fill = props.fill;
+  }
+
+  return <svg {...elementProps}>
     <path d="M2.27216 3.35991L1.12019 4.60793L2.53621 5.6639L3.40018 4.17588L4.24021 5.66387L5.65619 4.60784L4.50416 3.33586L6.18416 2.99983L5.63212 1.34384L4.09614 2.06387L4.2641 0.335864L2.5121 0.335899L2.68014 2.0639L1.14412 1.34393L0.592155 2.99994L2.27216 3.35991Z" />
   </svg>
 }

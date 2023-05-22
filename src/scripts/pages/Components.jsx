@@ -3,8 +3,11 @@ import Buttons from '../components/Buttons.jsx';
 import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
-import MailingList from '../../styles/components/MailingList.jsx';
 import Details from '../components/Details.tsx';
+import Benefits from '../components/Benefits.tsx';
+import MailingList from '../components/MailingList';
+import Icons from '../components/Icons.tsx';
+
 
 const toc = [
   {
@@ -24,9 +27,14 @@ const toc = [
   },
   {
     id: 'Accordion', title: 'Accordion'
+  },
+  {
+    id: 'Benefits', title: 'Benefits'
+  },
+  {
+    id: 'Icons', title: 'Icons'
   }
 ];
-
 
 export default function Components() {
   return (
@@ -74,7 +82,6 @@ export default function Components() {
             <MailingList />
           </Accordion>
 
-
           {/* Accordions */}
           <a name="Accordion"></a>
           <Accordion header="Accordion" open>
@@ -83,6 +90,16 @@ export default function Components() {
             </Details>
           </Accordion>
 
+          <a name="Benefits"></a>
+          <Accordion header="Benefits" open>
+            <Benefits />
+          </Accordion>
+
+
+          <a name="Icons"></a>
+          <Accordion header="Icons" open>
+            <Icons />
+          </Accordion>
         </div >
       </div>
     </>
