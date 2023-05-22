@@ -1,5 +1,5 @@
 import Router from 'preact-router';
-import Home from '../pages/Home.jsx';
+import Home from '../pages/Home';
 import Components from '../pages/Components';
 import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
