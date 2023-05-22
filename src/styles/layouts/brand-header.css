@@ -1,0 +1,54 @@
+.brand-header__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  align-content: start;
+}
+
+.brand-header__graphic--one,
+.brand-header__content {
+  padding-top: 2rem;
+}
+
+.brand-header__content {
+  grid-column: span 4 / span 4;
+}
+
+.brand-header__graphic--one svg {
+  fill: currentcolor;
+  height: 221px;
+  width: 24px;
+}
+
+.brand-header__graphic--two svg {
+  min-width: 71px;
+  max-width: 195px;
+
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .brand-header__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .brand-header__graphic--one,
+  .brand-header__content {
+    padding-top: 0;
+  }
+
+  .brand-header__content {
+    grid-column: span 9 / span 9;
+  }
+
+  .brand-header__graphic--one svg {
+    height: 357px;
+    width: 38px;
+  }
+
+  .brand-header__graphic--two {
+    grid-column: span 2 / span 2;
+  }
+}
