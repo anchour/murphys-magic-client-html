@@ -10,7 +10,8 @@ import TextCallout from '../components/TextCallout';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import MailingListSignup from '../components/MailingListSignup';
-import CalloutGrid from '../components/CalloutGrid';
+import CalloutGrid from '../components/CalloutGrid'
+import BrandHeader from '../components/BrandHeader';
 
 export default function Layouts() {
   return <>
@@ -18,6 +19,7 @@ export default function Layouts() {
 
     <SuperHeader />
     <Header />
+    <BrandHeader />
     <TextImageSplit />
     <TextImageSplit order="image-first" />
     <CollectionGrid />
