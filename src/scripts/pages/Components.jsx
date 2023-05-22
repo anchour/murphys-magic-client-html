@@ -4,7 +4,7 @@ import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
 import Benefits from '../components/Benefits.tsx';
-import MailingList from '../components/MailingList.jsx';
+import MailingList from '../components/MailingList';
 
 export default function Components() {
   return (
