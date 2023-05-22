@@ -60,6 +60,7 @@ body {
 }
 
 /* h3 - 48px / 48px */
+.typography-heading-md,
 .typography-h3,
 .h3 {
   font-size: 3rem;
