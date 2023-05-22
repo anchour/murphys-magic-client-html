@@ -1,7 +1,7 @@
 import Router from 'preact-router';
 import Home from '../pages/Home.jsx';
-import Components from '../pages/Components.jsx';
-import Pages from '../pages/Pages.tsx';
+import Components from '../pages/Components';
+import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
 import { useState } from 'preact/hooks';
 import BecomeADealer from '../pages/BecomeADealer';

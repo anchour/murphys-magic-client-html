@@ -1,12 +1,12 @@
-import Accordion from '../components/Accordion.jsx'
-import Buttons from '../components/Buttons.jsx';
-import Typography from '../components/Typography.jsx'
-import Tags from '../components/Tags.tsx';
-import Cards from '../components/Cards.tsx';
-import Details from '../components/Details.tsx';
-import Benefits from '../components/Benefits.tsx';
+import Accordion from '../components/Accordion'
+import Buttons from '../components/Buttons';
+import Typography from '../components/Typography'
+import Tags from '../components/Tags';
+import Cards from '../components/Cards';
+import Details from '../components/Details';
+import Benefits from '../components/Benefits';
 import MailingList from '../components/MailingList';
-import Icons from '../components/Icons.tsx';
+import Icons from '../components/Icons';
 
 
 const toc = [
