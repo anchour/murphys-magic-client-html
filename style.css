@@ -34,6 +34,7 @@
 @import "./src/styles/layouts/text-image-split.css";
 @import "./src/styles/layouts/benefits-grid.css";
 @import "./src/styles/layouts/icons-grid.css";
+@import "./src/styles/layouts/callout-grid.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
