@@ -51,12 +51,16 @@
   align-items: center;
   background-color: var(--color-primary-dove);
   color: var(--color-primary-smoke);
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   line-height: 1;
+  font-size: 1.25rem;
 }
 
 .callout-grid__area__title > svg {
+  flex: 0 0 19px;
+  height: 14px;
   margin-left: 0.5rem;
+  width: 19px;
 }
 
 @media (min-width: 768px) {
@@ -81,5 +85,13 @@
 
   .callout-grid__area--quaternary {
     grid-area: 3 / 4 / 5 / 5;
+  }
+}
+
+@media (min-width: 1280px) {
+  .callout-grid__area__title {
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
