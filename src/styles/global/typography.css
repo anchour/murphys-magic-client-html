@@ -129,6 +129,7 @@ body {
 .typography-quote {
   font-size: clamp(1.75rem, 4.3vw, 4rem);
   line-height: 1.1428571429;
+  margin-bottom: 1em;
 
   @media (min-width: 1280px) {
     line-height: 1.0625;
