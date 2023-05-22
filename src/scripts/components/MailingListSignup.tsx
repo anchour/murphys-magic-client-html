@@ -5,7 +5,7 @@ interface MailingListSignupProps {
 
 const MailingListSignup = (props: MailingListSignupProps) => {
 
-  return <section className="page-section mailing-list-signup bg-primary-smoke color-primary-dove">
+  return <section className="page-section mailing-list-signup bg-primary-smoke color-primary-bone">
     <div className="container">
       <div className="mailing-list-signup__content">
         <h2 className="mailing-list-signup__title typography-heading-lg">Dive into a world of wonder</h2>
