@@ -72,9 +72,11 @@ const Footer = (props: FooterProps) => {
 
         <FooterColumn title='Contact Us'>
           <address>
-            11500 Gold Dredge Way,
-            <br />
-            Rancho Cordova, CA 95742
+            <a href="https://goo.gl/maps/EpS6PtSjdesDdTe29" target="_blank">
+              11500 Gold Dredge Way,
+              <br />
+              Rancho Cordova, CA 95742
+            </a>
           </address>
 
           <p className="footer-navigation__line">
