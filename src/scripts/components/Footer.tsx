@@ -6,7 +6,6 @@ import Twitter from "./Icons/Twitter";
 import YouTube from "./Icons/YouTube";
 import { AsteriskVector } from "./Tags"
 import Button from './Button';
-import { times } from 'lodash-es'
 
 interface FooterProps {
 }
@@ -154,7 +153,7 @@ const Footer = (props: FooterProps) => {
         </div>
       </div>
     </div>
-  </footer >
+  </footer>
 }
 
 export default Footer

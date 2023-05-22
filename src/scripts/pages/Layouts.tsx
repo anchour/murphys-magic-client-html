@@ -11,7 +11,6 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import MailingListSignup from '../components/MailingListSignup';
 
-
 export default function Layouts() {
   return <>
     <h1>Page layouts</h1>
