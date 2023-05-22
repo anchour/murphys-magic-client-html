@@ -1,6 +1,6 @@
 .mailing-list-signup > .container {
   display: grid;
-  gap: 2rem;
+  gap: 1rem 2rem;
   grid-template-columns: 1fr;
   align-items: center;
   align-content: center;
@@ -23,4 +23,8 @@
 
 .mailing-list-signup__form-outer > p {
   margin-bottom: 1rem;
+}
+
+.mailing-list-signup .mailing-list {
+  margin-top: 2rem;
 }
