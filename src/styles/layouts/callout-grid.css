@@ -1,0 +1,85 @@
+.callout-grid__grid {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) repeat(3, 0);
+  grid-template-rows: 4fr repeat(2, 2fr) repeat(2, 0);
+  gap: 0.5rem;
+}
+
+.callout-grid__area--primary {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.callout-grid__area--secondary {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.callout-grid__area--tertiary {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.callout-grid__area--quaternary {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.callout-grid__area {
+  overflow: hidden;
+  position: relative;
+}
+
+.callout-grid img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.25s ease-in-out transform;
+  transform: scale(1);
+}
+
+.callout-grid__area:hover,
+.callout-grid__area:focus-visible {
+  img {
+    transform: scale(1.1);
+  }
+}
+
+.callout-grid__area__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary-dove);
+  color: var(--color-primary-smoke);
+  padding: 0.75rem 1.5rem;
+  line-height: 1;
+}
+
+.callout-grid__area__title > svg {
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .callout-grid__grid {
+    grid-template-columns: repeat(4, 1fr) 0;
+    grid-template-rows: repeat(4, 1fr) 0;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+  }
+
+  .callout-grid__area--primary {
+    grid-area: 1 / 1 / 5 / 3;
+  }
+
+  .callout-grid__area--secondary {
+    grid-area: 1 / 3 / 3 / 5;
+  }
+
+  .callout-grid__area--tertiary {
+    grid-area: 3 / 3 / 5 / 4;
+  }
+
+  .callout-grid__area--quaternary {
+    grid-area: 3 / 4 / 5 / 5;
+  }
+}

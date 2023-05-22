@@ -10,6 +10,7 @@ import TextCallout from '../components/TextCallout';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import MailingListSignup from '../components/MailingListSignup';
+import CalloutGrid from '../components/CalloutGrid';
 
 export default function Layouts() {
   return <>
@@ -27,6 +28,7 @@ export default function Layouts() {
     <Hero title="Become a Dealer" description="Grow your business, change the world" style="dark"/>
     <Hero />
     <Hero title="Bridging the ordinary with the extraordinary" description="For 40+ years Murphy’s has been teaming up with Dealers to bring mystery and magic to the masses." style="dark" />
+    <CalloutGrid />
     <MailingListSignup />
     <Footer />
   </>
