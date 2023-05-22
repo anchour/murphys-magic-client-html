@@ -3,51 +3,55 @@ import Buttons from '../components/Buttons.jsx';
 import Typography from '../components/Typography.jsx'
 import Tags from '../components/Tags.tsx';
 import Cards from '../components/Cards.tsx';
+import Details from '../components/Details.tsx';
 import Benefits from '../components/Benefits.tsx';
 import MailingList from '../components/MailingList';
 import Icons from '../components/Icons.tsx';
 
+
+const toc = [
+  {
+    id: 'Cards', title: 'Cards'
+  },
+  {
+    id: 'Typography', title: 'Typography'
+  },
+  {
+    id: 'Buttons', title: 'Buttons'
+  },
+  {
+    id: 'Tags', title: 'Tags'
+  },
+  {
+    id: 'MailingList', title: 'Mailing List'
+  },
+  {
+    id: 'Accordion', title: 'Accordion'
+  },
+  {
+    id: 'Benefits', title: 'Benefits'
+  },
+  {
+    id: 'Icons', title: 'Icons'
+  }
+];
+
 export default function Components() {
   return (
     <>
-      {/* Grid layout with 200px wide layout on left for Table of Contents */}
       <div className="grid grid-cols-1 md:grid-cols-[300px,1fr]">
 
-
         {/* Table of Contents */}
-
         <div className="p-4 overflow-y-auto bg-white md:sticky md:top-0 md:h-screen">
           <div className="mb-4 text-xl font-semibold tracking-wider uppercase border-b border-b-black">Table of Contents</div>
           <ul className="list-none">
-            
-            <li className="py-1">
-              <a href="#Cards">Cards</a>
-            </li>
-            
-            <li className="py-1">
-              <a href="#Typography">Typography</a>
-            </li>
-
-            <li className="py-1">
-              <a href="#Buttons">Buttons</a>
-            </li>
-
-            <li className="py-1">
-              <a href="#Tags">Tags</a>
-            </li>
-            
-            <li className="py-1">
-              <a href="#MailingList">Mailing List</a>
-            </li>
-
-            <li className="py-1">
-              <a href="#Benefits">Benefits</a>
-            </li>
-
-            <li className="py-1">
-              <a href="#Icons">Icons</a>
-            </li>
-            
+            {
+              toc.map(({ id, title }) =>
+                <li className='py-1'>
+                  <a href={`#${id}`}>{title}</a>
+                </li>
+              )
+            }
           </ul>
         </div>
 
@@ -56,7 +60,7 @@ export default function Components() {
           <Accordion header="Cards" open>
             <Cards />
           </Accordion>
-          
+
           <a name="Typography"></a>
           <Accordion header="Typography" open>
             <Typography />
@@ -76,6 +80,14 @@ export default function Components() {
           <a name="MailingList"></a>
           <Accordion header="Mailing List" open>
             <MailingList />
+          </Accordion>
+
+          {/* Accordions */}
+          <a name="Accordion"></a>
+          <Accordion header="Accordion" open>
+            <Details title="Accordion 1" open>
+              Contents of accordion 1 go here.
+            </Details>
           </Accordion>
 
           <a name="Benefits"></a>

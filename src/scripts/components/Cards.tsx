@@ -48,12 +48,12 @@ export function Card({
         {/* Card prices */}
         <div className="flex space-x-3 card__price typography-body-sm">
           {priceWholeSale && <span className="color-secondary-light">
-            Wholesale $19.99
+            Wholesale ${priceWholeSale}
           </span>}
 
           {priceRetail && priceWholeSale && <span aria-hidden role="presentation">|</span>}
 
-          {priceRetail && <span> Retail $29.99 </span>}
+          {priceRetail && <span> Retail ${priceWholeSale} </span>}
         </div>
 
         {showTags && <CardTags tags={['Type', 'Skill Level']} />}
