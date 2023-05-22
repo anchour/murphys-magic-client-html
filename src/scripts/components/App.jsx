@@ -5,6 +5,7 @@ import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
 import { useState } from 'preact/hooks';
 import BecomeADealer from '../pages/BecomeADealer';
+import AccountOverview from '../pages/AccountOverview';
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -62,6 +63,7 @@ export function App() {
         <Components path="/components/" />
         <Pages path="/pages/" />
         <BecomeADealer path="/pages/become-a-dealer" />
+        <AccountOverview path="/pages/account-overview" />
       </Router>
     </div>
   </>
