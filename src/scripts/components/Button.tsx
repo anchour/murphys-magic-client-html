@@ -10,11 +10,12 @@ interface ButtonProps {
   icon?: boolean;
   dark?: boolean;
   disableCopy?: boolean;
+  href?: string;
 }
 
-export default function Button({ className = '', variant = 'primary', children = 'Button text', small = false, icon = true, dark = false, disableCopy = false }: ButtonProps) {
+export default function Button({ href = '#', className = '', variant = 'primary', children = 'Button text', small = false, icon = true, dark = false, disableCopy = false }: ButtonProps) {
   const elProps = {
-    href: '#',
+    href,
     className: classnames(['btn', variant ? `btn--${variant}` : false, small ? `btn--sm` : false, dark ? 'btn--dark' : false, className]),
   };
 
