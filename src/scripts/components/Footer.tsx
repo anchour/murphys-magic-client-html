@@ -82,7 +82,7 @@ const Footer = (props: FooterProps) => {
             Phone: <a href="tel:1.800.853.7403">1.800.853.7403</a>
           </p>
 
-          <div className="footer-navigation__line typography-heading-xs">
+          <div className="footer-navigation__header typography-heading-xs">
             Follow Along
           </div>
 
@@ -119,8 +119,8 @@ const Footer = (props: FooterProps) => {
           </ul>
         </FooterColumn>
 
-        <div className="">
-          <Button dark={true} variant="secondary"> Dealer Login</Button>
+        <div className="footer__actions">
+          <Button dark={true} variant="secondary" disableCopy={true}> Dealer Login</Button>
         </div>
       </div>
     </nav>
