@@ -1,0 +1,67 @@
+.icons-grid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.icons-grid .row {
+  margin-left: -6px;
+  margin-right: -6px;
+  row-gap: 4rem;
+  align-items: center;
+}
+
+.icons-grid__title {
+  width: 100%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.icons-grid__icons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  row-gap: 4rem;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.icons-grid__title {
+  font-size: 3rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1428571429;
+}
+
+@media (min-width: 480px) {
+  .icons-grid__icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .icons-grid__icons {
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .icons-grid {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .icons-grid__icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .icons-grid__title {
+    width: 29%;
+  }
+
+  .icons-grid__icons {
+    width: 71%;
+  }
+}

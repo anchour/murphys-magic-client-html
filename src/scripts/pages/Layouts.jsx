@@ -3,6 +3,7 @@ import CollectionGrid from '../components/CollectionGrid';
 import Header from '../components/Header';
 import TextImageSplit from '../components/TextImageSplit';
 import BenefitsGrid from '../components/BenefitsGrid';
+import IconsGrid from '../components/IconsGrid';
 import CollectionHero from '../components/CollectionHero';
 import Breadcrumbs from '../components/Breadcrumbs';
 import TextCallout from '../components/TextCallout';
@@ -21,6 +22,7 @@ export default function Layouts() {
     <TextImageSplit order="image-first" />
     <CollectionGrid />
     <BenefitsGrid />
+    <IconsGrid />
     <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
     <TextCallout text='Help make the world a little more wondrous.' buttonUrl='#' buttonText='Apply Now' />
     <Hero title="Become a Dealer" description="Grow your business, change the world" style="dark"/>
