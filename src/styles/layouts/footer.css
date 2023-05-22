@@ -119,9 +119,16 @@
 }
 
 .social-navigation a {
+  color: var(--color-secondary-light);
   display: block;
-  width: 40px;
-  height: 40px;
+  height: 45px;
+  width: 45px;
+  transition: 0.15s ease-in-out color;
+}
+
+.social-navigation a:hover,
+.social-navigation a:focus-visible {
+  color: var(--color-primary-dove);
 }
 
 .social-navigation svg {
