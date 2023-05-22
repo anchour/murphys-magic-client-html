@@ -28,6 +28,7 @@
 @import "./src/styles/components/mobile-search-form.css";
 @import "./src/styles/components/mobile-navigation.css";
 @import "./src/styles/components/accordion.css";
+@import "./src/styles/components/responsive-embed.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
