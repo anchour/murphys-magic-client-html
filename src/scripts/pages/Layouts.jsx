@@ -8,6 +8,8 @@ import CollectionHero from '../components/CollectionHero';
 import Breadcrumbs from '../components/Breadcrumbs';
 import TextCallout from '../components/TextCallout';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import MailingListSignup from '../components/MailingListSignup';
 
 
 export default function Layouts() {
@@ -26,5 +28,7 @@ export default function Layouts() {
     <Hero title="Become a Dealer" description="Grow your business, change the world" style="dark"/>
     <Hero />
     <Hero title="Bridging the ordinary with the extraordinary" description="For 40+ years Murphy’s has been teaming up with Dealers to bring mystery and magic to the masses." style="dark" />
+    <MailingListSignup />
+    <Footer />
   </>
 }
