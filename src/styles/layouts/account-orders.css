@@ -4,6 +4,12 @@
   grid-template-columns: 1fr;
 }
 
+.account-orders__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
 @media (min-width: 640px) {
   .account-orders .container {
     gap: 2rem;
