@@ -10,8 +10,16 @@
   line-height: 1.1;
 }
 
-@media (min-width: 640px) {
+.order-stat--hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 1024px) {
   .order-stat {
     font-size: 1.125rem;
+  }
+
+  .order-stat--hidden-mobile {
+    display: block;
   }
 }
