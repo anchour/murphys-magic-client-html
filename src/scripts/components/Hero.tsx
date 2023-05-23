@@ -15,14 +15,21 @@ const Hero = ({ title = "Murphy's Magic", breadcrumbs = null, description = "Whe
   let backgroundComponent = null;
 
   if (style === "dark" || alignment === "left") {
-    let imgSrc = "";
+    let bgProps = {
+      className: "hero__background--image",
+      src: DarkHeroBG,
+      alt: "Become a Dealer",
+      width: 1729,
+      height: 973,
+      loading: "lazy",
+    };
     
-    if(style === "dark") {
-      imgSrc = DarkHeroBG;
-    } if(alignment ==="left") {
-      imgSrc = LeftAlignedBG;
+    if(alignment ==="left") {
+      bgProps.src = LeftAlignedBG;
+      bgProps.alt = "Bridging ordinary";
     }
-    backgroundComponent = <img className="hero__background--image" src={imgSrc} alt="Become a Dealer" width={1729} height={973} loading="lazy" />;    
+
+    backgroundComponent = <img {...bgProps}/>;    
   } else {
     backgroundComponent = <LightHeroBG />;
   }

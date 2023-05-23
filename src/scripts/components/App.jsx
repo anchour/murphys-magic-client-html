@@ -1,8 +1,11 @@
 import Router from 'preact-router';
-import Home from '../pages/Home.jsx';
-import Components from '../pages/Components.jsx';
-import Layouts from '../pages/Layouts.jsx';
+import Home from '../pages/Home';
+import Components from '../pages/Components';
+import Pages from '../pages/Pages';
+import Layouts from '../pages/Layouts';
 import { useState } from 'preact/hooks';
+import BecomeADealer from '../pages/BecomeADealer';
+import AccountOverview from '../pages/AccountOverview';
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -43,9 +46,13 @@ export function App() {
           <a href="/components/" className='inline-block text-lg '>
             Components
           </a>
-          
+
           <a href="/layouts/" className='inline-block text-lg '>
             Layouts
+          </a>
+
+          <a href="/pages/" className='inline-block text-lg '>
+            Pages
           </a>
         </nav>
       }
@@ -54,6 +61,9 @@ export function App() {
         <Home path="/" />
         <Layouts path="/layouts/" />
         <Components path="/components/" />
+        <Pages path="/pages/" />
+        <BecomeADealer path="/pages/become-a-dealer" />
+        <AccountOverview path="/pages/account-overview" />
       </Router>
     </div>
   </>

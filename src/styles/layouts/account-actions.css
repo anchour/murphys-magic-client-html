@@ -1,0 +1,47 @@
+.account-actions__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.account-actions__item {
+  display: flex;
+}
+
+.account-actions__item .btn {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: normal;
+  text-align: center;
+  background: var(--color-primary-dove);
+  width: 100%;
+
+  * {
+    line-height: 1;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary-smoke);
+  }
+}
+
+.account-actions__item__title {
+  padding-bottom: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .account-actions__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .account-actions__grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
