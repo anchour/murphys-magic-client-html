@@ -13,6 +13,10 @@ import CalloutGrid from "../components/CalloutGrid";
 import BrandHeader from "../components/BrandHeader";
 import Hero from "../components/Hero";
 
+// Asset imports
+import Eye from "../../images/icons/ico-magic-eye.svg";
+import Unkown from "../../images/icons/ico-art-of-unkown.svg";
+
 export default function Layouts() {
   return (
     <>
@@ -48,12 +52,16 @@ export default function Layouts() {
         headingLevel="h2"
         buttonText="Apply now"
         hasBackground
+        hasBrandElement
+        brandElement={Unkown}
       />
       <Hero title="Contact Us" description="We're here to help." />
       <Hero
         title="Making magic easy"
         description="Since 1998, our team has dedicated ourselves to making the world a little more wonderful for everyone. If there’s anything you need, or any questions you have, drop us a line, day or night."
         hasBackground
+        hasBrandElement
+        brandElement={Eye}
         style="dark"
         headingLevel="h2"
       />
