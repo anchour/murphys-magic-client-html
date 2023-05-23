@@ -1,0 +1,27 @@
+[
+  {
+    "date": "January 1, 2023",
+    "status": "Pending",
+    "quantity": 1,
+    "subtotal": 9995,
+    "shippingAddress": "199 Lisbon St, Lewiston, ME 04344",
+    "orderNumber": "1000000-001",
+    "invoiceLink": "#",
+    "detailsLink": "#",
+    "editLink": "#",
+    "lineItems": [
+      {
+        "title": "Mental Dice (With Online Instruction)",
+        "image": "/orders-images/sample-dice.jpg",
+        "quantity": 3,
+        "price": 4995
+      },
+      {
+        "title": "Exploding Deck of Cards",
+        "image": "/orders-images/sample-cards.jpg",
+        "quantity": 1,
+        "price": 9995
+      }
+    ]
+  }
+]
