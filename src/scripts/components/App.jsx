@@ -5,6 +5,7 @@ import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
 import { useState } from 'preact/hooks';
 import BecomeADealer from '../pages/BecomeADealer';
+import Collections from '../pages/Collections';
 import AccountOverview from '../pages/AccountOverview';
 
 export function App() {
@@ -63,6 +64,7 @@ export function App() {
         <Components path="/components/" />
         <Pages path="/pages/" />
         <BecomeADealer path="/pages/become-a-dealer" />
+        <Collections path="/pages/collections" />
         <AccountOverview path="/pages/account-overview" />
       </Router>
     </div>
