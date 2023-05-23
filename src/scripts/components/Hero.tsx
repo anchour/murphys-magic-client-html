@@ -5,33 +5,34 @@ import DarkHeroBG from '../../images/hero--dark-background.jpg';
 import LeftAlignedBG from '../../images/hero--left-aligned-background.jpg'
 
 interface HeroProps {
-  title?: string, breadcrumbs?: null | JSX.Element, description?: string, style?: string, alignment?: string, hasCTA?: boolean, headingLevel?: string, buttonText?: string,
+  title?: string, breadcrumbs?: null | JSX.Element, description?: string, style?: string, alignment?: string, hasCTA?: boolean, headingLevel?: string, buttonText?: string, hasBackground: boolean,
 }
 
-const Hero = ({ title = "Murphy's Magic", breadcrumbs = null, description = "Where the fun comes free", style="light", alignment="center", hasCTA=false, headingLevel="h1", buttonText="Button text" }: HeroProps) => {
+const Hero = ({ title = "Murphy's Magic", breadcrumbs = null, description = "Where the fun comes free", style="light", alignment="center", hasCTA=false, headingLevel="h1", buttonText="Button text", hasBackground=false}: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements; 
 
-  
   let backgroundComponent = null;
 
-  if (style === "dark" || alignment === "left") {
-    let bgProps = {
-      className: "hero__background--image",
-      src: DarkHeroBG,
-      alt: "Become a Dealer",
-      width: 1729,
-      height: 973,
-      loading: "lazy",
-    };
-    
-    if(alignment ==="left") {
-      bgProps.src = LeftAlignedBG;
-      bgProps.alt = "Bridging ordinary";
-    }
+  if (hasBackground) {
+    if (style === "dark" || alignment === "left") {
+      let bgProps = {
+        className: "hero__background--image",
+        src: DarkHeroBG,
+        alt: "Become a Dealer",
+        width: 1729,
+        height: 973,
+        loading: "lazy",
+      };
+      
+      if(alignment ==="left") {
+        bgProps.src = LeftAlignedBG;
+        bgProps.alt = "Bridging ordinary";
+      }
 
-    backgroundComponent = <img {...bgProps}/>;    
-  } else {
-    backgroundComponent = <LightHeroBG />;
+      backgroundComponent = <img {...bgProps}/>;    
+    } else {
+      backgroundComponent = <LightHeroBG />;
+    }
   }
 
   return <>

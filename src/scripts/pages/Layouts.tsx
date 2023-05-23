@@ -1,16 +1,16 @@
-import SuperHeader from '../components/SuperHeader';
-import CollectionGrid from '../components/CollectionGrid';
-import Header from '../components/Header';
-import TextImageSplit from '../components/TextImageSplit';
-import BenefitsGrid from '../components/BenefitsGrid';
-import IconsGrid from '../components/IconsGrid';
-import CollectionHero from '../components/CollectionHero';
-import Breadcrumbs from '../components/Breadcrumbs';
-import TextCallout from '../components/TextCallout';
-import Footer from '../components/Footer';
-import MailingListSignup from '../components/MailingListSignup';
-import CalloutGrid from '../components/CalloutGrid'
-import BrandHeader from '../components/BrandHeader';
+import SuperHeader from "../components/SuperHeader";
+import CollectionGrid from "../components/CollectionGrid";
+import Header from "../components/Header";
+import TextImageSplit from "../components/TextImageSplit";
+import BenefitsGrid from "../components/BenefitsGrid";
+import IconsGrid from "../components/IconsGrid";
+import CollectionHero from "../components/CollectionHero";
+import Breadcrumbs from "../components/Breadcrumbs";
+import TextCallout from "../components/TextCallout";
+import Footer from "../components/Footer";
+import MailingListSignup from "../components/MailingListSignup";
+import CalloutGrid from "../components/CalloutGrid";
+import BrandHeader from "../components/BrandHeader";
 import Hero from "../components/Hero";
 
 export default function Layouts() {
@@ -18,22 +18,27 @@ export default function Layouts() {
     <>
       <h1>Page layouts</h1>
 
-    <SuperHeader />
-    <Header />
-    <BrandHeader />
-    <TextImageSplit />
-    <TextImageSplit order="image-first" />
-    <CollectionGrid />
-    <BenefitsGrid />
-    <IconsGrid />
-    <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
-    <TextCallout text='Help make the world a little more wondrous.' buttonUrl='#' buttonText='Apply Now' />
-    <Hero
+      <SuperHeader />
+      <Header />
+      <BrandHeader />
+      <TextImageSplit />
+      <TextImageSplit order="image-first" />
+      <CollectionGrid />
+      <BenefitsGrid />
+      <IconsGrid />
+      <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
+      <TextCallout
+        text="Help make the world a little more wondrous."
+        buttonUrl="#"
+        buttonText="Apply Now"
+      />
+      <Hero
         title="Become a Dealer"
         description="Grow your business, change the world"
         style="dark"
+        hasBackground
       />
-      <Hero />
+      <Hero hasBackground />
       <Hero
         title="Bridging the ordinary with the extraordinary"
         description="For 40+ years Murphy’s has been teaming up with Dealers to bring mystery and magic to the masses."
@@ -42,10 +47,19 @@ export default function Layouts() {
         hasCTA
         headingLevel="h2"
         buttonText="Apply now"
+        hasBackground
       />
-    <CalloutGrid />
-    <MailingListSignup />
-    <Footer />
-  </>
-  )
+      <Hero title="Contact Us" description="We're here to help." />
+      <Hero
+        title="Making magic easy"
+        description="Since 1998, our team has dedicated ourselves to making the world a little more wonderful for everyone. If there’s anything you need, or any questions you have, drop us a line, day or night."
+        hasBackground
+        style="dark"
+        headingLevel="h2"
+      />
+      <CalloutGrid />
+      <MailingListSignup />
+      <Footer />
+    </>
+  );
 }

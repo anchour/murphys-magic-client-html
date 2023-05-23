@@ -85,6 +85,10 @@
   flex-wrap: wrap;
 }
 
+.hero__content {
+  max-width: 625px;
+}
+
 .hero--collection .hero__inner {
   min-height: 454px;
   height: 25vw;
@@ -143,6 +147,7 @@
 .hero--align-left .hero__content {
   display: grid;
   gap: 1.5rem;
+  max-width: unset;
 }
 
 .hero--align-left .hero__description {
