@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 
 import LightHeroBG from './CollectionHeroBG.svg.tsx';
 import DarkHeroBG from '../../images/hero--dark-background.jpg';
@@ -10,22 +11,28 @@ interface HeroProps {
 const Hero = ({ title = "Murphy's Magic", breadcrumbs = null, description = "Where the fun comes free", style="light", alignment="center", hasCTA=false, headingLevel="h1", buttonText="Button text" }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements; 
 
-
-  let backgroundImage = LightHeroBG;
-
   
   let backgroundComponent = null;
 
-  if (style === "dark") {
-    backgroundComponent = <img className="hero__background--image" src={DarkHeroBG} alt="Become a Dealer" width={1729} height={973} loading="lazy" />;
-  } if (alignment === "left") {
-    backgroundComponent = <img className="hero__background--image" src={LeftAlignedBG} alt="Become a Dealer" width={1729} height={973} loading="lazy" />;
+  if (style === "dark" || alignment === "left") {
+    let imgSrc = "";
+    
+    if(style === "dark") {
+      imgSrc = DarkHeroBG;
+    } if(alignment ==="left") {
+      imgSrc = LeftAlignedBG;
+    }
+    backgroundComponent = <img className="hero__background--image" src={imgSrc} alt="Become a Dealer" width={1729} height={973} loading="lazy" />;    
   } else {
     backgroundComponent = <LightHeroBG />;
   }
-  
+
   return <>
-    <section className={'hero hero--page hero--' + style + ' hero--align-' + alignment}>
+   
+   <section className={classnames('hero hero--page', {
+      [`hero--${style}`]: style,
+      [`hero--align-${alignment}`] : alignment
+    })}>
       <div className="hero__inner">
 
       <div className="hero__background">
