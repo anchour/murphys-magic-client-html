@@ -1,10 +1,9 @@
 import SuperHeader from "../components/SuperHeader"
 import Header from "../components/Header"
 import MailingListSignup from "../components/MailingListSignup"
-import Hero from "../components/Hero"
-import IconsGrid from '../components/IconsGrid';
+import CollectionHero from '../components/CollectionHero';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CollectionGrid from '../components/CollectionGrid';
-import TextCallout from '../components/TextCallout';
 import Footer from '../components/Footer';
 
 interface CollectionsPageProps {
@@ -16,9 +15,7 @@ const CollectionsPage = (props: CollectionsPageProps) => {
     <Header />
 
     <main role="main">
-      <Hero />
-      <IconsGrid />
-      <TextCallout text='“The street’s my stage and Murphy’s gives me the perfect products to surprise and delight my audiences. It’s the ideal mix of quality, price, and production execution. Want the best? Get this stuff.”' buttonUrl='#' buttonText='Shop Street Magic' />
+      <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
       <CollectionGrid />
     </main >
     
