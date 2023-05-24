@@ -12,6 +12,7 @@ import MailingListSignup from "../components/MailingListSignup";
 import CalloutGrid from "../components/CalloutGrid";
 import BrandHeader from "../components/BrandHeader";
 import Hero from "../components/Hero";
+import ImageOverlayGrid from "../components/ImageOverlayGrid";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
@@ -66,6 +67,7 @@ export default function Layouts() {
         headingLevel="h2"
       />
       <CalloutGrid />
+      <ImageOverlayGrid />
       <MailingListSignup />
       <Footer />
     </>

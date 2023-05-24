@@ -1,57 +1,63 @@
-import Accordion from '../components/Accordion'
-import Buttons from '../components/Buttons';
-import Typography from '../components/Typography'
-import Tags from '../components/Tags';
-import Cards from '../components/Cards';
-import Details from '../components/Details';
-import Benefits from '../components/Benefits';
-import MailingList from '../components/MailingList';
-import Icons from '../components/Icons';
-
+import Accordion from "../components/Accordion";
+import Buttons from "../components/Buttons";
+import Typography from "../components/Typography";
+import Tags from "../components/Tags";
+import Cards from "../components/Cards";
+import Details from "../components/Details";
+import Benefits from "../components/Benefits";
+import MailingList from "../components/MailingList";
+import Icons from "../components/Icons";
 
 const toc = [
   {
-    id: 'Cards', title: 'Cards'
+    id: "Cards",
+    title: "Cards",
   },
   {
-    id: 'Typography', title: 'Typography'
+    id: "Typography",
+    title: "Typography",
   },
   {
-    id: 'Buttons', title: 'Buttons'
+    id: "Buttons",
+    title: "Buttons",
   },
   {
-    id: 'Tags', title: 'Tags'
+    id: "Tags",
+    title: "Tags",
   },
   {
-    id: 'MailingList', title: 'Mailing List'
+    id: "MailingList",
+    title: "Mailing List",
   },
   {
-    id: 'Accordion', title: 'Accordion'
+    id: "Accordion",
+    title: "Accordion",
   },
   {
-    id: 'Benefits', title: 'Benefits'
+    id: "Benefits",
+    title: "Benefits",
   },
   {
-    id: 'Icons', title: 'Icons'
-  }
+    id: "Icons",
+    title: "Icons",
+  },
 ];
 
 export default function Components() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-[300px,1fr]">
-
         {/* Table of Contents */}
         <div className="p-4 overflow-y-auto bg-white md:sticky md:top-0 md:h-screen">
-          <div className="mb-4 text-xl font-semibold tracking-wider uppercase border-b border-b-black">Table of Contents</div>
+          <div className="mb-4 text-xl font-semibold tracking-wider uppercase border-b border-b-black">
+            Table of Contents
+          </div>
           <ul className="list-none">
-            {
-              toc.map(({ id, title }) =>
-                <li className='py-1'>
-                  <a href={`#${id}`}>{title}</a>
-                </li>
-              )
-            }
+            {toc.map(({ id, title }) => (
+              <li className="py-1">
+                <a href={`#${id}`}>{title}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -69,7 +75,7 @@ export default function Components() {
           <a id="Buttons"></a>
           <Accordion header="Buttons" open>
             <Buttons />
-          </Accordion >
+          </Accordion>
 
           <a name="Tags"></a>
           <Accordion header="Tags" open>
@@ -95,13 +101,12 @@ export default function Components() {
             <Benefits />
           </Accordion>
 
-
           <a name="Icons"></a>
           <Accordion header="Icons" open>
             <Icons />
           </Accordion>
-        </div >
+        </div>
       </div>
     </>
-  )
+  );
 }
