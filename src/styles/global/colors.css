@@ -54,5 +54,5 @@
 
 /* Miscellaneous/background colors */
 .color-background-bone {
-  color: var(--color-background-bone);
+  background-color: var(--color-background-bone);
 }

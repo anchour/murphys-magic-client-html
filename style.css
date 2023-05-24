@@ -30,6 +30,7 @@
 @import "./src/styles/components/accordion.css";
 @import "./src/styles/components/responsive-embed.css";
 @import "./src/styles/components/image-overlay.css";
+@import "./src/styles/components/one-column-text.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";

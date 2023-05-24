@@ -43,6 +43,7 @@ export default function () {
     <div className="container">
       <button type="button" aria-pressed="false" className="collection-filter-toggle btn btn--primary">Filter</button>
 
+      <h2 className="collection-filter-label typography-heading typography-heading-xs"> Filter By</h2>
       <div className="collection-filters">
         {filters.map(({ type, options }, index) => (
           <div key={index} className="collection-filters__filter">
