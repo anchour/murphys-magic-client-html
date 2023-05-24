@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@preact/preset-vite": "^2.5.0",
+    "@tailwindcss/forms": "^0.5.3",
     "classnames": "^2.3.2",
     "lodash-es": "^4.17.21",
     "lorem-ipsum": "^2.0.8",

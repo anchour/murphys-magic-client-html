@@ -4,12 +4,33 @@ import SuperHeader from "../components/SuperHeader";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
-// Asset imports
-import Eye from "../../images/icons/ico-magic-eye.svg";
 
-interface BecomeADealerPageProps {}
+const ContactForm = () => {
+  return (
+    <div className="container px-4 mx-auto">
+      <h1> FUCK! </h1>
+      <form>
+        <div className="form-control">
 
-const BecomeADealerPage = (props: BecomeADealerPageProps) => {
+          <label className="form-control__label" htmlFor="name">
+            Name
+          </label>
+
+          <input
+            className="form-control__input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+          />
+
+        </div>
+      </form>
+    </div>
+  )
+}
+
+const ContactPage = () => {
   return (
     <>
       <SuperHeader />
@@ -17,17 +38,8 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
 
       <main role="main">
         <Hero title="Contact Us" description="We're here for you." />
-        <Hero
-          title="Making magic easy"
-          description="Since 1998, our team has dedicated ourselves to making the world
-         a little more wonderful for everyone. If there’s anything you need,
-         or any questions you have, drop us a line, day or night."
-          headingLevel="h2"
-          style="dark"
-          hasBackground
-          hasBrandElement
-          brandElement={Eye}
-        />
+
+        <ContactForm />
       </main>
 
       <MailingListSignup />
@@ -36,4 +48,4 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
   );
 };
 
-export default BecomeADealerPage;
+export default ContactPage;
