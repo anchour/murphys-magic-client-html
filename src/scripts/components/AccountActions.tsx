@@ -12,7 +12,7 @@ const actions = [
   {
     title: 'Orders',
     description: 'Place, track, and organize.',
-    href: '#',
+    href: '/pages/account-orders',
   },
   {
     title: 'Reports',

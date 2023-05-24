@@ -6,6 +6,7 @@ import Layouts from '../pages/Layouts';
 import { useState } from 'preact/hooks';
 import BecomeADealer from '../pages/BecomeADealer';
 import AccountOverview from '../pages/AccountOverview';
+import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
 
 export function App() {
@@ -65,6 +66,7 @@ export function App() {
         <Pages path="/pages/" />
         <BecomeADealer path="/pages/become-a-dealer" />
         <AccountOverview path="/pages/account-overview" />
+        <AccountOrders path="/pages/account-orders" />
         <Cart path="/pages/cart" />
       </Router>
     </div>

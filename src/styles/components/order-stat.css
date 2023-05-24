@@ -1,0 +1,25 @@
+.order-stat {
+  font-size: 1rem;
+}
+
+.order-stat__header {
+  font-weight: bold;
+}
+
+.order-stat__value {
+  line-height: 1.1;
+}
+
+.order-stat--hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .order-stat {
+    font-size: 1.125rem;
+  }
+
+  .order-stat--hidden-mobile {
+    display: block;
+  }
+}
