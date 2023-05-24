@@ -1,33 +1,94 @@
 import SuperHeader from "../components/SuperHeader";
 import Header from "../components/Header";
-import { useRef } from "preact/hooks";
+import { useRef, useState } from "preact/hooks";
 import Footer from "../components/Footer";
 import MailingListSignup from "../components/MailingListSignup";
 import { formatMoney } from "../lib/currency";
 import cart from '../data/cart.json';
+import { DisableCopyComponent } from "../lib/interfaces";
+import { CartLineItemType, CartLineItemOptionType } from "../lib/types";
+import Button from "../components/Button";
 
-interface CartTableProps {
-  disableCopy?: boolean
+interface CartLayoutProps extends DisableCopyComponent {
 }
 
-type CartLineItemOption = {
-  label: string,
-  value: string
+const cartSubtotal = cart.lineItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+
+const QuantityControl = ({ quantity, title }: { quantity: number, title?: string }) => {
+  const [inputQuantity, setInputQuantity] = useState(quantity)
+
+  return <div className="quantity-control">
+
+    <label className="sr-only" htmlFor="Quantity-1">
+      Quantity
+    </label>
+
+    <button
+      className="quantity-control__button quantity-control__button--minus"
+      name="minus"
+      type="button"
+      onClick={() => setInputQuantity(Math.max(0, inputQuantity - 1))}
+    >
+      <span className="sr-only">Decrease quantity for {title}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        role="presentation"
+        className="icon icon-minus"
+        fill="none"
+        viewBox="0 0 10 2"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </button>
+    <input
+      className=" quantity-control__input"
+      type="number"
+      name="updates[]"
+      value={inputQuantity}
+      min="0"
+      aria-label={`Quantity for ${title}`}
+      id="Quantity-1"
+      data-product-key="45024251150618:16a3dd1e1996b033d6555cb9e9d38e9f"
+      data-key="quantity"
+      data-index="1"
+    />
+    <button
+      className="quantity-control__button quantity-control__button--plus"
+      name="plus"
+      type="button"
+      onClick={() => setInputQuantity(inputQuantity + 1)}
+    >
+      <span className="sr-only"
+      >Increase quantity for {title}</span
+      >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        role="presentation"
+        className="icon icon-plus"
+        fill="none"
+        viewBox="0 0 10 10"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </button>
+  </div>
 }
 
-type CartLineItem = {
-  title: string,
-  imageUrl: string,
-  productUrl?: string,
-  price: number,
-  quantity: number,
-  sku: string,
-  availableStock?: number,
-  index?: number,
-  options?: CartLineItemOption[]
-}
-
-const CartLineItem = (props: CartLineItem) => {
+const CartLineItem = (props: CartLineItemType) => {
   const {
     title,
     imageUrl,
@@ -110,74 +171,7 @@ const CartLineItem = (props: CartLineItem) => {
 
       <td className="cart-line-item__cell cart-line-item__cell--quantity">
         <div className="cart-line-item__quantity-wrapper">
-          <div className="quantity-control">
-
-            <label className="sr-only" htmlFor="Quantity-1">
-              Quantity
-            </label>
-
-            <button
-              className="quantity-control__button quantity-control__button--minus"
-              name="minus"
-              type="button"
-            >
-              <span className="sr-only">Decrease quantity for {title}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-                role="presentation"
-                className="icon icon-minus"
-                fill="none"
-                viewBox="0 0 10 2"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </button>
-            <input
-              className=" quantity-control__input"
-              type="number"
-              name="updates[]"
-              value="1"
-              min="0"
-              aria-label={`Quantity for ${title}`}
-              id="Quantity-1"
-              data-product-key="45024251150618:16a3dd1e1996b033d6555cb9e9d38e9f"
-              data-key="quantity"
-              data-index="1"
-            />
-            <button
-              className="quantity-control__button quantity-control__button--plus"
-              name="plus"
-              type="button"
-            >
-              <span className="sr-only"
-              >Increase quantity for {title}</span
-              >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-                role="presentation"
-                className="icon icon-plus"
-                fill="none"
-                viewBox="0 0 10 10"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </button>
-
-          </div>
+          <QuantityControl title={title} quantity={quantity} />
         </div>
 
         <a href="#" className="cart-line-item__remove cart-line-item__remove--mobile" title={`Remove ${title} from your cart.`}>
@@ -228,17 +222,68 @@ const CartLineItem = (props: CartLineItem) => {
           {XIcon}
         </a>
       </td>
-    </tr >
+    </tr>
   )
 }
 
-const CartTable = (props: CartTableProps) => {
+const CartFooter = (props: CartLayoutProps) => {
+  return <div className="cart-footer">
+    <div className="cart-footer__content">
+      <div className="cart-footer__content__item">
+        <div className="cart-footer__content__item__label typography-body-md">
+          Total Weight
+        </div>
+
+        <div className="cart-footer__content__item__value typography-body-md">
+          0.22lbs
+        </div>
+      </div>
+
+      <div className="cart-footer__content__item">
+        <div className="cart-footer__content__item__label typography-body-md">
+          Shipping
+        </div>
+
+        <div className="cart-footer__content__item__value typography-body-md">
+          Calculated at next step
+        </div>
+
+      </div>
+
+      <div className="cart-footer__content__item">
+        <div className="cart-footer__content__item__label typography-body-md">
+          Taxes
+        </div>
+
+        <div className="cart-footer__content__item__value typography-body-md">
+          Calculated at next step
+        </div>
+      </div>
+
+      <div className="cart-footer__content__item cart-footer__content__item--subtotal">
+        <div className="cart-footer__content__item__label typography-body-md">
+          Subtotal
+        </div>
+
+        <div className="cart-footer__content__item__value typography-body-md">
+          {formatMoney(cartSubtotal)}
+        </div>
+      </div>
+    </div>
+
+    <Button component="button" type="submit" variant={['block', 'primary']} disableCopy>
+      Check Out
+    </Button>
+  </div>
+}
+
+const CartTable = (props: CartLayoutProps) => {
   const containerRef = useRef(null)
 
   return <div className="relative">
-    <div className="container" ref={containerRef}>
+    <div className="container cart-outer" ref={containerRef}>
       <h1 className="typography-heading-md">MY CART</h1>
-      
+
       <table className="cart-table">
         <thead className="cart-table__header bg-background-bone typography-body-md">
           <tr>
@@ -263,6 +308,8 @@ const CartTable = (props: CartTableProps) => {
           )}
         </tbody>
       </table>
+
+      <CartFooter />
     </div>
   </div>
 
