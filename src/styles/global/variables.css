@@ -17,6 +17,10 @@
   /* Miscellaneous/background colors */
   --color-background-bone: #f8f6f4;
 
+  /* Status colors */
+  --color-status-success: #31AE81;
+  --color-status-error: #F35827;
+  --color-status-pending: var(--color-secondary-earth);
   /*
    * Drop shadows
    */
