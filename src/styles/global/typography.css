@@ -141,3 +141,7 @@ body {
 .color-secondary-light {
   color: var(---color-secondary-light);
 }
+
+strong {
+  font-weight: 500;
+}

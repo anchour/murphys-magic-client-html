@@ -15,6 +15,7 @@
 @import "./src/styles/global/animations.css";
 
 /* Components */
+@import "./src/styles/components/address.css";
 @import "./src/styles/components/card.css";
 @import "./src/styles/components/button.css";
 @import "./src/styles/components/tag.css";
@@ -35,7 +36,7 @@
 @import "./src/styles/components/cart.css";
 @import "./src/styles/components/quantity-control.css";
 @import "./src/styles/components/image-overlay.css";
-
+@import "./src/styles/components/forms.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
@@ -56,5 +57,8 @@
 @import "./src/styles/layouts/mobile-menu.css";
 @import "./src/styles/layouts/footer.css";
 @import "./src/styles/layouts/image-overlay-grid.css";
+@import "./src/styles/layouts/contact.css";
+@import "./src/styles/layouts/contact-form.css";
+@import "./src/styles/layouts/contact-content.css";
 
 @import "tailwindcss/utilities";
