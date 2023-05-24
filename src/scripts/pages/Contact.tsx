@@ -4,6 +4,9 @@ import SuperHeader from "../components/SuperHeader";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
+// Asset imports
+import Eye from "../../images/icons/ico-magic-eye.svg";
+
 interface BecomeADealerPageProps {}
 
 const BecomeADealerPage = (props: BecomeADealerPageProps) => {
@@ -21,6 +24,9 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
          or any questions you have, drop us a line, day or night."
           headingLevel="h2"
           style="dark"
+          hasBackground
+          hasBrandElement
+          brandElement={Eye}
         />
       </main>
 
