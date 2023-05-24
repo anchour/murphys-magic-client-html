@@ -32,6 +32,10 @@
 @import "./src/styles/components/account-sidebar.css";
 @import "./src/styles/components/order.css";
 @import "./src/styles/components/order-stat.css";
+@import "./src/styles/components/cart.css";
+@import "./src/styles/components/quantity-control.css";
+@import "./src/styles/components/image-overlay.css";
+
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
@@ -51,5 +55,6 @@
 @import "./src/styles/layouts/header.css";
 @import "./src/styles/layouts/mobile-menu.css";
 @import "./src/styles/layouts/footer.css";
+@import "./src/styles/layouts/image-overlay-grid.css";
 
 @import "tailwindcss/utilities";
