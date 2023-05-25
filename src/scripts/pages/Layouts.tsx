@@ -13,6 +13,7 @@ import CalloutGrid from "../components/CalloutGrid";
 import BrandHeader from "../components/BrandHeader";
 import Hero from "../components/Hero";
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
+import Testimonial from "../components/Testimonial";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
@@ -68,6 +69,7 @@ export default function Layouts() {
       />
       <CalloutGrid />
       <ImageOverlayGrid />
+      <Testimonial />
       <MailingListSignup />
       <Footer />
     </>
