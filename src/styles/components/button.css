@@ -15,6 +15,11 @@
   margin-left: 1rem;
 }
 
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
 .btn__icon {
   display: inline-block;
   vertical-align: middle;

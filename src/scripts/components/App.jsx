@@ -8,6 +8,8 @@ import BecomeADealer from '../pages/BecomeADealer';
 import CollectionsStandard from '../pages/CollectionsStandard';
 import Collections from '../pages/Collections';
 import AccountOverview from '../pages/AccountOverview';
+import AccountOrders from '../pages/AccountOrders';
+import Cart from '../pages/Cart';
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -68,6 +70,8 @@ export function App() {
         <CollectionsStandard path="/pages/collections-standard" />
         <Collections path="/pages/collections" />
         <AccountOverview path="/pages/account-overview" />
+        <AccountOrders path="/pages/account-orders" />
+        <Cart path="/pages/cart" />
       </Router>
     </div>
   </>

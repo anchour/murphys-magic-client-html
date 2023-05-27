@@ -1,5 +1,5 @@
 
-export default function SectionHeading({ size = 'normal', children, className }) {
+export default function SectionHeading({ size = 'normal', children, className = '' }) {
   let style = {
     fontFamily: 'var(--font-family-sans)',
     fontSize: '0.875rem',
