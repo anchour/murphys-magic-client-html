@@ -1,5 +1,4 @@
 import Button from "./Button"
-// import DropGraphic from "./graphics/DropGraphic"
 import ByLine from "./graphics/ByLine"
 
 interface TestimonialProps {
