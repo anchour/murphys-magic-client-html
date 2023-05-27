@@ -22,7 +22,7 @@ const CollectionsPage = (props: CollectionsPageProps) => {
         <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
         <CollectionGrid />
 
-        <div className="page-section--tall text-column__one--centered color-background-bone">
+        <div className="page-section--tall text-column__one--centered bg-background-bone">
           <div className="container">
             <div className="content">
               <h2 className="typography-heading typography-heading-md">
