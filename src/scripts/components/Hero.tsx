@@ -39,7 +39,7 @@ const Hero = ({
 
   if (hasBackground) {
     if (style === "dark" || alignment === "left") {
-      let bgProps = {
+      let bgProps: React.ImgHTMLAttributes<HTMLImageElement> = {
         className: "hero__background--image",
         src: DarkHeroBG,
         alt: "Become a Dealer",
