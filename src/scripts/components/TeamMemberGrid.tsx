@@ -1,5 +1,8 @@
 import { TeamMember } from "./TeamMembers";
 import { times } from "lodash-es";
+interface TeamMembersGridProps extends DisableCopyComponent {
+  count?: number;
+}
 
 export default function TeamMembersGrid() {
   return (
@@ -14,9 +17,9 @@ export default function TeamMembersGrid() {
         </div>
 
         <div className="team-members-grid__members">
-          {times(8, () => (
-            <TeamMember showCopyComponent={false} />
-          ))}
+            {times(count, () => (
+              <TeamMember disableCopy={true} />
+            ))}
         </div>
       </div>
     </section>
