@@ -13,6 +13,7 @@ import CalloutGrid from "../components/CalloutGrid";
 import BrandHeader from "../components/BrandHeader";
 import Hero from "../components/Hero";
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
+import TeamMembersGrid from "../components/TeamMemberGrid";
 import Testimonial from "../components/Testimonial";
 
 // Asset imports
@@ -69,6 +70,7 @@ export default function Layouts() {
       />
       <CalloutGrid />
       <ImageOverlayGrid />
+      <TeamMembersGrid />
       <Testimonial />
       <MailingListSignup />
       <Footer />

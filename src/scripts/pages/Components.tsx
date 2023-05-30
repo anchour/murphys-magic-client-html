@@ -7,6 +7,7 @@ import Details from "../components/Details";
 import Benefits from "../components/Benefits";
 import MailingList from "../components/MailingList";
 import Icons from "../components/Icons";
+import TeamMembers from "../components/TeamMembers";
 
 const toc = [
   {
@@ -40,6 +41,10 @@ const toc = [
   {
     id: "Icons",
     title: "Icons",
+  },
+  {
+    id: "Team Members",
+    title: "Team Members",
   },
 ];
 
@@ -104,6 +109,11 @@ export default function Components() {
           <a name="Icons"></a>
           <Accordion header="Icons" open>
             <Icons />
+          </Accordion>
+
+          <a name="Team Members"></a>
+          <Accordion header="Team Members" open>
+            <TeamMembers />
           </Accordion>
         </div>
       </div>

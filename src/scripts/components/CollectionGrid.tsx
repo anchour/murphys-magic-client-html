@@ -19,7 +19,7 @@ times(24, () => {
 
 export default function CollectionGrid() {
   return (
-    <section className="collection-grid">
+    <section className="page-section collection-grid">
       <CollectionFilters />
 
       <div className="container collection-grid__products">

@@ -51,8 +51,3 @@
 .color-secondary-earth {
   color: var(--color-secondary-earth);
 }
-
-/* Miscellaneous/background colors */
-.color-background-bone {
-  color: var(--color-background-bone);
-}
