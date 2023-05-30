@@ -1,6 +1,5 @@
 import classnames from "classnames";
 import SVGViewer from "./SVGViewer";
-
 import LightHeroBG from "./CollectionHeroBG.svg.tsx";
 import DarkHeroBG from "../../images/hero--dark-background.jpg";
 import LeftAlignedBG from "../../images/hero--left-aligned-background.jpg";
@@ -17,7 +16,8 @@ interface HeroProps {
   buttonText?: string;
   hasBackground?: boolean;
   hasBrandElement?: boolean;
-  brandElement?: null;
+  brandElement?: string;
+  image?: JSX.Element;
 }
 
 const Hero = ({
@@ -31,33 +31,44 @@ const Hero = ({
   buttonText = "Button text",
   hasBackground = false,
   hasBrandElement = false,
-  brandElement = Placeholder
+  brandElement = Placeholder,
+  image = null,
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
-  let backgroundComponent = null;
+  function BackgroundImage() {
+    let BGImage = null;
 
-  if (hasBackground) {
-    if (style === "dark" || alignment === "left") {
-      let bgProps: React.ImgHTMLAttributes<HTMLImageElement> = {
-        className: "hero__background--image",
-        src: DarkHeroBG,
-        alt: "Become a Dealer",
-        width: 1729,
-        height: 973,
-        loading: "lazy",
-      };
+    if (hasBackground) {
+      if (style === "dark" || alignment === "left") {
+        let bgProps: React.ImgHTMLAttributes<HTMLImageElement> = {
+          className: "hero__background--image",
+          src: DarkHeroBG,
+          alt: "Become a Dealer",
+          width: 1729,
+          height: 973,
+          loading: "lazy",
+        };
 
-      if (alignment === "left") {
-        bgProps.src = LeftAlignedBG;
-        bgProps.alt = "Bridging ordinary";
+        if (alignment === "left") {
+          bgProps.src = LeftAlignedBG;
+          bgProps.alt = "Bridging ordinary";
+        }
+
+        BGImage = <img {...bgProps} />;
+      } else {
+        BGImage = <LightHeroBG />;
       }
-
-      backgroundComponent = <img {...bgProps} />;
-    } else {
-      backgroundComponent = <LightHeroBG />;
     }
+
+    // If an image is passed in, use that instead of the background
+    if (image) {
+      BGImage = image
+    }
+
+    return BGImage
   }
+
 
   return (
     <>
@@ -69,7 +80,7 @@ const Hero = ({
       >
         <div className="hero__inner">
           {hasBackground &&
-            <div className="hero__background">{backgroundComponent}</div>
+            <div className="hero__background"><BackgroundImage /></div>
           }
 
           {alignment === "left" && hasBrandElement &&
