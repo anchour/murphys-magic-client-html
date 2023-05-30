@@ -28,7 +28,7 @@ body {
   margin-top: 0;
 
   &:not(:last-child) {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.33em;
   }
 }
 
@@ -135,6 +135,12 @@ body {
   @media (min-width: 1280px) {
     line-height: 1.0625;
   }
+}
+
+.typography-section {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.0833333333;
+  margin-bottom: 0.33em;
 }
 
 /* Color helpers */
