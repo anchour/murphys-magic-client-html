@@ -72,7 +72,7 @@ const Hero = ({
             <div className="hero__background">{backgroundComponent}</div>
           }
 
-          {alignment ==="left" && hasBrandElement && 
+          {alignment === "left" && hasBrandElement &&
             <SVGViewer
               svgClass={"hero__brand-element"}
               filePath={brandElement ? brandElement : Placeholder}
@@ -80,7 +80,7 @@ const Hero = ({
           }
 
           <div className="container">
-            {alignment ==="center" && hasBrandElement && 
+            {alignment === "center" && hasBrandElement &&
               <SVGViewer
                 svgClass={"hero__brand-element"}
                 filePath={brandElement ? brandElement : Placeholder}
