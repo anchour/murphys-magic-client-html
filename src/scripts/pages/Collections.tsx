@@ -8,10 +8,11 @@ import TextCallout from "../components/TextCallout";
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
 import Footer from "../components/Footer";
 import { LoremIpsum } from "lorem-ipsum";
+import SVGViewer from "../components/SVGViewer";
 
 const lipsum = new LoremIpsum();
 
-interface CollectionsPageProps {}
+interface CollectionsPageProps { }
 
 const CollectionsPage = (props: CollectionsPageProps) => {
   return (
@@ -24,9 +25,11 @@ const CollectionsPage = (props: CollectionsPageProps) => {
         <IconsGrid />
         <ImageOverlayGrid />
         <TextCallout
-          text="“The street’s my stage and Murphy’s gives me the perfect products to surprise and delight my audiences. It’s the ideal mix of quality, price, and production execution. Want the best? Get this stuff.”"
+          text="“The street's my stage and Murphy's gives me the perfect products to surprise and delight my audiences. It's the ideal mix of quality, price, and production execution. Want the best? Get this stuff.”"
           buttonUrl="#"
           buttonText="Shop Street Magic"
+          showBenefits={false}
+          graphic={<SVGViewer filePath="/src/images/collections/callout-graphic.svg" />}
         />
         <CollectionGrid />
 
@@ -34,7 +37,7 @@ const CollectionsPage = (props: CollectionsPageProps) => {
           <div className="container">
             <div className="content">
               <h2 className="typography-heading typography-heading-md">
-                World’s best magic tricks & playing cards
+                World's best magic tricks & playing cards
               </h2>
 
               <h3 className="typography-body-md">Card Magic Tricks</h3>
