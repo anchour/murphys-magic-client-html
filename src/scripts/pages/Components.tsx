@@ -8,6 +8,7 @@ import Benefits from "../components/Benefits";
 import MailingList from "../components/MailingList";
 import Icons from "../components/Icons";
 import TeamMembers from "../components/TeamMembers";
+import TeamMembersGrid from "../components/TeamMemberGrid";
 
 const toc = [
   {
@@ -113,7 +114,7 @@ export default function Components() {
 
           <a name="Team Members"></a>
           <Accordion header="Team Members" open>
-            <TeamMembers />
+            <TeamMembersGrid />
           </Accordion>
         </div>
       </div>
