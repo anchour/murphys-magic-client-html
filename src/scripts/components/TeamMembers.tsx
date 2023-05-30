@@ -1,17 +1,17 @@
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
+import { DisableCopyComponent } from "../lib/interfaces";
 
-interface TeamMemberProps {
-  showCopyComponent?: boolean;
-  name: string;
-  title: string;
-  email: string;
-  skype: string;
-  phone: string;
+interface TeamMemberProps extends DisableCopyComponent {
+  name?: string;
+  title?: string;
+  email?: string;
+  skype?: string;
+  phone?: string;
 }
 
 export function TeamMember({
-  showCopyComponent = true,
+  disableCopy = false,
   name = null,
   title = null,
   email = null,
@@ -65,7 +65,7 @@ export function TeamMember({
         </div>
       </div>
 
-      {showCopyComponent && <CopyComponent onClick={handleClick} />}
+      {!disableCopy && <CopyComponent onClick={handleClick} />}
     </div>
   );
 }
