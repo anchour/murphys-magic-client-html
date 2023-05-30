@@ -14,7 +14,6 @@ interface ButtonProps extends ReactButtonProps, LinkButtonProps, AriaBaseButtonP
 }
 
 export default function Button({ type = 'button', component = 'a', href = '#', className = '', variant = 'primary', children = 'Button text', small = false, icon = true, dark = false, disableCopy = false }: ButtonProps) {
-  console.log(type, children)
   let variantClasses = typeof variant == 'string' ? [variant] : variant;
 
   variantClasses = variantClasses
