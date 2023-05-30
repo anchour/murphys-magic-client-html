@@ -10,8 +10,8 @@ interface HeroProps {
   title?: string;
   breadcrumbs?: null | JSX.Element;
   description?: string;
-  style?: string;
-  alignment?: string;
+  style?: 'light' | 'dark';
+  alignment?: 'left' | 'center';
   hasCTA?: boolean;
   headingLevel?: string;
   buttonText?: string;
