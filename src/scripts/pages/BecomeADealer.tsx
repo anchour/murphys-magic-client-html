@@ -13,7 +13,7 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
     <Header />
 
     <main role="main">
-      <TextCallout />
+      <TextCallout showBenefits={false} />
       <BenefitsGrid />
     </main >
     
