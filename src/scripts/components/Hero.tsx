@@ -13,7 +13,7 @@ interface HeroProps {
   style?: 'light' | 'dark';
   alignment?: 'left' | 'center';
   hasCTA?: boolean;
-  headingLevel?: string;
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   buttonText?: string;
   hasBackground?: boolean;
   hasBrandElement?: boolean;
