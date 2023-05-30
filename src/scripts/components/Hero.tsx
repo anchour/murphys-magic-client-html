@@ -16,7 +16,7 @@ interface HeroProps {
   headingLevel?: string;
   buttonText?: string;
   hasBackground?: boolean;
-  hasBrandElement?: boolen
+  hasBrandElement?: boolean;
   brandElement?: null;
 }
 
