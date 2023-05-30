@@ -70,7 +70,7 @@ export default function Layouts() {
       />
       <CalloutGrid />
       <ImageOverlayGrid />
-      <TeamMembersGrid />
+      <TeamMembersGrid count={12}/>
       <Testimonial />
       <MailingListSignup />
       <Footer />

@@ -7,13 +7,19 @@ const Pages = (props: PagesProps) => {
       <li>
         <a className="underline decoration-slate-400" href="/pages/become-a-dealer/">Become A Dealer</a>
       </li>
+
+      <li>
+        <a className="underline decoration-slate-400" href="/pages/contact/">Contact</a>
+      </li>
+
       <li>
         <a className="underline decoration-slate-400" href="/pages/collections-standard/">Collections (Standard)</a>
       </li>
+
       <li>
         <a className="underline decoration-slate-400" href="/pages/collections/">Collections</a>
       </li>
-      
+
       <li>
         <a className="underline decoration-slate-400" href="/pages/account-overview/">Account &raquo; Overview</a>
       </li>
@@ -22,7 +28,7 @@ const Pages = (props: PagesProps) => {
         <a className="underline decoration-slate-400" href="/pages/account-orders/">Account &raquo; Orders</a>
       </li>
     </ul>
-  </div>
+  </div >
 }
 
 export default Pages

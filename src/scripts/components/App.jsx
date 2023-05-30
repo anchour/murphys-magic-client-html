@@ -8,6 +8,7 @@ import BecomeADealer from '../pages/BecomeADealer';
 import CollectionsStandard from '../pages/CollectionsStandard';
 import Collections from '../pages/Collections';
 import AccountOverview from '../pages/AccountOverview';
+import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
 
@@ -70,6 +71,7 @@ export function App() {
         <CollectionsStandard path="/pages/collections-standard" />
         <Collections path="/pages/collections" />
         <AccountOverview path="/pages/account-overview" />
+        <Contact path="/pages/contact" />
         <AccountOrders path="/pages/account-orders" />
         <Cart path="/pages/cart" />
       </Router>

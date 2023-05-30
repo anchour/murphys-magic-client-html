@@ -51,4 +51,8 @@
   .team-members-grid__members {
     grid-template-columns: repeat(4, 1fr);
   }
+  
+  .team-members-grid__top-content {
+    grid-column: span 5 / span 5;
+  }
 }

@@ -15,6 +15,7 @@
 @import "./src/styles/global/animations.css";
 
 /* Components */
+@import "./src/styles/components/address.css";
 @import "./src/styles/components/card.css";
 @import "./src/styles/components/button.css";
 @import "./src/styles/components/tag.css";
@@ -35,6 +36,7 @@
 @import "./src/styles/components/cart.css";
 @import "./src/styles/components/quantity-control.css";
 @import "./src/styles/components/image-overlay.css";
+@import "./src/styles/components/forms.css";
 @import "./src/styles/components/one-column-text.css";
 @import "./src/styles/components/team-member.css";
 
@@ -58,6 +60,9 @@
 @import "./src/styles/layouts/mobile-menu.css";
 @import "./src/styles/layouts/footer.css";
 @import "./src/styles/layouts/image-overlay-grid.css";
+@import "./src/styles/layouts/contact.css";
+@import "./src/styles/layouts/contact-form.css";
+@import "./src/styles/layouts/contact-content.css";
 @import "./src/styles/layouts/team-members-grid.css";
 @import "./src/styles/layouts/testimonial.css";
 
