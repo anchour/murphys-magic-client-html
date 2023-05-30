@@ -59,5 +59,6 @@
 @import "./src/styles/layouts/footer.css";
 @import "./src/styles/layouts/image-overlay-grid.css";
 @import "./src/styles/layouts/team-members-grid.css";
+@import "./src/styles/layouts/testimonial.css";
 
 @import "tailwindcss/utilities";
