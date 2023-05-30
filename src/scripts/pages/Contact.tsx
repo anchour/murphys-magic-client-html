@@ -4,7 +4,10 @@ import SuperHeader from "../components/SuperHeader";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-
+import TeamMembersGrid from "../components/TeamMemberGrid";
+import Banner1Bg from '../../images/contact/banner-1-bg.jpg';
+import ImageOverlayGrid from "../components/ImageOverlayGrid";
+import ImageOverlay from "../components/ImageOverlayColumn";
 
 const ContactForm = () => {
   return <form method="post" action="" className="contact-form">
@@ -141,6 +144,15 @@ const ContactContent = () => {
 }
 
 const ContactPage = () => {
+  const bannerProps: React.ImgHTMLAttributes<HTMLImageElement> = {
+    src: Banner1Bg,
+    className: 'hero__background--image',
+    alt: "Become a Dealer",
+    width: 1729,
+    height: 973,
+    loading: "lazy",
+  };
+
   return (
     <>
       <SuperHeader />
@@ -153,7 +165,23 @@ const ContactPage = () => {
           <ContactContent />
           <ContactForm />
         </div>
+
+        <Hero
+          style="dark"
+          description="Since 1998, our team has dedicated ourselves to making the world a little more wonderful for everyone. If there's anything you need, or any questions you have, drop us a line, day or night."
+          title="Making Magic Easy"
+          image={<img {...bannerProps} />}
+          hasBackground hasBrandElement brandElement={'/src/images/icons/ico-magic-eye.svg'}
+        />
+
+        <TeamMembersGrid count={14} />
+
+        <ImageOverlayGrid>
+          <ImageOverlay title="Become a Dealer" description="We're always looking for passionate Dealers who want to grow the market for their products. Whether you have a new or existing retail shop, a partnership with Murphy's is a valuable business move in a competitive industry." buttonText="Apply to become a dealer" />
+          <ImageOverlay title="Got Magic?" description="We're always looking for partners who push the envelope, delight in the next and the new, and know there's always room for one more trick. If you're a magician with a trick up your sleeve, get in touch." buttonText="Submit a trick" />
+        </ImageOverlayGrid>
       </main>
+
 
       <MailingListSignup />
       <Footer />
