@@ -17,10 +17,11 @@ times(5, (index) => {
 
 export default function BenefitsGrid() {
   return (
-    <section className="benefits-grid">
+    <section className="benefits-grid bg-background-bone">
       <div className="container benefits-grid__title">
         <h2>Benefits of working with us</h2>
       </div>
+      
       <div className="container benefits-grid__benefits">
         {benefits.map(({ identifier, title, description}) =>
           <Benefit

@@ -161,7 +161,7 @@ const ContactPage = () => {
       <main role="main">
         <Hero title="Contact Us" description="We're here for you." />
 
-        <div className="container contact-page-container page-section">
+        <div className="container form-container page-section">
           <ContactContent />
           <ContactForm />
         </div>
