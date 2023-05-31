@@ -15,6 +15,7 @@ import Hero from "../components/Hero";
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
 import TeamMembersGrid from "../components/TeamMemberGrid";
 import Testimonial from "../components/Testimonial";
+import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
@@ -72,6 +73,7 @@ export default function Layouts() {
       <ImageOverlayGrid />
       <TeamMembersGrid count={12}/>
       <Testimonial />
+      <LogoMarquee />
       <MailingListSignup />
       <Footer />
     </>

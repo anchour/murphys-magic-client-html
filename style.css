@@ -63,5 +63,6 @@
 @import "./src/styles/layouts/contact-content.css";
 @import "./src/styles/layouts/team-members-grid.css";
 @import "./src/styles/layouts/testimonial.css";
+@import "./src/styles/layouts/logo-marquee.css";
 
 @import "tailwindcss/utilities";
