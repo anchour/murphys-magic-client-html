@@ -9,7 +9,7 @@ import Banner1Bg from '../../images/contact/banner-1-bg.jpg';
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
 import ImageOverlay from "../components/ImageOverlayColumn";
 
-const ContactForm = () => {
+export const ContactForm = () => {
   return <form method="post" action="" className="contact-form">
     <div className="contact-form__body">
 
@@ -161,7 +161,7 @@ const ContactPage = () => {
       <main role="main">
         <Hero title="Contact Us" description="We're here for you." />
 
-        <div className="container contact-page-container page-section">
+        <div className="container form-container page-section">
           <ContactContent />
           <ContactForm />
         </div>

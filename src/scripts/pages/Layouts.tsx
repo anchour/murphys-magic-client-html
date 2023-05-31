@@ -18,7 +18,7 @@ import Testimonial from "../components/Testimonial";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
-import Unkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtofUnkown from "../../images/icons/ico-art-of-unkown.svg";
 
 export default function Layouts() {
   return (
@@ -56,7 +56,7 @@ export default function Layouts() {
         buttonText="Apply now"
         hasBackground
         hasBrandElement
-        brandElement={Unkown}
+        brandElement={ArtofUnkown}
       />
       <Hero title="Contact Us" description="We're here to help." />
       <Hero

@@ -50,8 +50,6 @@
 @import "./src/styles/layouts/brand-header.css";
 @import "./src/styles/layouts/account-actions.css";
 @import "./src/styles/layouts/account-orders.css";
-
-/* Layouts */
 @import "./src/styles/layouts/super-header.css";
 @import "./src/styles/layouts/text-callout.css";
 @import "./src/styles/layouts/mailing-list-signup.css";
