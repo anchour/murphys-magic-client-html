@@ -9,7 +9,7 @@ import Banner1Bg from '../../images/contact/banner-1-bg.jpg';
 import ImageOverlayGrid from "../components/ImageOverlayGrid";
 import ImageOverlay from "../components/ImageOverlayColumn";
 
-const ContactForm = () => {
+export const ContactForm = () => {
   return <form method="post" action="" className="contact-form">
     <div className="contact-form__body">
 
