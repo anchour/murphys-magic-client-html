@@ -1,5 +1,6 @@
 import Router from 'preact-router';
 import Home from '../pages/Home';
+import HomeLoggedIn from '../pages/HomeLoggedIn';
 import Components from '../pages/Components';
 import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
@@ -64,6 +65,7 @@ export function App() {
 
       <Router>
         <Home path="/" />
+        <HomeLoggedIn path="/pages/home-logged-in" />
         <Layouts path="/layouts/" />
         <Components path="/components/" />
         <Pages path="/pages/" />
