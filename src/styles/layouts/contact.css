@@ -1,0 +1,13 @@
+@media (min-width: 1280px) {
+  .contact-page-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  
+  .contact-content,
+  .contact-form {
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+}

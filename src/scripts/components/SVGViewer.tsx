@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'preact/hooks';
 
-const SVGViewer = ({ filePath, svgClass }) => {
+interface SVGViewerProps {
+  filePath: string;
+  svgClass?: string;
+}
+
+const SVGViewer = ({ filePath, svgClass }: SVGViewerProps) => {
   const [svgContent, setSvgContent] = useState(null);
 
   useEffect(() => {
@@ -24,8 +29,12 @@ const SVGViewer = ({ filePath, svgClass }) => {
     return <div>SVG file not found</div>;
   }
 
+  const svgProps = {
+    className: svgClass, dangerouslySetInnerHTML: { __html: svgContent }
+  }
+
   return (
-    <div className={svgClass} dangerouslySetInnerHTML={{ __html: svgContent }} />
+    <div {...svgProps} />
   );
 };
 

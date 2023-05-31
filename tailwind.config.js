@@ -1,11 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,css}"],
-  safelist: [
-    {
-      pattern: /.btn--/,
-    },
-  ],
+  safelist: [],
   theme: {
     extend: {
       colors: {
@@ -19,7 +15,7 @@ export default {
         green: `var(--color-secondary-light)`,
         earth: `var(--color-secondary-earth)`,
       },
-      
+
       fontFamily: {
         sans: [`var(--font-sans)`],
         heading: [`var(--font-heading)`],
@@ -32,10 +28,12 @@ export default {
           sm: `2rem`,
         },
         screens: {
-          '2xl': '1368px',
-        }
+          "2xl": "1368px",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 };

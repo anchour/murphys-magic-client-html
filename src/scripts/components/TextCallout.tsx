@@ -1,13 +1,23 @@
 interface TextCalloutProps {
-  text?: string,
-  buttonUrl?: string,
-  buttonText?: string,
+  text?: string;
+  buttonUrl?: string;
+  buttonText?: string;
+  showBenefits?: boolean,
+  graphic?: JSX.Element | JSX.Element[];
 }
 
-const TextCallout = ({ text = 'Help make the world a little more wondrous.', buttonUrl = '#', buttonText = "Apply Now" }: TextCalloutProps): JSX.Element => {
-  return <section className="text-callout bg-primary-bone">
+const TextCallout = ({
+  text = 'Help make the world a little more wondrous.',
+  buttonUrl = '#',
+  buttonText = "Apply Now",
+  showBenefits = true,
+  graphic = null,
+}: TextCalloutProps): JSX.Element => {
 
+  return <section className="text-callout bg-primary-bone">
     <div className="container">
+      {graphic && <div className="text-callout__graphic">{graphic}</div>}
+
       <div className="text-callout__content">
         <div className="text-callout__text">
           <h2 className="typography-quote">{text}</h2>
@@ -24,20 +34,20 @@ const TextCallout = ({ text = 'Help make the world a little more wondrous.', but
 
         </div>
 
-        <div className="text-callout__benefits">
+        {showBenefits && (
+          <div className="text-callout__benefits">
+            <div>
+              <h3 className="text-callout__benefit-title typography-body-lg">Earn Customers</h3>
+              <p className="typography-body-sm">We give our dealers the products needed to grow their customer base, while intriguing the world.</p>
+            </div>
 
-          <div>
-            <h3 className="text-callout__benefit-title typography-body-lg">Earn Customers</h3>
-            <p className="typography-body-sm">We give our dealers the products needed to grow their customer base, while intriguing the world.</p>
+            <div>
+
+              <h3 className="text-callout__benefit-title typography-body-lg">Create Value</h3>
+              <p className="typography-body-sm">Murphy&rsquo;s always looks to help our Dealers create value. We&rsquo;re looking for partners ready to grow, together.</p>
+            </div>
           </div>
-
-          <div>
-
-            <h3 className="text-callout__benefit-title typography-body-lg">Create Value</h3>
-            <p className="typography-body-sm">Murphy&rsquo;s always looks to help our Dealers create value. We&rsquo;re looking for partners ready to grow, together.</p>
-          </div>
-
-        </div>
+        )}
       </div>
 
       <div className="text-callout__image">

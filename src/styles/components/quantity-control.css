@@ -1,0 +1,43 @@
+.quantity-control {
+  border: 1px solid var(--color-primary-midnight);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.quantity-control__button {
+  appearance: none;
+  display: block;
+  border: 0 none;
+  padding: 1rem;
+}
+
+.quantity-control__button,
+.quantity-control__input {
+  width: 3rem;
+  height: 3rem;
+}
+
+.quantity-control__button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.quantity-control__input {
+  appearance: none;
+  display: block;
+  line-height: normal;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.quantity-control__input::-webkit-outer-spin-button,
+.quantity-control__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-control__input {
+  -moz-appearance: textfield;
+}

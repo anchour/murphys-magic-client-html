@@ -2,3 +2,15 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+.page-section--tall {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
+}
+
+@media (min-width: 1024px) {
+  .page-section--tall {
+    padding-top: 5rem;
+    padding-bottom: 5rem
+  }
+}

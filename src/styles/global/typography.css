@@ -28,7 +28,7 @@ body {
   margin-top: 0;
 
   &:not(:last-child) {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.33em;
   }
 }
 
@@ -137,7 +137,17 @@ body {
   }
 }
 
+.typography-section {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.0833333333;
+  margin-bottom: 0.33em;
+}
+
 /* Color helpers */
 .color-secondary-light {
   color: var(---color-secondary-light);
+}
+
+strong {
+  font-weight: 500;
 }
