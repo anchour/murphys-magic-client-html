@@ -3,8 +3,7 @@ import MailingListSignup from "../components/MailingListSignup";
 import SuperHeader from "../components/SuperHeader";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import BrandHeader from "../components/BrandHeader";
-import TextImageSplit from "../components/TextImageSplit";
+import QuickLinks from "../components/QuickLinks";
 import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
@@ -19,8 +18,7 @@ export default function HomeLoggedIn() {
       <Header />
 
       <main role="main">
-        <BrandHeader />
-        <TextImageSplit order="image-first" />
+        <QuickLinks />
         <CalloutGrid />
         <LogoMarquee />
         <Hero
