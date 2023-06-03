@@ -65,5 +65,6 @@
 @import "./src/styles/layouts/testimonial.css";
 @import "./src/styles/layouts/logo-marquee.css";
 @import "./src/styles/layouts/quick-links.css";
+@import "./src/styles/layouts/deal.css";
 
 @import "tailwindcss/utilities";

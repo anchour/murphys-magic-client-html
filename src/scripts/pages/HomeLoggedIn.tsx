@@ -4,6 +4,7 @@ import SuperHeader from "../components/SuperHeader";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import QuickLinks from "../components/QuickLinks";
+import Deal from "../components/Deal"
 import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
@@ -19,6 +20,7 @@ export default function HomeLoggedIn() {
 
       <main role="main">
         <QuickLinks />
+        <Deal />
         <CalloutGrid />
         <LogoMarquee />
         <Hero
