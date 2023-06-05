@@ -26,7 +26,7 @@ export default function Layouts() {
       <h1>Page layouts</h1>
 
       <SuperHeader />
-      <Header />
+      <Header hideSuperHeader />
       <BrandHeader />
       <TextImageSplit />
       <TextImageSplit order="image-first" />

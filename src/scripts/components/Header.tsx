@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from 'preact/hooks';
 import CopyComponent from './CopyComponent';
 import MobileNavigation from './MobileNavigation';
 import { DisableCopyComponent } from '../lib/interfaces';
+import SuperHeader from './SuperHeader';
 
 export function DropdownCaret(): JSX.Element {
   return (
@@ -23,11 +24,12 @@ const classes = {
 }
 
 interface HeaderProps extends DisableCopyComponent {
+  hideSuperHeader?: boolean,
 }
 
 export default function Header(props: HeaderProps): JSX.Element {
   const headerRef = useRef<HTMLHeadElement>(null);
-  
+
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function Header(props: HeaderProps): JSX.Element {
 
   const elements = (
     <>
+      {!props.hideSuperHeader && <SuperHeader disableCopy={props.disableCopy} />}
       <header className="bg-white header" ref={headerRef}>
         <nav className="header__nav" aria-label="Global">
           <div className="flex flex-1 header__nav__menu">

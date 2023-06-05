@@ -49,6 +49,7 @@ export default function SuperHeader(props: SuperHeaderProps) {
 
   return props.disableCopy ? elements : (
     <div className="relative">
+      {elements}
       <CopyComponent onClick={() => {
         navigator.clipboard.writeText(ref.current.outerHTML)
       }} />

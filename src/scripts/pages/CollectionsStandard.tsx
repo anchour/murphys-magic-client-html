@@ -15,7 +15,6 @@ interface CollectionsPageProps {}
 const CollectionsPage = (props: CollectionsPageProps) => {
   return (
     <>
-      <SuperHeader />
       <Header />
 
       <main role="main">
