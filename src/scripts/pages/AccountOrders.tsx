@@ -112,7 +112,6 @@ const Order = (props: OrderProps) => {
 
 const AccountOrders = (props: AccountOrdersProps) => {
   return <>
-    <SuperHeader disableCopy />
     <Header disableCopy />
 
     <section className="page-section account-orders">

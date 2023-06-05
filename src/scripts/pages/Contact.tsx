@@ -155,7 +155,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <SuperHeader />
       <Header />
 
       <main role="main">

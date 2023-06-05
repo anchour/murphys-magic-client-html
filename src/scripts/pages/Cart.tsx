@@ -316,7 +316,6 @@ const CartTable = (props: CartLayoutProps) => {
 }
 
 const CartPage = () => <>
-  <SuperHeader />
   <Header />
   <CartTable />
   <MailingListSignup />
