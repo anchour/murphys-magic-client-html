@@ -1,22 +1,23 @@
 import thumbnail from '../../images/button-thumbnail-example.jpg';
-
 import classNames from "classnames";
 import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
+import { DisableCopyComponent } from '../lib/interfaces';
 
-interface TagProps {
-  component?: string,
-  variant: string,
+interface TagProps extends DisableCopyComponent {
+  className?: string,
+  component?: 'a' | 'div' | 'button',
+  variant: string, // invert, simple, label, secondayr, has-thumbnail
   children: any,
   href?: string,
-  disableCopy?: boolean,
+  size?: 'md' | 'lg',
 }
 
-export function Tag({ component = 'a', variant, children, href = '', disableCopy = false }: TagProps) {
+export function Tag({ component = 'a', variant, children, className, href = '', disableCopy = false }: TagProps) {
   const TagComponent: string = component ? component : 'a';
   const tagVariants = variant.replace(' ', ',').split(',').map(v => `tag--${v}`);
   const elementProps = {
-    className: classNames('tag', tagVariants),
+    className: classNames('tag', tagVariants, className),
     href: TagComponent === 'a' && href.length > 0 ? href : null,
   };
 

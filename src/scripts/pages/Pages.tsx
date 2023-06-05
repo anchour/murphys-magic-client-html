@@ -27,6 +27,10 @@ const Pages = (props: PagesProps) => {
       <li>
         <a className="underline decoration-slate-400" href="/pages/account-orders/">Account &raquo; Orders</a>
       </li>
+
+      <li>
+        <a className="underline decoration-slate-400" href="/products/atom-rings/">Product page</a>
+      </li>
     </ul>
   </div >
 }

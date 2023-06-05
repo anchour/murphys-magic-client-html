@@ -30,6 +30,7 @@ export default function CollectionGrid() {
             showCopyComponent={false}
             priceWholeSale={wholesale}
             priceRetail={retail}
+            cardTags={["New", "Sale"]}
             showTags={true}
           />
         )}

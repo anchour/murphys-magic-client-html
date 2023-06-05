@@ -1,8 +1,19 @@
+.form-field {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+select.form-select,
 select.form-control {
   appearance: none;
-  background: var(--color-primary-dove)
-    svg-load("icons/CheveronDown.svg", stroke=#2b2b2b, fill=none) no-repeat
-    right 1rem center;
+  background: var(--color-primary-dove) svg-load("icons/CheveronDown.svg", stroke=#2b2b2b, fill=none) no-repeat right
+    1rem center;
   border: 1px solid var(--color-primary-smoke);
   display: block;
   height: 3.75rem;
@@ -36,12 +47,9 @@ select.form-control {
   --form-ring-offset-width: 0px;
   --form-ring-offset-color: #fff;
   --form-ring-color: var(--color-primary-smoke);
-  --form-ring-offset-shadow: var(--form-ring-inset) 0 0 0
-    var(--form-ring-offset-width) var(--form-ring-offset-color);
-  --form-ring-shadow: var(--form-ring-inset) 0 0 0
-    calc(1px + var(--form-ring-offset-width)) var(--form-ring-color);
-  box-shadow: var(--form-ring-offset-shadow), var(--form-ring-shadow),
-    var(--form-shadow);
+  --form-ring-offset-shadow: var(--form-ring-inset) 0 0 0 var(--form-ring-offset-width) var(--form-ring-offset-color);
+  --form-ring-shadow: var(--form-ring-inset) 0 0 0 calc(1px + var(--form-ring-offset-width)) var(--form-ring-color);
+  box-shadow: var(--form-ring-offset-shadow), var(--form-ring-shadow), var(--form-shadow);
   border-color: var(--color-primary-smoke);
 }
 .form-input::placeholder,
@@ -66,9 +74,4 @@ select.form-control {
 .form-input::-webkit-datetime-edit-meridiem-field {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.form-label {
-  display: block; 
-  margin-bottom: 0.25rem;
 }

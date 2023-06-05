@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 
 /* Globals */
+@import "./src/styles/global/vendor.css";
 @import "./src/styles/global/variables.css";
 @import "./src/styles/global/fonts.css";
 @import "./src/styles/global/typography.css";
@@ -39,7 +40,9 @@
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/one-column-text.css";
 @import "./src/styles/components/team-member.css";
-
+@import "./src/styles/components/product-form.css";
+@import "./src/styles/components/quantity-input.css";
+@import "./src/styles/components/pricing-table.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
@@ -63,5 +66,6 @@
 @import "./src/styles/layouts/contact-content.css";
 @import "./src/styles/layouts/team-members-grid.css";
 @import "./src/styles/layouts/testimonial.css";
+@import "./src/styles/layouts/product.css";
 
 @import "tailwindcss/utilities";

@@ -11,6 +11,7 @@ import AccountOverview from '../pages/AccountOverview';
 import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
+import ProductPage from '../pages/ProductPage';
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -74,6 +75,7 @@ export function App() {
         <Contact path="/pages/contact" />
         <AccountOrders path="/pages/account-orders" />
         <Cart path="/pages/cart" />
+        <ProductPage path="/products/atom-rings" />
       </Router>
     </div>
   </>

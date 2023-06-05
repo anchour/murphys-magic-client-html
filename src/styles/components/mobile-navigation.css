@@ -36,3 +36,9 @@
 .mobile-navigation__close svg path {
   stroke-width: 1;
 }
+
+@media (min-width: 1024px) {
+  .mobile-navigation {
+    display: none;
+  }
+}

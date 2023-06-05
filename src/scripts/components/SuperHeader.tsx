@@ -2,11 +2,16 @@ import { useRef } from "preact/hooks"
 import { times } from "lodash-es"
 import CopyComponent from "./CopyComponent"
 import { AsteriskVector } from "./Tags.js"
+import { DisableCopyComponent } from "../lib/interfaces"
 
-export default function SuperHeader() {
+interface SuperHeaderProps extends DisableCopyComponent {
+}
+
+export default function SuperHeader(props: SuperHeaderProps) {
   const ref = useRef(null)
 
-  return <div className="relative">
+  const elements = <>
+
     <div className="super-header" ref={ref}>
       <div className="super-header__marquee typography-heading color-secondary-light sm:hidden"
         role="presentation"
@@ -39,9 +44,14 @@ export default function SuperHeader() {
       </nav>
 
     </div>
+  </>
 
-    <CopyComponent onClick={() => {
-      navigator.clipboard.writeText(ref.current.outerHTML)
-    }} />
-  </div>
+  return props.disableCopy ? elements : (
+    <div className="relative">
+      {elements}
+      <CopyComponent onClick={() => {
+        navigator.clipboard.writeText(ref.current.outerHTML)
+      }} />
+    </div>
+  )
 }
