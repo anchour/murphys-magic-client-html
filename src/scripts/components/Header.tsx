@@ -6,6 +6,7 @@ import ScreenReaderText from './ScreenReaderText';
 import { useEffect, useState, useRef } from 'preact/hooks';
 import CopyComponent from './CopyComponent';
 import MobileNavigation from './MobileNavigation';
+import { DisableCopyComponent } from '../lib/interfaces';
 
 export function DropdownCaret(): JSX.Element {
   return (
@@ -21,19 +22,20 @@ const classes = {
   NAV_OPEN: 'is-mobile-nav-open'
 }
 
-export default function Header(): JSX.Element {
-  const headerRef = useRef<HTMLHeadElement>(null);
+interface HeaderProps extends DisableCopyComponent {
+}
 
+export default function Header(props: HeaderProps): JSX.Element {
+  const headerRef = useRef<HTMLHeadElement>(null);
+  
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList[mobileNavOpen ? 'add' : 'remove'](classes.NAV_OPEN)
   }, [mobileNavOpen]);
 
-  return (
-    <div className="relative group">
-      <CopyComponent onClick={() => navigator.clipboard.writeText(headerRef.current?.outerHTML)} />
-
+  const elements = (
+    <>
       <header className="bg-white header" ref={headerRef}>
         <nav className="header__nav" aria-label="Global">
           <div className="flex flex-1 header__nav__menu">
@@ -90,12 +92,12 @@ export default function Header(): JSX.Element {
               <SearchIcon />
             </button>
 
-            <a href="#account" className="header__actions__action header__actions__action--desktop-only">
+            <a href="/pages/account-overview" className="header__actions__action header__actions__action--desktop-only">
               <ScreenReaderText text='Account' />
               <AccountIcon />
             </a>
 
-            <a href="#cart" className="header__actions__action">
+            <a href="/pages/cart" className="header__actions__action">
               <ScreenReaderText text='Cart' />
               <CartIcon />
             </a>
@@ -133,6 +135,14 @@ export default function Header(): JSX.Element {
       </header >
 
       <MobileNavigation closeButtonClick={() => setMobileNavOpen(false)} />
+    </>
+  )
+
+  return props.disableCopy ? elements : (
+    <div className="relative group">
+      <CopyComponent onClick={() => navigator.clipboard.writeText(headerRef.current?.outerHTML)} />
+
+      {elements}
     </div>
   )
 }

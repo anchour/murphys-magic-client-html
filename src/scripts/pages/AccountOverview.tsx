@@ -9,8 +9,8 @@ interface AccountOverviewProps {
 
 const AccountOverview = (props: AccountOverviewProps) => {
   return <>
-    <SuperHeader />
-    <Header />
+    <SuperHeader disableCopy />
+    <Header disableCopy />
     <AccountActions />
     <MailingListSignup />
     <Footer />
