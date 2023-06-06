@@ -1,7 +1,6 @@
 import BenefitsGrid from "../components/BenefitsGrid";
 import Header from "../components/Header";
 import MailingListSignup from "../components/MailingListSignup";
-import SuperHeader from "../components/SuperHeader";
 import TextCallout from "../components/TextCallout";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
@@ -32,8 +31,7 @@ interface BecomeADealerPageProps {}
 const BecomeADealerPage = (props: BecomeADealerPageProps) => {
   return (
     <>
-      <SuperHeader />
-      <Header />
+      <Header disableCopy />
 
       <main role="main">
         <Hero

@@ -24,10 +24,8 @@ import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 export default function Layouts() {
   return (
     <>
-      <h1>Page layouts</h1>
-
       <SuperHeader />
-      <Header />
+      <Header hideSuperHeader />
       <BrandHeader />
       <TextImageSplit />
       <TextImageSplit order="image-first" />

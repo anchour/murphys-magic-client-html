@@ -39,6 +39,8 @@
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/one-column-text.css";
 @import "./src/styles/components/team-member.css";
+@import "./src/styles/components/loader.css";
+@import "./src/styles/components/video-background.css";
 
 
 /* Layouts */

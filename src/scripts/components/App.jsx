@@ -12,12 +12,14 @@ import AccountOverview from '../pages/AccountOverview';
 import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import pagesData from '../data/pages.json'
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
 
   function MenuToggle({ invertColors = false, extraClasses = null, status = null, children }) {
-    let className = 'absolute px-4 py-2 font-semibold tracking-wider uppercase transition-all rounded-full shadow-md appearance-none hover:shadow-lg focus:shadow-lg top-4 left-4'
+    let className = 'w-12 h-12 p-2 font-semibold tracking-wider uppercase transition-all rounded-full shadow-md appearance-none hover:shadow-lg focus:shadow-lg'
 
     if (invertColors === true) {
       className += ' bg-white text-water'
@@ -38,29 +40,48 @@ export function App() {
   }
 
   return <>
-    <div className='pt-[76px]'>
-      <MenuToggle status={true}>Open Menu</MenuToggle>
+    <div className='relative min-h-[88px] z-50'>
+      {!navOpen &&
+        <MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle>}
 
       {navOpen &&
-        <nav className='absolute top-0 left-0 flex flex-col flex-wrap w-full p-4 pt-24 space-x-3 text-white sm:items-center sm:justify-center sm:py-6 sm:flex-row bg-water'>
-          <MenuToggle extraClasses={'sm:top-1/2 sm:transform sm:-translate-y-1/2'} invertColors={true} status={false}>Close Menu</MenuToggle>
+        <div className='relative'>
+          <MenuToggle invertColors={true} status={false} extraClasses={'absolute left-4 top-4'}><XMarkIcon /></MenuToggle>
+          <nav className='w-full p-4 pt-20 text-white sm:py-6 bg-water'>
+            <ul className='flex flex-col flex-wrap sm:space-x-3 sm:items-center sm:justify-center sm:flex-row'>
+              <li className='relative'>
+                <a href="/components/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+                  Components
+                </a>
+              </li>
 
-          <a href="/" className='inline-block text-lg '>
-            Home
-          </a>
+              <li className='relative'>
+                <a href="/layouts/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+                  Layouts
+                </a>
+              </li>
 
-          <a href="/components/" className='inline-block text-lg '>
-            Components
-          </a>
+              <li className='relative group'>
 
-          <a href="/layouts/" className='inline-block text-lg '>
-            Layouts
-          </a>
+                <a href="/pages/" className='inline-block py-1 pl-0 text-2xl font-semibold group'>
+                  Pages
 
-          <a href="/pages/" className='inline-block text-lg '>
-            Pages
-          </a>
-        </nav>
+                  <ul className='absolute left-0 p-4 pr-24 text-base font-normal rounded shadow opacity-0 pointer-events-none top-full bg-primary-dove color-secondary-water whitespace-nowrap group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto'>
+
+                    {
+                      pagesData.map(page => (
+                        <li>
+                          <a className="underline text-slate-500 hover:text-water focus:text-water decoration-slate-400" href={page.href} dangerouslySetInnerHTML={{ __html: page.title }} />
+                        </li>
+                      ))
+                    }
+
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       }
 
       <Router>
