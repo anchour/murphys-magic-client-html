@@ -1,5 +1,5 @@
 import SVGViewer from "./SVGViewer";
-import Asterix from "../../images/icons/ico-asterix.svg";
+import Asterisk from "../../images/icons/ico-asterisk.svg";
 
 interface DealProps {
   title?: string;
@@ -38,7 +38,7 @@ const Deal = ({
 
                 <SVGViewer
                   svgClass={"deal-content__counter-spacer"}
-                  filePath={Asterix}
+                  filePath={Asterisk}
                 />
 
                 <span className="typography-heading typography-body-2xs">
@@ -47,7 +47,7 @@ const Deal = ({
 
                 <SVGViewer
                   svgClass={"deal-content__counter-spacer"}
-                  filePath={Asterix}
+                  filePath={Asterisk}
                 />
               </div>
 

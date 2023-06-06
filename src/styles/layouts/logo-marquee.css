@@ -10,7 +10,8 @@
   margin-top: 4rem;
 }
 
-.marquee-wrap:before {
+.marquee-wrap:before,
+.marquee-wrap:after {
   content: "";
   position: absolute;
   top: 0;
@@ -19,6 +20,10 @@
   z-index: 2;
   height: 100%;
   width: 12%;
+  display: block;
+}
+
+.marquee-wrap:before {
   background: linear-gradient(
     90deg,
     rgba(245, 244, 245, 100%) 0%,
@@ -28,14 +33,6 @@
 }
 
 .marquee-wrap:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  height: 100%;
-  width: 12%;
   background: linear-gradient(
     270deg,
     rgba(245, 244, 245, 100%) 0%,
@@ -62,6 +59,6 @@
 
 @media (min-width: 768px) {
   .ticker__logo {
-    margin-right: 98px;
+    margin-right: 6.25rem;
   }
 }

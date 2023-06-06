@@ -9,7 +9,7 @@ import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
-import ArtofUnkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unkown.svg";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
           buttonText="See Anvendi’s Magic"
           hasBackground
           hasBrandElement
-          brandElement={ArtofUnkown}
+          brandElement={ArtOfUnknown}
         />
         <LogoMarquee />
       </main>
