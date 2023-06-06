@@ -8,6 +8,7 @@ import CopyComponent from './CopyComponent';
 import MobileNavigation from './MobileNavigation';
 import { DisableCopyComponent } from '../lib/interfaces';
 import SuperHeader from './SuperHeader';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock/lib/bodyScrollLock.es6';
 
 export function DropdownCaret(): JSX.Element {
   return (
@@ -29,11 +30,18 @@ interface HeaderProps extends DisableCopyComponent {
 
 export default function Header(props: HeaderProps): JSX.Element {
   const headerRef = useRef<HTMLHeadElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList[mobileNavOpen ? 'add' : 'remove'](classes.NAV_OPEN)
+
+    if (mobileNavOpen) {
+      disableBodyScroll(mobileNavRef.current)
+    } else {
+      clearAllBodyScrollLocks();
+    }
   }, [mobileNavOpen]);
 
   const elements = (
@@ -137,7 +145,7 @@ export default function Header(props: HeaderProps): JSX.Element {
         </div>
       </header >
 
-      <MobileNavigation closeButtonClick={() => setMobileNavOpen(false)} />
+      <MobileNavigation ref={mobileNavRef} closeButtonClick={() => setMobileNavOpen(false)} />
     </>
   )
 
