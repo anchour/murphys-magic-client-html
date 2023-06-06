@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import MailingListSignup from "../components/MailingListSignup";
-import SuperHeader from "../components/SuperHeader";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import BrandHeader from "../components/BrandHeader";
@@ -14,7 +13,6 @@ import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 export default function Home() {
   return (
     <>
-      <SuperHeader />
       <Header />
 
       <main role="main">
