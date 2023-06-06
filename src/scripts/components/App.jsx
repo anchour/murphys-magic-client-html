@@ -11,6 +11,7 @@ import AccountOverview from '../pages/AccountOverview';
 import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -61,20 +62,20 @@ export function App() {
           </nav>
         </div>
       }
-
-      <Router>
-        <Home path="/" />
-        <Layouts path="/layouts/" />
-        <Components path="/components/" />
-        <Pages path="/pages/" />
-        <BecomeADealer path="/pages/become-a-dealer" />
-        <CollectionsStandard path="/pages/collections-standard" />
-        <Collections path="/pages/collections" />
-        <AccountOverview path="/pages/account-overview" />
-        <Contact path="/pages/contact" />
-        <AccountOrders path="/pages/account-orders" />
-        <Cart path="/pages/cart" />
-      </Router>
     </div>
+
+    <Router>
+      <Home path="/" />
+      <Layouts path="/layouts/" />
+      <Components path="/components/" />
+      <Pages path="/pages/" />
+      <BecomeADealer path="/pages/become-a-dealer" />
+      <CollectionsStandard path="/pages/collections-standard" />
+      <Collections path="/pages/collections" />
+      <AccountOverview path="/pages/account-overview" />
+      <Contact path="/pages/contact" />
+      <AccountOrders path="/pages/account-orders" />
+      <Cart path="/pages/cart" />
+    </Router>
   </>
 }
