@@ -12,6 +12,7 @@ import SVGViewer from "../components/SVGViewer";
 import VideoBackground from "../components/VideoBackground";
 import Button from "../components/Button";
 import videoSrc from "../../video/sample-30s.mp4";
+import ImageOverlay from "../components/ImageOverlayColumn";
 
 const lipsum = new LoremIpsum();
 
@@ -41,7 +42,20 @@ const CollectionsPage = (props: CollectionsPageProps) => {
           ]} />
         </Hero>
         <IconsGrid />
-        <ImageOverlayGrid />
+
+        <ImageOverlayGrid>
+          <ImageOverlay
+            title="APPRENTICE"
+            description="Just starting your magic adventure, but don't know where to begin? Our Apprentice line was made for the curious ones like you. Explore tried-and-true tricks at prices that won't make your wallet disappear."
+            buttonText="Shop Apprentice Magic"
+          />
+          <ImageOverlay
+            title="Anverdi"
+            description="Tony Anverdi — the man, the myth, and legend  — took the industry by storm decades ago with his stunning and innovative inventions. We landed his collection back in 2010, and the tricks have only improved over time."
+            buttonText="Shop Anverdi Magic"
+          />
+        </ImageOverlayGrid>
+
         <TextCallout
           text="“The street's my stage and Murphy's gives me the perfect products to surprise and delight my audiences. It's the ideal mix of quality, price, and production execution. Want the best? Get this stuff.”"
           buttonUrl="#"
