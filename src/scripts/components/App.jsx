@@ -17,7 +17,7 @@ export function App() {
   const [navOpen, setNavOpen] = useState(false)
 
   function MenuToggle({ invertColors = false, extraClasses = null, status = null, children }) {
-    let className = 'absolute w-12 h-12 p-2 font-semibold tracking-wider uppercase transition-all rounded-full shadow-md appearance-none hover:shadow-lg focus:shadow-lg top-4 left-4'
+    let className = 'w-12 h-12 p-2 font-semibold tracking-wider uppercase transition-all rounded-full shadow-md appearance-none hover:shadow-lg focus:shadow-lg'
 
     if (invertColors === true) {
       className += ' bg-white text-water'
@@ -41,24 +41,26 @@ export function App() {
     <div className='relative'>
 
       {!navOpen &&
-        <MenuToggle status={true}><Bars3Icon /></MenuToggle>}
+        <MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle>}
 
       {navOpen &&
-        <nav className='flex flex-col flex-wrap w-full p-4 pt-20 text-white sm:space-x-3 sm:items-center sm:justify-center sm:py-6 sm:flex-row bg-water'>
-          <MenuToggle extraClasses={'sm:top-1/2 sm:transform sm:-translate-y-1/2'} invertColors={true} status={false}><XMarkIcon /></MenuToggle>
+        <div className='relative'>
+          <MenuToggle invertColors={true} status={false} extraClasses={'absolute left-4 top-4'}><XMarkIcon /></MenuToggle>
+          <nav className='flex flex-col flex-wrap w-full p-4 pt-20 text-white sm:space-x-3 sm:items-center sm:justify-center sm:py-6 sm:flex-row bg-water'>
 
-          <a href="/components/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-            Components
-          </a>
+            <a href="/components/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+              Components
+            </a>
 
-          <a href="/layouts/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-            Layouts
-          </a>
+            <a href="/layouts/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+              Layouts
+            </a>
 
-          <a href="/pages/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-            Pages
-          </a>
-        </nav>
+            <a href="/pages/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+              Pages
+            </a>
+          </nav>
+        </div>
       }
     </div>
 
