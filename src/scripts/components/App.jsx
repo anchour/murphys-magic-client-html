@@ -12,6 +12,7 @@ import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import pagesData from '../data/pages.json'
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -38,27 +39,46 @@ export function App() {
   }
 
   return <>
-    <div className='relative'>
-
+    <div className='relative min-h-[88px] z-50'>
       {!navOpen &&
         <MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle>}
 
       {navOpen &&
         <div className='relative'>
           <MenuToggle invertColors={true} status={false} extraClasses={'absolute left-4 top-4'}><XMarkIcon /></MenuToggle>
-          <nav className='flex flex-col flex-wrap w-full p-4 pt-20 text-white sm:space-x-3 sm:items-center sm:justify-center sm:py-6 sm:flex-row bg-water'>
+          <nav className='w-full p-4 pt-20 text-white sm:py-6 bg-water'>
+            <ul className='flex flex-col flex-wrap sm:space-x-3 sm:items-center sm:justify-center sm:flex-row'>
+              <li className='relative'>
+                <a href="/components/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+                  Components
+                </a>
+              </li>
 
-            <a href="/components/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-              Components
-            </a>
+              <li className='relative'>
+                <a href="/layouts/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
+                  Layouts
+                </a>
+              </li>
 
-            <a href="/layouts/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-              Layouts
-            </a>
+              <li className='relative group'>
 
-            <a href="/pages/" className='inline-block py-1 pl-0 text-2xl font-semibold'>
-              Pages
-            </a>
+                <a href="/pages/" className='inline-block py-1 pl-0 text-2xl font-semibold group'>
+                  Pages
+
+                  <ul className='absolute left-0 p-4 pr-24 text-base font-normal rounded shadow opacity-0 pointer-events-none top-full bg-primary-dove color-secondary-water whitespace-nowrap group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto'>
+
+                    {
+                      pagesData.map(page => (
+                        <li>
+                          <a className="underline text-slate-500 hover:text-water focus:text-water decoration-slate-400" href={page.href} dangerouslySetInnerHTML={{ __html: page.title }} />
+                        </li>
+                      ))
+                    }
+
+                  </ul>
+                </a>
+              </li>
+            </ul>
           </nav>
         </div>
       }
