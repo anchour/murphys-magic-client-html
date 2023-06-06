@@ -11,6 +11,7 @@ import { LoremIpsum } from "lorem-ipsum";
 import SVGViewer from "../components/SVGViewer";
 import VideoBackground from "../components/VideoBackground";
 import Button from "../components/Button";
+import videoSrc from "../../video/sample-30s.mp4";
 
 const lipsum = new LoremIpsum();
 
@@ -34,7 +35,7 @@ const CollectionsPage = (props: CollectionsPageProps) => {
         >
           <VideoBackground src={[
             {
-              src: "/src/video/sample-30s.mp4",
+              src: videoSrc,
               type: "video/mp4"
             }
           ]} />
