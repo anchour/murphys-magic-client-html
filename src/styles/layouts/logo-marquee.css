@@ -16,7 +16,6 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
   z-index: 2;
   height: 100%;
   width: 12%;
@@ -24,6 +23,7 @@
 }
 
 .marquee-wrap:before {
+  left: 0;
   background: linear-gradient(
     90deg,
     rgba(245, 244, 245, 100%) 0%,
@@ -33,6 +33,7 @@
 }
 
 .marquee-wrap:after {
+  right: 0;
   background: linear-gradient(
     270deg,
     rgba(245, 244, 245, 100%) 0%,
