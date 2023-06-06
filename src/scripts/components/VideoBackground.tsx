@@ -6,10 +6,10 @@ interface VideoProps {
   src: VideoSrc[],
 }
 
-const Video = (props: VideoProps) => {
-  return <video className="video-background responsive-embed__item" autoPlay muted loop>
+const VideoBackground = (props: VideoProps) => {
+  return <video className="video-background" autoPlay muted loop>
     {props.src.map(src => <source src={src.src} type={src.type} />)}
   </video>
 };
 
-export default Video
+export default VideoBackground
