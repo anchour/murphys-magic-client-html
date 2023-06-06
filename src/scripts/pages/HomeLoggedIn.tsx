@@ -6,6 +6,7 @@ import QuickLinks from "../components/QuickLinks";
 import Deal from "../components/Deal"
 import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
+import Carousel from '../components/Carousel';
 
 // Asset imports
 import Eye from "../../images/icons/ico-key.svg";
@@ -15,8 +16,8 @@ export default function HomeLoggedIn() {
   return (
     <>
       <Header />
-
       <main role="main">
+        <Carousel />
         <QuickLinks />
         <Deal />
         <CalloutGrid />
