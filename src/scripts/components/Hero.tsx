@@ -18,6 +18,7 @@ interface HeroProps {
   hasBrandElement?: boolean;
   brandElement?: string;
   image?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
 }
 
@@ -35,6 +36,7 @@ const Hero = ({
   brandElement = Placeholder,
   buttons = null,
   image = null,
+  children,
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
@@ -136,6 +138,8 @@ const Hero = ({
             </div>
           </div>
         </div>
+
+        {children}
       </section>
     </>
   );
