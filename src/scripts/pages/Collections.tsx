@@ -9,6 +9,8 @@ import ImageOverlayGrid from "../components/ImageOverlayGrid";
 import Footer from "../components/Footer";
 import { LoremIpsum } from "lorem-ipsum";
 import SVGViewer from "../components/SVGViewer";
+import VideoBackground from "../components/VideoBackground";
+import Button from "../components/Button";
 
 const lipsum = new LoremIpsum();
 
@@ -21,6 +23,22 @@ const CollectionsPage = (props: CollectionsPageProps) => {
 
       <main role="main">
         <Hero />
+        <Hero
+          style="dark"
+          alignment="left"
+          title="MAKING MAGIC HAPPEN"
+          description="We're here to reawaken the curious with quality magic tricks and playing cards."
+          buttons={
+            <Button component="a" href="#" variant={'primary'}>Shop Murphy's Magic</Button>
+          }
+        >
+          <VideoBackground src={[
+            {
+              src: "/src/video/sample-30s.mp4",
+              type: "video/mp4"
+            }
+          ]} />
+        </Hero>
         <IconsGrid />
         <ImageOverlayGrid />
         <TextCallout
