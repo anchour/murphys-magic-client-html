@@ -8,7 +8,7 @@ const Pages = (props: PagesProps) => {
       {
         pagesData.map(page => (
           <li>
-            <a className="underline decoration-slate-400" href={page.href}>{page.title}</a>
+            <a className="underline decoration-slate-400" href={page.href} dangerouslySetInnerHTML={{ __html: page.title }} />
           </li>
         ))
       }
