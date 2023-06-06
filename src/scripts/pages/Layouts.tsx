@@ -23,8 +23,6 @@ import ArtofUnkown from "../../images/icons/ico-art-of-unkown.svg";
 export default function Layouts() {
   return (
     <>
-      <h1>Page layouts</h1>
-
       <SuperHeader />
       <Header hideSuperHeader />
       <BrandHeader />
