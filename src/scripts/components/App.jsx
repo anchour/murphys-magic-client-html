@@ -40,12 +40,12 @@ export function App() {
   }
 
   return <>
-    <div className='relative min-h-[88px] z-50'>
+    <div className='relative'>
       {!navOpen &&
-        <MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle>}
+        <div className="min-h-[88px]"><MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle></div>}
 
       {navOpen &&
-        <div className='relative'>
+        <div className='relative z-10 min-h-[88px]'>
           <MenuToggle invertColors={true} status={false} extraClasses={'absolute left-4 top-4'}><XMarkIcon /></MenuToggle>
           <nav className='w-full p-4 pt-20 text-white sm:py-6 bg-water'>
             <ul className='flex flex-col flex-wrap sm:space-x-3 sm:items-center sm:justify-center sm:flex-row'>
