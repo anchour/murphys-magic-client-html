@@ -19,7 +19,7 @@ import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
-import ArtOfUnknown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 export default function Layouts() {
   return (

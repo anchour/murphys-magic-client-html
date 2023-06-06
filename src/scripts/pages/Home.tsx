@@ -9,7 +9,7 @@ import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
-import ArtOfUnknown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 export default function Home() {
   return (
