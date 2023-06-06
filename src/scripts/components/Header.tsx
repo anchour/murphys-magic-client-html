@@ -92,7 +92,7 @@ export default function Header(props: HeaderProps): JSX.Element {
               </button>
             </div>
           </div>
-          <a href="#" className="header__logo -m-1.5 p-1.5">
+          <a href="/" className="header__logo -m-1.5 p-1.5">
             <ScreenReaderText text="Murphy's Magic" />
             <Brandmark />
           </a>
