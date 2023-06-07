@@ -6,7 +6,7 @@ interface BrandHeaderProps {
 }
 
 const BrandHeader = (props: BrandHeaderProps) => {
-  return <section className="brand-header page-section">
+  return <section className="brand-header page-section page-section--tall">
 
     <div className="container">
       <div className="brand-header__grid">
