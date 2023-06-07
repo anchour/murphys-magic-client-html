@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import { ContactForm } from "../pages/Contact";
 
-import ArtOfUnkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 const GetStartedContent = () => {
   return (
@@ -51,7 +51,7 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
           buttonText="Apply now"
           hasBackground
           hasBrandElement
-          brandElement={ArtOfUnkown}
+          brandElement={ArtOfUnknown}
         />
         <BenefitsGrid />
 
