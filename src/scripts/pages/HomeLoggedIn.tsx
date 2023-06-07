@@ -1,10 +1,9 @@
 import Header from "../components/Header";
 import MailingListSignup from "../components/MailingListSignup";
-import SuperHeader from "../components/SuperHeader";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import BrandHeader from "../components/BrandHeader";
-import TextImageSplit from "../components/TextImageSplit";
+import QuickLinks from "../components/QuickLinks";
+import Deal from "../components/Deal"
 import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
@@ -15,12 +14,11 @@ import Rings from "../../images/icons/ico-mm-rings.svg";
 export default function HomeLoggedIn() {
   return (
     <>
-      <SuperHeader />
       <Header />
 
       <main role="main">
-        <BrandHeader />
-        <TextImageSplit order="image-first" />
+        <QuickLinks />
+        <Deal />
         <CalloutGrid />
         <LogoMarquee />
         <Hero

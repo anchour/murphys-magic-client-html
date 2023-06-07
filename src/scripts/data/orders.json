@@ -12,13 +12,13 @@
     "lineItems": [
       {
         "title": "Mental Dice (With Online Instruction)",
-        "image": "/orders-images/sample-dice.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 3,
         "price": 4995
       },
       {
         "title": "Exploding Deck of Cards",
-        "image": "/orders-images/sample-cards.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 1,
         "price": 9995
       }
@@ -38,13 +38,13 @@
     "lineItems": [
       {
         "title": "Mental Dice (With Online Instruction)",
-        "image": "/orders-images/sample-dice.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 3,
         "price": 4995
       },
       {
         "title": "Exploding Deck of Cards",
-        "image": "/orders-images/sample-cards.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 1,
         "price": 9995
       }
@@ -63,13 +63,13 @@
     "lineItems": [
       {
         "title": "Mental Dice (With Online Instruction)",
-        "image": "/orders-images/sample-dice.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 3,
         "price": 4995
       },
       {
         "title": "Exploding Deck of Cards",
-        "image": "/orders-images/sample-cards.jpg",
+        "image": "https://placehold.it/200x200",
         "quantity": 1,
         "price": 9995
       }

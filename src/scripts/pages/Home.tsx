@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import MailingListSignup from "../components/MailingListSignup";
-import SuperHeader from "../components/SuperHeader";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import BrandHeader from "../components/BrandHeader";
@@ -9,12 +8,11 @@ import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
-import ArtofUnkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 export default function Home() {
   return (
     <>
-      <SuperHeader />
       <Header />
 
       <main role="main">
@@ -31,7 +29,7 @@ export default function Home() {
           buttonText="See Anvendi’s Magic"
           hasBackground
           hasBrandElement
-          brandElement={ArtofUnkown}
+          brandElement={ArtOfUnknown}
         />
         <LogoMarquee />
       </main>

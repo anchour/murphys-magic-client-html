@@ -1,13 +1,12 @@
 import BenefitsGrid from "../components/BenefitsGrid";
 import Header from "../components/Header";
 import MailingListSignup from "../components/MailingListSignup";
-import SuperHeader from "../components/SuperHeader";
 import TextCallout from "../components/TextCallout";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import { ContactForm } from "../pages/Contact";
 
-import ArtOfUnkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 const GetStartedContent = () => {
   return (
@@ -32,8 +31,7 @@ interface BecomeADealerPageProps {}
 const BecomeADealerPage = (props: BecomeADealerPageProps) => {
   return (
     <>
-      <SuperHeader />
-      <Header />
+      <Header disableCopy />
 
       <main role="main">
         <Hero
@@ -53,7 +51,7 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
           buttonText="Apply now"
           hasBackground
           hasBrandElement
-          brandElement={ArtOfUnkown}
+          brandElement={ArtOfUnknown}
         />
         <BenefitsGrid />
 

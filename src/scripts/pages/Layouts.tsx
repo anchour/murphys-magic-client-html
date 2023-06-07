@@ -19,15 +19,13 @@ import LogoMarquee from "../components/LogoMarquee";
 
 // Asset imports
 import Eye from "../../images/icons/ico-magic-eye.svg";
-import ArtofUnkown from "../../images/icons/ico-art-of-unkown.svg";
+import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
 
 export default function Layouts() {
   return (
     <>
-      <h1>Page layouts</h1>
-
       <SuperHeader />
-      <Header />
+      <Header hideSuperHeader />
       <BrandHeader />
       <TextImageSplit />
       <TextImageSplit order="image-first" />
@@ -57,7 +55,7 @@ export default function Layouts() {
         buttonText="Apply now"
         hasBackground
         hasBrandElement
-        brandElement={ArtofUnkown}
+        brandElement={ArtOfUnknown}
       />
       <Hero title="Contact Us" description="We're here to help." />
       <Hero
