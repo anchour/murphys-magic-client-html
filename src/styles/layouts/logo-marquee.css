@@ -3,7 +3,6 @@
   overflow: hidden;
   box-sizing: content-box;
   white-space: nowrap;
-  width: 100vw;
 }
 
 .marquee-wrap {
