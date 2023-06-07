@@ -1,4 +1,4 @@
-import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide"
+import { Splide, SplideProps, SplideSlide, SplideTrack } from "@splidejs/react-splide"
 
 interface CarouselProps {
   className?: string,
@@ -15,7 +15,8 @@ const Carousel = (props: CarouselProps) => {
       type: 'loop',
       arrows: false,
       pagination: true,
-    }
+    },
+    hasTrack: false,
   };
 
   const wrapperProps = {
@@ -24,11 +25,19 @@ const Carousel = (props: CarouselProps) => {
 
   return <div {...wrapperProps}>
     <Splide {...splideProps}>
-      {
-        props.children.map((c, index) =>
-          <SplideSlide key={`carousel-slide-${index}`}>{c}</SplideSlide>
-        )
-      }
+      <SplideTrack>
+        {
+          props.children.map((c, index) =>
+            <SplideSlide key={`carousel-slide-${index}`}>{c}</SplideSlide>
+          )
+        }
+      </SplideTrack>
+
+      <div className="carousel__pagination">
+        <div className="container">
+          <ul className="splide__pagination"></ul>
+        </div>
+      </div>
     </Splide>
   </div>
 

@@ -14,6 +14,9 @@ import Rings from "../../images/icons/ico-mm-rings.svg";
 import Button from "../components/Button";
 import { Tag } from "../components/Tags";
 
+// Hero images
+import { heroCarouselOne, heroMobileCarouselOne } from "../assets/hero-images";
+
 export default function HomeLoggedIn() {
   return (
     <>
@@ -25,6 +28,14 @@ export default function HomeLoggedIn() {
             alignment="left"
             title="Apprentice Magic"
             description={null}
+            mobileLayout="stacked"
+            hasBackground
+            image={
+              <img src={heroCarouselOne.src} srcSet={heroCarouselOne.srcSet} alt="Apprentice Magic" width={3978} height={1620} />
+            }
+            mobileImage={
+              <img src={heroMobileCarouselOne.src} alt="Apprentice Magic" width={722} height={709} />
+            }
             tags={
               <Tag showDecorations disableCopy component="span" variant="label secondary-invert">Trending Now</Tag>
             }
