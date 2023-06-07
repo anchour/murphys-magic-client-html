@@ -121,6 +121,11 @@
   z-index: 0;
 }
 
+.hero--has-vertical-gap {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .hero__background--mobile {
   display: none;
   max-height: 320px;
