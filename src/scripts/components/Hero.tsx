@@ -4,6 +4,7 @@ import LightHeroBG from "./CollectionHeroBG.svg.tsx";
 import DarkHeroBG from "../../images/hero--dark-background.jpg";
 import LeftAlignedBG from "../../images/hero--left-aligned-background.jpg";
 import Placeholder from "../../images/icons/ico-placeholder.svg";
+import classNames from "classnames";
 
 interface HeroProps {
   title?: string;
@@ -17,6 +18,8 @@ interface HeroProps {
   hasBackground?: boolean;
   hasBrandElement?: boolean;
   brandElement?: string;
+  mobileLayout?: 'stacked' | 'overlay';
+  mobileImage?: JSX.Element;
   image?: JSX.Element;
   children?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
@@ -35,7 +38,9 @@ const Hero = ({
   hasBackground = false,
   hasBrandElement = false,
   brandElement = Placeholder,
+  mobileLayout = 'overlay',
   image = null,
+  mobileImage,
   buttons,
   children,
   tags,
@@ -75,19 +80,27 @@ const Hero = ({
     return BGImage
   }
 
+  const heroProps = {
+    className: classnames("hero hero--page",
+      `hero--mobile-${mobileLayout}`,
+      {
+        [`hero--${style}`]: style,
+        [`hero--align-${alignment}`]: alignment,
+      }
+    )
+  }
 
   return (
     <>
-      <section
-        className={classnames("hero hero--page", {
-          [`hero--${style}`]: style,
-          [`hero--align-${alignment}`]: alignment,
-        })}
-      >
+      <section {...heroProps}>
         <div className="hero__inner">
           {hasBackground &&
-            <div className="hero__background"><BackgroundImage /></div>
+            <div className={classNames('hero__background', { 'hero__background--desktop': mobileImage })}><BackgroundImage /></div>
           }
+
+          {mobileImage && (
+            <div className="hero__background hero__background--mobile">{mobileImage}</div>
+          )}
 
           {alignment === "left" && hasBrandElement &&
             <SVGViewer
