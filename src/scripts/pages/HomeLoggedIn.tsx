@@ -11,13 +11,37 @@ import Carousel from '../components/Carousel';
 // Asset imports
 import Eye from "../../images/icons/ico-key.svg";
 import Rings from "../../images/icons/ico-mm-rings.svg";
+import Button from "../components/Button";
+import { Tag } from "../components/Tags";
 
 export default function HomeLoggedIn() {
   return (
     <>
       <Header />
       <main role="main">
-        <Carousel />
+        <Carousel className="hero-carousel">
+          <Hero
+            style="dark"
+            alignment="left"
+            title="Apprentice Magic"
+            description={null}
+            tags={
+              <Tag showDecorations disableCopy component="span" variant="label secondary-invert">Trending Now</Tag>
+            }
+            buttons={
+              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+            }
+          />
+          <Hero
+            style="dark"
+            alignment="left"
+            title="Anverdi Magic"
+            description={null}
+            buttons={
+              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+            }
+          ></Hero>
+        </Carousel>
         <QuickLinks />
         <Deal />
         <CalloutGrid />

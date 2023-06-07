@@ -20,6 +20,7 @@ interface HeroProps {
   image?: JSX.Element;
   children?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
+  tags?: JSX.Element | JSX.Element[];
 }
 
 const Hero = ({
@@ -34,9 +35,10 @@ const Hero = ({
   hasBackground = false,
   hasBrandElement = false,
   brandElement = Placeholder,
-  buttons = null,
   image = null,
+  buttons,
   children,
+  tags,
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
@@ -103,17 +105,21 @@ const Hero = ({
             }
 
             <div className="hero__content">
-              <HeadingTag className="hero__title typography-heading typography-heading-lg">
-                {title}
-              </HeadingTag>
+              {tags}
 
-              {breadcrumbs && (
-                <div className="hero__breadcrumbs">{breadcrumbs}</div>
-              )}
+              <div>
+                <HeadingTag className="hero__title typography-heading typography-heading-lg">
+                  {title}
+                </HeadingTag>
 
-              {description && (
-                <p className="hero__description"> {description} </p>
-              )}
+                {breadcrumbs && (
+                  <div className="hero__breadcrumbs">{breadcrumbs}</div>
+                )}
+
+                {description && (
+                  <p className="hero__description"> {description} </p>
+                )}
+              </div>
 
               {hasCTA || buttons && (
                 <div className="actions">
