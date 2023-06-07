@@ -14,3 +14,8 @@ export type CartLineItemType = {
   index?: number,
   options?: CartLineItemOptionType[]
 }
+
+export type Asset = {
+  src: string,
+  size?: number,
+}

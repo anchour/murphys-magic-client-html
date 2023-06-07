@@ -1,4 +1,6 @@
 [
+  { "href": "/", "title": "Home" },
+  { "href": "/pages/home-logged-in", "title": "Home (Logged in variant)" },
   { "href": "/pages/become-a-dealer/", "title": "Become A Dealer" },
   { "href": "/pages/contact/", "title": "Contact" },
   { "href": "/pages/collections-standard/", "title": "Collections (Standard)" },

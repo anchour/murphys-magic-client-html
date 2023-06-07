@@ -1,5 +1,6 @@
 import Router from 'preact-router';
 import Home from '../pages/Home';
+import HomeLoggedIn from '../pages/HomeLoggedIn';
 import Components from '../pages/Components';
 import Pages from '../pages/Pages';
 import Layouts from '../pages/Layouts';
@@ -39,12 +40,12 @@ export function App() {
   }
 
   return <>
-    <div className='relative min-h-[88px] z-50'>
+    <div className='relative'>
       {!navOpen &&
-        <MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle>}
+        <div className="min-h-[88px]"><MenuToggle extraClasses={'ml-4 mt-4 mb-4'} status={true}><Bars3Icon /></MenuToggle></div>}
 
       {navOpen &&
-        <div className='relative'>
+        <div className='relative z-10 min-h-[88px]'>
           <MenuToggle invertColors={true} status={false} extraClasses={'absolute left-4 top-4'}><XMarkIcon /></MenuToggle>
           <nav className='w-full p-4 pt-20 text-white sm:py-6 bg-water'>
             <ul className='flex flex-col flex-wrap sm:space-x-3 sm:items-center sm:justify-center sm:flex-row'>
@@ -82,20 +83,21 @@ export function App() {
           </nav>
         </div>
       }
-    </div>
 
-    <Router>
-      <Home path="/" />
-      <Layouts path="/layouts/" />
-      <Components path="/components/" />
-      <Pages path="/pages/" />
-      <BecomeADealer path="/pages/become-a-dealer" />
-      <CollectionsStandard path="/pages/collections-standard" />
-      <Collections path="/pages/collections" />
-      <AccountOverview path="/pages/account-overview" />
-      <Contact path="/pages/contact" />
-      <AccountOrders path="/pages/account-orders" />
-      <Cart path="/pages/cart" />
-    </Router>
+      <Router>
+        <Home path="/" />
+        <HomeLoggedIn path="/pages/home-logged-in" />
+        <Layouts path="/layouts/" />
+        <Components path="/components/" />
+        <Pages path="/pages/" />
+        <BecomeADealer path="/pages/become-a-dealer" />
+        <CollectionsStandard path="/pages/collections-standard" />
+        <Collections path="/pages/collections" />
+        <AccountOverview path="/pages/account-overview" />
+        <Contact path="/pages/contact" />
+        <AccountOrders path="/pages/account-orders" />
+        <Cart path="/pages/cart" />
+      </Router>
+    </div>
   </>
 }

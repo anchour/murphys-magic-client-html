@@ -8,36 +8,6 @@ const items = [
   {
     title: 'Magic Tricks',
     url: '#',
-    children: [
-      {
-        title: 'Closeup magic',
-        url: '#',
-      },
-      {
-        title: 'Mentalism',
-        url: '#',
-      },
-      {
-        title: 'Stage',
-        url: '#',
-      },
-      {
-        title: 'Card Magic',
-        url: '#',
-      },
-      {
-        title: 'Coin Magic',
-        url: '#',
-      },
-      {
-        title: 'Kids Show',
-        url: '#',
-      },
-      {
-        title: 'All Magic Tricks',
-        url: '#',
-      },
-    ]
   },
   {
     title: 'Books & Digital',

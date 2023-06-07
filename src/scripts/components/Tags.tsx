@@ -5,15 +5,16 @@ import { useRef } from "preact/hooks";
 import CopyComponent from "./CopyComponent";
 
 interface TagProps {
-  component?: string,
+  component?: 'a' | 'button' | 'span',
   variant: string,
-  children: any,
+  children?: any,
   href?: string,
   disableCopy?: boolean,
+  showDecorations?: boolean,
 }
 
-export function Tag({ component = 'a', variant, children, href = '', disableCopy = false }: TagProps) {
-  const TagComponent: string = component ? component : 'a';
+export function Tag({ component = 'a', variant, children, href = '', disableCopy = false, showDecorations = false }: TagProps) {
+  const TagComponent = component ? component : 'a';
   const tagVariants = variant.replace(' ', ',').split(',').map(v => `tag--${v}`);
   const elementProps = {
     className: classNames('tag', tagVariants),
@@ -28,7 +29,11 @@ export function Tag({ component = 'a', variant, children, href = '', disableCopy
   return (
     <div className="relative inline-block group">
       <TagComponent {...elementProps} ref={button}>
+        {showDecorations && <TagLabelDecoration direction="left" /> }
+
         {children}
+
+        {showDecorations && <TagLabelDecoration direction="right" />}
       </TagComponent>
 
       {!disableCopy && <CopyComponent onClick={handleClick} />}
