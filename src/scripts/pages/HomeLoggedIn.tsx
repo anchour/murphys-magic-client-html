@@ -58,7 +58,7 @@ export default function HomeLoggedIn() {
         
         <Deal />
         <ProductCardCarousel />
-        <CalloutGrid />
+        <CalloutGrid title="Popular Collections" />
         <LogoMarquee />
         <Hero
           title="Theory11: The world’s finest playing cards"
