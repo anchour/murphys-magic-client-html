@@ -61,7 +61,7 @@ export default function Home() {
           collectionLinkText="Peek New Arrivals"
         />
         <TextImageSplit order="image-first" />
-        <CalloutGrid />
+        <CalloutGrid title="Popular Collections" />
         <Hero
           title="Our Beginner Magic Collection"
           description="Every trick has a strong start — and so do all great magicians. Enter the world of curiosity with our collection of best-selling Beginner Magic."
