@@ -42,7 +42,7 @@ export default function Header(props: HeaderProps): JSX.Element {
       <header className="bg-white header" ref={headerRef}>
         <nav className="header__nav" aria-label="Global">
           <div className="flex flex-1 header__nav__menu">
-            <ul className="header__nav__menu--hidden lg:flex lg:gap-x-12">
+            <ul className="header__nav__menu header__nav__menu--desktop">
               <li className="header__nav__menu__item">
 
                 <a href="#" className="header__nav__menu__link">Product
