@@ -68,6 +68,7 @@ export default function HomeLoggedIn() {
           hasBackground
           hasBrandElement
           brandElement={Rings}
+          verticalGap
         />
         <Hero
           title="Enchanting surprises are just aroundthe corner..."
@@ -80,6 +81,7 @@ export default function HomeLoggedIn() {
           hasBackground
           hasBrandElement
           brandElement={Eye}
+          verticalGap
         />
       </main>
 

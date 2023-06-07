@@ -21,6 +21,7 @@ interface HeroProps {
   mobileLayout?: 'stacked' | 'overlay';
   mobileImage?: JSX.Element;
   image?: JSX.Element;
+  verticalGap?: boolean,
   children?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
   tags?: JSX.Element | JSX.Element[];
@@ -43,6 +44,7 @@ const Hero = ({
   mobileImage,
   buttons,
   children,
+  verticalGap,
   tags,
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
@@ -86,6 +88,7 @@ const Hero = ({
       {
         [`hero--${style}`]: style,
         [`hero--align-${alignment}`]: alignment,
+        [`hero--has-vertical-gap`]: verticalGap,
       }
     )
   }
