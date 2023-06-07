@@ -14,6 +14,7 @@ import { Tag } from "../components/Tags";
 import Button from "../components/Button";
 
 import { heroCarouselOne, heroMobileCarouselOne } from "../assets/hero-images";
+import ProductCardCarousel from "../components/ProductCardCarousel";
 
 export default function Home() {
   return (
@@ -53,6 +54,12 @@ export default function Home() {
           ></Hero>
         </Carousel>
         <BrandHeader />
+        <ProductCardCarousel
+          title="Check out the latest drop"
+          subtitle="New magic that thrills"
+          collectionLink="#"
+          collectionLinkText="Peek New Arrivals"
+        />
         <TextImageSplit order="image-first" />
         <CalloutGrid />
         <Hero
