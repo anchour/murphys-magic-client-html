@@ -29,6 +29,7 @@
     "lodash-es": "^4.17.21",
     "lorem-ipsum": "^2.0.8",
     "preact": "^10.13.2",
-    "preact-router": "^4.1.0"
+    "preact-router": "^4.1.0",
+    "vite-plugin-require": "^1.1.10"
   }
 }
