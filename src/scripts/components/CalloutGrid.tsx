@@ -5,11 +5,17 @@ import Quaternary from '../../images/callout-grid/callout-grid-quaternary.jpg';
 import ArrowRight from './Icons/ArrowRight.svg';
 
 interface CalloutGridProps {
+  title?: string,
+  titleLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 }
 
 const CalloutGrid = (props: CalloutGridProps) => {
+  const { title, titleLevel } = props;
+  const TitleTag = titleLevel || 'h2';
   return <section className="page-section callout-grid">
     <div className="container">
+      {title && TitleTag && <TitleTag className="callout-grid__title typography-section">{title}</TitleTag>}
+
       <div className='callout-grid__grid'>
         <a href="#" className="callout-grid__area callout-grid__area--primary">
           <img src={Primary} loading='lazy' width={1348} height={1661} alt='Toy & Hobby Collection' />
