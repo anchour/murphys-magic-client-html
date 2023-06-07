@@ -1,8 +1,9 @@
 import { useRef } from "preact/hooks"
 import { Tag } from "./Tags"
 import CopyComponent from "./CopyComponent"
+import { DisableCopyComponent } from "../lib/interfaces"
 
-interface CardProps {
+interface CardProps extends DisableCopyComponent {
   showTags?: boolean,
   cardTags?: any,
   title?: string,
@@ -10,7 +11,6 @@ interface CardProps {
   description?: string,
   priceWholeSale?: number,
   priceRetail?: number,
-  showCopyComponent?: boolean
 }
 
 export function CardTags({ tags }: { tags: string[] }) {
@@ -29,7 +29,7 @@ export function Card({
   description = null,
   priceWholeSale = null,
   priceRetail = null,
-  showCopyComponent = true
+  disableCopy
 }: CardProps) {
   const ref = useRef(null)
 
@@ -60,7 +60,7 @@ export function Card({
       </div>
     </a>
 
-    {showCopyComponent &&
+    {!disableCopy &&
       <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
     }
   </div>

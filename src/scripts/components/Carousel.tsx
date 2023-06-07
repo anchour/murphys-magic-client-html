@@ -1,8 +1,10 @@
 import { Splide, SplideProps, SplideSlide, SplideTrack } from "@splidejs/react-splide"
 
-interface CarouselProps {
-  className?: string,
-  children: JSX.Element[]
+export interface CarouselProps {
+  className?: string;
+  children?: JSX.Element[];
+  pagination?: JSX.Element;
+  splideProps?: SplideProps;
 }
 
 const Carousel = (props: CarouselProps) => {
@@ -17,6 +19,8 @@ const Carousel = (props: CarouselProps) => {
       pagination: true,
     },
     hasTrack: false,
+
+    ...props.splideProps
   };
 
   const wrapperProps = {
@@ -33,11 +37,13 @@ const Carousel = (props: CarouselProps) => {
         }
       </SplideTrack>
 
-      <div className="carousel__pagination">
-        <div className="container">
-          <ul className="splide__pagination"></ul>
+      {props.pagination ? props.pagination : (
+        <div className="carousel__pagination">
+          <div className="container">
+            <ul className="splide__pagination"></ul>
+          </div>
         </div>
-      </div>
+      )}
     </Splide>
   </div>
 

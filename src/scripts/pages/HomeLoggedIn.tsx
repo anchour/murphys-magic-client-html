@@ -16,6 +16,7 @@ import { Tag } from "../components/Tags";
 
 // Hero images
 import { heroCarouselOne, heroMobileCarouselOne } from "../assets/hero-images";
+import ProductCardCarousel from "../components/ProductCardCarousel";
 
 export default function HomeLoggedIn() {
   return (
@@ -54,7 +55,9 @@ export default function HomeLoggedIn() {
           ></Hero>
         </Carousel>
         <QuickLinks />
+        
         <Deal />
+        <ProductCardCarousel />
         <CalloutGrid />
         <LogoMarquee />
         <Hero
