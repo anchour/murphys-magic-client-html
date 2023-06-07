@@ -4,6 +4,7 @@ import LightHeroBG from "./CollectionHeroBG.svg.tsx";
 import DarkHeroBG from "../../images/hero--dark-background.jpg";
 import LeftAlignedBG from "../../images/hero--left-aligned-background.jpg";
 import Placeholder from "../../images/icons/ico-placeholder.svg";
+import classNames from "classnames";
 
 interface HeroProps {
   title?: string;
@@ -17,9 +18,12 @@ interface HeroProps {
   hasBackground?: boolean;
   hasBrandElement?: boolean;
   brandElement?: string;
+  mobileLayout?: 'stacked' | 'overlay';
+  mobileImage?: JSX.Element;
   image?: JSX.Element;
   children?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
+  tags?: JSX.Element | JSX.Element[];
 }
 
 const Hero = ({
@@ -34,9 +38,12 @@ const Hero = ({
   hasBackground = false,
   hasBrandElement = false,
   brandElement = Placeholder,
-  buttons = null,
+  mobileLayout = 'overlay',
   image = null,
+  mobileImage,
+  buttons,
   children,
+  tags,
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
@@ -73,19 +80,27 @@ const Hero = ({
     return BGImage
   }
 
+  const heroProps = {
+    className: classnames("hero hero--page",
+      `hero--mobile-${mobileLayout}`,
+      {
+        [`hero--${style}`]: style,
+        [`hero--align-${alignment}`]: alignment,
+      }
+    )
+  }
 
   return (
     <>
-      <section
-        className={classnames("hero hero--page", {
-          [`hero--${style}`]: style,
-          [`hero--align-${alignment}`]: alignment,
-        })}
-      >
+      <section {...heroProps}>
         <div className="hero__inner">
           {hasBackground &&
-            <div className="hero__background"><BackgroundImage /></div>
+            <div className={classNames('hero__background', { 'hero__background--desktop': mobileImage })}><BackgroundImage /></div>
           }
+
+          {mobileImage && (
+            <div className="hero__background hero__background--mobile">{mobileImage}</div>
+          )}
 
           {alignment === "left" && hasBrandElement &&
             <SVGViewer
@@ -103,17 +118,21 @@ const Hero = ({
             }
 
             <div className="hero__content">
-              <HeadingTag className="hero__title typography-heading typography-heading-lg">
-                {title}
-              </HeadingTag>
+              {tags}
 
-              {breadcrumbs && (
-                <div className="hero__breadcrumbs">{breadcrumbs}</div>
-              )}
+              <div>
+                <HeadingTag className="hero__title typography-heading typography-heading-lg">
+                  {title}
+                </HeadingTag>
 
-              {description && (
-                <p className="hero__description"> {description} </p>
-              )}
+                {breadcrumbs && (
+                  <div className="hero__breadcrumbs">{breadcrumbs}</div>
+                )}
+
+                {description && (
+                  <p className="hero__description"> {description} </p>
+                )}
+              </div>
 
               {hasCTA || buttons && (
                 <div className="actions">
