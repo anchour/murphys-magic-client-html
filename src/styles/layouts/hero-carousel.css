@@ -1,0 +1,6 @@
+.hero-carousel {
+}
+
+.hero-carousel .splide__pagination {
+  justify-content: flex-start;
+}

@@ -6,17 +6,53 @@ import QuickLinks from "../components/QuickLinks";
 import Deal from "../components/Deal"
 import CalloutGrid from "../components/CalloutGrid";
 import LogoMarquee from "../components/LogoMarquee";
+import Carousel from '../components/Carousel';
 
 // Asset imports
 import Eye from "../../images/icons/ico-key.svg";
 import Rings from "../../images/icons/ico-mm-rings.svg";
+import Button from "../components/Button";
+import { Tag } from "../components/Tags";
+
+// Hero images
+import { heroCarouselOne, heroMobileCarouselOne } from "../assets/hero-images";
 
 export default function HomeLoggedIn() {
   return (
     <>
       <Header />
-
       <main role="main">
+        <Carousel className="hero-carousel">
+          <Hero
+            style="dark"
+            alignment="left"
+            title="Apprentice Magic"
+            description={null}
+            mobileLayout="stacked"
+            hasBackground
+            image={
+              <img src={heroCarouselOne.src} srcSet={heroCarouselOne.srcSet} alt="Apprentice Magic" width={3978} height={1620} />
+            }
+            mobileImage={
+              <img src={heroMobileCarouselOne.src} alt="Apprentice Magic" width={722} height={709} />
+            }
+            tags={
+              <Tag showDecorations disableCopy component="span" variant="label secondary-invert">Trending Now</Tag>
+            }
+            buttons={
+              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+            }
+          />
+          <Hero
+            style="dark"
+            alignment="left"
+            title="Anverdi Magic"
+            description={null}
+            buttons={
+              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+            }
+          ></Hero>
+        </Carousel>
         <QuickLinks />
         <Deal />
         <CalloutGrid />
