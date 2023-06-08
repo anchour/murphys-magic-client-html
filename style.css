@@ -70,5 +70,6 @@
 @import "./src/styles/layouts/logo-marquee.css";
 @import "./src/styles/layouts/quick-links.css";
 @import "./src/styles/layouts/deal.css";
+@import "./src/styles/layouts/cta-buttons-section.css";
 
 @import "tailwindcss/utilities";

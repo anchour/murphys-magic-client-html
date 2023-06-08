@@ -58,7 +58,7 @@ export default function HomeLoggedIn() {
 
       <Deal />
       <ProductCardCarousel />
-      <CtaButtonsSection />
+      <CtaButtonsSection sectionTitle="What Delights You?" />
       <CalloutGrid title="Popular Collections" />
       <LogoMarquee />
       <Hero
