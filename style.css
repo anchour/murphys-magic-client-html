@@ -17,8 +17,8 @@
 
 /* Components */
 @import "./src/styles/components/address.css";
-@import "./src/styles/components/card.css";
 @import "./src/styles/components/button.css";
+@import "./src/styles/components/card.css";
 @import "./src/styles/components/tag.css";
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/mailing-list.css";

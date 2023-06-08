@@ -5,6 +5,7 @@ import CardCarouselBackgroundSVG from "./CardCarouselBackgroundSVG"
 import { Card } from "./Cards"
 import Carousel, { CarouselProps } from "./Carousel"
 import CopyComponent from "./CopyComponent"
+import { CardProps } from "./Cards"
 
 interface ProductCardCarouselProps extends DisableCopyComponent {
   title?: string,
@@ -12,6 +13,7 @@ interface ProductCardCarouselProps extends DisableCopyComponent {
   subtitle?: string,
   collectionLink?: string,
   collectionLinkText?: string,
+  cardProps?: CardProps
 }
 
 const ProductCardCarousel = (props: ProductCardCarouselProps) => {
@@ -56,6 +58,7 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
     }
   }
 
+  console.log(carouselProps)
   const TitleTag = props.titleLevel || 'h2'
 
   const elementRef = useRef(null)
@@ -78,12 +81,12 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
       </div>
 
       <Carousel {...carouselProps}>
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999}{...props.cardProps} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
       </Carousel>
     </div>
   </div>

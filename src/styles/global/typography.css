@@ -157,3 +157,40 @@ body {
 strong {
   font-weight: 500;
 }
+
+.rte {
+  a {
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+  }
+
+  a:hover,
+  a:focus-visible {
+    /* text decoration offset */
+    text-underline-offset: 2px;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  li {
+    padding: 0.33rem 0 0.33rem 0.25rem;
+    margin-left: 1.5rem;
+  }
+
+  p,
+  ul,
+  ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &:first-child {
+      margin-top: 0rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

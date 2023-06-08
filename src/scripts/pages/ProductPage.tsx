@@ -1,3 +1,5 @@
+import ProductCardCarousel from "../components/ProductCardCarousel"
+import ProductDescription from "../components/ProductDescription"
 import ProductForm from "../components/product/Form"
 import ProductGallery from "../components/product/Gallery"
 import BasePage from "./Base"
@@ -13,6 +15,9 @@ const ProductPage = (props: ProductPageProps) => {
         <ProductForm />
       </div>
     </section>
+
+    <ProductDescription />
+    <ProductCardCarousel cardProps={{ showAddToCart: true, disableCopy: true }} />
   </BasePage>
 }
 

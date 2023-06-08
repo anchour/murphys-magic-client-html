@@ -2,6 +2,7 @@ import Button from "../Button"
 import QuantityInput from "../QuantityInput"
 import PricingTable from './PricingTable'
 import { Tag } from "../Tags"
+import Details from "../Details"
 
 interface ProductFormProps {
 }
@@ -33,13 +34,13 @@ const ProductForm = (props: ProductFormProps) => {
 
           <input id="size-sm" type="radio" className="sr-only product-form__option" name="size" value="sm" />
           <label htmlFor="size-sm"> Small </label>
-          
+
           <input id="size-md" type="radio" className="sr-only product-form__option" name="size" value="md" />
           <label htmlFor="size-md"> Medium </label>
-          
+
           <input id="size-lg" type="radio" className="sr-only product-form__option" name="size" value="lg" />
           <label htmlFor="size-lg"> Large </label>
-          
+
           <input id="size-xl" type="radio" className="sr-only product-form__option" name="size" value="xl" />
           <label htmlFor="size-xl"> X-Large </label>
         </div>
@@ -96,6 +97,40 @@ const ProductForm = (props: ProductFormProps) => {
         <Button type="submit" variant="primary block">Add to cart</Button>
       </div>
     </form>
+
+    <div className="product-form-section__details">
+
+      <Details title="Orders" summaryClassName="typography-heading-xs" open>
+        <div className="rte">
+          <p> Date Added: 11/3/2022 </p>
+          <p>Weight (lbs): 0.1</p>
+          <p>Dimensions: 4.5 x 4.5 x 0.1</p>
+          <p>⚠️ This item is potentially hazardous.</p>
+        </div>
+      </Details>
+
+      <Details title="Marketing Resources" summaryClassName="typography-heading-xs" open>
+        <div className="rte">
+          <ul>
+            <li><a href="#">🎬 Video Teaser #1 HD Version SD Version</a></li>
+            <li><a href="#">🎬 Video Teaser #2 HD Version SD Version</a></li>
+            <li><a href="#">📁 Product Photography</a></li>
+            <li><a href="#">Download All</a></li>
+          </ul>
+
+        </div>
+      </Details>
+
+      <Details title="Instructions" summaryClassName="typography-heading-xs" open>
+        <div className="rte">
+          <p> Date Added: 11/3/2022 </p>
+          <p>Weight (lbs): 0.1</p>
+          <p>Dimensions: 4.5 x 4.5 x 0.1</p>
+          <p>⚠️ This item is potentially hazardous.</p>
+        </div>
+      </Details>
+
+    </div>
   </div >
 }
 
