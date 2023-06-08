@@ -166,6 +166,7 @@
 
 .hero--align-left .hero__content {
   display: grid;
+  justify-items: start;
   gap: 1.5rem;
   max-width: unset;
 }
