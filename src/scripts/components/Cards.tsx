@@ -16,7 +16,7 @@ interface CardProps extends DisableCopyComponent {
 export function CardTags({ tags }: { tags: string[] }) {
   return (
     <div className="card__tags">
-      {tags.map(tag => <Tag component="div" key={tag} variant='simple invert' disableCopy={true}>{tag}</Tag>)}
+      {tags.map(tag => <Tag component="div" key={tag} variant='simple invert' disableCopy>{tag}</Tag>)}
     </div>
   )
 }
@@ -69,9 +69,9 @@ export function Card({
 export default function Cards() {
   return <>
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-      <Card cardTags={<Tag variant="label secondary" disableCopy={true}>New</Tag>} showTags={true} />
+      <Card cardTags={<Tag variant="label secondary" disableCopy>New</Tag>} showTags />
 
-      <Card showTags={true} />
+      <Card showTags />
     </div >
   </>
 }
