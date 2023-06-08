@@ -1,0 +1,97 @@
+import { useRef } from "preact/hooks"
+import { DisableCopyComponent } from "../lib/interfaces"
+import Button from "./Button"
+import CardCarouselBackgroundSVG from "./CardCarouselBackgroundSVG"
+import { Card } from "./Cards"
+import Carousel, { CarouselProps } from "./Carousel"
+import CopyComponent from "./CopyComponent"
+
+interface ProductCardCarouselProps extends DisableCopyComponent {
+  title?: string,
+  titleLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+  subtitle?: string,
+  collectionLink?: string,
+  collectionLinkText?: string,
+}
+
+const ProductCardCarousel = (props: ProductCardCarouselProps) => {
+
+  const ViewMoreLink = () => props.collectionLink && props.collectionLinkText ? (
+    <Button disableCopy className="product-cards-carousel__view-more" component="a" href={props.collectionLink} variant={'link'}>
+      {props.collectionLinkText}
+    </Button>
+  ) : null
+
+  const carouselProps: CarouselProps = {
+    pagination: (
+      <div className="product-cards-carousel__pagination">
+        <ul className="splide__pagination"></ul>
+
+        <ViewMoreLink />
+      </div>
+    ),
+    splideProps: {
+      options: {
+        arrows: false,
+        gap: '0.5rem',
+        perPage: 1,
+        mediaQuery: 'min',
+        padding: {
+          right: '2rem',
+        },
+        rewind: true,
+
+        breakpoints: {
+          640: {
+            perPage: 2,
+          },
+          768: {
+            perPage: 3,
+          },
+          1280: {
+            perPage: 4,
+          }
+        }
+      }
+    }
+  }
+
+  const TitleTag = props.titleLevel || 'h2'
+
+  const elementRef = useRef(null)
+  const elements = <div className="product-cards-carousel" ref={elementRef}>
+    <div className="product-cards-carousel__bg">
+      <CardCarouselBackgroundSVG />
+    </div>
+
+    <div className="container">
+      <div className="product-cards-carousel__header">
+        <div className="product-cards-carousel__header-left">
+          <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>
+          <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>
+        </div>
+
+        {props.collectionLink && props.collectionLinkText ? (
+          <div className="product-cards-carousel__header-right">
+            <ViewMoreLink />
+          </div>) : null}
+      </div>
+
+      <Carousel {...carouselProps}>
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
+      </Carousel>
+    </div>
+  </div>
+
+  return props.disableCopy ? elements : (<div className="relative">
+    <CopyComponent onClick={() => navigator.clipboard.writeText(elementRef.current.outerHTML)} />
+    {elements}
+  </div>)
+}
+
+export default ProductCardCarousel

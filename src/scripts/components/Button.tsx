@@ -2,18 +2,20 @@ import classnames from 'classnames';
 import { useRef } from 'preact/hooks'
 import CopyComponent from './CopyComponent';
 import { AriaBaseButtonProps, LinkButtonProps, ButtonProps as ReactButtonProps } from '@react-types/button';
+import { DisableCopyComponent } from '../lib/interfaces';
 
-interface ButtonProps extends ReactButtonProps, LinkButtonProps, AriaBaseButtonProps {
+interface ButtonProps extends ReactButtonProps, LinkButtonProps, AriaBaseButtonProps, DisableCopyComponent {
   component?: 'a' | 'button';
   className?: string;
   variant?: string | string[];
   small?: boolean;
   icon?: boolean;
   dark?: boolean;
-  disableCopy?: boolean;
+  title?: string,
+  onClick?: (e) => void;
 }
 
-export default function Button({ type = 'button', component = 'a', href = '#', className = '', variant = 'primary', children = 'Button text', small = false, icon = true, dark = false, disableCopy = false }: ButtonProps) {
+export default function Button({ type = 'button', component = 'a', href = '#', className = '', variant = 'primary', children = 'Button text', small = false, icon = true, dark = false, disableCopy = false, onClick }: ButtonProps) {
   let variantClasses = typeof variant == 'string' ? [variant] : variant;
 
   variantClasses = variantClasses
@@ -28,6 +30,8 @@ export default function Button({ type = 'button', component = 'a', href = '#', c
       dark ? 'btn--dark' : false,
       className
     ]),
+    title: null,
+    onClick,
   };
 
   if (component === 'a') {

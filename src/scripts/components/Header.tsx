@@ -6,8 +6,9 @@ import ScreenReaderText from './ScreenReaderText';
 import { useEffect, useState, useRef } from 'preact/hooks';
 import CopyComponent from './CopyComponent';
 import MobileNavigation from './MobileNavigation';
-import SuperHeader from './SuperHeader';
 import { DisableCopyComponent } from '../lib/interfaces';
+import SuperHeader from './SuperHeader';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock/lib/bodyScrollLock.es6';
 
 export function DropdownCaret(): JSX.Element {
   return (
@@ -24,29 +25,33 @@ const classes = {
 }
 
 interface HeaderProps extends DisableCopyComponent {
-  showSuperHeader?: boolean
+  hideSuperHeader?: boolean,
 }
 
-export default function Header({ showSuperHeader = false, disableCopy }: HeaderProps): JSX.Element {
+export default function Header(props: HeaderProps): JSX.Element {
   const headerRef = useRef<HTMLHeadElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList[mobileNavOpen ? 'add' : 'remove'](classes.NAV_OPEN)
+
+    if (mobileNavOpen) {
+      disableBodyScroll(mobileNavRef.current)
+    } else {
+      clearAllBodyScrollLocks();
+    }
   }, [mobileNavOpen]);
 
-  const elements = <>
-    {showSuperHeader && <SuperHeader disableCopy />}
-    <header className="bg-white header" ref={headerRef}>
-      <nav className="header__nav" aria-label="Global">
-        <div className="flex flex-1 header__nav__menu">
-          <ul className="header__nav__menu--hidden lg:flex lg:gap-x-12">
-            <li className="header__nav__menu__item">
-
-              <a href="#" className="header__nav__menu__link">Product
-                <DropdownCaret />
-              </a>
+  const elements = (
+    <>
+      {!props.hideSuperHeader && <SuperHeader disableCopy={props.disableCopy} />}
+      <header className="bg-white header" ref={headerRef}>
+        <nav className="header__nav" aria-label="Global">
+          <div className="flex flex-1 header__nav__menu">
+            <ul className="header__nav__menu header__nav__menu--desktop">
+              <li className="header__nav__menu__item">
 
               <ul className="header__nav__menu__dropdown">
                 <li className="header__nav__menu__dropdown__item">
@@ -119,9 +124,26 @@ export default function Header({ showSuperHeader = false, disableCopy }: HeaderP
                 </svg>
               </button>
             </div>
-            <a href="#" className="header__mobile-menu--header--logo -m-1.5 p-1.5">
-              <ScreenReaderText text="Murphy's Magic" />
-              <Brandmark />
+          </div>
+          <a href="/" className="header__logo -m-1.5 p-1.5">
+            <ScreenReaderText text="Murphy's Magic" />
+            <Brandmark />
+          </a>
+          <div className="flex justify-end flex-1 header__actions">
+            <button type="button" className='header__actions__action header__actions__action--desktop-only'>
+              <ScreenReaderText text='Search' />
+
+              <SearchIcon />
+            </button>
+
+            <a href="/pages/account-overview" className="header__actions__action header__actions__action--desktop-only">
+              <ScreenReaderText text='Account' />
+              <AccountIcon />
+            </a>
+
+            <a href="/pages/cart" className="header__actions__action">
+              <ScreenReaderText text='Cart' />
+              <CartIcon />
             </a>
             <div className="flex justify-end flex-1 header__mobile-menu--header--user">
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900 header__mobile-menu--header--user-login">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -136,10 +158,11 @@ export default function Header({ showSuperHeader = false, disableCopy }: HeaderP
       </div>
     </header >
 
-    <MobileNavigation closeButtonClick={() => setMobileNavOpen(false)} />
-  </>
+      <MobileNavigation ref={mobileNavRef} closeButtonClick={() => setMobileNavOpen(false)} />
+    </>
+  )
 
-  return disableCopy ? elements : (
+  return props.disableCopy ? elements : (
     <div className="relative group">
       <CopyComponent onClick={() => navigator.clipboard.writeText(headerRef.current?.outerHTML)} />
 

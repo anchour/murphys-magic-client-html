@@ -121,7 +121,7 @@ const Footer = (props: FooterProps) => {
         </FooterColumn>
 
         <div className="footer__actions">
-          <Button dark={true} variant="secondary" disableCopy={true}> Dealer Login</Button>
+          <Button dark variant="secondary" disableCopy> Dealer Login</Button>
         </div>
       </div>
     </nav>

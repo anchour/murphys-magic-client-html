@@ -1,8 +1,9 @@
 import { useRef } from "preact/hooks"
 import { Tag } from "./Tags"
 import CopyComponent from "./CopyComponent"
+import { DisableCopyComponent } from "../lib/interfaces"
 
-interface CardProps {
+interface CardProps extends DisableCopyComponent {
   showTags?: boolean,
   cardTags?: any,
   title?: string,
@@ -10,13 +11,12 @@ interface CardProps {
   description?: string,
   priceWholeSale?: number,
   priceRetail?: number,
-  showCopyComponent?: boolean
 }
 
 export function CardTags({ tags }: { tags: string[] }) {
   return (
     <div className="card__tags">
-      {tags.map(tag => <Tag component="div" key={tag} variant='simple invert' disableCopy={true}>{tag}</Tag>)}
+      {tags.map(tag => <Tag component="div" key={tag} variant='simple invert' disableCopy>{tag}</Tag>)}
     </div>
   )
 }
@@ -29,11 +29,11 @@ export function Card({
   description = null,
   priceWholeSale = null,
   priceRetail = null,
-  showCopyComponent = true
+  disableCopy
 }: CardProps) {
   const ref = useRef(null)
 
-  return <div className="relative group" ref={ref}>
+  const elements = (
     <a href="#" className="card">
       <div className="card__thumbnail">
         {cardTags && <div className="card__image-tags">{cardTags}</div>}
@@ -59,19 +59,20 @@ export function Card({
         {showTags && <CardTags tags={['Type', 'Skill Level']} />}
       </div>
     </a>
+  );
 
-    {showCopyComponent &&
-      <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
-    }
+  return disableCopy ? elements : <div className="relative group" ref={ref}>
+    {elements}
+    <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
   </div>
 }
 
 export default function Cards() {
   return <>
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-      <Card cardTags={<Tag variant="label secondary" disableCopy={true}>New</Tag>} showTags={true} />
+      <Card cardTags={<Tag variant="label secondary" disableCopy>New</Tag>} showTags />
 
-      <Card showTags={true} />
+      <Card showTags />
     </div >
   </>
 }

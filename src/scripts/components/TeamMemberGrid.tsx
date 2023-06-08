@@ -27,7 +27,7 @@ export default function TeamMembersGrid({ count = 8 }: TeamMembersGridProps) {
 
           <div className="team-members-grid__members">
             {times(count, () => (
-              <TeamMember disableCopy={true} />
+              <TeamMember disableCopy />
             ))}
           </div>
         </div>

@@ -43,6 +43,10 @@
 @import "./src/styles/components/product-form.css";
 @import "./src/styles/components/quantity-input.css";
 @import "./src/styles/components/pricing-table.css";
+@import "./src/styles/components/loader.css";
+@import "./src/styles/components/video-background.css";
+@import "./src/styles/components/carousel.css";
+@import "./src/styles/components/product-card-carousel.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
@@ -67,5 +71,9 @@
 @import "./src/styles/layouts/team-members-grid.css";
 @import "./src/styles/layouts/testimonial.css";
 @import "./src/styles/layouts/product.css";
+@import "./src/styles/layouts/logo-marquee.css";
+@import "./src/styles/layouts/quick-links.css";
+@import "./src/styles/layouts/deal.css";
+@import "./src/styles/layouts/cta-buttons-section.css";
 
 @import "tailwindcss/utilities";

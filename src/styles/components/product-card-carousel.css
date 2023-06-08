@@ -1,0 +1,86 @@
+.product-cards-carousel {
+  overflow: hidden;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  position: relative;
+}
+
+.product-cards-carousel__bg {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.product-cards-carousel__header {
+  margin-bottom: 2rem;
+}
+
+.product-cards-carousel__header-right {
+  display: none;
+}
+
+.product-cards-carousel__title {
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.product-cards-carousel .splide__track {
+  overflow: visible;
+}
+
+/* Fixes issue with slide box shadows not showing over subsequent slides. */
+.product-cards-carousel .splide__slide:hover {
+  z-index: 10;
+}
+
+.product-cards-carousel__pagination {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-content: center;
+  align-items: center;
+
+  .splide__pagination {
+    justify-content: flex-start;
+  }
+
+  .splide__pagination__page::before {
+    border-color: var(--color-primary-midnight);
+  }
+
+  .splide__pagination__page:not(.is-active):hover::before,
+  .splide__pagination__page:not(.is-active):focus-visible::before {
+    border-color: var(--color-secondary-water);
+  }
+
+  .splide__pagination__page.is-active::before {
+    background-color: var(--color-primary-midnight);
+  }
+}
+
+@media (min-width: 640px) {
+  .product-cards-carousel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+
+  .product-cards-carousel__pagination .product-cards-carousel__view-more {
+    display: none;
+  }
+
+  .product-cards-carousel__header-right {
+    display: block;
+  }
+}

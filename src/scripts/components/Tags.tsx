@@ -6,15 +6,16 @@ import { DisableCopyComponent } from '../lib/interfaces';
 
 interface TagProps extends DisableCopyComponent {
   className?: string,
-  component?: 'a' | 'div' | 'button',
   variant: string, // invert, simple, label, secondayr, has-thumbnail
-  children: any,
-  href?: string,
   size?: 'md' | 'lg',
+  component?: 'a' | 'button' | 'span' | 'div',
+  children?: any,
+  href?: string,
+  showDecorations?: boolean,
 }
 
-export function Tag({ component = 'a', variant, children, className, href = '', disableCopy = false }: TagProps) {
-  const TagComponent: string = component ? component : 'a';
+export function Tag({ component = 'a', className, variant, children, href = '', disableCopy = false, showDecorations = false }: TagProps) {
+  const TagComponent = component ? component : 'a';
   const tagVariants = variant.replace(' ', ',').split(',').map(v => `tag--${v}`);
   const elementProps = {
     className: classNames('tag', tagVariants, className),
@@ -26,15 +27,20 @@ export function Tag({ component = 'a', variant, children, className, href = '', 
   const handleClick = () =>
     button.current && navigator.clipboard.writeText(button.current.outerHTML);
 
-  return (
-    <div className="relative inline-block group">
-      <TagComponent {...elementProps} ref={button}>
-        {children}
-      </TagComponent>
+  const elements = <TagComponent {...elementProps} ref={button}>
+    {showDecorations && <TagLabelDecoration direction="left" />}
 
-      {!disableCopy && <CopyComponent onClick={handleClick} />}
+    {children}
+
+    {showDecorations && <TagLabelDecoration direction="right" />}
+  </TagComponent>
+
+  return disableCopy ? elements : (
+    <div className="relative inline-block group">
+      {elements}
+      <CopyComponent onClick={handleClick} />
     </div>
-  )
+  );
 }
 
 interface AsteriskVectorProps {
