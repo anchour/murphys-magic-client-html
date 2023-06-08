@@ -5,10 +5,11 @@
 }
 
 .collection-grid__pagination {
-  display: flex;
-  min-height: 50px;
   align-items: center;
+  display: flex;
   justify-content: center;
+  margin-top: 1rem;
+  min-height: 50px;
 }
 
 .collection-grid .card {
