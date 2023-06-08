@@ -25,8 +25,11 @@ export default function CollectionGrid() {
 
   useEffect(() => {
     setTimeout(() => {
+      if (loadMoreClicked == true) {
+        setCollectionProducts([...collectionProducts, ...collectionProducts]);
+      }
+
       setLoadMoreClicked(false);
-      setCollectionProducts([...collectionProducts, ...collectionProducts]);
     }, 6000);
   }, [loadMoreClicked])
 
