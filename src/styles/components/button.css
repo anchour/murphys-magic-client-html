@@ -63,10 +63,6 @@
   }
 }
 
-.btn--secondary:not(.btn--sm) {
-  box-shadow: var(--drop-shadow-default);
-}
-
 .btn--secondary.btn--dark {
   background: var(--color-primary-smoke);
   border-color: var(--color-primary-dove);
