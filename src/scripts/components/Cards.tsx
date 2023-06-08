@@ -33,7 +33,7 @@ export function Card({
 }: CardProps) {
   const ref = useRef(null)
 
-  return <div className="relative group" ref={ref}>
+  const elements = (
     <a href="#" className="card">
       <div className="card__thumbnail">
         {cardTags && <div className="card__image-tags">{cardTags}</div>}
@@ -59,10 +59,11 @@ export function Card({
         {showTags && <CardTags tags={['Type', 'Skill Level']} />}
       </div>
     </a>
+  );
 
-    {!disableCopy &&
-      <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
-    }
+  return disableCopy ? elements : <div className="relative group" ref={ref}>
+    {elements}
+    <CopyComponent onClick={() => { navigator.clipboard.writeText(ref.current?.querySelector('a').outerHTML) }} />
   </div>
 }
 
