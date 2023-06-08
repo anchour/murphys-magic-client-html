@@ -33,7 +33,6 @@
 .btn--sm {
   font-size: 1rem;
   padding: 0.25rem 1.25rem 0.35rem;
-  box-shadow: none;
 }
 
 .btn--primary {
@@ -73,15 +72,6 @@
     background: var(--color-primary-dove);
     border-color: var(--color-primary-dove);
     color: var(--color-primary-smoke);
-  }
-}
-
-.btn--secondary.btn--dark:not(.btn--sm) {
-  box-shadow: var(--drop-shadow-dimensions) var(--color-primary-dove);
-
-  &:hover,
-  &:focus-visible {
-    box-shadow: 0.25rem 0.25rem 0 0 var(--color-primary-dove);
   }
 }
 
