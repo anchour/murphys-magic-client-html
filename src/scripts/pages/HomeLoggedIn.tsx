@@ -17,79 +17,76 @@ import { Tag } from "../components/Tags";
 // Hero images
 import { heroCarouselOne, heroMobileCarouselOne } from "../assets/hero-images";
 import ProductCardCarousel from "../components/ProductCardCarousel";
+import CtaButtonsSection from "../components/CtaButtonsSection";
+import BasePage from "./Base";
 
 export default function HomeLoggedIn() {
   return (
-    <>
-      <Header />
-      <main role="main">
-        <Carousel className="hero-carousel">
-          <Hero
-            style="dark"
-            alignment="left"
-            title="Apprentice Magic"
-            description={null}
-            mobileLayout="stacked"
-            hasBackground
-            image={
-              <img src={heroCarouselOne.src} srcSet={heroCarouselOne.srcSet} alt="Apprentice Magic" width={3978} height={1620} />
-            }
-            mobileImage={
-              <img src={heroMobileCarouselOne.src} alt="Apprentice Magic" width={722} height={709} />
-            }
-            tags={
-              <Tag showDecorations disableCopy component="span" variant="label secondary-invert">Trending Now</Tag>
-            }
-            buttons={
-              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
-            }
-          />
-          <Hero
-            style="dark"
-            alignment="left"
-            title="Anverdi Magic"
-            description={null}
-            buttons={
-              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
-            }
-          ></Hero>
-        </Carousel>
-        <QuickLinks />
-        
-        <Deal />
-        <ProductCardCarousel />
-        <CalloutGrid title="Popular Collections" />
-        <LogoMarquee />
+    <BasePage>
+      <Carousel className="hero-carousel">
         <Hero
-          title="Theory11: The world’s finest playing cards"
-          description="Premium playing cards your jam? Theory11 makes the world’s finest decks, right here in America. From comic and fantasy, to tricks and magic, Theory11 creates an exquisite blend of elegance, fun, and entertainment."
           style="dark"
           alignment="left"
-          hasCTA
-          headingLevel="h2"
-          buttonText="Shop Theory11"
+          title="Apprentice Magic"
+          description={null}
+          mobileLayout="stacked"
           hasBackground
-          hasBrandElement
-          brandElement={Rings}
-          verticalGap
+          image={
+            <img src={heroCarouselOne.src} srcSet={heroCarouselOne.srcSet} alt="Apprentice Magic" width={3978} height={1620} />
+          }
+          mobileImage={
+            <img src={heroMobileCarouselOne.src} alt="Apprentice Magic" width={722} height={709} />
+          }
+          tags={
+            <Tag showDecorations disableCopy component="span" variant="label secondary-invert">Trending Now</Tag>
+          }
+          buttons={
+            <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+          }
         />
         <Hero
-          title="Enchanting surprises are just aroundthe corner..."
-          description=""
           style="dark"
-          alignment="center"
-          hasCTA
-          headingLevel="h2"
-          buttonText="Shop New Arrivals"
-          hasBackground
-          hasBrandElement
-          brandElement={Eye}
-          verticalGap
-        />
-      </main>
+          alignment="left"
+          title="Anverdi Magic"
+          description={null}
+          buttons={
+            <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+          }
+        ></Hero>
+      </Carousel>
+      <QuickLinks />
 
-      <MailingListSignup />
-      <Footer />
-    </>
+      <Deal />
+      <ProductCardCarousel />
+      <CtaButtonsSection />
+      <CalloutGrid title="Popular Collections" />
+      <LogoMarquee />
+      <Hero
+        title="Theory11: The world’s finest playing cards"
+        description="Premium playing cards your jam? Theory11 makes the world’s finest decks, right here in America. From comic and fantasy, to tricks and magic, Theory11 creates an exquisite blend of elegance, fun, and entertainment."
+        style="dark"
+        alignment="left"
+        hasCTA
+        headingLevel="h2"
+        buttonText="Shop Theory11"
+        hasBackground
+        hasBrandElement
+        brandElement={Rings}
+        verticalGap
+      />
+      <Hero
+        title="Enchanting surprises are just aroundthe corner..."
+        description=""
+        style="dark"
+        alignment="center"
+        hasCTA
+        headingLevel="h2"
+        buttonText="Shop New Arrivals"
+        hasBackground
+        hasBrandElement
+        brandElement={Eye}
+        verticalGap
+      />
+    </BasePage>
   );
 }
