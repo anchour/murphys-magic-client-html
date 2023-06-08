@@ -13,8 +13,9 @@ import Contact from '../pages/Contact';
 import AccountOrders from '../pages/AccountOrders';
 import Cart from '../pages/Cart';
 import ProductPage from '../pages/ProductPage';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import pagesData from '../data/pages.json'
+import stubData from '../data/stubs.json'
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -79,6 +80,37 @@ export function App() {
 
                   </ul>
                 </a>
+              </li>
+
+              <li className='relative group'>
+                <span className='inline-block py-1 pl-0 text-2xl font-semibold group'>
+                  Stubs
+
+                  <ul className='absolute left-0 p-4 pr-24 text-base font-normal rounded shadow opacity-0 pointer-events-none top-full bg-primary-dove color-secondary-water whitespace-nowrap group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto'>
+
+                    {
+                      stubData.map(page => {
+                        let href = page.href
+
+                        if (!href.includes('/index.html')) {
+                          href += '/index.html'
+                        }
+
+                        return (
+                          <li>
+                            <a
+                              className="underline text-slate-500 hover:text-water focus:text-water decoration-slate-400"
+                              data-native
+                              href={href}
+                              dangerouslySetInnerHTML={{ __html: page.title }}
+                            />
+                          </li>
+                        )
+                      })
+                    }
+
+                  </ul>
+                </span>
               </li>
             </ul>
           </nav>
