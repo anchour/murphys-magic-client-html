@@ -39,10 +39,10 @@ export default function CollectionGrid() {
           <Card
             title={title.split(' ').map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(' ')}
             description={description}
-            showCopyComponent={false}
             priceWholeSale={wholesale}
             priceRetail={retail}
-            showTags={true}
+            showTags
+            disableCopy
           />
         )}
       </div>
