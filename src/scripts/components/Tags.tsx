@@ -26,19 +26,20 @@ export function Tag({ component = 'a', variant, children, href = '', disableCopy
   const handleClick = () =>
     button.current && navigator.clipboard.writeText(button.current.outerHTML);
 
-  return (
+  const elements = <TagComponent {...elementProps} ref={button}>
+    {showDecorations && <TagLabelDecoration direction="left" />}
+
+    {children}
+
+    {showDecorations && <TagLabelDecoration direction="right" />}
+  </TagComponent>
+
+  return disableCopy ? elements : (
     <div className="relative inline-block group">
-      <TagComponent {...elementProps} ref={button}>
-        {showDecorations && <TagLabelDecoration direction="left" /> }
-
-        {children}
-
-        {showDecorations && <TagLabelDecoration direction="right" />}
-      </TagComponent>
-
-      {!disableCopy && <CopyComponent onClick={handleClick} />}
+      {elements}
+      <CopyComponent onClick={handleClick} />
     </div>
-  )
+  );
 }
 
 interface AsteriskVectorProps {
