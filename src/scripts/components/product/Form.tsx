@@ -8,7 +8,7 @@ interface ProductFormProps {
 
 const ProductForm = (props: ProductFormProps) => {
   return <div className="product-form-section">
-    <Tag component="div" className="product-form-section__tag product-form-section__tag--desktop" variant='label secondary' disableCopy={true}>New</Tag>
+    <Tag component="div" className="product-form-section__tag product-form-section__tag--desktop" variant='label secondary' disableCopy>New</Tag>
 
     <div className="product-form-section__header">
       <h1 className="typography-section product-form-section__title">
