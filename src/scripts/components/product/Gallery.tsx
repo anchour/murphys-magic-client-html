@@ -25,7 +25,7 @@ const ProductGallery = (props: ProductGalleryProps) => {
 
   return <>
     <div className="product-gallery">
-      <Tag component="div" className="product-form-section__tag product-form-section__tag--mobile" variant='label secondary' disableCopy={true}>New</Tag>
+      <Tag component="div" className="product-form-section__tag product-form-section__tag--mobile" variant='label secondary' disableCopy>New</Tag>
 
       <div dangerouslySetInnerHTML={{ __html: slider }} />
     </div>
