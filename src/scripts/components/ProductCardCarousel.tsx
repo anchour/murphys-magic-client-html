@@ -58,9 +58,7 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
     }
   }
 
-  console.log(carouselProps)
   const TitleTag = props.titleLevel || 'h2'
-
   const elementRef = useRef(null)
   const elements = <div className="product-cards-carousel" ref={elementRef}>
     <div className="product-cards-carousel__bg">
@@ -70,8 +68,8 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
     <div className="container">
       <div className="product-cards-carousel__header">
         <div className="product-cards-carousel__header-left">
-          <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>
-          <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>
+          {props.title && <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>}
+          {props.subtitle && <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>}
         </div>
 
         {props.collectionLink && props.collectionLinkText ? (
