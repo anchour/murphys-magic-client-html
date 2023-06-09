@@ -109,7 +109,7 @@ const ProductForm = (props: ProductFormProps) => {
         </div>
       </Details>
 
-      <Details title="Marketing Resources" summaryClassName="typography-heading-xs" open>
+      <Details title="Marketing Resources" summaryClassName="typography-heading-xs">
         <div className="rte">
           <ul>
             <li><a href="#">🎬 Video Teaser #1 HD Version SD Version</a></li>
@@ -121,7 +121,7 @@ const ProductForm = (props: ProductFormProps) => {
         </div>
       </Details>
 
-      <Details title="Instructions" summaryClassName="typography-heading-xs" open>
+      <Details title="Instructions" summaryClassName="typography-heading-xs">
         <div className="rte">
           <p> Date Added: 11/3/2022 </p>
           <p>Weight (lbs): 0.1</p>
