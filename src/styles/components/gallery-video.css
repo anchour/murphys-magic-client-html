@@ -1,0 +1,15 @@
+.gallery-video__button {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  margin-top: -2rem;
+  margin-left: -2rem;
+  top: 50%;
+  left: 50%;
+  transition: 0.25s ease-in-out opacity 0.5s;
+}
+
+.gallery-video__button--hide {
+  opacity: 0;
+  pointer-events: none;
+}

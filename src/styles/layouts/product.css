@@ -1,6 +1,13 @@
 .product-container {
   display: grid;
-  gap: 2rem 1.5rem;
+  align-items: start;
+  gap: 1rem 1.5rem;
+}
+
+.product-form-section {
+  position: sticky;
+  top: 2rem;
+  left: 0;
 }
 
 .product-form-section__title {
@@ -22,8 +29,52 @@
   margin-top: 4rem;
 }
 
-/* Product description section */
+.product-form-section .form-label {
+  margin-bottom: 0.5rem;
+}
 
+.product-form-section .form-label + .form-field {
+  margin-top: 0;
+}
+
+.product-gallery {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.product-gallery .splide__pagination--below {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0;
+}
+
+.product-gallery__thumbnails-list {
+  display: none;
+}
+
+.product-gallery__thumbnails-list-item,
+.product-gallery__thumbnails-list-item button,
+.product-gallery__thumbnails-list-item img {
+  display: block;
+}
+
+.rte .product-description__header {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.product-form-section__tag--mobile {
+  position: absolute;
+  top: 3.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+}
+
+/* Product description section */
 @media (min-width: 640px) {
   .product-description__grid {
     display: grid;
@@ -40,20 +91,16 @@
   }
 }
 
-.rte .product-description__header {
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .product-container {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .product-gallery {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .product-description__features-list {
@@ -77,9 +124,25 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .product-gallery .splide .splide__list:not(.is-active) {
+    display: grid;
+    gap: 0.5rem;
+  }
+}
+
 @media (min-width: 1280px) {
   .product-gallery {
     grid-column: 1 / span 7;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0.5rem;
+  }
+
+  .product-gallery__thumbnails-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
   .product-description__grid {

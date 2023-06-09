@@ -47,6 +47,8 @@
 @import "./src/styles/components/video-background.css";
 @import "./src/styles/components/carousel.css";
 @import "./src/styles/components/product-card-carousel.css";
+@import "./src/styles/components/splide.css";
+@import "./src/styles/components/gallery-video.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
