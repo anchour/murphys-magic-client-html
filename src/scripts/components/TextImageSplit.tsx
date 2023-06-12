@@ -3,7 +3,7 @@ import Placeholder from '../../images/placeholder--split.jpg';
 import BeginnerFriendlyIcon from '../../images/icons/BeginnerFriendly.svg';
 import { DisableCopyComponent } from '../lib/interfaces';
 import { useRef } from 'preact/hooks';
-import CopyComponent from './CopyComponent';
+import CopyWrapper from './CopyWrapper';
 
 interface TextImageSplitProps extends DisableCopyComponent {
   order?: 'content-first' | 'image-first'
@@ -84,10 +84,5 @@ export default function TextImageSplit(props: TextImageSplitProps) {
     </section>
   )
 
-  return props.disableCopy ? elements : (
-    <div className='relative'>
-      <CopyComponent onClick={() => navigator.clipboard.writeText(elementRef.current.outerHTML)} />
-      {elements}
-    </div>
-  )
+  return <CopyWrapper>{elements}</CopyWrapper>
 }

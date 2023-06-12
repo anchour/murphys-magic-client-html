@@ -4,8 +4,8 @@ import Button from "./Button"
 import CardCarouselBackgroundSVG from "./CardCarouselBackgroundSVG"
 import { Card } from "./Cards"
 import Carousel, { CarouselProps } from "./Carousel"
-import CopyComponent from "./CopyComponent"
 import { CardProps } from "./Cards"
+import CopyWrapper from "./CopyWrapper"
 
 interface ProductCardCarouselProps extends DisableCopyComponent {
   title?: string,
@@ -89,10 +89,7 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
     </div>
   </div>
 
-  return props.disableCopy ? elements : (<div className="relative">
-    <CopyComponent onClick={() => navigator.clipboard.writeText(elementRef.current.outerHTML)} />
-    {elements}
-  </div>)
+  return <CopyWrapper ref={elementRef}>{elements}</CopyWrapper>
 }
 
 export default ProductCardCarousel
