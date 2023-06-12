@@ -4,7 +4,7 @@ import CopyComponent from './CopyComponent';
 import { AriaBaseButtonProps, LinkButtonProps, ButtonProps as ReactButtonProps } from '@react-types/button';
 import { DisableCopyComponent } from '../lib/interfaces';
 
-interface ButtonProps extends ReactButtonProps, LinkButtonProps, AriaBaseButtonProps, DisableCopyComponent {
+export interface ButtonProps extends ReactButtonProps, LinkButtonProps, AriaBaseButtonProps, DisableCopyComponent {
   component?: 'a' | 'button';
   className?: string;
   variant?: string | string[];
