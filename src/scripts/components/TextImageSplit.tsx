@@ -8,7 +8,6 @@ interface TextImageSplitProps extends DisableCopyComponent {
   buttons?: JSX.Element | JSX.Element[],
 }
 
-export default function TextImageSplit({ order = 'content-first' }: { order?: 'content-first' | 'image-first' }) {
 export default function TextImageSplit(props: TextImageSplitProps) {
   const sectionProps = {
     className: classNames('text-image-split', `text-image-split--${order}`, 'bg-background-bone', 'color-primary-smoke'),
