@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import Placeholder from '../../images/placeholder--split.jpg';
 import BeginnerFriendlyIcon from '../../images/icons/BeginnerFriendly.svg';
+import { DisableCopyComponent } from '../lib/interfaces';
+import { useRef } from 'preact/hooks';
 interface TextImageSplitProps extends DisableCopyComponent {
   order?: 'content-first' | 'image-first'
   title?: string,
