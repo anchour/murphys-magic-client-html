@@ -135,6 +135,26 @@ const ProductGallery = (props: ProductGalleryProps) => {
     }
   }
 
+  function videoIsPlaying() {
+    return videoRefs.current[currentVideoIndex]?.paused === false;
+  }
+
+  const thumbnailRef = useRef([])
+
+  function setupThumbnailRef(slide: HTMLButtonElement, index) {
+    if (slide) {
+      thumbnailRef.current[index] = slide;
+    }
+  }
+
+  const slideRef = useRef([])
+
+  function setupSlideRef(slide: HTMLDivElement, index) {
+    if (slide) {
+      slideRef.current[index] = slide;
+    }
+  }
+
   return shouldReinit ? null : <>
     <div className="product-gallery">
 
@@ -146,7 +166,12 @@ const ProductGallery = (props: ProductGalleryProps) => {
               className="product-gallery__thumbnails-list-item"
               key={`thumbnail-${index}`}
             >
-              <button type="button" data-slide-index={index}>
+              <button type="button" data-slide-index={index} ref={el => setupThumbnailRef(el, index)} onClick={() => {
+                if (videoIsPlaying() && currentVideoIndex !== index) {
+                  pauseActiveVideo();
+                }
+                slideRef.current[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }}>
                 <img alt={slide.alt} src={slide.image} loading="lazy" width={slide.width} height={slide.height} />
               </button>
             </li>
@@ -166,7 +191,7 @@ const ProductGallery = (props: ProductGalleryProps) => {
 
               return <SplideSlide {...slideProps}>
                 {slide.type === 'video' && slide.video?.src ?
-                  <div className="relative gallery-video">
+                  <div className="relative gallery-video" ref={el => setupSlideRef(el, index)}>
                     <video preload="metadata" poster={slide.image} controls={currentVideoIndex === index} ref={(el) => setupVideoRef(el, index)} src={slide.video.src} />
 
                     {currentVideoIndex !== index && (
@@ -185,7 +210,7 @@ const ProductGallery = (props: ProductGalleryProps) => {
 
                   </div>
                   :
-                  <img src={slide.image} />
+                  <img src={slide.image} ref={el => setupSlideRef(el, index)} />
                 }
               </SplideSlide>
             }
