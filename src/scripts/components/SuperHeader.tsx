@@ -44,7 +44,6 @@ export default function SuperHeader(props: SuperHeaderProps) {
       </nav>
 
     </div>
-
   </>
 
   return props.disableCopy ? elements : (

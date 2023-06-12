@@ -44,6 +44,7 @@ export default function CollectionGrid() {
             description={description}
             priceWholeSale={wholesale}
             priceRetail={retail}
+            cardTags={["New", "Sale"]}
             showTags
             disableCopy
           />

@@ -4,7 +4,8 @@ import Button from "./Button"
 import CardCarouselBackgroundSVG from "./CardCarouselBackgroundSVG"
 import { Card } from "./Cards"
 import Carousel, { CarouselProps } from "./Carousel"
-import CopyComponent from "./CopyComponent"
+import { CardProps } from "./Cards"
+import CopyWrapper from "./CopyWrapper"
 
 interface ProductCardCarouselProps extends DisableCopyComponent {
   title?: string,
@@ -12,6 +13,7 @@ interface ProductCardCarouselProps extends DisableCopyComponent {
   subtitle?: string,
   collectionLink?: string,
   collectionLinkText?: string,
+  cardProps?: CardProps
 }
 
 const ProductCardCarousel = (props: ProductCardCarouselProps) => {
@@ -57,7 +59,6 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
   }
 
   const TitleTag = props.titleLevel || 'h2'
-
   const elementRef = useRef(null)
   const elements = <div className="product-cards-carousel" ref={elementRef}>
     <div className="product-cards-carousel__bg">
@@ -67,8 +68,8 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
     <div className="container">
       <div className="product-cards-carousel__header">
         <div className="product-cards-carousel__header-left">
-          <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>
-          <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>
+          {props.title && <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>}
+          {props.subtitle && <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>}
         </div>
 
         {props.collectionLink && props.collectionLinkText ? (
@@ -78,20 +79,17 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
       </div>
 
       <Carousel {...carouselProps}>
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999}{...props.cardProps} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
       </Carousel>
     </div>
   </div>
 
-  return props.disableCopy ? elements : (<div className="relative">
-    <CopyComponent onClick={() => navigator.clipboard.writeText(elementRef.current.outerHTML)} />
-    {elements}
-  </div>)
+  return <CopyWrapper ref={elementRef}>{elements}</CopyWrapper>
 }
 
 export default ProductCardCarousel

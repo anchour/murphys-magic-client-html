@@ -8,7 +8,10 @@ import vitePluginRequire from "vite-plugin-require";
 
 export default defineConfig({
   plugins: [preact(), vitePluginRequire.default()],
-  
+  alias: {
+    react: "preact/compat",
+    "react-dom": "preact/compat",
+  },
   css: {
     postcss: {
       plugins: [

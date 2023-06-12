@@ -18,3 +18,9 @@
   height: 100%;
   object-fit: cover;
 }
+
+.responsive-embed--16by9::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}

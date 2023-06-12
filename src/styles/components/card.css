@@ -73,3 +73,9 @@
     margin-left: 0.75rem;
   }
 }
+
+.card__add-to-cart__submit {
+  border-radius: 0;
+  display: block;
+  width: 100%;
+}

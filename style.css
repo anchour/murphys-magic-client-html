@@ -17,8 +17,8 @@
 
 /* Components */
 @import "./src/styles/components/address.css";
-@import "./src/styles/components/card.css";
 @import "./src/styles/components/button.css";
+@import "./src/styles/components/card.css";
 @import "./src/styles/components/tag.css";
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/mailing-list.css";
@@ -40,10 +40,15 @@
 @import "./src/styles/components/forms.css";
 @import "./src/styles/components/one-column-text.css";
 @import "./src/styles/components/team-member.css";
+@import "./src/styles/components/product-form.css";
+@import "./src/styles/components/quantity-input.css";
+@import "./src/styles/components/pricing-table.css";
 @import "./src/styles/components/loader.css";
 @import "./src/styles/components/video-background.css";
 @import "./src/styles/components/carousel.css";
 @import "./src/styles/components/product-card-carousel.css";
+@import "./src/styles/components/splide.css";
+@import "./src/styles/components/gallery-video.css";
 
 /* Layouts */
 @import "./src/styles/layouts/super-header.css";
@@ -67,6 +72,7 @@
 @import "./src/styles/layouts/contact-content.css";
 @import "./src/styles/layouts/team-members-grid.css";
 @import "./src/styles/layouts/testimonial.css";
+@import "./src/styles/layouts/product.css";
 @import "./src/styles/layouts/logo-marquee.css";
 @import "./src/styles/layouts/quick-links.css";
 @import "./src/styles/layouts/deal.css";

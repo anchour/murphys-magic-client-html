@@ -1,0 +1,20 @@
+.pricing-table {
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-primary-bone);
+}
+
+.pricing-table td {
+  text-align: center;
+}
+
+.pricing-table th {
+  background-color: var(--color-primary-bone);
+  font-weight: normal;
+  text-align: left;
+}
