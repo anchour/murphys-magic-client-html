@@ -40,6 +40,20 @@
   overflow: visible;
 }
 
+.product-cards-carousel__pagination .splide__pagination {
+  justify-content: flex-start;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.product-cards-carousel__pagination .splide__pagination__page::before {
+  border-color: var(--color-primary-midnight);
+}
+
+.product-cards-carousel__pagination .splide__pagination__page.is-active::before {
+  background-color: var(--color-primary-midnight);
+}
+
 /* Fixes issue with slide box shadows not showing over subsequent slides. */
 .product-cards-carousel .splide__slide:hover {
   z-index: 10;
