@@ -3,6 +3,8 @@ import Placeholder from '../../images/placeholder--split.jpg';
 import BeginnerFriendlyIcon from '../../images/icons/BeginnerFriendly.svg';
 import { DisableCopyComponent } from '../lib/interfaces';
 import { useRef } from 'preact/hooks';
+import CopyComponent from './CopyComponent';
+
 interface TextImageSplitProps extends DisableCopyComponent {
   order?: 'content-first' | 'image-first'
   title?: string,
@@ -11,8 +13,15 @@ interface TextImageSplitProps extends DisableCopyComponent {
 }
 
 export default function TextImageSplit(props: TextImageSplitProps) {
+  const elementRef = useRef(null)
   const sectionProps = {
-    className: classNames('text-image-split', `text-image-split--${order}`, 'bg-background-bone', 'color-primary-smoke'),
+    className: classNames(
+      'text-image-split',
+      `text-image-split--${props.order}`,
+      'bg-background-bone',
+      'color-primary-smoke'
+    ),
+    ref: elementRef,
   }
 
   let {
@@ -37,12 +46,11 @@ export default function TextImageSplit(props: TextImageSplitProps) {
     )
   }
 
-  return (
+  const elements = (
     <section {...sectionProps}>
       <div className="container">
 
         <div className="text-image-split__content">
-
           <h2 className="typography-h2">
             {title}
           </h2>
@@ -54,8 +62,8 @@ export default function TextImageSplit(props: TextImageSplitProps) {
           <div className="actions">
             {buttons}
           </div>
-
         </div>
+
         <div className="text-image-split__image">
           <div className="text-image-split__image-tag bg-secondary-water color-primary-dove typography-heading-xs">
             <div className="text-image-split__image-tag__inner">
@@ -68,10 +76,18 @@ export default function TextImageSplit(props: TextImageSplitProps) {
               </span>
             </div>
           </div>
+
           <img src={Placeholder} alt="Anverdi Book" width={1789} height={1289} loading='lazy' />
         </div>
 
       </div>
     </section>
+  )
+
+  return props.disableCopy ? elements : (
+    <div className='relative'>
+      <CopyComponent onClick={() => navigator.clipboard.writeText(elementRef.current.outerHTML)} />
+      {elements}
+    </div>
   )
 }
