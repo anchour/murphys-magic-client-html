@@ -13,6 +13,29 @@ export default function TextImageSplit(props: TextImageSplitProps) {
   const sectionProps = {
     className: classNames('text-image-split', `text-image-split--${order}`, 'bg-background-bone', 'color-primary-smoke'),
   }
+
+  let {
+    title = 'THE MAGIC OF ANVERDI',
+    description,
+    buttons,
+  } = props;
+
+  if (!description) {
+    description = (
+      <p className="typography-body-sm">
+        The extraordinary Tony Anverdi changed the magic industry decades ago, and his secrets were well hidden.Until now.Peek behind the curtain, and indulge yourself in all of Anverdi’s curious pleasures.
+      </p >
+    )
+  }
+
+  if (!buttons) {
+    buttons = (
+      <a href="#" className="btn btn--secondary">
+        See Anverdi&rsquo;s Magic
+      </a>
+    )
+  }
+
   return (
     <section {...sectionProps}>
       <div className="container">
@@ -20,20 +43,15 @@ export default function TextImageSplit(props: TextImageSplitProps) {
         <div className="text-image-split__content">
 
           <h2 className="typography-h2">
-            THE MAGIC OF ANVERDI
+            {title}
           </h2>
 
           <div className="rte">
-            <p className="typography-body-sm">
-              The extraordinary Tony Anverdi changed the magic industry decades ago, and his secrets were well hidden. Until now. Peek behind the curtain, and indulge yourself in all of Anverdi’s curious pleasures.
-            </p>
-
+            {description}
           </div>
 
           <div className="actions">
-            <a href="#" className="btn btn--secondary">
-              See Anvendi&rsquo;s Magic
-            </a>
+            {buttons}
           </div>
 
         </div>
