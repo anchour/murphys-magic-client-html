@@ -1,14 +1,39 @@
 import { Splide, SplideSlide, SplideProps, SplideTrack } from "@splidejs/react-splide"
 import { Tag } from "../Tags";
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import classNames from "classnames";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface ProductGalleryProps {
 }
 
 const ProductGallery = (props: ProductGalleryProps) => {
+  const matches = useMediaQuery('(min-width:1024px)');
+  const [isMobile, setIsMobile] = useState(matches);
+  const [shouldReinit, setShouldReinit] = useState(false);
+
+  // Update the isMobile state when the breakpoint changes
+  useEffect(() => {
+    if (matches != isMobile) {
+      setIsMobile(matches);
+      setShouldReinit(true);
+    }
+  }, [matches])
+
+  // Reinit the Splide component when the breakpoint changes
+  useEffect(() => {
+    if (shouldReinit) {
+      setShouldReinit(false);
+    }
+  }, [shouldReinit])
+
   const splideProps: SplideProps = {
     hasTrack: false,
+
+    onMove(splide, index, prev, dest) {
+      pauseActiveVideo();
+    },
+
     options: {
       type: 'loop',
       rewind: true,
@@ -30,7 +55,6 @@ const ProductGallery = (props: ProductGalleryProps) => {
         },
         1024: {
           destroy: true,
-          pagination: false,
         }
       }
     }
@@ -46,14 +70,14 @@ const ProductGallery = (props: ProductGalleryProps) => {
         src: '/video/video-placeholder.mp4',
       },
       alt: 'Video slide',
-      image: 'https://via.placeholder.com/1200',
+      image: '/video/poster-1200x1200.png',
       width: 1200,
       height: 1200,
     },
     {
       type: 'image',
       alt: 'Image slide',
-      image: 'https://via.placeholder.com/1200x625',
+      image: '/video/poster-1200x675.png',
       width: 1200,
       height: 625,
     },
@@ -63,36 +87,41 @@ const ProductGallery = (props: ProductGalleryProps) => {
       video: {
         src: '/video/video-placeholder.mp4',
       },
-      image: 'https://via.placeholder.com/1200x625',
+      image: '/video/poster-1200x675.png',
       width: 1200,
       height: 625,
     },
     {
       type: 'image',
       alt: 'Image slide 2',
-      image: 'https://via.placeholder.com/1200x625',
+      image: '/video/poster-1200x675.png',
       width: 1200,
       height: 625,
     }
   ];
 
+  /**
+   * When the active slide is changed, pause the existing video.
+   */
+  useEffect(() => {
+    pauseActiveVideo();
+    playActiveVideo();
+  }, [currentVideoIndex])
 
   function handlePlayButtonClick(index: number) {
-    const old = videoRefs.current[currentVideoIndex];
-
-    if (currentVideoIndex != null && old) {
-      old.pause();
-      old.currentTime = 0;
-    }
-
     setCurrentVideoIndex(index)
+  }
 
-    const video = videoRefs.current[index];
+  function playActiveVideo() {
+    const active = videoRefs.current[currentVideoIndex];
 
-    if (video) {
-      video.play();
-      setCurrentVideoIndex(index)
+    if (currentVideoIndex != null && active) {
+      active.play();
     }
+  }
+
+  function pauseActiveVideo() {
+    videoRefs.current.forEach(v => v.pause());
   }
 
   function setupVideoRef(video: HTMLVideoElement, index) {
@@ -100,15 +129,13 @@ const ProductGallery = (props: ProductGalleryProps) => {
       videoRefs.current[index] = video;
 
       video.addEventListener('ended', () => {
-        setCurrentVideoIndex(null)
-
         video.currentTime = 0;
         video.src = video.src
       })
     }
   }
 
-  return <>
+  return shouldReinit ? null : <>
     <div className="product-gallery">
 
       <div className="product-gallery__thumbnails">
@@ -143,35 +170,35 @@ const ProductGallery = (props: ProductGalleryProps) => {
                     <video preload="metadata" poster={slide.image} controls={currentVideoIndex === index} ref={(el) => setupVideoRef(el, index)} src={slide.video.src} />
 
                     {currentVideoIndex !== index && (
-                  <button
-                    type="button"
-                    aria-label="Play video"
-                    className={classNames('gallery-video__button gallery-video__button--play', { 'gallery-video__button--hide': currentVideoIndex === index })}
-                    onClick={() => handlePlayButtonClick(index)}
-                  >
-                    {/* SVG play button at 64 px, no circle BG */}
-                    <svg width="50" height="58" viewBox="0 0 50 58" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M50 29L0.499997 57.5788L0.5 0.421159L50 29Z" fill="#fff" fill-opacity="0.8" />
-                    </svg>
-                  </button>
-                )}
+                      <button
+                        type="button"
+                        aria-label="Play video"
+                        className={classNames('gallery-video__button gallery-video__button--play', { 'gallery-video__button--hide': currentVideoIndex === index })}
+                        onClick={() => handlePlayButtonClick(index)}
+                      >
+                        {/* SVG play button at 64 px, no circle BG */}
+                        <svg width="50" height="58" viewBox="0 0 50 58" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M50 29L0.499997 57.5788L0.5 0.421159L50 29Z" fill="#fff" fill-opacity="0.8" />
+                        </svg>
+                      </button>
+                    )}
 
-              </div>
+                  </div>
                   :
-          <img src={slide.image} />
+                  <img src={slide.image} />
                 }
-        </SplideSlide>
+              </SplideSlide>
             }
-        )
+            )
           }
-      </SplideTrack>
+        </SplideTrack>
 
-      <div className="splide__pagination--below">
-        <ul className="splide__pagination"></ul>
-      </div>
-    </Splide>
+        <div className="splide__pagination--below">
+          <ul className="splide__pagination"></ul>
+        </div>
+      </Splide>
 
-  </div >
+    </div >
   </>
 }
 
