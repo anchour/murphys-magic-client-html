@@ -1,8 +1,15 @@
 import classNames from 'classnames';
 import Placeholder from '../../images/placeholder--split.jpg';
 import BeginnerFriendlyIcon from '../../images/icons/BeginnerFriendly.svg';
+interface TextImageSplitProps extends DisableCopyComponent {
+  order?: 'content-first' | 'image-first'
+  title?: string,
+  description?: JSX.Element | JSX.Element[],
+  buttons?: JSX.Element | JSX.Element[],
+}
 
 export default function TextImageSplit({ order = 'content-first' }: { order?: 'content-first' | 'image-first' }) {
+export default function TextImageSplit(props: TextImageSplitProps) {
   const sectionProps = {
     className: classNames('text-image-split', `text-image-split--${order}`, 'bg-background-bone', 'color-primary-smoke'),
   }
