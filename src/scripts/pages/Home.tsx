@@ -52,6 +52,15 @@ export default function Home() {
               <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
             }
           ></Hero>
+          <Hero
+            style="dark"
+            alignment="left"
+            title="Anverdi Magic"
+            description={null}
+            buttons={
+              <Button disableCopy component="a" href="#" variant={'primary'}>View Product</Button>
+            }
+          ></Hero>
         </Carousel>
         <BrandHeader />
         <ProductCardCarousel
