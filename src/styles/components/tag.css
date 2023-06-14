@@ -12,6 +12,10 @@
   transition: 0.15s ease-in-out;
 }
 
+.tag+.tag {
+  margin-left: 0.5rem;
+}
+
 a.tag {
   &:hover,
   &:focus-visible {
@@ -61,6 +65,7 @@ a.tag {
 }
 
 .tag--simple {
+  background-color: transparent;
   border-width: 1px;
 }
 

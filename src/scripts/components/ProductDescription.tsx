@@ -1,3 +1,5 @@
+import { Tag } from "./Tags"
+
 interface ProductDescriptionProps {
 }
 
@@ -21,6 +23,9 @@ const ProductDescription = (props: ProductDescriptionProps) => {
           <p className="typography-body-sm">
             In this version, You show four separate, solid rings of steel. You explain how you have the ability to break down atoms and pass a SOLID RING THROUGH ANOTHER SOLID RING, linking them together!! You do the same with the other two rings. You can even hand out the rings to show they have been linked together!
           </p>
+
+          <Tag component="div" variant='simple' disableCopy>Close-up Performer</Tag>
+          <Tag component="div" variant='simple' disableCopy>Illusionist</Tag>
         </div>
       </div>
 
