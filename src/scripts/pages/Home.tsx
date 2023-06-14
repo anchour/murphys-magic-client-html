@@ -78,7 +78,7 @@ export default function Home() {
           alignment="left"
           hasCTA
           headingLevel="h2"
-          buttonText="See Anvendi’s Magic"
+          buttonText="See Anverdi’s Magic"
           hasBackground
           hasBrandElement
           brandElement={ArtOfUnknown}
