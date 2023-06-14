@@ -170,8 +170,8 @@
 }
 
 .footer__marquee-slide svg {
-  height: 28px;
-  width: 28px;
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 .footer__actions {
@@ -214,6 +214,11 @@
 @media (min-width: 1024px) {
   .footer__navigation .container {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .footer__marquee-slide svg {
+    width: 0.8125rem;
+    height: 0.8125rem;
   }
 
   .footer__navigation__column > summary {
