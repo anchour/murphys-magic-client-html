@@ -94,7 +94,7 @@ const ProductForm = (props: ProductFormProps) => {
           <div className="product-form-quantity__remaining">145 in stock</div>
         </div>
 
-        <Button type="submit" variant="primary block">Add to cart</Button>
+        <Button disableCopy type="submit" className="product-form-footer__submit" variant="primary block">Add to cart</Button>
       </div>
     </form>
 
