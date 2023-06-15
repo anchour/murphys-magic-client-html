@@ -12,6 +12,17 @@
   grid-column-gap: 1.5rem;
   grid-row-gap: 1rem;
   padding: 1.5rem 1.5rem 0.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+@media (min-width: 640px) {
+  .order__header {
+    margin-left: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: -2rem;
+  }
 }
 
 .order__date {
@@ -77,6 +88,13 @@
 }
 
 @media (min-width: 1024px) {
+  .order__header {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .order__header {
     display: flex;
     justify-content: space-between;
