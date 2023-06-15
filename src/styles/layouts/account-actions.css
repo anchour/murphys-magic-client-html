@@ -1,7 +1,6 @@
 .account-actions__grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
 }
 
 .account-actions__item {
@@ -35,6 +34,12 @@
 }
 
 @media (min-width: 640px) {
+  .account-actions__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
   .account-actions__grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
