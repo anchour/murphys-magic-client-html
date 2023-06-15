@@ -2,13 +2,20 @@
   border: 2px solid #2b2b2b;
   display: inline-block;
   border-radius: 9999px;
-  padding: 1rem 2.5rem;
+  padding: 1rem 1.5rem;
   font-family: var(--font-button);
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.3333333333;
   text-align: center;
   transition: 0.15s ease-in-out;
+}
+
+@media (min-width: 640px) {
+  .btn {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .btn + .btn {

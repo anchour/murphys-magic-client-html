@@ -40,13 +40,15 @@
   display: grid;
   padding-top: 4.3125rem;
   padding-bottom: 4.3125rem;
-  padding-left: 4.875rem;
-  padding-right: 4.875rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .column__content {
     grid-template-columns: 9fr 3fr;
+    padding-left: 4.875rem;
+    padding-right: 4.875rem;
   }
 }
 
