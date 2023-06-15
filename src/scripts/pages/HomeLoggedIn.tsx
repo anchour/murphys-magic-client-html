@@ -75,7 +75,7 @@ export default function HomeLoggedIn() {
         verticalGap
       />
       <Hero
-        title="Enchanting surprises are just aroundthe corner..."
+        title="Enchanting surprises are just around the corner..."
         description=""
         style="dark"
         alignment="center"
