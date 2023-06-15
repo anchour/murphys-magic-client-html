@@ -91,14 +91,18 @@ a.tag {
   border-radius: 9999px;
   overflow: hidden;
   height: 100%;
-  aspect-ratio: 1/1;
+}
+
+.tag__thumbnail > img {
+  width: auto;
+  height: 100%;
 }
 
 .tag__decoration {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
+
   svg {
     fill: currentcolor;
   }
