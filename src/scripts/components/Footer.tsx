@@ -108,18 +108,6 @@ const Footer = (props: FooterProps) => {
           </ul>
         </FooterColumn>
 
-        <FooterColumn title="Information">
-          <ul className="footer-navigation">
-            <li className="footer-navigation__item">
-              <a className="footer-navigation__link" href="#">Submit Magic</a>
-            </li>
-
-            <li className="footer-navigation__item">
-              <a className="footer-navigation__link" href="#">Become a Dealer</a>
-            </li>
-          </ul>
-        </FooterColumn>
-
         <div className="footer__actions">
           <Button dark variant="secondary" disableCopy> Dealer Login</Button>
         </div>
