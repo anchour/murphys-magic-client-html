@@ -6,6 +6,9 @@
 }
 
 .mailing-list__input {
+  // for iOS <= 15.3
+  -webkit-appearance: none;
+  appearance: none;
   border-radius: 9999px 0 0 9999px;
   font-size: 1rem;
   padding: 1rem 1.5rem;
