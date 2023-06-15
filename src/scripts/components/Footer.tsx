@@ -49,15 +49,7 @@ const Footer = (props: FooterProps) => {
             </li>
 
             <li className="footer-navigation__item">
-              <a className="footer-navigation__link" href="#">Books & Digital</a>
-            </li>
-
-            <li className="footer-navigation__item">
               <a className="footer-navigation__link" href="#">Playing Cards</a>
-            </li>
-
-            <li className="footer-navigation__item">
-              <a className="footer-navigation__link" href="#">Best Sellers</a>
             </li>
 
             <li className="footer-navigation__item">
