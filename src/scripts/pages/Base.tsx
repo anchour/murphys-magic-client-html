@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import MailingListSignup from "../components/MailingListSignup";
 
 interface BasePageProps {
   children?: JSX.Element | JSX.Element[];
@@ -11,6 +12,7 @@ const BasePage = (props: BasePageProps) => {
     <main role="main">
       {props.children}
     </main>
+    <MailingListSignup />
     <Footer />
   </>
 }
