@@ -213,7 +213,7 @@
 
 @media (min-width: 1024px) {
   .footer__navigation .container {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .footer__marquee-slide svg {
@@ -229,5 +229,10 @@
 @media (min-width: 1280px) {
   .footer__navigation .container {
     max-width: 83.33333333%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .footer__actions {
+    grid-column: 5/5;
   }
 }
