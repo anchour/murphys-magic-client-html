@@ -86,7 +86,15 @@
   box-shadow: 0 0 0 1px var(--color-primary-midnight);
 }
 
+.product-form-footer__submit {
+  margin-top: 2.5rem;
+}
+
 @media (min-width: 414px) {
+  .product-form-footer__submit {
+    margin-top: 0;
+  }
+
   .product-form-footer--with-quantity {
     display: grid;
     align-items: end;
