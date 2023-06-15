@@ -7,14 +7,12 @@
 }
 
 .account-sidebar__list a {
-  text-decoration: underline;
-  
+  &.is-active,
   &:hover,
   &:focus-visible {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
-
 
 @media (min-width: 1280px) {
   .account-sidebar {
