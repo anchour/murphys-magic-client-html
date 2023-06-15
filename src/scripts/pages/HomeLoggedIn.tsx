@@ -75,13 +75,14 @@ export default function HomeLoggedIn() {
         verticalGap
       />
       <Hero
-        title="Enchanting surprises are just aroundthe corner..."
+        title="Enchanting surprises are just around the corner..."
         description=""
         style="dark"
         alignment="center"
-        hasCTA
         headingLevel="h2"
-        buttonText="Shop New Arrivals"
+        buttons={
+          <Button disableCopy component="a" href="#" variant={['link', 'link-secondary']}>Shop New Arrivals</Button>
+        }
         hasBackground
         hasBrandElement
         brandElement={Eye}

@@ -137,7 +137,7 @@ const Hero = ({
                 )}
               </div>
 
-              {hasCTA || buttons && (
+              {(hasCTA || buttons) && (
                 <div className="actions">
                   {buttons}
                   {hasCTA && (

@@ -139,3 +139,12 @@
     }
   }
 }
+
+.btn--link.btn--link-secondary {
+  color: var(--color-secondary-light);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-primary-dove);
+  }
+}
