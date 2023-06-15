@@ -1,7 +1,8 @@
 .hide-scrollbars {
-  overflow-y: scroll;
-  scrollbar-idth: none;
+  scrollbar-width: none;
   -ms-overflow-style: none;
+  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .hide-scrollbars::-webkit-scrollbar {

@@ -37,7 +37,7 @@ const CollectionHero = ({ title = 'Magic Tricks', breadcrumbs = null, descriptio
           <ul className="hero__tags container-padding-right">
             {tags.map(tag =>
               <li key={tag} className="hero__tag">
-                <Tag variant='lg has-thumbnail' href="#">
+                <Tag variant='lg has-thumbnail' href="#" disableCopy>
                   <div className="tag__thumbnail">
                     <img src='https://picsum.photos/300/300' loading="lazy" width={150} height={150} role="presentation" />
                   </div>
