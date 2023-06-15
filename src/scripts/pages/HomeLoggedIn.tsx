@@ -1,6 +1,3 @@
-import Header from "../components/Header";
-import MailingListSignup from "../components/MailingListSignup";
-import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import QuickLinks from "../components/QuickLinks";
 import Deal from "../components/Deal"
