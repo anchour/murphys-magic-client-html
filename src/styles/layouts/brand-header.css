@@ -5,14 +5,20 @@
 .brand-header__grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 24px;
   align-items: start;
   align-content: start;
+  position: relative;
 }
 
+.brand-header__graphic--two {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}
 .brand-header__graphic--one,
 .brand-header__content {
-  padding-top: 2rem;
+  padding-top: 32px;
 }
 
 .brand-header__content {
@@ -22,21 +28,40 @@
 
 .brand-header__graphic--one svg {
   fill: currentcolor;
-  height: 221px;
-  width: 24px;
+  height: 13.8125rem;
+  width: 1.5rem;
 }
 
 .brand-header__graphic--two svg {
-  min-width: 71px;
-  max-width: 195px;
+  max-width: 12.1875rem;
 
+  height: 100%;
   width: 100%;
 }
 
-@media (min-width: 768px) {
+.brand-header__button--desktop {
+  display: none;
+}
+
+.brand-header__actions-mobile {
+  padding-left: 16.66666667%;
+  grid-column: span 6 / span 6;
+}
+
+@media (min-width: 26.5625rem) {
+  .brand-header__button--desktop {
+    display: inline-block;
+  }
+
+  .brand-header__actions-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 48rem) {
   .brand-header__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 2rem;
+    gap: 32px;
   }
 
   .brand-header__graphic--one,
@@ -49,8 +74,8 @@
   }
 
   .brand-header__graphic--one svg {
-    height: 357px;
-    width: 38px;
+    height: 22.3125rem;
+    width: 2.375rem;
   }
 
   .brand-header__graphic--two {

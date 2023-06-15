@@ -19,7 +19,7 @@ const BrandHeader = (props: BrandHeaderProps) => {
 
           <div className="brand-header__content">
             <h2 className="typography-quote">We are the largest distributor of magic supplies in the world. Come journey into the mysterious.</h2>
-            <Button variant="secondary" href="#" disableCopy>Find a Dealer</Button>
+            <Button variant="secondary" className="brand-header__button brand-header__button--desktop" href="#" disableCopy>Find a Dealer</Button>
           </div>
 
           <div className="brand-header__graphic brand-header__graphic--two" role="presentation" aria-hidden>
@@ -31,10 +31,15 @@ const BrandHeader = (props: BrandHeaderProps) => {
             </div>
           </div>
 
+          <div className="brand-header__actions-mobile">
+            <Button variant="secondary" className="brand-header__button brand-header__button--mobile" href="#" disableCopy>
+              Find a Dealer
+            </Button>
+          </div>
         </div>
       </div>
     </section>
-  </CopyWrapper>
+  </CopyWrapper >
 }
 
 export default BrandHeader
