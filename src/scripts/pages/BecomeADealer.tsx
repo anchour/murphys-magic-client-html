@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import { ContactForm } from "../pages/Contact";
 
 import ArtOfUnknown from "../../images/icons/ico-art-of-unknown.svg";
+import Button from "../components/Button";
 
 const GetStartedContent = () => {
   return (
@@ -46,9 +47,10 @@ const BecomeADealerPage = (props: BecomeADealerPageProps) => {
           description="For 40+ years Murphy’s has been teaming up with Dealers to bring mystery and magic to the masses."
           style="dark"
           alignment="left"
-          hasCTA
+          buttons={
+            <Button disableCopy component="a" href="#" variant={['secondary', 'midnight']}>Apply Now</Button>
+          }
           headingLevel="h2"
-          buttonText="Apply now"
           hasBackground
           hasBrandElement
           brandElement={ArtOfUnknown}
