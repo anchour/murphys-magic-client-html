@@ -54,7 +54,7 @@ export default function HomeLoggedIn() {
       <QuickLinks />
 
       <Deal />
-      <ProductCardCarousel />
+      <ProductCardCarousel title="MORE THAN MEETS THE EYE" subtitle="Our most popular products for all audiences" collectionLinkText="Shop Bestsellers" collectionLink="#" />
       <CtaButtonsSection sectionTitle="What Delights You?" />
       <CalloutGrid title="Popular Collections" />
       <LogoMarquee />
