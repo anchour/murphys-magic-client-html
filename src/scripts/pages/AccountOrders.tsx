@@ -120,7 +120,7 @@ const AccountOrders = (props: AccountOrdersProps) => {
 
           <Details title="Orders" summaryClassName="typography-heading-xs" open>
             <ul className="account-sidebar__list">
-              <li><a href="#">Recent Orders</a></li>
+              <li><a className="is-active" href="#">Recent Orders</a></li>
               <li><a href="#">Open Orders</a></li>
               <li><a href="#">Closed Orders</a></li>
               <li><a href="#">Dropship Orders</a></li>
