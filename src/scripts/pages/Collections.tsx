@@ -61,7 +61,7 @@ const CollectionsPage = (props: CollectionsPageProps) => {
           buttonUrl="#"
           buttonText="Shop Street Magic"
           showBenefits={false}
-          graphic={<SVGViewer filePath="/src/images/collections/callout-graphic.svg" />}
+          graphic={<SVGViewer filePath="/images/collections/callout-graphic.svg" />}
         />
         <CollectionGrid />
 
