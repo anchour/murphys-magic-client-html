@@ -6,23 +6,26 @@ const pages = [
   { name: 'Magic Tricks', href: '#', current: true },
 ]
 
-interface BreadcrumbsProps {
-  excludeHomeLink?: boolean
+interface BreadcrumbsProps extends DisableCopyComponent {
+  excludeHomeLink?: boolean,
+  pages?: { name: string, href: string, current?: boolean }[]
 }
 
 const Breadcrumbs = (props: BreadcrumbsProps) => {
+  const breadcrumbs = props.pages.length ? props.pages : pages;
+
   return <CopyWrapper disableCopy={props.disableCopy}>
     <nav className="breadcrumb" aria-label="Breadcrumb">
       <ol role="list" className="breadcrumb__list">
-        {!excludeHomeLink &&
+        {!props.excludeHomeLink &&
           <li className="breadcrumb__item">
             <a href="#" className="breadcrumb__link">
               Home
             </a>
           </li>}
-        {pages.map((page, index) => (
+        {breadcrumbs.map((page, index) => (
           <li key={page.name} className="breadcrumb__item">
-            {excludeHomeLink && index > 0 &&
+            {props.excludeHomeLink && index > 0 &&
               <svg
                 className="hero__breadcrumb__delimiter"
                 fill="currentColor"
