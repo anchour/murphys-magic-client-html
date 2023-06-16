@@ -1,5 +1,4 @@
 .btn {
-  border: 2px solid #2b2b2b;
   display: inline-block;
   border-radius: 9999px;
   padding: 1rem 1.5rem;
@@ -43,22 +42,19 @@
 }
 
 .btn--primary {
-  background: var(--color-secondary-water);
-  border-color: var(--color-secondary-water);
-  color: var(--color-primary-dove);
+  background: var(--color-secondary-light);
+  color: var(--color-primary-smoke);
 
   &:hover,
   &:focus-visible {
-    background: var(--color-primary-dove);
-    border-color: var(--color-primary-water);
-    color: var(--color-secondary-water);
+    background: var(--color-secondary-water);
+    color: var(--color-primary-dove);
   }
 }
 
 .btn--secondary {
-  /* background: var(--color-primary-dove); */
   background-color: transparent;
-  border-color: var(--color-primary-smoke);
+  border: 2px solid var(--color-primary-smoke);
   color: var(--color-primary-smoke);
 
   &:hover,
