@@ -96,7 +96,7 @@ export default function Header(props: HeaderProps): JSX.Element {
             <ScreenReaderText text="Murphy's Magic" />
             <Brandmark />
           </a>
-          <div className="flex justify-end flex-1 header__actions">
+          <div className="header__actions">
             <button type="button" className='header__actions__action header__actions__action--desktop-only'>
               <ScreenReaderText text='Search' />
 
@@ -116,12 +116,12 @@ export default function Header(props: HeaderProps): JSX.Element {
         </nav>
 
         <div className="header__mobile-menu lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-10 header__mobile-menu--backdrop"></div>
+          <div className="header__mobile-menu--backdrop"></div>
 
-          <div className="fixed inset-y-0 left-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white header__mobile-menu--content">
-            <div className="flex items-center justify-between header__mobile-menu--header">
-              <div className="flex flex-1 header__mobile-menu--header--menu-button">
-                <button type="button" className="header__mobile-menu--header--menu-button__button -m-2.5 rounded-md p-2.5 text-gray-700">
+          <div className="header__mobile-menu--content">
+            <div className="header__mobile-menu--header">
+              <div className="header__mobile-menu--header--menu-button">
+                <button type="button" className="header__mobile-menu--header--menu-button__button">
                   <span className="sr-only">Close menu</span>
                   <svg className="w-6 h-6 header__mobile-menu--header--menu-button__button-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -129,11 +129,11 @@ export default function Header(props: HeaderProps): JSX.Element {
                 </button>
               </div>
             </div>
-            <a href="/" className="header__logo -m-1.5 p-1.5">
+            <a href="/" className="header__logo header__mobile-menu__header__logo">
               <ScreenReaderText text="Murphy's Magic" />
               <Brandmark />
             </a>
-            <div className="flex justify-end flex-1 header__actions">
+            <div className="header__actions">
               <button type="button" className='header__actions__action header__actions__action--desktop-only'>
                 <ScreenReaderText text='Search' />
 
@@ -149,14 +149,14 @@ export default function Header(props: HeaderProps): JSX.Element {
                 <ScreenReaderText text='Cart' />
                 <CartIcon />
               </a>
-              <div className="flex justify-end flex-1 header__mobile-menu--header--user">
+              <div className="header__mobile-menu--header--user">
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900 header__mobile-menu--header--user-login">Log in <span aria-hidden="true">&rarr;</span></a>
               </div>
             </div>
             <div className="mt-6 space-y-2 header__mobile-menu--links">
-              <a href="#" className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg header__mobile-menu--links-item hover:bg-gray-50">Product</a>
-              <a href="#" className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg header__mobile-menu--links-item hover:bg-gray-50">Features</a>
-              <a href="#" className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg header__mobile-menu--links-item hover:bg-gray-50">Company</a>
+              <a href="#" className="header__mobile-menu--links-item">Product</a>
+              <a href="#" className="header__mobile-menu--links-item">Features</a>
+              <a href="#" className="header__mobile-menu--links-item">Company</a>
             </div>
           </div>
         </div>
