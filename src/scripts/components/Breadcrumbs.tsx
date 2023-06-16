@@ -1,3 +1,6 @@
+import { DisableCopyComponent } from "../lib/interfaces"
+import CopyWrapper from "./CopyWrapper"
+
 const pages = [
   { name: 'All Products', href: '#', current: false },
   { name: 'Magic Tricks', href: '#', current: true },
@@ -7,8 +10,8 @@ interface BreadcrumbsProps {
   excludeHomeLink?: boolean
 }
 
-const Breadcrumbs = ({ excludeHomeLink = false }: BreadcrumbsProps) => {
-  return <>
+const Breadcrumbs = (props: BreadcrumbsProps) => {
+  return <CopyWrapper disableCopy={props.disableCopy}>
     <nav className="breadcrumb" aria-label="Breadcrumb">
       <ol role="list" className="breadcrumb__list">
         {!excludeHomeLink &&
@@ -39,7 +42,7 @@ const Breadcrumbs = ({ excludeHomeLink = false }: BreadcrumbsProps) => {
         ))}
       </ol>
     </nav>
-  </>
+  </CopyWrapper>
 }
 
 export default Breadcrumbs
