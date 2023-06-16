@@ -1,4 +1,5 @@
 details > summary {
+  cursor: pointer;
   list-style: none;
 }
 details > summary::-webkit-details-marker {
