@@ -64,9 +64,12 @@
 .deal-content__form .form-select {
   border-color: #f8f6f4;
   color: #f8f6f4;
-  background: transparent
-    svg-load("icons/CheveronDown.svg", stroke=#f8f6f4, fill=none) no-repeat
-    right 1rem center;
+  background: svg-load('icons/CheveronDown.svg', stroke=#f8f6f4, fill=none) no-repeat right 1rem center;
+  /*
+  Setting a specific background color fixes the background color issue on 
+  Windows 10/11 select menu option elements.
+  */
+  background-color: var(--color-primary-smoke);
 }
 
 .deal-content__form .btn {
