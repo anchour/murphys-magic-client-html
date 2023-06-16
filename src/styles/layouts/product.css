@@ -160,4 +160,8 @@
   .product-form-section {
     grid-column: span 5 / span 5;
   }
+
+  .product-form-section__inner {
+    max-width: 472px;
+  }
 }
