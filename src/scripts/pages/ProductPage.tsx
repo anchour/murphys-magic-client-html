@@ -1,3 +1,4 @@
+import Breadcrumbs from "../components/Breadcrumbs"
 import ProductCardCarousel from "../components/ProductCardCarousel"
 import ProductDescription from "../components/ProductDescription"
 import TextImageSplit from "../components/TextImageSplit"
@@ -8,9 +9,30 @@ import BasePage from "./Base"
 interface ProductPageProps {
 }
 
+const breadcrumbPages = [
+  {
+    name: 'All Products',
+    href: '#',
+    current: false
+  },
+  {
+    name: 'Magic Tricks',
+    href: '#',
+    current: false
+  },
+  {
+    name: 'Atom Rings',
+    href: '#',
+    current: true
+  }
+];
+
 const ProductPage = (props: ProductPageProps) => {
   return <BasePage>
-    <section className="page-section">
+    <section className="page-section product-page">
+      <div className="container">
+        <Breadcrumbs disableCopy excludeHomeLink pages={breadcrumbPages} />
+      </div>
       <div className="container product-container">
         <ProductGallery />
         <ProductForm />
