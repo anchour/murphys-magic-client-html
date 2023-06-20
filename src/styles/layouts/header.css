@@ -60,7 +60,14 @@
   height: 38px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 1023px) {
+  .header__logo {
+    height: 62px;
+    width: 223px;
+  }
+}
+
+@media (min-width: 1280px) {
   .header__logo {
     height: 62px;
     width: 223px;
@@ -224,6 +231,12 @@
   &:hover,
   &:focus {
     color: var(--color-secondary-water);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header__nav__menu__link {
+    font-size: 1rem;
   }
 }
 
