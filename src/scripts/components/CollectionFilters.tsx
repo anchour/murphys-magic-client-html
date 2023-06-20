@@ -1,4 +1,5 @@
 import slugify from 'slugify'
+import Details from './Details'
 
 const filters = [
   {
@@ -38,23 +39,39 @@ const filters = [
   }
 ]
 
+
 export default function () {
+  const renderedFilters = filters.map(({ type, options }, index) => (
+    <div key={index} className="collection-filters__filter">
+      <label htmlFor={slugify(type)} className="sr-only">{type}</label>
+      <select id={slugify(type)} className="form-control">
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>{option.name}</option>
+        ))}
+      </select>
+    </div>
+  ))
+
+
   return (
     <div className="container">
-      <button type="button" aria-pressed="false" className="collection-filter-toggle btn btn--primary">Filter</button>
+      <Details
+        className="collection-filters collection-filters--mobile"
+        summaryElement={
+          <button type="button" aria-pressed="false" className="collection-filter-toggle btn btn--primary">
+            Filter
+          </button>
+        }
+      >
+        <h2 className="collection-filter-label typography-heading typography-heading-xs"> Filter By</h2>
 
-      <h2 className="collection-filter-label typography-heading typography-heading-xs"> Filter By</h2>
-      <div className="collection-filters">
-        {filters.map(({ type, options }, index) => (
-          <div key={index} className="collection-filters__filter">
-            <label htmlFor={slugify(type)} className="sr-only">{type}</label>
-            <select id={slugify(type)} className="form-control">
-              {options.map((option, index) => (
-                <option key={index} value={option.value}>{option.name}</option>
-              ))}
-            </select>
-          </div>
-        ))}
+        <div className="collection-filters__wrap">
+          {renderedFilters}
+        </div>
+      </Details>
+
+      <div className="collection-filters collection-filters--desktop">
+        {renderedFilters}
       </div>
     </div>
   )
