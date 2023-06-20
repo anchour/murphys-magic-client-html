@@ -33,8 +33,8 @@ export default function TextImageSplit(props: TextImageSplitProps) {
   if (!description) {
     description = (
       <p className="typography-body-sm">
-        The extraordinary Tony Anverdi changed the magic industry decades ago, and his secrets were well hidden.Until now.Peek behind the curtain, and indulge yourself in all of Anverdi’s curious pleasures.
-      </p >
+        The extraordinary Tony Anverdi changed the magic industry decades ago, and his secrets were well hidden. Until now. Peek behind the curtain, and indulge yourself in all of Anverdi’s curious pleasures.
+      </p>
     )
   }
 
