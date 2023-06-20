@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { useState } from "preact/hooks";
 
 interface DetailsProps {
   title: string,
@@ -13,13 +14,16 @@ const Caret = () => <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xm
 
 
 const Details = (props: DetailsProps) => {
+  const [open, setOpen] = useState(props.open)
+
   const detailsProps = {
-    className: classNames('accordion'),
-    open: props.open,
+    className: classNames('accordion', props.className),
+    open,
   }
 
   const summaryProps = {
     className: classNames('accordion__title', props.summaryClassName),
+    onClick: () => setOpen(!open)
   }
 
   return <details {...detailsProps}>
