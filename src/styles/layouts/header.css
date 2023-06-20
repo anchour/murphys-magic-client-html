@@ -28,6 +28,7 @@
 
 .header__actions {
   justify-content: flex-end;
+  align-items: center;
   flex: 1;
   display: flex;
 }
@@ -254,7 +255,10 @@
 @media (min-width: 1024px) {
   .header__nav__menu--desktop {
     display: flex;
-    column-gap: 1.5rem;
+  }
+
+  .header__nav__menu--actions {
+    flex: 0;
   }
 
   .header__nav__menu__dropdown {

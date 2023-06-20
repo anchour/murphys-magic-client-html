@@ -97,6 +97,18 @@ export default function Header(props: HeaderProps): JSX.Element {
             <Brandmark />
           </a>
           <div className="header__actions">
+
+            <ul className="header__nav__menu header__nav__menu--actions header__nav__menu--desktop">
+              <li className='header__nav__menu__item'>
+                <a href="/products/atom-rings" className="header__nav__menu__link">Brands</a>
+              </li>
+
+              <li className="header__nav__menu__item">
+                <a href="#" className="header__nav__menu__link">Latest</a>
+              </li>
+
+            </ul>
+
             <button type="button" className='header__actions__action header__actions__action--desktop-only'>
               <ScreenReaderText text='Search' />
 
