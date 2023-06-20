@@ -2,10 +2,12 @@ import classNames from "classnames";
 import { useState } from "preact/hooks";
 
 interface DetailsProps {
-  title: string,
-  children?: any,
-  open?: boolean,
-  summaryClassName?: string,
+  title?: string;
+  children?: any;
+  open?: boolean;
+  className?: string;
+  summaryClassName?: string;
+  summaryElement?: any;
 }
 
 const Caret = () => <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,11 +28,17 @@ const Details = (props: DetailsProps) => {
     onClick: () => setOpen(!open)
   }
 
-  return <details {...detailsProps}>
-    <summary {...summaryProps}>
+  const summaryElements = props.summaryElement ? props.summaryElement : (
+    <>
       {props.title} <div className="accordion__caret">
         <Caret />
       </div>
+    </>
+  )
+
+  return <details {...detailsProps}>
+    <summary {...summaryProps}>
+      {summaryElements}
     </summary>
 
 
