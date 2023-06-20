@@ -49,7 +49,7 @@ export default function Header(props: HeaderProps): JSX.Element {
       {!props.hideSuperHeader && <SuperHeader disableCopy={props.disableCopy} />}
       <header className="bg-white header" ref={headerRef}>
         <nav className="header__nav" aria-label="Global">
-          <div className="flex flex-1 header__nav__menu">
+          <div className="header__nav__menu">
             <ul className="header__nav__menu header__nav__menu--desktop">
               <li className='header__nav__menu__item'>
                 <a href="/products/atom-rings" className="header__nav__menu__link">
