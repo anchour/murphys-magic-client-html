@@ -17,7 +17,7 @@ export default function TextImageSplit(props: TextImageSplitProps) {
   const sectionProps = {
     className: classNames(
       'text-image-split',
-      `text-image-split--${props.order}`,
+      `text-image-split--${props.order || 'content-first'}`,
       'bg-background-bone',
       'color-primary-smoke'
     ),
