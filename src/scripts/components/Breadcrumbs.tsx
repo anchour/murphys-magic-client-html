@@ -12,7 +12,7 @@ interface BreadcrumbsProps extends DisableCopyComponent {
 }
 
 const Breadcrumbs = (props: BreadcrumbsProps) => {
-  const breadcrumbs = props.pages.length ? props.pages : pages;
+  const breadcrumbs = props.pages?.length ? props.pages : pages;
 
   return <CopyWrapper disableCopy={props.disableCopy}>
     <nav className="breadcrumb" aria-label="Breadcrumb">
