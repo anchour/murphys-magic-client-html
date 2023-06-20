@@ -7,7 +7,7 @@ import { formatMoney } from "../lib/currency"
 
 export interface CardProps extends DisableCopyComponent {
   showTags?: boolean,
-  cardTags?: any,
+  cardTags?: String | String[] | JSX.Element | JSX.Element[],
   title?: string,
   image?: string,
   description?: string,
@@ -39,7 +39,7 @@ export function Card({
   const elements = (
     <a href="#" className="card">
       <div className="card__thumbnail">
-        {cardTags && <div className="card__image-tags">{cardTags}</div>}
+        {cardTags && <div className="card__image-tags"> {cardTags}</div>}
 
         <img src="https://source.unsplash.com/random/300x300" loading="lazy" width={300} height={300} role="presentation" />
       </div>

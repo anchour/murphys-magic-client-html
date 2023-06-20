@@ -4,6 +4,7 @@ import { Card } from "./Cards";
 import CollectionFilters from "./CollectionFilters";
 import { useEffect, useState } from "preact/hooks";
 import LoadingIcon from "./LoadingIcon";
+import { Tag } from "./Tags";
 
 const lipsum = new LoremIpsum()
 let products = []
@@ -13,8 +14,8 @@ times(24, () => {
     title: lipsum.generateWords(Math.round(Math.random() * 3 + 1)),
     description: lipsum.generateSentences(1),
     price: {
-      wholesale: 19.99,
-      retail: 29.99
+      wholesale: 1999,
+      retail: 2999
     },
   })
 });
@@ -38,13 +39,20 @@ export default function CollectionGrid() {
       <CollectionFilters />
 
       <div className="container collection-grid__products">
-        {collectionProducts.map(({ title, description, price: { wholesale, retail } }) =>
+        {collectionProducts.map(({ title, description, price: { wholesale, retail } }, index) =>
           <Card
             title={title.split(' ').map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(' ')}
             description={description}
             priceWholeSale={wholesale}
             priceRetail={retail}
-            cardTags={["New", "Sale"]}
+            cardTags={
+              index % 3 == 0 ?
+                <>
+                  <Tag variant="label secondary" disableCopy>New</Tag>
+                  <Tag variant="label secondary" disableCopy>Sale</Tag>
+                </>
+                : null
+            }
             showTags
             disableCopy
           />
