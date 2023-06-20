@@ -1,4 +1,4 @@
-Prevent issues with overflow on images for screens >= 1280px.
+/* Prevent issues with overflow on images for screens >= 1280px. */
 .testimonial {
   overflow: hidden;
 }
