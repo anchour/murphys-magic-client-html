@@ -2,6 +2,8 @@
 
 # Table of Contents
 
-1. Pages
-  1a. [Home page](/static/pages/home/)
-  1b. [Home page (logged in)](/static/pages/home-logged-in/)
+* Pages
+  * [Home page](/static/pages/home/)
+  * [Home page (logged in)](/static/pages/home-logged-in/)
+  * [Collection page](/static/pages/collection/)
+  * [Collection page (standard)](/static/pages/collection-standard/)
