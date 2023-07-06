@@ -9,18 +9,19 @@ interface CopyWrapperProps extends DisableCopyComponent {
 const CopyWrapper = (props: CopyWrapperProps) => {
   const ref = useRef(null)
 
-  return props.disableCopy ? <>{props.children}</> : (
-    <div className="relative group">
-      <CopyComponent
-        onClick={() => navigator.clipboard.writeText(ref.current.innerHTML)}
-        buttonText={props.copyButtonText}
-      />
+  return props.children
+  // return props.disableCopy ? <>{props.children}</> : (
+  //   <div className="relative group">
+  //     <CopyComponent
+  //       onClick={() => navigator.clipboard.writeText(ref.current.innerHTML)}
+  //       buttonText={props.copyButtonText}
+  //     />
 
-      <div ref={ref}>
-        {props.children}
-      </div>
-    </div>
-  )
+  //     <div ref={ref}>
+  //       {props.children}
+  //     </div>
+  //   </div>
+  // )
 }
 
 export default CopyWrapper
