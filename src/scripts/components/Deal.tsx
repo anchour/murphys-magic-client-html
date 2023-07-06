@@ -1,5 +1,6 @@
 import SVGViewer from "./SVGViewer";
 import Asterisk from "../../images/icons/ico-asterisk.svg";
+import QuantityInput from "./QuantityInput";
 
 interface DealProps {
   title?: string;
@@ -66,16 +67,7 @@ const Deal = ({
               </div>
 
               <form method="POST" action="" className="deal-content__form">
-                <label className="sr-only" htmlFor="search-term">
-                  Quantity
-                </label>
-                <select name="quantity" className="form-select">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
+                <QuantityInput />
 
                 <button type="submit" className="btn btn--primary">
                   Add to Cart

@@ -8,7 +8,7 @@ const QuantityInput = (props: QuantityInputProps) => {
   const [quantity, setQuantity] = useState(1)
 
   return <>
-  <label htmlFor="quantity" className="form-label">Quantity</label>
+  <label htmlFor="quantity" className="form-label form-label--quantity">Quantity</label>
     <div className="quantity-input">
       <button onClick={() => setQuantity(Math.max(quantity - 1, 1))} className="quantity-input__button quantity-input__button--decrement" type="button" aria-label="Decrement quantity">
         &minus;
