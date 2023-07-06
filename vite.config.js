@@ -15,8 +15,6 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        nesting,
-        tailwindcss,
         inlineSvg({
           paths: [resolve(process.cwd(), "./src/images")],
         }),
