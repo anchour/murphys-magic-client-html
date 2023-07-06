@@ -20,12 +20,17 @@ const Details = (props: DetailsProps) => {
 
   const detailsProps = {
     className: classNames('accordion', props.className),
+    onClick: e => e.preventDefault(),
     open,
   }
 
   const summaryProps = {
     className: classNames('accordion__title', props.summaryClassName),
-    onClick: () => setOpen(!open)
+    onClick: (e) => {
+      e.preventDefault()
+
+      setOpen(!open)
+    }
   }
 
   const summaryElements = props.summaryElement ? props.summaryElement : (
@@ -37,7 +42,7 @@ const Details = (props: DetailsProps) => {
   )
 
   return <details {...detailsProps}>
-    <summary {...summaryProps}>
+    <summary {...summaryProps} >
       {summaryElements}
     </summary>
 

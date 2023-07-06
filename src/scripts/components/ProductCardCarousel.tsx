@@ -1,4 +1,3 @@
-import { useRef } from "preact/hooks"
 import { DisableCopyComponent } from "../lib/interfaces"
 import Button from "./Button"
 import CardCarouselBackgroundSVG from "./CardCarouselBackgroundSVG"
@@ -59,37 +58,37 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
   }
 
   const TitleTag = props.titleLevel || 'h2'
-  const elementRef = useRef(null)
-  const elements = <div className="product-cards-carousel" ref={elementRef}>
-    <div className="product-cards-carousel__bg">
-      <CardCarouselBackgroundSVG />
-    </div>
 
-    <div className="container">
-      <div className="product-cards-carousel__header">
-        <div className="product-cards-carousel__header-left">
-          {props.title && <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>}
-          {props.subtitle && <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>}
-        </div>
-
-        {props.collectionLink && props.collectionLinkText ? (
-          <div className="product-cards-carousel__header-right">
-            <ViewMoreLink />
-          </div>) : null}
+  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Product Card Carousel">
+    <div className="product-cards-carousel">
+      <div className="product-cards-carousel__bg">
+        <CardCarouselBackgroundSVG />
       </div>
 
-      <Carousel {...carouselProps}>
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999}{...props.cardProps} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
-        <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
-        <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
-      </Carousel>
-    </div>
-  </div>
+      <div className="container">
+        <div className="product-cards-carousel__header">
+          <div className="product-cards-carousel__header-left">
+            {props.title && <TitleTag className="product-cards-carousel__title typography-heading-md">{props.title}</TitleTag>}
+            {props.subtitle && <p className="product-cards-carousel__subtitle typography-body-sm">{props.subtitle}</p>}
+          </div>
 
-  return <CopyWrapper ref={elementRef}>{elements}</CopyWrapper>
+          {props.collectionLink && props.collectionLinkText ? (
+            <div className="product-cards-carousel__header-right">
+              <ViewMoreLink />
+            </div>) : null}
+        </div>
+
+        <Carousel {...carouselProps}>
+          <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+          <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999}{...props.cardProps} />
+          <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+          <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+          <Card disableCopy title='Magic Cards Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+          <Card disableCopy title='The Vault Set' priceRetail={2999} priceWholeSale={1999} {...props.cardProps} />
+        </Carousel>
+      </div>
+    </div>
+  </CopyWrapper>
 }
 
 export default ProductCardCarousel
