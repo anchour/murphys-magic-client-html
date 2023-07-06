@@ -47,7 +47,7 @@ export default function Header(props: HeaderProps): JSX.Element {
   const elements = (
     <>
       {!props.hideSuperHeader && <SuperHeader disableCopy={props.disableCopy} />}
-      <header className="bg-white header" ref={headerRef}>
+      <header className="header" ref={headerRef}>
         <nav className="header__nav" aria-label="Global">
           <div className="header__nav__menu">
             <ul className="header__nav__menu header__nav__menu--desktop">
