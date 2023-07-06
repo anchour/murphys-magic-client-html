@@ -1,4 +1,5 @@
 import { Splide, SplideProps, SplideSlide, SplideTrack } from "@splidejs/react-splide"
+import CopyWrapper from "./CopyWrapper";
 
 export interface CarouselProps {
   className?: string;
@@ -27,25 +28,27 @@ const Carousel = (props: CarouselProps) => {
     className: props.className
   }
 
-  return <div {...wrapperProps}>
-    <Splide {...splideProps}>
-      <SplideTrack>
-        {
-          props.children.map((c, index) =>
-            <SplideSlide key={`carousel-slide-${index}`}>{c}</SplideSlide>
-          )
-        }
-      </SplideTrack>
+  return <CopyWrapper>
+    <div {...wrapperProps}>
+      <Splide {...splideProps}>
+        <SplideTrack>
+          {
+            props.children.map((c, index) =>
+              <SplideSlide key={`carousel-slide-${index}`}>{c}</SplideSlide>
+            )
+          }
+        </SplideTrack>
 
-      {props.pagination ? props.pagination : (
-        <div className="carousel__pagination">
-          <div className="container">
-            <ul className="splide__pagination"></ul>
+        {props.pagination ? props.pagination : (
+          <div className="carousel__pagination">
+            <div className="container">
+              <ul className="splide__pagination"></ul>
+            </div>
           </div>
-        </div>
-      )}
-    </Splide>
-  </div>
+        )}
+      </Splide>
+    </div>
+  </CopyWrapper>
 
 }
 
