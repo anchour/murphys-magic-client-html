@@ -1,0 +1,116 @@
+/* Prevent issues with overflow on images for screens >= 1280px. */
+.text-callout {
+  overflow: hidden;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.text-callout__image {
+  position: relative;
+  margin: 0 -1.5rem -1.5rem;
+}
+
+.text-callout__content {
+  margin-bottom: 2rem;
+}
+
+.text-callout__image > img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.text-callout__content > *:not([hidden]):not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.text-callout__benefits {
+  margin-top: 4rem;
+}
+
+.text-callout__benefits > div:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.text-callout__benefit-title {
+  margin-bottom: 0.5rem;
+}
+
+.text-callout__graphic {
+  display: none;
+}
+
+@media (min-width: $screen-sm) {
+  .text-callout__benefits,
+  .text-callout .container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .text-callout__benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text-callout__benefits > div:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .text-callout .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .text-callout__image {
+    margin: -2rem 0;
+  }
+  
+  .text-callout__image img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+  }
+
+  .text-callout__content {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .text-callout {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  .text-callout .container {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .text-callout__graphic {
+    display: block;
+    grid-column: span 1 / span 1;
+  }
+
+  .text-callout__content {
+    grid-column: span 7 / span 7;
+  }
+
+  .text-callout__image {
+    grid-column: 9 / span 4;
+    margin-bottom: -4rem;
+    margin-top: -4rem;
+  }
+
+  .text-callout__image > img {
+    max-width: none;
+    margin: 0;
+    width: calc((100vw - (1280px / 3)) / 2);
+  }
+
+  .text-callout__benefits {
+    margin-top: 6rem;
+  }
+}

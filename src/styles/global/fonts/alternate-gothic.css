@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'Alternate Gothic';
-    src: url('../../../fonts/alternate-gothic/AlternateGothicStd-No2.woff2') format('woff2'),
-        url('../../../fonts/alternate-gothic/AlternateGothicStd-No2.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}

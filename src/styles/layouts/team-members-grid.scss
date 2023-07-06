@@ -1,0 +1,58 @@
+.team-members-grid__members {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.team-members-grid__top-content {
+  margin-bottom: 4rem;
+}
+
+.team-members-grid__top-content > h2 {
+  font-size: 3rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1428571429;
+}
+
+@media (min-width: $screen-sm) {
+  .team-members-grid .container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));	
+  }
+
+  .team-members-grid__top-content {
+    grid-column: span 10 / span 10;
+  }
+
+  .team-members-grid__members {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: span 12 / span 12;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .team-members-grid__top-content {
+    grid-column: span 8 / span 8;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .team-members-grid__members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-members-grid__top-content {
+    grid-column: span 6 / span 6;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .team-members-grid__members {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .team-members-grid__top-content {
+    grid-column: span 5 / span 5;
+  }
+}

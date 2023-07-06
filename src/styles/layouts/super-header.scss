@@ -1,0 +1,132 @@
+.super-header {
+  background: var(--color-primary-smoke);
+  color: var(--color-primary-dove);
+  padding: 0.5rem 1rem;
+  line-height: 1.25;
+
+  @media (min-width: $screen-sm) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.super-header__marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+@media (min-width: $screen-sm) {
+  .super-header__marquee {
+    display: none;
+  }
+}
+
+.super-header__marquee-text,
+.super-header__marquee-content {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.super-header__marquee-content {
+  animation: 50s marquee linear infinite;
+}
+
+.super-header__marquee-text svg {
+  fill: currentcolor;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.super-header a {
+  position: relative;
+  display: inline-block;
+  transition-property: color;
+}
+
+.super-header a,
+.super-header a::after {
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.super-header a::after {
+  background: var(--color-primary-dove);
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 100%;
+  transform-origin: right;
+  transition-property: transform;
+  transform: scaleX(0);
+  width: 100%;
+  height: 1px;
+}
+
+.super-header a:hover::after {
+  transform: scaleX(100%);
+  transform-origin: left;
+}
+
+.super-header__text {
+  display: none;
+}
+
+.super-header__text-callout {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  color: var(--color-secondary-light);
+}
+
+.super-header__text-content {
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+@media (min-width: $screen-sm) {
+  .super-header__marquee {
+    display: none;
+  }
+
+  .super-header__text {
+    display: block;
+  }
+}
+
+.utility-nav {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
+}
+
+.utility-nav__menu {
+  display: flex;
+  margin-left: 1rem;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+
+.utility-nav__menu a {
+  color: var(--color-secondary-light);
+}
+
+.utility-nav__menu a:hover,
+.utility-nav__menu a:focus-visible {
+  color: var(--color-primary-dove);
+}
+
+.utility-nav__menu li:not(:first-child) {
+  margin-left: 2rem;
+}

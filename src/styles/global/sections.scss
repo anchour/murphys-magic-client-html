@@ -1,0 +1,21 @@
+[role='main'] {
+  position: relative;
+  z-index: 0;
+}
+
+.page-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-section--tall {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
+}
+
+@media (min-width: $screen-lg) {
+  .page-section--tall {
+    padding-top: 5rem;
+    padding-bottom: 5rem
+  }
+}
