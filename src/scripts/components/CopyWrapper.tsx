@@ -11,7 +11,10 @@ const CopyWrapper = (props: CopyWrapperProps) => {
 
   return props.disableCopy ? <>{props.children}</> : (
     <div className="relative group">
-      <CopyComponent onClick={() => navigator.clipboard.writeText(ref.current.innerHTML)} />
+      <CopyComponent
+        onClick={() => navigator.clipboard.writeText(ref.current.innerHTML)}
+        buttonText={props.buttonText}
+      />
 
       <div ref={ref}>
         {props.children}
