@@ -81,8 +81,8 @@ export default function Header(props: HeaderProps): JSX.Element {
 
             </ul>
 
-            <div className="flex header__nav__menu-toggle lg:hidden">
-              <button type="button" className="header__nav__menu-toggle-button -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            <div className="header__nav__menu-toggle">
+              <button type="button" className="header__nav__menu-toggle-button"
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
               >
                 <span className="sr-only">Open main menu</span>
