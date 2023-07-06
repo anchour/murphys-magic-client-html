@@ -9,7 +9,7 @@ interface SuperHeaderProps extends DisableCopyComponent {
 export default function SuperHeader(props: SuperHeaderProps) {
   const elements = (
     <div className="super-header">
-      <div className="super-header__marquee typography-heading color-secondary-light sm:hidden"
+      <div className="super-header__marquee typography-heading color-secondary-light"
         role="presentation"
         aria-hidden="true"
       >
@@ -32,7 +32,7 @@ export default function SuperHeader(props: SuperHeaderProps) {
         </a>
       </div>
 
-      <nav className="hidden utility-nav sm:block">
+      <nav className="hidden utility-nav">
         <ul className="utility-nav__menu">
           <li><a href="#">Recent Orders</a></li>
           <li><a href="#">Make a Payment</a></li>

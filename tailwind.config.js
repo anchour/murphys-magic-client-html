@@ -27,9 +27,6 @@ export default {
           DEFAULT: `1.5rem`,
           sm: `2rem`,
         },
-        screens: {
-          "2xl": "1368px",
-        },
       },
     },
   },
