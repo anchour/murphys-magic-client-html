@@ -30,7 +30,7 @@ const breadcrumbPages = [
 
 const ProductPage = (props: ProductPageProps) => {
   return <BasePage>
-    <CopyWrapper buttonText="Product page">
+    <CopyWrapper copyButtonText="Product page">
       <section className="page-section product-page">
         <div className="container">
           <Breadcrumbs disableCopy excludeHomeLink pages={breadcrumbPages} />

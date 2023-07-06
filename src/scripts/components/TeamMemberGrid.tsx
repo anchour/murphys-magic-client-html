@@ -8,7 +8,7 @@ interface TeamMembersGridProps extends DisableCopyComponent {
 }
 
 export default function TeamMembersGrid({ count = 8, ...props }: TeamMembersGridProps) {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Team members grid">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Team members grid">
     <section className="page-section--tall team-members-grid">
       <div className="container">
         <div className="team-members-grid__top-content">

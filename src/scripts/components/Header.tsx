@@ -52,30 +52,31 @@ export default function Header(props: HeaderProps): JSX.Element {
           <div className="header__nav__menu">
             <ul className="header__nav__menu header__nav__menu--desktop">
               <li className='header__nav__menu__item'>
-                <a href="/products/atom-rings" className="header__nav__menu__link">
+                <a href="/pages/collections" className="header__nav__menu__link">
                   Magic Tricks
                   <DropdownCaret />
                 </a>
 
                 <ul className="header__nav__menu__dropdown">
                   <li className="header__nav__menu__dropdown__item">
-                    <a href="#" className="header__nav__menu__dropdown__link">Product 1</a>
+                    <a href="/products/atom-rings" className="header__nav__menu__dropdown__link">Atom Rings</a>
                   </li>
-                  <li className="header__nav__menu__dropdown__item">
-                    <a href="#" className="header__nav__menu__dropdown__link">Product 2</a>
 
-                  </li>
                   <li className="header__nav__menu__dropdown__item">
-                    <a href="#" className="header__nav__menu__dropdown__link">Product 3</a>
+                    <a href="/products/atom-rings" className="header__nav__menu__dropdown__link">Product 2</a>
+                  </li>
+
+                  <li className="header__nav__menu__dropdown__item">
+                    <a href="/products/atom-rings" className="header__nav__menu__dropdown__link">Product 3</a>
                   </li>
                 </ul>
 
               </li>
               <li className="header__nav__menu__item">
-                <a href="#" className="header__nav__menu__link">Books &amp; Digital</a>
+                <a href="/pages/collections" className="header__nav__menu__link">Books &amp; Digital</a>
               </li>
               <li className="header__nav__menu__item">
-                <a href="#" className="header__nav__menu__link">Playing Cards</a>
+                <a href="/pages/collections" className="header__nav__menu__link">Playing Cards</a>
               </li>
 
             </ul>
@@ -115,12 +116,12 @@ export default function Header(props: HeaderProps): JSX.Element {
               <SearchIcon />
             </button>
 
-            <a href="#account" className="header__actions__action header__actions__action--desktop-only">
+            <a href="/pages/account-overview" className="header__actions__action header__actions__action--desktop-only">
               <ScreenReaderText text='Account' />
               <AccountIcon />
             </a>
 
-            <a href="#cart" className="header__actions__action">
+            <a href="/pages/cart" className="header__actions__action">
               <ScreenReaderText text='Cart' />
               <CartIcon />
             </a>

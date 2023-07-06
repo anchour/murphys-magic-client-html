@@ -13,7 +13,7 @@ const tags = [
 ]
 
 const CollectionHero = ({ title = 'Magic Tricks', breadcrumbs = null, description = 'Wizardry at your fingertips', ...props }: CollectionHeroProps) => {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Collection Hero">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Collection Hero">
     <section className="hero hero--collection hero--light">
       <div className="hero__inner">
 

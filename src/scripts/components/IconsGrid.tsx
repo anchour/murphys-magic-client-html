@@ -7,7 +7,7 @@ import { DisableCopyComponent } from "../lib/interfaces";
 import CopyWrapper from "./CopyWrapper";
 
 export default function IconGrid(props: DisableCopyComponent) {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Icon grid">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Icon grid">
     <section className="icons-grid">
       <div className="container">
         <div className="row">

@@ -1,6 +1,8 @@
+import { DisableCopyComponent } from "../lib/interfaces"
 import Button from "./Button"
+import CopyWrapper from "./CopyWrapper"
 
-interface AccountActionsProps {
+interface AccountActionsProps extends DisableCopyComponent {
 }
 
 const actions = [
@@ -52,27 +54,29 @@ const actions = [
 ]
 
 const AccountActions = (props: AccountActionsProps) => {
-  return <section className="page-section account-actions bg-background-bone">
-    <div className="container">
-      <h2 className="text-center typography-heading-md ">Your Account</h2>
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Account Actions">
+    <section className="page-section account-actions bg-background-bone">
+      <div className="container">
+        <h2 className="text-center typography-heading-md ">Your Account</h2>
 
-      <div className="account-actions__grid">
-        {actions.map(({ title, description, href }, index) =>
-          <div className="account-actions__item" key={index}>
-            <Button variant="secondary" icon={false} href={href} disableCopy>
-              <div className="typography-body-lg account-actions__item__title">
-                {title}
-              </div>
+        <div className="account-actions__grid">
+          {actions.map(({ title, description, href }, index) =>
+            <div className="account-actions__item" key={index}>
+              <Button variant="secondary" icon={false} href={href} disableCopy>
+                <div className="typography-body-lg account-actions__item__title">
+                  {title}
+                </div>
 
-              <div className="typography-body-sm">
-                {description}
-              </div>
-            </Button>
-          </div>
-        )}
+                <div className="typography-body-sm">
+                  {description}
+                </div>
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </CopyWrapper>
 
 }
 

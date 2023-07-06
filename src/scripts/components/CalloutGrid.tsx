@@ -15,7 +15,7 @@ const CalloutGrid = (props: CalloutGridProps) => {
   const { title, titleLevel } = props;
   const TitleTag = titleLevel || 'h2';
 
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText='Callout grid'>
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText='Callout grid'>
 
     <section className="page-section callout-grid">
       <div className="container">

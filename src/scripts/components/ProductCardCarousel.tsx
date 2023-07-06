@@ -59,7 +59,7 @@ const ProductCardCarousel = (props: ProductCardCarouselProps) => {
 
   const TitleTag = props.titleLevel || 'h2'
 
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Product Card Carousel">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Product Card Carousel">
     <div className="product-cards-carousel">
       <div className="product-cards-carousel__bg">
         <CardCarouselBackgroundSVG />

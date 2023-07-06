@@ -7,7 +7,7 @@ interface MailingListSignupProps extends DisableCopyComponent {
 
 const MailingListSignup = (props: MailingListSignupProps) => {
 
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText='Mailing List Signup'>
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText='Mailing List Signup'>
     <section className="page-section mailing-list-signup bg-primary-smoke color-primary-bone">
       <div className="container">
         <div className="mailing-list-signup__content">

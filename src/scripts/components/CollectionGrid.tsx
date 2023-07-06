@@ -35,11 +35,11 @@ export default function CollectionGrid(props: CollectionGridProps) {
       }
 
       setLoadMoreClicked(false);
-    }, 6000);
+    }, 3000);
   }, [loadMoreClicked])
 
   return (
-    <CopyWrapper disableCopy={props.disableCopy} buttonText="Collection Grid">
+    <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Collection Grid">
       <section className="page-section collection-grid">
         <CollectionFilters disableCopy />
 

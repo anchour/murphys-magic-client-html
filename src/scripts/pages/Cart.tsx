@@ -8,6 +8,7 @@ import cart from '../data/cart.json';
 import { DisableCopyComponent } from "../lib/interfaces";
 import { CartLineItemType, CartLineItemOptionType } from "../lib/types";
 import Button from "../components/Button";
+import CopyWrapper from "../components/CopyWrapper";
 
 interface CartLayoutProps extends DisableCopyComponent {
 }
@@ -278,10 +279,8 @@ const CartFooter = (props: CartLayoutProps) => {
 }
 
 const CartTable = (props: CartLayoutProps) => {
-  const containerRef = useRef(null)
-
-  return <div className="relative">
-    <div className="container cart-outer" ref={containerRef}>
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Cart Table">
+    <div className="container cart-outer">
       <h1 className="typography-heading-md">MY CART</h1>
 
       <table className="cart-table">
@@ -311,7 +310,7 @@ const CartTable = (props: CartLayoutProps) => {
 
       <CartFooter />
     </div>
-  </div>
+  </CopyWrapper>
 
 }
 

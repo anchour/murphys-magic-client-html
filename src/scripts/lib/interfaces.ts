@@ -1,6 +1,6 @@
 export interface DisableCopyComponent {
   disableCopy?: boolean,
-  buttonText?: string,
+  copyButtonText?: string,
 }
 
 export interface SectionTitleComponent {

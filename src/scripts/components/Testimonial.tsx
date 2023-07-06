@@ -7,7 +7,7 @@ interface TestimonialProps extends DisableCopyComponent {
 }
 
 const Testimonial = (props: TestimonialProps) => {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Testimonial">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Testimonial">
     <section className="testimonial bg-primary-bone">
 
       <div className="container">

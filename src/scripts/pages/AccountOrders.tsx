@@ -4,6 +4,7 @@ import slugify from "slugify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SuperHeader from "../components/SuperHeader";
+import CopyWrapper from "../components/CopyWrapper";
 
 interface AccountOrdersProps {
 }
@@ -114,46 +115,49 @@ const AccountOrders = (props: AccountOrdersProps) => {
   return <>
     <Header disableCopy />
 
-    <section className="page-section account-orders">
-      <div className="container">
-        <div className="account-sidebar">
+    <CopyWrapper copyButtonText="Account Orders">
+      <section className="page-section account-orders">
+        <div className="container">
+          <div className="account-sidebar">
 
-          <Details title="Orders" summaryClassName="typography-heading-xs" open>
-            <ul className="account-sidebar__list">
-              <li><a className="is-active" href="#">Recent Orders</a></li>
-              <li><a href="#">Open Orders</a></li>
-              <li><a href="#">Closed Orders</a></li>
-              <li><a href="#">Dropship Orders</a></li>
-              <li><a href="#">Back Orders</a></li>
-              <li><a href="#">Import Orders</a></li>
-            </ul>
-          </Details>
+            <Details title="Orders" summaryClassName="typography-heading-xs" open>
+              <ul className="account-sidebar__list">
+                <li><a className="is-active" href="#">Recent Orders</a></li>
+                <li><a href="#">Open Orders</a></li>
+                <li><a href="#">Closed Orders</a></li>
+                <li><a href="#">Dropship Orders</a></li>
+                <li><a href="#">Back Orders</a></li>
+                <li><a href="#">Import Orders</a></li>
+              </ul>
+            </Details>
 
-          {[
-            "Account details",
-            "Reports",
-            "Product updates",
-            "Payment",
-            "Invoices",
-            "Returns",
-            "Support",
-            "Resources",
-          ].map((title, index) =>
-            <Details title={title} key={index} summaryClassName="typography-heading-xs" />
-          )}
-        </div>
-
-        <div className="account-primary-content">
-          <h2 className="typography-heading-md">Orders</h2>
-
-          <div className="account-orders__grid">
-            {ordersData.map((order, index) =>
-              <Order {...order} key={index} />
+            {[
+              "Account details",
+              "Reports",
+              "Product updates",
+              "Payment",
+              "Invoices",
+              "Returns",
+              "Support",
+              "Resources",
+            ].map((title, index) =>
+              <Details title={title} key={index} summaryClassName="typography-heading-xs" />
             )}
           </div>
+
+          <div className="account-primary-content">
+            <h2 className="typography-heading-md">Orders</h2>
+
+            <div className="account-orders__grid">
+              {ordersData.map((order, index) =>
+                <Order {...order} key={index} />
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </CopyWrapper>
+
     <Footer />
   </>
 }

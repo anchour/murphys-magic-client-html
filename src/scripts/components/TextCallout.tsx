@@ -18,7 +18,7 @@ const TextCallout = ({
   ...props
 }: TextCalloutProps): JSX.Element => {
 
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Text callout">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Text callout">
     <section className="text-callout bg-primary-bone">
       <div className="container">
         {graphic && <div className="text-callout__graphic">{graphic}</div>}

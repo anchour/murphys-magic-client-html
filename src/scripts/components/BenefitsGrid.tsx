@@ -18,7 +18,7 @@ times(5, (index) => {
 });
 
 export default function BenefitsGrid(props: DisableCopyComponent) {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Benefits grid">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Benefits grid">
     <section className="benefits-grid bg-background-bone">
       <div className="container benefits-grid__title">
         <h2>Benefits of working with us</h2>

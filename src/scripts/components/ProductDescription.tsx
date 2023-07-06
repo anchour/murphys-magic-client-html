@@ -6,7 +6,7 @@ interface ProductDescriptionProps extends DisableCopyComponent {
 }
 
 const ProductDescription = (props: ProductDescriptionProps) => {
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Product Description">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Product Description">
     <section className="product-description page-section page-section--tall">
       <div className="container product-description__grid">
         <div className="product-description__content">

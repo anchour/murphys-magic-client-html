@@ -29,7 +29,7 @@ const marqueeText = ['MAGIC TRICKS', 'BOOKS &amp; DIGITAL', 'PLAYING CARDS']
 const Footer = (props: FooterProps) => {
   const delimiter = <AsteriskVector fill="var(--color-secondary-light)" />;
 
-  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Footer">
+  return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Footer">
     <footer className="footer bg-primary-smoke color-primary-bone">
       <div className="footer__marquee-outer">
         <div className="footer__marquee" aria-hidden role="presentation">

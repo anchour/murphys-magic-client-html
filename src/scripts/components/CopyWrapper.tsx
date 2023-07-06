@@ -13,7 +13,7 @@ const CopyWrapper = (props: CopyWrapperProps) => {
     <div className="relative group">
       <CopyComponent
         onClick={() => navigator.clipboard.writeText(ref.current.innerHTML)}
-        buttonText={props.buttonText}
+        buttonText={props.copyButtonText}
       />
 
       <div ref={ref}>

@@ -48,6 +48,7 @@ const Hero = ({
   children,
   verticalGap,
   tags,
+  copyButtonText = 'Hero',
   ...props
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
@@ -97,7 +98,7 @@ const Hero = ({
   }
 
   return (
-    <CopyWrapper disableCopy={props.disableCopy} buttonText="Hero">
+    <CopyWrapper disableCopy={props.disableCopy} copyButtonText={copyButtonText}>
       <section {...heroProps}>
         <div className="hero__inner">
           {hasBackground &&

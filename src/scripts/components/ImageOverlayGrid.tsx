@@ -7,7 +7,7 @@ interface ImageOverlayGridProps extends DisableCopyComponent {
 }
 
 export default function ImageOverlayGrid({ children, disableCopy = false }: ImageOverlayGridProps): JSX.Element {
-  return <CopyWrapper disableCopy={disableCopy} buttonText="Image overlay grid">
+  return <CopyWrapper disableCopy={disableCopy} copyButtonText="Image overlay grid">
     <section className="image-overlay-grid">
       {children ? children : <>
         <ImageOverlay />
