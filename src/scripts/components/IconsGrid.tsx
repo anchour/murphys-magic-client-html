@@ -3,9 +3,11 @@ import Top from "/src/images/icons/ico-top_magicians.svg";
 import Quality from "/src/images/icons/ico-superior_quality.svg";
 import USA from "/src/images/icons/ico-USA.svg";
 import Learn from "/src/images/icons/ico-learn.svg";
+import { DisableCopyComponent } from "../lib/interfaces";
+import CopyWrapper from "./CopyWrapper";
 
-export default function IconGrid() {
-  return (
+export default function IconGrid(props: DisableCopyComponent) {
+  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Icon grid">
     <section className="icons-grid">
       <div className="container">
         <div className="row">
@@ -18,12 +20,12 @@ export default function IconGrid() {
               showCopyComponent={false}
             />
             <Icon
-               icon={Quality}
+              icon={Quality}
               description="Superior Quality"
               showCopyComponent={false}
             />
             <Icon
-               icon={USA}
+              icon={USA}
               description="Designed in USA"
               showCopyComponent={false}
             />
@@ -36,5 +38,5 @@ export default function IconGrid() {
         </div>
       </div>
     </section>
-  );
+  </CopyWrapper>
 }

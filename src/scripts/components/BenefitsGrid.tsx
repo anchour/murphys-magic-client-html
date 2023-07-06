@@ -1,6 +1,8 @@
 import { LoremIpsum } from "lorem-ipsum"
 import { times } from 'lodash-es'
 import { Benefit } from "./Benefits";
+import { DisableCopyComponent } from "../lib/interfaces";
+import CopyWrapper from "./CopyWrapper";
 
 const lipsum = new LoremIpsum()
 let benefits = []
@@ -15,23 +17,24 @@ times(5, (index) => {
   })
 });
 
-export default function BenefitsGrid() {
-  return (
+export default function BenefitsGrid(props: DisableCopyComponent) {
+  return <CopyWrapper disableCopy={props.disableCopy} buttonText="Benefits grid">
     <section className="benefits-grid bg-background-bone">
       <div className="container benefits-grid__title">
         <h2>Benefits of working with us</h2>
       </div>
-      
+
       <div className="container benefits-grid__benefits">
-        {benefits.map(({ identifier, title, description}) =>
+        {benefits.map(({ identifier, title, description }) =>
           <Benefit
             identifier={identifier}
             title={title.split(' ').map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(' ')}
             description={description}
-            showCopyComponent= {false}
+            showCopyComponent={false}
           />
         )}
       </div>
     </section>
-  )
+  </CopyWrapper>
+
 }

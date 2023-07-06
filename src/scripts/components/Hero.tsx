@@ -5,8 +5,10 @@ import DarkHeroBG from "../../images/hero--dark-background.jpg";
 import LeftAlignedBG from "../../images/hero--left-aligned-background.jpg";
 import Placeholder from "../../images/icons/ico-placeholder.svg";
 import classNames from "classnames";
+import { DisableCopyComponent } from "../lib/interfaces";
+import CopyWrapper from "./CopyWrapper";
 
-interface HeroProps {
+interface HeroProps extends DisableCopyComponent {
   title?: string;
   breadcrumbs?: null | JSX.Element;
   description?: string;
@@ -46,6 +48,7 @@ const Hero = ({
   children,
   verticalGap,
   tags,
+  ...props
 }: HeroProps) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
@@ -94,7 +97,7 @@ const Hero = ({
   }
 
   return (
-    <>
+    <CopyWrapper disableCopy={props.disableCopy} buttonText="Hero">
       <section {...heroProps}>
         <div className="hero__inner">
           {hasBackground &&
@@ -163,7 +166,7 @@ const Hero = ({
 
         {children}
       </section>
-    </>
+    </CopyWrapper>
   );
 };
 export default Hero;

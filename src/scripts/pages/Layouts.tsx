@@ -32,7 +32,7 @@ export default function Layouts() {
       <CollectionGrid />
       <BenefitsGrid />
       <IconsGrid />
-      <CollectionHero breadcrumbs={<Breadcrumbs excludeHomeLink />} />
+      <CollectionHero breadcrumbs={<Breadcrumbs disableCopy excludeHomeLink />} />
       <TextCallout
         text="Help make the world a little more wondrous."
         buttonUrl="#"

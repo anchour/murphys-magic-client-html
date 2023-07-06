@@ -1,13 +1,15 @@
 import slugify from 'slugify'
 import Details from './Details'
+import CopyWrapper from './CopyWrapper'
+import { DisableCopyComponent } from '../lib/interfaces'
 
 const filters = [
   {
     type: 'Product Type',
     options: [
-      { name: 'T-Shirt', value: 't-shirt' },
-      { name: 'Hoodie', value: 'hoodie' },
-      { name: 'Mug', value: 'mug' },
+      { name: 'Cards', value: 'card-tricks' },
+      { name: 'Vanishing', value: 'vanishing-tricks' },
+      { name: 'Infinity Watch', value: 'infinity-watch' },
     ]
   },
   {
@@ -31,16 +33,17 @@ const filters = [
   {
     type: 'Elite Brands',
     options: [
-      { name: 'Nike', value: 'nike' },
-      { name: 'Adidas', value: 'adidas' },
-      { name: 'Puma', value: 'puma' },
-      { name: 'Reebok', value: 'reebok' },
+      { name: 'Cherry Casino', value: 'cherry-casino' },
+      { name: 'Black Label', value: 'black-label' },
+      { name: 'Secret Tannery', value: 'seceret-tannery' },
+      { name: 'Vanish', value: 'vanish' },
     ]
   }
 ]
 
+interface CollectionFilterProps extends DisableCopyComponent { }
 
-export default function () {
+export default function (props: CollectionFilterProps) {
   const renderedFilters = filters.map(({ type, options }, index) => (
     <div key={index} className="collection-filters__filter">
       <label htmlFor={slugify(type)} className="sr-only">{type}</label>
@@ -52,27 +55,28 @@ export default function () {
     </div>
   ))
 
-
   return (
-    <div className="container">
-      <Details
-        className="collection-filters collection-filters--mobile"
-        summaryElement={
-          <button type="button" aria-pressed="false" className="collection-filter-toggle btn btn--primary">
-            Filter
-          </button>
-        }
-      >
-        <h2 className="collection-filter-label typography-heading typography-heading-xs"> Filter By</h2>
+    <CopyWrapper disableCopy={props.disableCopy}>
+      <div className="container">
+        <Details
+          className="collection-filters collection-filters--mobile"
+          summaryElement={
+            <button type="button" aria-pressed="false" className="collection-filter-toggle btn btn--primary">
+              Filter
+            </button>
+          }
+        >
+          <h2 className="collection-filter-label typography-heading typography-heading-xs"> Filter By</h2>
 
-        <div className="collection-filters__wrap">
+          <div className="collection-filters__wrap">
+            {renderedFilters}
+          </div>
+        </Details>
+
+        <div className="collection-filters collection-filters--desktop">
           {renderedFilters}
         </div>
-      </Details>
-
-      <div className="collection-filters collection-filters--desktop">
-        {renderedFilters}
       </div>
-    </div>
+    </CopyWrapper>
   )
 }

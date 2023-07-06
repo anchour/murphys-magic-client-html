@@ -1,18 +1,14 @@
-import { useRef } from "preact/hooks"
 import { times } from "lodash-es"
-import CopyComponent from "./CopyComponent"
 import { AsteriskVector } from "./Tags.js"
 import { DisableCopyComponent } from "../lib/interfaces"
+import CopyWrapper from "./CopyWrapper"
 
 interface SuperHeaderProps extends DisableCopyComponent {
 }
 
 export default function SuperHeader(props: SuperHeaderProps) {
-  const ref = useRef(null)
-
-  const elements = <>
-
-    <div className="super-header" ref={ref}>
+  const elements = (
+    <div className="super-header">
       <div className="super-header__marquee typography-heading color-secondary-light sm:hidden"
         role="presentation"
         aria-hidden="true"
@@ -44,14 +40,11 @@ export default function SuperHeader(props: SuperHeaderProps) {
       </nav>
 
     </div>
-  </>
+  )
 
   return props.disableCopy ? elements : (
-    <div className="relative">
+    <CopyWrapper disableCopy={props.disableCopy}>
       {elements}
-      <CopyComponent onClick={() => {
-        navigator.clipboard.writeText(ref.current.outerHTML)
-      }} />
-    </div>
+    </CopyWrapper>
   )
 }

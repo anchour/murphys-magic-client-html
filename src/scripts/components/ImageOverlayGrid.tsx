@@ -1,25 +1,18 @@
-import { useRef } from "preact/hooks";
 import ImageOverlay from "../components/ImageOverlayColumn";
 import { DisableCopyComponent } from "../lib/interfaces";
-import CopyComponent from "./CopyComponent";
+import CopyWrapper from "./CopyWrapper";
 
 interface ImageOverlayGridProps extends DisableCopyComponent {
   children?: JSX.Element | JSX.Element[] | null;
 }
 
 export default function ImageOverlayGrid({ children, disableCopy = false }: ImageOverlayGridProps): JSX.Element {
-  const elementsRef = useRef(null);
-  const elements = (
-    <section className="image-overlay-grid" ref={elementsRef}>
+  return <CopyWrapper disableCopy={disableCopy} buttonText="Image overlay grid">
+    <section className="image-overlay-grid">
       {children ? children : <>
         <ImageOverlay />
         <ImageOverlay />
       </>}
     </section>
-  );
-
-  return disableCopy ? elements : <div className="relative group">
-    <CopyComponent onClick={() => navigator.clipboard.writeText(elementsRef.current.outerHTML)} />
-    {elements}
-  </div>
+  </CopyWrapper>
 }

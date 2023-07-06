@@ -19,7 +19,7 @@ import ProductCardCarousel from "../components/ProductCardCarousel";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header disableCopy />
 
       <main role="main">
         <Carousel className="hero-carousel">

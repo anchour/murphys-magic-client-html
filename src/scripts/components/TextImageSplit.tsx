@@ -84,5 +84,5 @@ export default function TextImageSplit(props: TextImageSplitProps) {
     </section>
   )
 
-  return <CopyWrapper>{elements}</CopyWrapper>
+  return <CopyWrapper disableCopy={props.disableCopy} buttonText='Text/Image Split'>{elements}</CopyWrapper>
 }
