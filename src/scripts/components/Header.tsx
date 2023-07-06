@@ -52,7 +52,7 @@ export default function Header(props: HeaderProps): JSX.Element {
           <div className="header__nav__menu">
             <ul className="header__nav__menu header__nav__menu--desktop">
               <li className='header__nav__menu__item'>
-                <a href="/pages/collections" className="header__nav__menu__link">
+                <a href="/pages/collections-standard" className="header__nav__menu__link">
                   Magic Tricks
                   <DropdownCaret />
                 </a>

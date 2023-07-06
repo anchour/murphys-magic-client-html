@@ -5,8 +5,6 @@ import CollectionHero from "../components/CollectionHero";
 import Breadcrumbs from "../components/Breadcrumbs";
 import CollectionGrid from "../components/CollectionGrid";
 import Footer from "../components/Footer";
-
-import { LoremIpsum } from "lorem-ipsum"
 import CollectionContent from "../components/CollectionContent";
 
 interface CollectionsPageProps { }
