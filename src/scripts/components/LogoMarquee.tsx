@@ -8,7 +8,7 @@ export default function LogoMarquee(props: DisableCopyComponent) {
   return <CopyWrapper disableCopy={props.disableCopy} copyButtonText="Logo marquee">
     <section className="logo-ticker page-section--tall" role="presentation">
       <div className="container">
-        <h2 className="text-center typography-heading-lg"> Elite Brands</h2>
+        <h2 className="logo-ticker__header typography-heading-lg"> Elite Brands</h2>
       </div>
 
       <div className="marquee-wrap">
