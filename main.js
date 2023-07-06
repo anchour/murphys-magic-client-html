@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 import { render } from "preact";
 import { App } from "./src/scripts/components/App.jsx";
 
