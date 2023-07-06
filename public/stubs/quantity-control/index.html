@@ -10,82 +10,132 @@
   </head>
   <body>
     <!-- // Tailwind classes on a quantity input control. increment and decrement buttons that control a type=number input -->
-    <label for="quantity" class="form-label">Quantity</label>
-    <div class="quantity-input">
-      <button
-        class="quantity-input__button quantity-input__button--decrement"
-        type="button"
-        aria-label="Decrement quantity"
-      >
-        &minus;
-      </button>
+    <div class="container mx-auto">
+      <div class="prose">
+        <h1>Note:</h1>
+        <p>
+          This page is home to the vanilla JS scripts for various pieces of functionality. Because
+          we built the main components of the site using Preact, we used the react-based scripts for
+          carousels, etc. This page is here for reference and to show how to implement the
+          functionality in vanilla JS.
+        </p>
+      </div>
 
-      <input
-        type="text"
-        id="quantity"
-        class="quantity-input__field form-input"
-        value="1"
-        pattern="[0-9]*"
-        inputmode="numeric"
-      />
+      <details>
+        <summary>Quantity input</summary>
+        <label for="quantity" class="form-label">Quantity</label>
+        <div class="quantity-input">
+          <button
+            class="quantity-input__button quantity-input__button--decrement"
+            type="button"
+            aria-label="Decrement quantity"
+          >
+            &minus;
+          </button>
 
-      <button
-        class="quantity-input__button quantity-input__button--increment"
-        type="button"
-        aria-label="Increment quantity"
-      >
-        &plus;
-      </button>
+          <input
+            type="text"
+            id="quantity"
+            class="quantity-input__field form-input"
+            value="1"
+            pattern="[0-9]*"
+            inputmode="numeric"
+          />
+
+          <button
+            class="quantity-input__button quantity-input__button--increment"
+            type="button"
+            aria-label="Increment quantity"
+          >
+            &plus;
+          </button>
+        </div>
+        <script>
+          /**
+           * QuantityControl is a JavaScript class that provides functionality for controlling quantity input fields.
+           *
+           * @class QuantityControl
+           * @param {HTMLElement} input - The input element representing the quantity control.
+           * @throws {TypeError} If the input parameter is not an HTML element.
+           *
+           * @example
+           *
+           * // Create a new QuantityControl instance for an input element with the ID "quantity-input"
+           * const quantityInput = document.querySelector('.quantity-input');
+           * const quantityControl = new QuantityControl(quantityInput);
+           *
+           * @note The increment and decrement controls are assumed to be child elements of the input's parent element,
+           *       and they should have the attributes `data-quantity-increment` and `data-quantity-decrement` respectively.
+           *       The increment control should increase the quantity value by 1, and the decrement control should decrease
+           *       the quantity value by 1. Both controls trigger a 'change' event on the input element when clicked.
+           */
+          class QuantityControl {
+            constructor(element) {
+              this.element = element;
+              this.quantityInput = this.element.querySelector('.quantity-input__field');
+              this.quantity = this.quantityInput.value;
+              this.decrementControl = this.element.querySelector(
+                '.quantity-input__button--decrement',
+              );
+              this.incrementControl = this.element.querySelector(
+                '.quantity-input__button--increment',
+              );
+
+              this.decrementControl.addEventListener('click', this.decrement.bind(this));
+              this.incrementControl.addEventListener('click', this.increment.bind(this));
+            }
+
+            decrement() {
+              this.quantity = Math.max(this.quantity - 1, 1);
+              this.quantityInput.value = this.quantity;
+            }
+
+            increment() {
+              this.quantity++;
+              this.quantityInput.value = this.quantity;
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.quantity-input');
+
+            elements.forEach((i) => new QuantityControl(i));
+          });
+        </script>
+
+        <pre>
+&lt;script&gt;
+class QuantityControl {
+  constructor(element) {
+    this.element = element;
+    this.quantityInput = this.element.querySelector('.quantity-input__field');
+    this.quantity = this.quantityInput.value;
+    this.decrementControl = this.element.querySelector('.quantity-input__button--decrement');
+    this.incrementControl = this.element.querySelector('.quantity-input__button--increment');
+
+    this.decrementControl.addEventListener('click', this.decrement.bind(this));
+    this.incrementControl.addEventListener('click', this.increment.bind(this));
+  }
+
+  decrement() {
+    this.quantity = Math.max(this.quantity - 1, 1);
+    this.quantityInput.value = this.quantity;
+  }
+
+  increment() {
+    this.quantity++;
+    this.quantityInput.value = this.quantity;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.quantity-input');
+
+  elements.forEach((i) => new QuantityControl(i));
+});
+&lt;/script&gt;
+        </pre>
+      </details>
     </div>
-    <script>
-      /**
-       * QuantityControl is a JavaScript class that provides functionality for controlling quantity input fields.
-       *
-       * @class QuantityControl
-       * @param {HTMLElement} input - The input element representing the quantity control.
-       * @throws {TypeError} If the input parameter is not an HTML element.
-       *
-       * @example
-       *
-       * // Create a new QuantityControl instance for an input element with the ID "quantity-input"
-       * const quantityInput = document.querySelector('.quantity-input');
-       * const quantityControl = new QuantityControl(quantityInput);
-       *
-       * @note The increment and decrement controls are assumed to be child elements of the input's parent element,
-       *       and they should have the attributes `data-quantity-increment` and `data-quantity-decrement` respectively.
-       *       The increment control should increase the quantity value by 1, and the decrement control should decrease
-       *       the quantity value by 1. Both controls trigger a 'change' event on the input element when clicked.
-       */
-      class QuantityControl {
-        constructor(element) {
-          this.element = element;
-          this.quantityInput = this.element.querySelector('.quantity-input__field');
-          this.quantity = this.quantityInput.value;
-          this.decrementControl = this.element.querySelector('.quantity-input__button--decrement');
-          this.incrementControl = this.element.querySelector('.quantity-input__button--increment');
-
-          this.decrementControl.addEventListener('click', this.decrement.bind(this));
-          this.incrementControl.addEventListener('click', this.increment.bind(this));
-        }
-
-        decrement() {
-          this.quantity = Math.max(this.quantity - 1, 1);
-          this.quantityInput.value = this.quantity;
-        }
-
-        increment() {
-          this.quantity++;
-          this.quantityInput.value = this.quantity;
-        }
-      }
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const elements = document.querySelectorAll('.quantity-input');
-
-        elements.forEach((i) => new QuantityControl(i));
-      });
-    </script>
   </body>
 </html>
