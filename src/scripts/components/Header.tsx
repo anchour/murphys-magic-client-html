@@ -127,52 +127,6 @@ export default function Header(props: HeaderProps): JSX.Element {
             </a>
           </div>
         </nav>
-
-        <div className="header__mobile-menu lg:hidden" role="dialog" aria-modal="true">
-          <div className="header__mobile-menu--backdrop"></div>
-
-          <div className="header__mobile-menu--content">
-            <div className="header__mobile-menu--header">
-              <div className="header__mobile-menu--header--menu-button">
-                <button type="button" className="header__mobile-menu--header--menu-button__button">
-                  <span className="sr-only">Close menu</span>
-                  <svg className="w-6 h-6 header__mobile-menu--header--menu-button__button-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <a href="/" className="header__logo header__mobile-menu__header__logo">
-              <ScreenReaderText text="Murphy's Magic" />
-              <Brandmark />
-            </a>
-            <div className="header__actions">
-              <button type="button" className='header__actions__action header__actions__action--desktop-only'>
-                <ScreenReaderText text='Search' />
-
-                <SearchIcon />
-              </button>
-
-              <a href="/pages/account-overview" className="header__actions__action header__actions__action--desktop-only">
-                <ScreenReaderText text='Account' />
-                <AccountIcon />
-              </a>
-
-              <a href="/pages/cart" className="header__actions__action">
-                <ScreenReaderText text='Cart' />
-                <CartIcon />
-              </a>
-              <div className="header__mobile-menu--header--user">
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900 header__mobile-menu--header--user-login">Log in <span aria-hidden="true">&rarr;</span></a>
-              </div>
-            </div>
-            <div className="mt-6 space-y-2 header__mobile-menu--links">
-              <a href="#" className="header__mobile-menu--links-item">Product</a>
-              <a href="#" className="header__mobile-menu--links-item">Features</a>
-              <a href="#" className="header__mobile-menu--links-item">Company</a>
-            </div>
-          </div>
-        </div>
       </header >
 
       <MobileNavigation ref={mobileNavRef} closeButtonClick={() => setMobileNavOpen(false)} />
