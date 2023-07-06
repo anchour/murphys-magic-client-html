@@ -72,14 +72,36 @@
 
 .super-header__text {
   display: none;
+}
 
-  @media (min-width: 640px) {
+.super-header__text-callout {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  color: var(--color-secondary-light);
+}
+
+.super-header__text-content {
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .super-header__marquee {
+    display: none;
+  }
+
+  .super-header__text {
     display: block;
   }
 }
 
 .utility-nav {
-  display: inline-block;
+  display: none;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 }
 
 .utility-nav__menu {
