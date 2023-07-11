@@ -8,4 +8,9 @@ if (file_exists(__DIR__ . '/../dist/hot')) {
 ?>
 
 <link rel="stylesheet" href="<?= $path; ?>/style.css" />
+<script src="<?= $path; ?>/vendor.js" defer></script>
 <script src="<?= $path; ?>/main.js" defer></script>
+
+<?php if (isset($template) && $template === 'product') : ?>
+  <script src="<?= $path; ?>/product.js" defer></script>
+<?php endif; ?>

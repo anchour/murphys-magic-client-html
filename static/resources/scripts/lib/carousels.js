@@ -1,5 +1,3 @@
-import Splide from '@splidejs/splide';
-
 /**
  * Hero carousel setup using Splide.
  * 

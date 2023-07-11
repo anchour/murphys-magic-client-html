@@ -136,13 +136,13 @@
           </a>
           <ul class="header__nav__menu__dropdown">
             <li class="header__nav__menu__dropdown__item">
-              <a href="/products/atom-rings" class="header__nav__menu__dropdown__link">Atom Rings</a>
+              <a href="/static/pages/product-page/" class="header__nav__menu__dropdown__link">Atom Rings</a>
             </li>
             <li class="header__nav__menu__dropdown__item">
-              <a href="/products/atom-rings" class="header__nav__menu__dropdown__link">Product 2</a>
+              <a href="/static/pages/product-page/" class="header__nav__menu__dropdown__link">Product 2</a>
             </li>
             <li class="header__nav__menu__dropdown__item">
-              <a href="/products/atom-rings" class="header__nav__menu__dropdown__link">Product 3</a>
+              <a href="/static/pages/product-page/" class="header__nav__menu__dropdown__link">Product 3</a>
             </li>
           </ul>
         </li>
