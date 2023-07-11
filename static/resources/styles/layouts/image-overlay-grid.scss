@@ -1,0 +1,11 @@
+.image-overlay-grid {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+
+@media (min-width: $screen-lg) {
+  .image-overlay-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

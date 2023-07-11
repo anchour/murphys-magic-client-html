@@ -1,3 +1,5 @@
+import './lib/carousels.js';
+
 const classes = {
   NAV_OPEN: 'nav-open',
 };

@@ -1,0 +1,15 @@
+.text-column__one--centered .content p:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: $screen-md) {
+  .text-column__one--centered .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .text-column__one--centered .content {
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+}

@@ -1,0 +1,25 @@
+.splide__pagination--below {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-content: center;
+  align-items: center;
+
+  .splide__pagination {
+    justify-content: flex-start;
+  }
+
+  .splide__pagination__page::before {
+    border-color: var(--color-primary-midnight);
+  }
+
+  .splide__pagination__page:not(.is-active):hover::before,
+  .splide__pagination__page:not(.is-active):focus-visible::before {
+    border-color: var(--color-secondary-water);
+  }
+
+  .splide__pagination__page.is-active::before {
+    background-color: var(--color-primary-midnight);
+  }
+}

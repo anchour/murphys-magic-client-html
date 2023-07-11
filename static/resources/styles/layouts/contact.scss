@@ -1,0 +1,21 @@
+@media (min-width: $screen-lg) {
+  .contact-content__header {
+    width: 50%;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .form-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  
+  .contact-content,
+  .contact-form,
+  .get-started-content,
+  .get-started-form {
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+}

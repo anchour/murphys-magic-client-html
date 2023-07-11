@@ -1,0 +1,23 @@
+.breadcrumb__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb__link {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+
+.breadcrumb__item:first-child .breadcrumb__link {
+  margin-left: 0;
+}
+
+.breadcrumb__item:not(:first-child) {
+  margin-left: 0.75rem;
+}

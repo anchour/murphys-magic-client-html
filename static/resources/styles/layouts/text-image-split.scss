@@ -1,0 +1,140 @@
+.text-image-split {
+  overflow: hidden;
+  position: relative;
+}
+
+.text-image-split .container {
+  display: grid;
+  align-items: center;
+  row-gap: 0;
+  column-gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.text-image-split__image {
+  position: relative;
+  order: 0;
+}
+
+.text-image-split__content {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  order: 1;
+}
+
+@media (max-width: 1023px) {
+  .text-image-split__image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    max-width: none;
+  }
+  .text-image-split__image-tag__text {
+    font-size: 0.875rem;
+  }
+}
+
+.text-image-split__image-tag__inner {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: rotate(90deg) translate(-50%, -50%);
+  transform-origin: left top;
+  white-space: nowrap;
+}
+
+.text-image-split__image-tag {
+  direction: ltr;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  width: 33px;
+}
+
+.text-image-split__image-tag svg {
+  fill: var(--color-primary-dove);
+}
+
+.text-image-split__image-tag__text,
+.text-image-split__image-tag__decoration {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text-image-split__image-tag__decoration {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.75rem;
+}
+
+.text-image-split__image-tag__decoration svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: $screen-lg) {
+  .text-image-split .container {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .text-image-split__image {
+    position: static;
+  }
+
+  .text-image-split__image-tag__decoration {
+    width: 36px;
+    height: 36px;
+  }
+
+  .text-image-split__image img {
+    /* This is the important part */
+    width: calc((100vw - 1024px) / 2 + (1024px * 7 / 12) + 1rem);
+    position: relative;
+    left: 0;
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .text-image-split__image,
+  .text-image-split__content {
+    grid-column: span 6 / span 6;
+  }
+
+  /* This.... might not be the right thing to do here. But it works. */
+  .text-image-split--image-first .text-image-split__image {
+    direction: rtl;
+  }
+
+  .text-image-split--content-first .text-image-split__content,
+  .text-image-split--image-first .text-image-split__image {
+    order: 0;
+  }
+
+  .text-image-split--content-first .text-image-split__image,
+  .text-image-split--image-first .text-image-split__content {
+    order: 1;
+  }
+
+  .text-image-split--content-first .text-image-split__image-tag {
+    left: auto;
+    right: 0;
+  }
+
+  .text-image-split__image-tag {
+    width: 70px;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .text-image-split__image {
+    grid-column: span 7 / span 7;
+  }
+
+  .text-image-split__content {
+    grid-column: span 5 / span 5;
+  }
+}

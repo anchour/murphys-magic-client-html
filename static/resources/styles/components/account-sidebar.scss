@@ -1,0 +1,21 @@
+.account-sidebar {
+  font-size: 1rem;
+}
+
+.account-sidebar__list li {
+  margin-bottom: 0.5rem;
+}
+
+.account-sidebar__list a {
+  &.is-active,
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .account-sidebar {
+    font-size: 1.25rem;
+  }
+}
