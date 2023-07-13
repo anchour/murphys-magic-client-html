@@ -5,4 +5,5 @@ mix
   .js('static/resources/scripts/main.js', 'main.js')
   .js('static/resources/scripts/product.js', 'product.js')
   .js('static/resources/scripts/vendor.js', 'vendor.js')
+  .copyDirectory('static/resources/fonts', 'static/dist/fonts/')
   .setPublicPath('static/dist/')

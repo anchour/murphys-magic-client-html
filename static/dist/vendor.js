@@ -1,2 +1,3044 @@
-/*! For license information please see vendor.js.LICENSE.txt */
-(()=>{"use strict";function e(t){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(t)}function t(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}function n(e,n,i){n&&t(e.prototype,n),i&&t(e,i),Object.defineProperty(e,"prototype",{writable:!1})}var i,o;function r(e,t){e.prototype=Object.create(t.prototype),u(e.prototype.constructor=e,t)}function u(e,t){return(u=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(e,t){return e.__proto__=t,e})(e,t)}i=void 0,o=function(){var t="(prefers-reduced-motion: reduce)",i={CREATED:1,MOUNTED:2,IDLE:3,MOVING:4,SCROLLING:5,DRAGGING:6,DESTROYED:7};function o(e){e.length=0}function r(e,t,n){return Array.prototype.slice.call(e,t,n)}function u(e){return e.bind.apply(e,[null].concat(r(arguments,1)))}function a(){}var s=setTimeout;function c(e){return requestAnimationFrame(e)}function l(t,n){return e(n)===t}function d(e){return!y(e)&&l("object",e)}var f=Array.isArray,h=u(l,"function"),p=u(l,"string"),v=u(l,"undefined");function y(e){return null===e}function m(e){try{return e instanceof(e.ownerDocument.defaultView||window).HTMLElement}catch(e){return!1}}function g(e){return f(e)?e:[e]}function b(e,t){g(e).forEach(t)}function w(e,t){return-1<e.indexOf(t)}function E(e,t){return e.push.apply(e,g(t)),e}function k(e,t,n){e&&b(t,(function(t){t&&e.classList[n?"add":"remove"](t)}))}function P(e,t){k(e,p(t)?t.split(" "):t,!0)}function S(e,t){b(t,e.appendChild.bind(e))}function x(e,t){b(e,(function(e){var n=(t||e).parentNode;n&&n.insertBefore(e,t)}))}function C(e,t){return m(e)&&(e.msMatchesSelector||e.matches).call(e,t)}function T(e,t){return e=e?r(e.children):[],t?e.filter((function(e){return C(e,t)})):e}function A(e,t){return t?T(e,t)[0]:e.firstElementChild}var M=Object.keys;function L(e,t,n){e&&(n?M(e).reverse():M(e)).forEach((function(n){"__proto__"!==n&&t(e[n],n)}))}function N(e){return r(arguments,1).forEach((function(t){L(t,(function(n,i){e[i]=t[i]}))})),e}function _(e){return r(arguments,1).forEach((function(t){L(t,(function(t,n){f(t)?e[n]=t.slice():d(t)?e[n]=_({},d(e[n])?e[n]:{},t):e[n]=t}))})),e}function F(e,t){b(t||M(e),(function(t){delete e[t]}))}function I(e,t){b(e,(function(e){b(t,(function(t){e&&e.removeAttribute(t)}))}))}function O(e,t,n){d(t)?L(t,(function(t,n){O(e,n,t)})):b(e,(function(e){y(n)||""===n?I(e,t):e.setAttribute(t,String(n))}))}function j(e,t,n){return e=document.createElement(e),t&&(p(t)?P:O)(e,t),n&&S(n,e),e}function R(e,t,n){if(v(n))return getComputedStyle(e)[t];y(n)||(e.style[t]=""+n)}function V(e,t){R(e,"display",t)}function D(e){e.setActive&&e.setActive()||e.focus({preventScroll:!0})}function z(e,t){return e.getAttribute(t)}function q(e,t){return e&&e.classList.contains(t)}function W(e){return e.getBoundingClientRect()}function B(e){b(e,(function(e){e&&e.parentNode&&e.parentNode.removeChild(e)}))}function Y(e){return A((new DOMParser).parseFromString(e,"text/html").body)}function H(e,t){e.preventDefault(),t&&(e.stopPropagation(),e.stopImmediatePropagation())}function U(e,t){return e&&e.querySelector(t)}function X(e,t){return t?r(e.querySelectorAll(t)):[]}function G(e,t){k(e,t,!1)}function Q(e){return e.timeStamp}function J(e){return p(e)?e:e?e+"px":""}var K="splide",$="data-"+K;function Z(e,t){if(!e)throw new Error("["+K+"] "+(t||""))}var ee=Math.min,te=Math.max,ne=Math.floor,ie=Math.ceil,oe=Math.abs;function re(e,t,n){return oe(e-t)<n}function ue(e,t,n,i){var o=ee(t,n);t=te(t,n);return i?o<e&&e<t:o<=e&&e<=t}function ae(e,t,n){var i=ee(t,n);t=te(t,n);return ee(te(i,e),t)}function se(e){return(0<e)-(e<0)}function ce(e,t){return b(t,(function(t){e=e.replace("%s",""+t)})),e}function le(e){return e<10?"0"+e:""+e}var de={};function fe(){var e=[];function t(e,t,n){b(e,(function(e){e&&b(t,(function(t){t.split(" ").forEach((function(t){t=t.split("."),n(e,t[0],t[1])}))}))}))}return{bind:function(n,i,o,r){t(n,i,(function(t,n,i){var u="addEventListener"in t,a=u?t.removeEventListener.bind(t,n,o,r):t.removeListener.bind(t,o);u?t.addEventListener(n,o,r):t.addListener(o),e.push([t,n,i,o,a])}))},unbind:function(n,i,o){t(n,i,(function(t,n,i){e=e.filter((function(e){return!!(e[0]!==t||e[1]!==n||e[2]!==i||o&&e[3]!==o)||(e[4](),!1)}))}))},dispatch:function(e,t,n){var i;return"function"==typeof CustomEvent?i=new CustomEvent(t,{bubbles:!0,detail:n}):(i=document.createEvent("CustomEvent")).initCustomEvent(t,!0,!1,n),e.dispatchEvent(i),i},destroy:function(){e.forEach((function(e){e[4]()})),o(e)}}}var he="mounted",pe="move",ve="moved",ye="click",me="refresh",ge="updated",be="resize",we="resized",Ee="scroll",ke="scrolled",Pe="destroy",Se="navigation:mounted",xe="autoplay:play",Ce="autoplay:pause",Te="lazyload:loaded";function Ae(e){var t=e?e.event.bus:document.createDocumentFragment(),n=fe();return e&&e.event.on(Pe,n.destroy),N(n,{bus:t,on:function(e,i){n.bind(t,g(e).join(" "),(function(e){i.apply(i,f(e.detail)?e.detail:[])}))},off:u(n.unbind,t),emit:function(e){n.dispatch(t,e,r(arguments,1))}})}function Me(e,t,n,i){var o,r,u=Date.now,a=0,s=!0,l=0;function d(){if(!s){if(a=e?ee((u()-o)/e,1):1,n&&n(a),1<=a&&(t(),o=u(),i&&++l>=i))return f();r=c(d)}}function f(){s=!0}function h(){r&&cancelAnimationFrame(r),s=!(r=a=0)}return{start:function(t){t||h(),o=u()-(t?a*e:0),s=!1,r=c(d)},rewind:function(){o=u(),a=0,n&&n(a)},pause:f,cancel:h,set:function(t){e=t},isPaused:function(){return s}}}var Le,Ne,_e=(Le="Arrow")+"Left",Fe=Le+"Right",Ie=Le+"Up",Oe="ttb",je={width:["height"],left:["top","right"],right:["bottom","left"],x:["y"],X:["Y"],Y:["X"],ArrowLeft:[Ie,Fe],ArrowRight:[Le=Le+"Down",_e]},Re="role",Ve="tabindex",De=(Ne="aria-")+"controls",ze=Ne+"current",qe=Ne+"selected",We=Ne+"label",Be=Ne+"labelledby",Ye=Ne+"hidden",He=Ne+"orientation",Ue=Ne+"roledescription",Xe=Ne+"live",Ge=Ne+"busy",Qe=Ne+"atomic",Je=[Re,Ve,"disabled",De,ze,We,Be,Ye,He,Ue],Ke=K,$e=(Ne=K+"__")+"track",Ze=Ne+"list",et=Ne+"slide",tt=et+"--clone",nt=et+"__container",it=Ne+"arrows",ot=Ne+"arrow",rt=ot+"--prev",ut=ot+"--next",at=Ne+"pagination",st=at+"__page",ct=Ne+"progress__bar",lt=Ne+"toggle",dt=Ne+"sr",ft="is-active",ht="is-prev",pt="is-next",vt="is-visible",yt="is-loading",mt="is-focus-in",gt="is-overflow",bt=[ft,vt,ht,pt,yt,mt,gt],wt="touchstart mousedown",Et="touchmove mousemove",kt="touchend touchcancel mouseup click",Pt="slide",St="loop",xt="fade";var Ct=$+"-interval",Tt={passive:!1,capture:!0},At={Spacebar:" ",Right:Fe,Left:_e,Up:Ie,Down:Le};function Mt(e){return e=p(e)?e:e.key,At[e]||e}var Lt="keydown",Nt=$+"-lazy",_t=Nt+"-srcset",Ft="["+Nt+"], ["+_t+"]",It=[" ","Enter"],Ot=Object.freeze({__proto__:null,Media:function(e,n,i){var o=e.state,r=i.breakpoints||{},u=i.reducedMotion||{},a=fe(),s=[];function c(e){e&&a.destroy()}function l(e,t){t=matchMedia(t),a.bind(t,"change",d),s.push([e,t])}function d(){var t=o.is(7),n=i.direction,r=s.reduce((function(e,t){return _(e,t[1].matches?t[0]:{})}),{});F(i),f(r),i.destroy?e.destroy("completely"===i.destroy):t?(c(!0),e.mount()):n!==i.direction&&e.refresh()}function f(t,n,r){_(i,t),n&&_(Object.getPrototypeOf(i),t),!r&&o.is(1)||e.emit(ge,i)}return{setup:function(){var e="min"===i.mediaQuery;M(r).sort((function(t,n){return e?+t-+n:+n-+t})).forEach((function(t){l(r[t],"("+(e?"min":"max")+"-width:"+t+"px)")})),l(u,t),d()},destroy:c,reduce:function(e){matchMedia(t).matches&&(e?_(i,u):F(i,M(u)))},set:f}},Direction:function(e,t,n){return{resolve:function(e,t,i){var o="rtl"!==(i=i||n.direction)||t?i===Oe?0:-1:1;return je[e]&&je[e][o]||e.replace(/width|left|right/i,(function(e,t){return e=je[e.toLowerCase()][o]||e,0<t?e.charAt(0).toUpperCase()+e.slice(1):e}))},orient:function(e){return e*("rtl"===n.direction?1:-1)}}},Elements:function(e,t,n){var i,r,u,a=Ae(e),s=a.on,c=a.bind,l=e.root,d=n.i18n,f={},p=[],v=[],y=[];function m(){i=w("."+$e),r=A(i,"."+Ze),Z(i&&r,"A track/list element is missing."),E(p,T(r,"."+et+":not(."+tt+")")),L({arrows:it,pagination:at,prev:rt,next:ut,bar:ct,toggle:lt},(function(e,t){f[t]=w("."+e)})),N(f,{root:l,track:i,list:r,slides:p});var e=l.id||function(e){return""+e+le(de[e]=(de[e]||0)+1)}(K),t=n.role;l.id=e,i.id=i.id||e+"-track",r.id=r.id||e+"-list",!z(l,Re)&&"SECTION"!==l.tagName&&t&&O(l,Re,t),O(l,Ue,d.carousel),O(r,Re,"presentation"),b()}function g(e){var t=Je.concat("style");o(p),G(l,v),G(i,y),I([i,r],t),I(l,e?t:["style",Ue])}function b(){G(l,v),G(i,y),v=S(Ke),y=S($e),P(l,v),P(i,y),O(l,We,n.label),O(l,Be,n.labelledby)}function w(e){return(e=U(l,e))&&function(e,t){if(h(e.closest))return e.closest(t);for(var n=e;n&&1===n.nodeType&&!C(n,t);)n=n.parentElement;return n}(e,"."+Ke)===l?e:void 0}function S(e){return[e+"--"+n.type,e+"--"+n.direction,n.drag&&e+"--draggable",n.isNavigation&&e+"--nav",e===Ke&&ft]}return N(f,{setup:m,mount:function(){s(me,g),s(me,m),s(ge,b),c(document,wt+" keydown",(function(e){u="keydown"===e.type}),{capture:!0}),c(l,"focusin",(function(){k(l,mt,!!u)}))},destroy:g})},Slides:function(e,t,n){var i=Ae(e),r=i.on,a=i.emit,s=i.bind,c=(i=t.Elements).slides,l=i.list,d=[];function f(){c.forEach((function(e,t){y(e,t,-1)}))}function v(){T((function(e){e.destroy()})),o(d)}function y(t,n,i){n=function(e,t,n,i){var o,r=Ae(e),a=r.on,s=r.emit,c=r.bind,l=e.Components,d=e.root,f=e.options,h=f.isNavigation,p=f.updateOnMove,v=f.i18n,y=f.pagination,m=f.slideFocus,g=l.Direction.resolve,b=z(i,"style"),w=z(i,We),E=-1<n,P=A(i,"."+nt);function S(){var o=e.splides.map((function(e){return(e=e.splide.Components.Slides.getAt(t))?e.slide.id:""})).join(" ");O(i,We,ce(v.slideX,(E?n:t)+1)),O(i,De,o),O(i,Re,m?"button":""),m&&I(i,Ue)}function x(){o||C()}function C(){var n,r,u;o||(n=e.index,(u=T())!==q(i,ft)&&(k(i,ft,u),O(i,ze,h&&u||""),s(u?"active":"inactive",M)),u=function(){if(e.is(xt))return T();var t=W(l.Elements.track),n=W(i),o=g("left",!0),r=g("right",!0);return ne(t[o])<=ie(n[o])&&ne(n[r])<=ie(t[r])}(),r=!u&&(!T()||E),e.state.is([4,5])||O(i,Ye,r||""),O(X(i,f.focusableNodes||""),Ve,r?-1:""),m&&O(i,Ve,r?-1:0),u!==q(i,vt)&&(k(i,vt,u),s(u?"visible":"hidden",M)),u||document.activeElement!==i||(r=l.Slides.getAt(e.index))&&D(r.slide),k(i,ht,t===n-1),k(i,pt,t===n+1))}function T(){var i=e.index;return i===t||f.cloneStatus&&i===n}var M={index:t,slideIndex:n,slide:i,container:P,isClone:E,mount:function(){E||(i.id=d.id+"-slide"+le(t+1),O(i,Re,y?"tabpanel":"group"),O(i,Ue,v.slide),O(i,We,w||ce(v.slideLabel,[t+1,e.length]))),c(i,"click",u(s,ye,M)),c(i,"keydown",u(s,"sk",M)),a([ve,"sh",ke],C),a(Se,S),p&&a(pe,x)},destroy:function(){o=!0,r.destroy(),G(i,bt),I(i,Je),O(i,"style",b),O(i,We,w||"")},update:C,style:function(e,t,n){R(n&&P||i,e,t)},isWithin:function(n,i){return n=oe(n-t),(n=E||!f.rewind&&!e.is(St)?n:ee(n,e.length-n))<=i}};return M}(e,n,i,t),n.mount(),d.push(n),d.sort((function(e,t){return e.index-t.index}))}function E(e){return e?M((function(e){return!e.isClone})):d}function T(e,t){E(t).forEach(e)}function M(e){return d.filter(h(e)?e:function(t){return p(e)?C(t.slide,e):w(g(e),t.index)})}return{mount:function(){f(),r(me,v),r(me,f)},destroy:v,update:function(){T((function(e){e.update()}))},register:y,get:E,getIn:function(e){var i=t.Controller,o=i.toIndex(e),r=i.hasFocus()?1:n.perPage;return M((function(e){return ue(e.index,o,o+r-1)}))},getAt:function(e){return M(e)[0]},add:function(e,t){b(e,(function(e){var i,o,r;m(e=p(e)?Y(e):e)&&((i=c[t])?x(e,i):S(l,e),P(e,n.classes.slide),i=e,o=u(a,be),i=X(i,"img"),(r=i.length)?i.forEach((function(e){s(e,"load error",(function(){--r||o()}))})):o())})),a(me)},remove:function(e){B(M(e).map((function(e){return e.slide}))),a(me)},forEach:T,filter:M,style:function(e,t,n){T((function(i){i.style(e,t,n)}))},getLength:function(e){return(e?c:d).length},isEnough:function(){return d.length>n.perPage}}},Layout:function(e,t,n){var i,o,r,a=(l=Ae(e)).on,s=l.bind,c=l.emit,l=t.Slides,f=t.Direction.resolve,h=(t=t.Elements).root,p=t.track,v=t.list,y=l.getAt,m=l.style;function g(){i=n.direction===Oe,R(h,"maxWidth",J(n.width)),R(p,f("paddingLeft"),w(!1)),R(p,f("paddingRight"),w(!0)),b(!0)}function b(e){var t=W(h);!e&&o.width===t.width&&o.height===t.height||(R(p,"height",function(){var e="";return i&&(Z(e=E(),"height or heightRatio is missing."),e="calc("+e+" - "+w(!1)+" - "+w(!0)+")"),e}()),m(f("marginRight"),J(n.gap)),m("width",n.autoWidth?null:J(n.fixedWidth)||(i?"":P())),m("height",J(n.fixedHeight)||(i?n.autoHeight?null:P():E()),!0),o=t,c(we),r!==(r=M())&&(k(h,gt,r),c("overflow",r)))}function w(e){var t=n.padding;e=f(e?"right":"left");return t&&J(t[e]||(d(t)?0:t))||"0px"}function E(){return J(n.height||W(v).width*n.heightRatio)}function P(){var e=J(n.gap);return"calc((100%"+(e&&" + "+e)+")/"+(n.perPage||1)+(e&&" - "+e)+")"}function S(){return W(v)[f("width")]}function x(e,t){return(e=y(e||0))?W(e.slide)[f("width")]+(t?0:A()):0}function C(e,t){var n;return(e=y(e))?(e=W(e.slide)[f("right")],n=W(v)[f("left")],oe(e-n)+(t?0:A())):0}function T(t){return C(e.length-1)-C(0)+x(0,t)}function A(){var e=y(0);return e&&parseFloat(R(e.slide,f("marginRight")))||0}function M(){return e.is(xt)||T(!0)>S()}return{mount:function(){var e,t;g(),s(window,"resize load",(e=u(c,be),t=Me(0,e,null,1),function(){t.isPaused()&&t.start()})),a([ge,me],g),a(be,b)},resize:b,listSize:S,slideSize:x,sliderSize:T,totalSize:C,getPadding:function(e){return parseFloat(R(p,f("padding"+(e?"Right":"Left"))))||0},isOverflow:M}},Clones:function(e,t,n){var i,r=Ae(e),u=r.on,a=t.Elements,s=t.Slides,c=t.Direction.resolve,l=[];function d(){if(u(me,f),u([ge,be],p),i=y()){var o=i,r=s.get().slice(),c=r.length;if(c){for(;r.length<o;)E(r,r);E(r.slice(-o),r.slice(0,o)).forEach((function(t,i){var u=i<o,d=function(t,i){return P(t=t.cloneNode(!0),n.classes.clone),t.id=e.root.id+"-clone"+le(i+1),t}(t.slide,i);u?x(d,r[0].slide):S(a.list,d),E(l,d),s.register(d,i-o+(u?0:c),t.index)}))}t.Layout.resize(!0)}}function f(){h(),d()}function h(){B(l),o(l),r.destroy()}function p(){var e=y();i!==e&&(i<e||!e)&&r.emit(me)}function y(){var i,o=n.clones;return e.is(St)?v(o)&&(o=(i=n[c("fixedWidth")]&&t.Layout.slideSize(0))&&ie(W(a.track)[c("width")]/i)||n[c("autoWidth")]&&e.length||2*n.perPage):o=0,o}return{mount:d,destroy:h}},Move:function(e,t,n){var i,o=Ae(e),r=o.on,u=o.emit,a=e.state.set,s=(o=t.Layout).slideSize,c=o.getPadding,l=o.totalSize,d=o.listSize,f=o.sliderSize,h=(o=t.Direction).resolve,p=o.orient,y=(o=t.Elements).list,m=o.track;function g(){t.Controller.isBusy()||(t.Scroll.cancel(),b(e.index),t.Slides.update())}function b(e){w(S(e,!0))}function w(n,i){e.is(xt)||(i=i?n:function(n){var i,o;return e.is(St)&&(o=(i=P(n))>t.Controller.getEnd(),(i<0||o)&&(n=E(n,o))),n}(n),R(y,"transform","translate"+h("X")+"("+i+"px)"),n!==i&&u("sh"))}function E(e,t){var n=e-C(t),i=f();return e-p(i*(ie(oe(n)/i)||1))*(t?1:-1)}function k(){w(x(),!0),i.cancel()}function P(e){for(var n=t.Slides.get(),i=0,o=1/0,r=0;r<n.length;r++){var u=n[r].index,a=oe(S(u,!0)-e);if(!(a<=o))break;o=a,i=u}return i}function S(t,i){var o=p(l(t-1)-("center"===(o=n.focus)?(d()-s(t,!0))/2:+o*s(t)||0));return i?(t=o,t=n.trimSpace&&e.is(Pt)?ae(t,0,p(f(!0)-d())):t):o}function x(){var e=h("left");return W(y)[e]-W(m)[e]+p(c(!1))}function C(e){return S(e?t.Controller.getEnd():0,!!n.trimSpace)}return{mount:function(){i=t.Transition,r([he,we,ge,me],g)},move:function(e,t,n,o){var r,s;e!==t&&(r=n<e,s=p(E(x(),r)),r?0<=s:s<=y[h("scrollWidth")]-W(m)[h("width")])&&(k(),w(E(x(),n<e),!0)),a(4),u(pe,t,n,e),i.start(t,(function(){a(3),u(ve,t,n,e),o&&o()}))},jump:b,translate:w,shift:E,cancel:k,toIndex:P,toPosition:S,getPosition:x,getLimit:C,exceededLimit:function(e,t){t=v(t)?x():t;var n=!0!==e&&p(t)<p(C(!1));e=!1!==e&&p(t)>p(C(!0));return n||e},reposition:g}},Controller:function(e,t,n){var i,o,r,a,s=Ae(e),c=s.on,l=s.emit,d=t.Move,f=d.getPosition,h=d.getLimit,y=d.toPosition,m=(s=t.Slides).isEnough,g=s.getLength,b=n.omitEnd,w=e.is(St),E=e.is(Pt),k=u(A,!1),P=u(A,!0),S=n.start||0,x=S;function C(){o=g(!0),r=n.perMove,a=n.perPage,i=N();var e=ae(S,0,b?i:o-1);e!==S&&(S=e,d.reposition())}function T(){i!==N()&&l("ei")}function A(e,t){var n=r||(O()?1:a);return-1===(n=M(S+n*(e?-1:1),S,!(r||O())))&&E&&!re(f(),h(!e),1)?e?0:i:t?n:L(n)}function M(t,u,s){var c;return m()||O()?((c=function(t){if(E&&"move"===n.trimSpace&&t!==S)for(var i=f();i===y(t,!0)&&ue(t,0,e.length-1,!n.rewind);)t<S?--t:++t;return t}(t))!==t&&(u=t,t=c,s=!1),t<0||i<t?t=r||!ue(0,t,u,!0)&&!ue(i,u,t,!0)?w?s?t<0?-(o%a||a):o:t:n.rewind?t<0?i:0:-1:_(F(t)):s&&t!==u&&(t=_(F(u)+(t<u?-1:1)))):t=-1,t}function L(e){return w?(e+o)%o||0:e}function N(){for(var e=o-(O()||w&&r?1:a);b&&0<e--;)if(y(o-1,!0)!==y(e,!0)){e++;break}return ae(e,0,o-1)}function _(e){return ae(O()?e:a*e,0,i)}function F(e){return O()?ee(e,i):ne((i<=e?o-1:e)/a)}function I(e){e!==S&&(x=S,S=e)}function O(){return!v(n.focus)||n.isNavigation}function j(){return e.state.is([4,5])&&!!n.waitForTransition}return{mount:function(){C(),c([ge,me,"ei"],C),c(we,T)},go:function(e,t,n){var o;j()||-1<(o=L(e=function(e){var t,n,o=S;return p(e)?(t=(n=e.match(/([+\-<>])(\d+)?/)||[])[1],n=n[2],"+"===t||"-"===t?o=M(S+ +(""+t+(+n||1)),S):">"===t?o=n?_(+n):k(!0):"<"===t&&(o=P(!0))):o=w?e:ae(e,0,i),o}(e)))&&(t||o!==S)&&(I(o),d.move(e,o,x,n))},scroll:function(e,n,o,r){t.Scroll.scroll(e,n,o,(function(){var e=L(d.toIndex(f()));I(b?ee(e,i):e),r&&r()}))},getNext:k,getPrev:P,getAdjacent:A,getEnd:N,setIndex:I,getIndex:function(e){return e?x:S},toIndex:_,toPage:F,toDest:function(e){return e=d.toIndex(e),E?ae(e,0,i):e},hasFocus:O,isBusy:j}},Arrows:function(e,t,n){var i,o,r=Ae(e),a=r.on,s=r.bind,c=r.emit,l=n.classes,d=n.i18n,f=t.Elements,h=t.Controller,p=f.arrows,v=f.track,y=p,m=f.prev,g=f.next,b={};function w(){var e=n.arrows;!e||m&&g||(y=p||j("div",l.arrows),m=T(!0),g=T(!1),i=!0,S(y,[m,g]),p||x(y,v)),m&&g&&(N(b,{prev:m,next:g}),V(y,e?"":"none"),P(y,o=it+"--"+n.direction),e&&(a([he,ve,me,ke,"ei"],A),s(g,"click",u(C,">")),s(m,"click",u(C,"<")),A(),O([m,g],De,v.id),c("arrows:mounted",m,g))),a(ge,E)}function E(){k(),w()}function k(){r.destroy(),G(y,o),i?(B(p?[m,g]:y),m=g=null):I([m,g],Je)}function C(e){h.go(e,!0)}function T(e){return Y('<button class="'+l.arrow+" "+(e?l.prev:l.next)+'" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="'+(n.arrowPath||"m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z")+'" />')}function A(){var t,n,i,o;m&&g&&(o=e.index,t=h.getPrev(),n=h.getNext(),i=-1<t&&o<t?d.last:d.prev,o=-1<n&&n<o?d.first:d.next,m.disabled=t<0,g.disabled=n<0,O(m,We,i),O(g,We,o),c("arrows:updated",m,g,t,n))}return{arrows:b,mount:w,destroy:k,update:A}},Autoplay:function(e,t,n){var i,o,r=Ae(e),u=r.on,a=r.bind,s=r.emit,c=Me(n.interval,e.go.bind(e,">"),(function(e){var t=d.bar;t&&R(t,"width",100*e+"%"),s("autoplay:playing",e)})),l=c.isPaused,d=t.Elements,f=(r=t.Elements).root,h=r.toggle,p=n.autoplay,v="pause"===p;function y(){l()&&t.Slides.isEnough()&&(c.start(!n.resetProgress),o=i=v=!1,b(),s(xe))}function m(e){v=!!(e=void 0===e||e),b(),l()||(c.pause(),s(Ce))}function g(){v||(i||o?m(!1):y())}function b(){h&&(k(h,ft,!v),O(h,We,n.i18n[v?"play":"pause"]))}function w(e){e=t.Slides.getAt(e),c.set(e&&+z(e.slide,Ct)||n.interval)}return{mount:function(){p&&(n.pauseOnHover&&a(f,"mouseenter mouseleave",(function(e){i="mouseenter"===e.type,g()})),n.pauseOnFocus&&a(f,"focusin focusout",(function(e){o="focusin"===e.type,g()})),h&&a(h,"click",(function(){v?y():m(!0)})),u([pe,Ee,me],c.rewind),u(pe,w),h&&O(h,De,d.track.id),v||y(),b())},destroy:c.cancel,play:y,pause:m,isPaused:l}},Cover:function(e,t,n){var i=Ae(e).on;function o(e){t.Slides.forEach((function(t){var n=A(t.container||t.slide,"img");n&&n.src&&r(e,n,t)}))}function r(e,t,n){n.style("background",e?'center/cover no-repeat url("'+t.src+'")':"",!0),V(t,e?"none":"")}return{mount:function(){n.cover&&(i(Te,u(r,!0)),i([he,ge,me],u(o,!0)))},destroy:u(o,!1)}},Scroll:function(e,t,n){var i,o,r=Ae(e),a=r.on,s=r.emit,c=e.state.set,l=t.Move,d=l.getPosition,f=l.getLimit,h=l.exceededLimit,p=l.translate,v=e.is(Pt),y=1;function m(e,n,r,a,f){var p,m=d();w(),!r||v&&h()||(r=t.Layout.sliderSize(),p=se(e)*r*ne(oe(e)/r)||0,e=l.toPosition(t.Controller.toDest(e%r))+p),r=re(m,e,1);y=1,n=r?0:n||te(oe(e-m)/1.5,800),o=a,i=Me(n,g,u(b,m,e,f),1),c(5),s(Ee),i.start()}function g(){c(3),o&&o(),s(ke)}function b(e,t,i,r){var u=d();r=(e+(t-e)*(t=r,(e=n.easingFunc)?e(t):1-Math.pow(1-t,4))-u)*y;p(u+r),v&&!i&&h()&&(y*=.6,oe(r)<10&&m(f(h(!0)),600,!1,o,!0))}function w(){i&&i.cancel()}function E(){i&&!i.isPaused()&&(w(),g())}return{mount:function(){a(pe,w),a([ge,me],E)},destroy:w,scroll:m,cancel:E}},Drag:function(e,t,n){var i,o,r,u,s,c,l,f,h=Ae(e),p=h.on,v=h.emit,y=h.bind,m=h.unbind,g=e.state,b=t.Move,w=t.Scroll,E=t.Controller,k=t.Elements.track,P=t.Media.reduce,S=(h=t.Direction).resolve,x=h.orient,T=b.getPosition,A=b.exceededLimit,M=!1;function L(){var e=n.drag;q(!e),u="free"===e}function N(e){var t,i,o;c=!1,l||(t=z(e),i=e.target,o=n.noDrag,C(i,"."+st+", ."+ot)||o&&C(i,o)||!t&&e.button||(E.isBusy()?H(e,!0):(f=t?k:window,s=g.is([4,5]),r=null,y(f,Et,_,Tt),y(f,kt,F,Tt),b.cancel(),w.cancel(),O(e))))}function _(t){var o,r,u,a,l;g.is(6)||(g.set(6),v("drag")),t.cancelable&&(s?(b.translate(i+j(t)/(M&&e.is(Pt)?5:1)),l=200<R(t),o=M!==(M=A()),(l||o)&&O(t),c=!0,v("dragging"),H(t)):oe(j(l=t))>oe(j(l,!0))&&(o=t,a=(u=d(r=n.dragMinThreshold))&&r.mouse||0,u=(u?r.touch:+r)||10,s=oe(j(o))>(z(o)?u:a),H(t)))}function F(i){var o,r,a;g.is(6)&&(g.set(3),v("dragged")),s&&(r=function(e){return T()+se(e)*ee(oe(e)*(n.flickPower||600),u?1/0:t.Layout.listSize()*(n.flickMaxPages||1))}(o=function(t){if(e.is(St)||!M){var n=R(t);if(n&&n<200)return j(t)/n}return 0}(o=i)),a=n.rewind&&n.rewindByDrag,P(!1),u?E.scroll(r,0,n.snap):e.is(xt)?E.go(x(se(o))<0?a?"<":"-":a?">":"+"):e.is(Pt)&&M&&a?E.go(A(!0)?">":"<"):E.go(E.toDest(r),!0),P(!0),H(i)),m(f,Et,_),m(f,kt,F),s=!1}function I(e){!l&&c&&H(e,!0)}function O(e){r=o,o=e,i=T()}function j(e,t){return D(e,t)-D(V(e),t)}function R(e){return Q(e)-Q(V(e))}function V(e){return o===e&&r||o}function D(e,t){return(z(e)?e.changedTouches[0]:e)["page"+S(t?"Y":"X")]}function z(e){return"undefined"!=typeof TouchEvent&&e instanceof TouchEvent}function q(e){l=e}return{mount:function(){y(k,Et,a,Tt),y(k,kt,a,Tt),y(k,wt,N,Tt),y(k,"click",I,{capture:!0}),y(k,"dragstart",H),p([he,ge],L)},disable:q,isDragging:function(){return s}}},Keyboard:function(e,t,n){var i,o,r=Ae(e),u=r.on,a=r.bind,c=r.unbind,l=e.root,d=t.Direction.resolve;function f(){var e=n.keyboard;e&&(i="global"===e?window:l,a(i,Lt,v))}function h(){c(i,Lt)}function p(){var e=o;o=!0,s((function(){o=e}))}function v(t){o||((t=Mt(t))===d(_e)?e.go("<"):t===d(Fe)&&e.go(">"))}return{mount:function(){f(),u(ge,h),u(ge,f),u(pe,p)},destroy:h,disable:function(e){o=e}}},LazyLoad:function(e,t,n){var i=Ae(e),r=i.on,a=i.off,s=i.bind,c=i.emit,l="sequential"===n.lazyLoad,d=[ve,ke],f=[];function h(){o(f),t.Slides.forEach((function(e){X(e.slide,Ft).forEach((function(t){var i=z(t,Nt),o=z(t,_t);i===t.src&&o===t.srcset||(i=n.classes.spinner,i=A(o=t.parentElement,"."+i)||j("span",i,o),f.push([t,e,i]),t.src||V(t,"none"))}))})),(l?m:(a(d),r(d,p),p))()}function p(){(f=f.filter((function(t){var i=n.perPage*((n.preloadPages||1)+1)-1;return!t[1].isWithin(e.index,i)||v(t)}))).length||a(d)}function v(e){var t=e[0];P(e[1].slide,yt),s(t,"load error",u(y,e)),O(t,"src",z(t,Nt)),O(t,"srcset",z(t,_t)),I(t,Nt),I(t,_t)}function y(e,t){var n=e[0],i=e[1];G(i.slide,yt),"error"!==t.type&&(B(e[2]),V(n,""),c(Te,n,i),c(be)),l&&m()}function m(){f.length&&v(f.shift())}return{mount:function(){n.lazyLoad&&(h(),r(me,h))},destroy:u(o,f),check:p}},Pagination:function(e,t,n){var i,a,s=Ae(e),c=s.on,l=s.emit,d=s.bind,f=t.Slides,h=t.Elements,p=t.Controller,v=p.hasFocus,y=p.getIndex,m=p.go,g=t.Direction.resolve,b=h.pagination,w=[];function E(){i&&(B(b?r(i.children):i),G(i,a),o(w),i=null),s.destroy()}function k(e){m(">"+e,!0)}function S(e,t){var n=w.length,i=Mt(t),o=x(),r=-1;(o=(i===g(Fe,!1,o)?r=++e%n:i===g(_e,!1,o)?r=(--e+n)%n:"Home"===i?r=0:"End"===i&&(r=n-1),w[r]))&&(D(o.button),m(">"+r),H(t,!0))}function x(){return n.paginationDirection||n.direction}function C(e){return w[p.toPage(e)]}function T(){var e,t=C(y(!0)),n=C(y());t&&(G(e=t.button,ft),I(e,qe),O(e,Ve,-1)),n&&(P(e=n.button,ft),O(e,qe,!0),O(e,Ve,"")),l("pagination:updated",{list:i,items:w},t,n)}return{items:w,mount:function t(){E(),c([ge,me,"ei"],t);var o=n.pagination;if(b&&V(b,o?"":"none"),o){c([pe,Ee,ke],T);o=e.length;var r=n.classes,s=n.i18n,y=n.perPage,m=v()?p.getEnd()+1:ie(o/y);P(i=b||j("ul",r.pagination,h.track.parentElement),a=at+"--"+x()),O(i,Re,"tablist"),O(i,We,s.select),O(i,He,x()===Oe?"vertical":"");for(var g=0;g<m;g++){var A=j("li",null,i),M=j("button",{class:r.page,type:"button"},A),L=f.getIn(g).map((function(e){return e.slide.id})),N=!v()&&1<y?s.pageX:s.slideX;d(M,"click",u(k,g)),n.paginationKeyboard&&d(M,"keydown",u(S,g)),O(A,Re,"presentation"),O(M,Re,"tab"),O(M,De,L.join(" ")),O(M,We,ce(N,g+1)),O(M,Ve,-1),w.push({li:A,button:M,page:g})}T(),l("pagination:mounted",{list:i,items:w},C(e.index))}},destroy:E,getAt:C,update:T}},Sync:function(e,t,n){var i=n.isNavigation,r=n.slideFocus,a=[];function s(){var t,n;e.splides.forEach((function(t){t.isParent||(l(e,t.splide),l(t.splide,e))})),i&&((n=(t=Ae(e)).on)(ye,f),n("sk",h),n([he,ge],d),a.push(t),t.emit(Se,e.splides))}function c(){a.forEach((function(e){e.destroy()})),o(a)}function l(e,t){(e=Ae(e)).on(pe,(function(e,n,i){t.go(t.is(St)?i:e)})),a.push(e)}function d(){O(t.Elements.list,He,n.direction===Oe?"vertical":"")}function f(t){e.go(t.index)}function h(e,t){w(It,Mt(t))&&(f(e),H(t))}return{setup:u(t.Media.set,{slideFocus:v(r)?i:r},!0),mount:s,destroy:c,remount:function(){c(),s()}}},Wheel:function(e,t,n){var i=Ae(e).bind,o=0;function r(i){var r,u,a,s,c;i.cancelable&&(r=(c=i.deltaY)<0,u=Q(i),a=n.wheelMinThreshold||0,s=n.wheelSleep||0,oe(c)>a&&s<u-o&&(e.go(r?"<":">"),o=u),c=r,n.releaseWheel&&!e.state.is(4)&&-1===t.Controller.getAdjacent(c)||H(i))}return{mount:function(){n.wheel&&i(t.Elements.track,"wheel",r,Tt)}}},Live:function(e,t,n){var i=Ae(e).on,o=t.Elements.track,r=n.live&&!n.isNavigation,a=j("span",dt),s=Me(90,u(c,!1));function c(e){O(o,Ge,e),e?(S(o,a),s.start()):(B(a),s.cancel())}function l(e){r&&O(o,Xe,e?"off":"polite")}return{mount:function(){r&&(l(!t.Autoplay.isPaused()),O(o,Qe,!0),a.textContent="…",i(xe,u(l,!0)),i(Ce,u(l,!1)),i([ve,ke],u(c,!0)))},disable:l,destroy:function(){I(o,[Xe,Qe,Ge]),B(a)}}}}),jt={type:"slide",role:"region",speed:400,perPage:1,cloneStatus:!0,arrows:!0,pagination:!0,paginationKeyboard:!0,interval:5e3,pauseOnHover:!0,pauseOnFocus:!0,resetProgress:!0,easing:"cubic-bezier(0.25, 1, 0.5, 1)",drag:!0,direction:"ltr",trimSpace:!0,focusableNodes:"a, button, textarea, input, select, iframe",live:!0,classes:{slide:et,clone:tt,arrows:it,arrow:ot,prev:rt,next:ut,pagination:at,page:st,spinner:Ne+"spinner"},i18n:{prev:"Previous slide",next:"Next slide",first:"Go to first slide",last:"Go to last slide",slideX:"Go to slide %s",pageX:"Go to page %s",play:"Start autoplay",pause:"Pause autoplay",carousel:"carousel",slide:"slide",select:"Select a slide to show",slideLabel:"%s of %s"},reducedMotion:{speed:0,rewindSpeed:0,autoplay:"pause"}};function Rt(e,t,n){var i=t.Slides;function o(){i.forEach((function(e){e.style("transform","translateX(-"+100*e.index+"%)")}))}return{mount:function(){Ae(e).on([he,me],o)},start:function(e,t){i.style("transition","opacity "+n.speed+"ms "+n.easing),s(t)},cancel:a}}function Vt(e,t,n){var i,o=t.Move,r=t.Controller,a=t.Scroll,s=t.Elements.list,c=u(R,s,"transition");function l(){c(""),a.cancel()}return{mount:function(){Ae(e).bind(s,"transitionend",(function(e){e.target===s&&i&&(l(),i())}))},start:function(t,u){var s=o.toPosition(t,!0),l=o.getPosition(),d=function(t){var i=n.rewindSpeed;if(e.is(Pt)&&i){var o=r.getIndex(!0),u=r.getEnd();if(0===o&&u<=t||u<=o&&0===t)return i}return n.speed}(t);1<=oe(s-l)&&1<=d?n.useScroll?a.scroll(s,d,!1,u):(c("transform "+d+"ms "+n.easing),o.translate(s,!0),i=u):(o.jump(t),u())},cancel:l}}return Ie=function(){function e(t,n){this.event=Ae(),this.Components={},this.state=function(e){var t=e;return{set:function(e){t=e},is:function(e){return w(g(e),t)}}}(1),this.splides=[],this.n={},this.t={},Z(t=p(t)?U(document,t):t,t+" is invalid."),n=_({label:z(this.root=t,We)||"",labelledby:z(t,Be)||""},jt,e.defaults,n||{});try{_(n,JSON.parse(z(t,$)))}catch(t){Z(!1,"Invalid JSON")}this.n=Object.create(_({},n))}var t=e.prototype;return t.mount=function(e,t){var n=this,i=this.state,o=this.Components;return Z(i.is([1,7]),"Already mounted!"),i.set(1),this.i=o,this.r=t||this.r||(this.is(xt)?Rt:Vt),this.t=e||this.t,L(N({},Ot,this.t,{Transition:this.r}),(function(e,t){e=e(n,o,n.n),(o[t]=e).setup&&e.setup()})),L(o,(function(e){e.mount&&e.mount()})),this.emit(he),P(this.root,"is-initialized"),i.set(3),this.emit("ready"),this},t.sync=function(e){return this.splides.push({splide:e}),e.splides.push({splide:this,isParent:!0}),this.state.is(3)&&(this.i.Sync.remount(),e.Components.Sync.remount()),this},t.go=function(e){return this.i.Controller.go(e),this},t.on=function(e,t){return this.event.on(e,t),this},t.off=function(e){return this.event.off(e),this},t.emit=function(e){var t;return(t=this.event).emit.apply(t,[e].concat(r(arguments,1))),this},t.add=function(e,t){return this.i.Slides.add(e,t),this},t.remove=function(e){return this.i.Slides.remove(e),this},t.is=function(e){return this.n.type===e},t.refresh=function(){return this.emit(me),this},t.destroy=function(e){void 0===e&&(e=!0);var t=this.event,n=this.state;return n.is(1)?Ae(this).on("ready",this.destroy.bind(this,e)):(L(this.i,(function(t){t.destroy&&t.destroy(e)}),!0),t.emit(Pe),t.destroy(),e&&o(this.splides),n.set(7)),this},n(e,[{key:"options",get:function(){return this.n},set:function(e){this.i.Media.set(e,!0,!0)}},{key:"length",get:function(){return this.i.Slides.getLength(!0)}},{key:"index",get:function(){return this.i.Controller.getIndex()}}]),e}(),Ie.defaults={},Ie.STATES=i,Ie},"object"==("undefined"==typeof exports?"undefined":e(exports))&&"undefined"!=typeof module?module.exports=o():"function"==typeof define&&define.amd?define(o):(i="undefined"!=typeof globalThis?globalThis:i||self).Splide=o(),o=function(){function t(e,t,n){return Array.prototype.slice.call(e,t,n)}function n(e){return e.bind.apply(e,[null].concat(t(arguments,1)))}function i(t,n){return e(n)===t}var o=Array.isArray;function u(e){return o(e)?e:[e]}function a(e,t){u(e).forEach(t)}n(i,"function"),n(i,"string"),n(i,"undefined");var s=Object.keys;var c="dragging",l="destroy";function d(e){var i=e?e.event.bus:document.createDocumentFragment(),r=function(){var e=[];function t(e,t,n){a(e,(function(e){e&&a(t,(function(t){t.split(" ").forEach((function(t){t=t.split("."),n(e,t[0],t[1])}))}))}))}return{bind:function(n,i,o,r){t(n,i,(function(t,n,i){var u="addEventListener"in t,a=u?t.removeEventListener.bind(t,n,o,r):t.removeListener.bind(t,o);u?t.addEventListener(n,o,r):t.addListener(o),e.push([t,n,i,o,a])}))},unbind:function(n,i,o){t(n,i,(function(t,n,i){e=e.filter((function(e){return!!(e[0]!==t||e[1]!==n||e[2]!==i||o&&e[3]!==o)||(e[4](),!1)}))}))},dispatch:function(e,t,n){var i;return"function"==typeof CustomEvent?i=new CustomEvent(t,{bubbles:!0,detail:n}):(i=document.createEvent("CustomEvent")).initCustomEvent(t,!0,!1,n),e.dispatchEvent(i),i},destroy:function(){e.forEach((function(e){e[4]()})),e.length=0}}}();return e&&e.event.on(l,r.destroy),function(e){return t(arguments,1).forEach((function(t){var n,i=t;if(i)for(var o=o=s(i),r=0;r<o.length;r++){var u=o[r];if("__proto__"!==u&&!1===(i[u],void(e[n=u]=t[n])))break}})),e}(r,{bus:i,on:function(e,t){r.bind(i,u(e).join(" "),(function(e){t.apply(t,o(e.detail)?e.detail:[])}))},off:n(r.unbind,i),emit:function(e){r.dispatch(i,e,t(arguments,1))}})}var f="splide__slide",h=f+"__container";function p(e,t,n){return Array.prototype.slice.call(e,t,n)}function v(e){return e.bind.apply(e,[null].concat(p(arguments,1)))}function y(t,n){return e(n)===t}function m(e){return!k(e)&&y("object",e)}var g=Array.isArray,b=v(y,"function"),w=v(y,"string"),E=v(y,"undefined");function k(e){return null===e}function P(e,t){(g(e)?e:[e]).forEach(t)}function S(e,t,n){e&&P(t,(function(t){t&&e.classList[n?"add":"remove"](t)}))}function x(e,t){S(e,w(t)?t.split(" "):t,!0)}function C(e,t){return t?(n=t,t=(t=e)?p(t.children):[],(n?t.filter((function(e){return function(e,t){return e instanceof HTMLElement&&(e.msMatchesSelector||e.matches).call(e,t)}(e,n)})):t)[0]):e.firstElementChild;var n}var T=Object.keys;function A(e,t,n){if(e)for(var i=T(e),o=(i=n?i.reverse():i,0);o<i.length;o++){var r=i[o];if("__proto__"!==r&&!1===t(e[r],r))break}}function M(e){return p(arguments,1).forEach((function(t){A(t,(function(n,i){e[i]=t[i]}))})),e}function L(e){return p(arguments,1).forEach((function(t){A(t,(function(t,n){g(t)?e[n]=t.slice():m(t)?e[n]=L({},m(e[n])?e[n]:{},t):e[n]=t}))})),e}function N(e,t,n){m(t)?A(t,(function(t,n){N(e,n,t)})):P(e,(function(e){var i;k(n)||""===n?(i=t,P(e,(function(e){P(i,(function(t){e&&e.removeAttribute(t)}))}))):e.setAttribute(t,String(n))}))}function _(e,t,n){return e=document.createElement(e),t&&(w(t)?x:N)(e,t),n&&P(e,n.appendChild.bind(n)),e}function F(e,t){var n="display";E(t)?getComputedStyle(e)[n]:k(t)||(e.style[n]=""+t)}function I(e,t){S(e,t,!1)}var O=Math.min,j=Math.max;function R(e,t,n){var i=O(t,n);t=j(t,n);return O(j(i,e),t)}Math.floor,Math.ceil,Math.abs;var V="--has-video",D={hideControls:!1,loop:!1,mute:!1,volume:.2},z="video:click",q=function(){function e(e,t,n){this.state=function(e){var t=e;return{set:function(e){t=e},is:function(e){return e=u(e),n=t,-1<e.indexOf(n);var n}}}(1),this.event=d(),this.target=e,this.videoId=t,this.options=n||{},this.onPlay=this.onPlay.bind(this),this.onPause=this.onPause.bind(this),this.onEnded=this.onEnded.bind(this),this.onPlayerReady=this.onPlayerReady.bind(this),this.onError=this.onError.bind(this)}var t=e.prototype;return t.on=function(e,t){this.event.on(e,t)},t.play=function(){var e=this.state;if(!e.is(9))return this.event.emit("play"),e.is(2)?e.set(4):e.is(3)?(this.player=this.createPlayer(this.videoId),e.set(4)):void(e.is([4,8])||e.is(5)&&(e.set(6),this.playVideo()));console.error("[splide] Can not play this video.")},t.pause=function(){var e=this.state;if(!e.is(9))return this.event.emit("pause"),e.is(4)?e.set(2):e.is(6)?e.set(7):void(e.is(8)&&(this.pauseVideo(),this.state.set(5)))},t.isPaused=function(){return!this.state.is(8)},t.destroy=function(){this.event.destroy()},t.onPlayerReady=function(){var e=this.state,t=e.is(4);e.set(5),t&&this.play()},t.onPlay=function(){var e=this.state,t=e.is(7);e.set(8),t?this.pause():this.event.emit("played")},t.onPause=function(){this.state.set(5),this.event.emit("paused")},t.onEnded=function(){this.state.set(5),this.event.emit("ended")},t.onError=function(){this.state.set(9),this.event.emit("error")},e}(),W=function(e){function t(t,n,i){return(t=e.call(this,t,n,i=void 0===i?{}:i)||this).state.set(3),t}r(t,e);var n=t.prototype;return n.createPlayer=function(e){var t=this.options,n=void 0===(n=this.options.playerOptions)?{}:n,i=(e=_("video",{src:e},this.target)).addEventListener.bind(e);return M(e,{controls:!t.hideControls,loop:t.loop,volume:R(t.volume,0,1),muted:t.mute},n.htmlVideo||{}),i("play",this.onPlay),i("pause",this.onPause),i("ended",this.onEnded),i("loadeddata",this.onPlayerReady),i("error",this.onError),e},n.playVideo=function(){var e=this.player.play();e&&e.catch(this.onError.bind(this))},n.pauseVideo=function(){this.player.pause()},n.onError=function(){this.state.is(7)?this.state.set(5):e.prototype.onError.call(this)},n.destroy=function(){var t;e.prototype.destroy.call(this),(t=(t=this.player).addEventListener.bind(t))("play",this.onPlay),t("pause",this.onPause),t("ended",this.onEnded),t("loadeddata",this.onPlayerReady)},t}(q);function B(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}var Y="undefined"!=typeof global&&"[object global]"==={}.toString.call(global);function H(e,t){return 0===e.indexOf(t.toLowerCase())?e:"".concat(t.toLowerCase()).concat(e.substr(0,1).toUpperCase()).concat(e.substr(1))}function U(e){return/^(https?:)?\/\/((player|www)\.)?vimeo\.com(?=$|\/)/.test(e)}function X(e){var t,n=(e=0<arguments.length&&void 0!==e?e:{}).id;e=e.url;if(!(e=n||e))throw new Error("An id or url must be passed, either in an options object or as a data-vimeo-id or data-vimeo-url attribute.");if(t=e,!isNaN(parseFloat(t))&&isFinite(t)&&Math.floor(t)==t)return"https://vimeo.com/".concat(e);if(U(e))return e.replace("http:","https:");if(n)throw new TypeError("“".concat(n,"” is not a valid video id."));throw new TypeError("“".concat(e,"” is not a vimeo.com url."))}var G=void 0!==Array.prototype.indexOf,Q="undefined"!=typeof window&&void 0!==window.postMessage;if(!(Y||G&&Q))throw new Error("Sorry, the Vimeo Player API is not available in this browser.");var J,K,$,Z="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function ee(){if(void 0===this)throw new TypeError("Constructor WeakMap requires 'new'");if($(this,"_id","_WeakMap_"+ne()+"."+ne()),0<arguments.length)throw new TypeError("WeakMap iterable is not supported")}function te(t,n){if(!ie(t)||!J.call(t,"_id"))throw new TypeError(n+" method called on incompatible receiver "+e(t))}function ne(){return Math.random().toString().substring(2)}function ie(e){return Object(e)===e}(G="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:Z).WeakMap||(J=Object.prototype.hasOwnProperty,K=Object.defineProperty&&function(){try{return 1===Object.defineProperty({},"x",{value:1}).x}catch(e){}}(),G.WeakMap=(($=function(e,t,n){K?Object.defineProperty(e,t,{configurable:!0,writable:!0,value:n}):e[t]=n})(ee.prototype,"delete",(function(e){var t;return te(this,"delete"),!!ie(e)&&!(!(t=e[this.t])||t[0]!==e)&&(delete e[this.t],!0)})),$(ee.prototype,"get",(function(e){var t;return te(this,"get"),ie(e)&&(t=e[this.t])&&t[0]===e?t[1]:void 0})),$(ee.prototype,"has",(function(e){var t;return te(this,"has"),!!ie(e)&&!(!(t=e[this.t])||t[0]!==e)})),$(ee.prototype,"set",(function(e,t){var n;if(te(this,"set"),ie(e))return(n=e[this.t])&&n[0]===e?n[1]=t:$(e,this.t,[e,t]),this;throw new TypeError("Invalid value used as weak map key")})),$(ee,"_polyfill",!0),ee)),function(t){var n,i,o;o=function(){var t,n,i,o,r,u=Object.prototype.toString,a="undefined"!=typeof setImmediate?function(e){return setImmediate(e)}:setTimeout;try{Object.defineProperty({},"x",{}),t=function(e,t,n,i){return Object.defineProperty(e,t,{value:n,writable:!0,configurable:!1!==i})}}catch(u){t=function(e,t,n){return e[t]=n,e}}function s(e,t){this.fn=e,this.self=t,this.next=void 0}function c(e,t){g.add(e,t),n=n||a(g.drain)}function l(t){var n,i=e(t);return"function"==typeof(n=null==t||"object"!=i&&"function"!=i?n:t.then)&&n}function d(){for(var e=0;e<this.chain.length;e++){n=t=r=o=void 0;var t,n,i=this,o=1===this.state?this.chain[e].success:this.chain[e].failure,r=this.chain[e];try{!1===o?r.reject(i.msg):(t=!0===o?i.msg:o.call(void 0,i.msg))===r.promise?r.reject(TypeError("Promise-chain cycle")):(n=l(t))?n.call(t,r.resolve,r.reject):r.resolve(t)}catch(e){r.reject(e)}}this.chain.length=0}function f(e){var t,n=this;if(!n.triggered){n.triggered=!0,n.def&&(n=n.def);try{(t=l(e))?c((function(){var i=new v(n);try{t.call(e,(function(){f.apply(i,arguments)}),(function(){h.apply(i,arguments)}))}catch(e){h.call(i,e)}})):(n.msg=e,n.state=1,0<n.chain.length&&c(d,n))}catch(e){h.call(new v(n),e)}}}function h(e){var t=this;t.triggered||(t.triggered=!0,(t=t.def?t.def:t).msg=e,t.state=2,0<t.chain.length&&c(d,t))}function p(e,t,n,i){for(var o=0;o<t.length;o++)!function(o){e.resolve(t[o]).then((function(e){n(o,e)}),i)}(o)}function v(e){this.def=e,this.triggered=!1}function y(e){this.promise=e,this.state=0,this.triggered=!1,this.chain=[],this.msg=void 0}function m(e){if("function"!=typeof e)throw TypeError("Not a function");if(0!==this.n)throw TypeError("Not a promise");this.n=1;var t=new y(this);this.then=function(e,n){var i={success:"function"!=typeof e||e,failure:"function"==typeof n&&n};return i.promise=new this.constructor((function(e,t){if("function"!=typeof e||"function"!=typeof t)throw TypeError("Not a function");i.resolve=e,i.reject=t})),t.chain.push(i),0!==t.state&&c(d,t),i.promise},this.catch=function(e){return this.then(void 0,e)};try{e.call(void 0,(function(e){f.call(t,e)}),(function(e){h.call(t,e)}))}catch(e){h.call(t,e)}}var g={add:function(e,t){r=new s(e,t),o?o.next=r:i=r,o=r,r=void 0},drain:function(){var e=i;for(i=o=n=void 0;e;)e.fn.call(e.self),e=e.next}},b=t({},"constructor",m,!1);return t(m.prototype=b,"__NPO__",0,!1),t(m,"resolve",(function(t){return t&&"object"==e(t)&&1===t.n?t:new this((function(e,n){if("function"!=typeof e||"function"!=typeof n)throw TypeError("Not a function");e(t)}))})),t(m,"reject",(function(e){return new this((function(t,n){if("function"!=typeof t||"function"!=typeof n)throw TypeError("Not a function");n(e)}))})),t(m,"all",(function(e){var t=this;return"[object Array]"!=u.call(e)?t.reject(TypeError("Not an array")):0===e.length?t.resolve([]):new t((function(n,i){if("function"!=typeof n||"function"!=typeof i)throw TypeError("Not a function");var o=e.length,r=Array(o),u=0;p(t,e,(function(e,t){r[e]=t,++u===o&&n(r)}),i)}))})),t(m,"race",(function(e){var t=this;return"[object Array]"!=u.call(e)?t.reject(TypeError("Not an array")):new t((function(n,i){if("function"!=typeof n||"function"!=typeof i)throw TypeError("Not a function");p(t,e,(function(e,t){n(t)}),i)}))})),m},(i=Z)[n="Promise"]=i[n]||o(),t.exports&&(t.exports=i[n])}(Q={exports:{}});var oe=Q.exports,re=new WeakMap;function ue(e,t,n){var i=re.get(e.element)||{};t in i||(i[t]=[]),i[t].push(n),re.set(e.element,i)}function ae(e,t){return(re.get(e.element)||{})[t]||[]}function se(e,t,n){var i=re.get(e.element)||{};return!i[t]||(n?(-1!==(n=i[t].indexOf(n))&&i[t].splice(n,1),re.set(e.element,i),i[t]&&0===i[t].length):(i[t]=[],re.set(e.element,i),!0))}function ce(e){if("string"==typeof e)try{e=JSON.parse(e)}catch(e){return console.warn(e),{}}return e}function le(e,t,n){e.element.contentWindow&&e.element.contentWindow.postMessage&&(t={method:t},void 0!==n&&(t.value=n),8<=(n=parseFloat(navigator.userAgent.toLowerCase().replace(/^.*msie (\d+).*$/,"$1")))&&n<10&&(t=JSON.stringify(t)),e.element.contentWindow.postMessage(t,e.origin))}var de=["autopause","autoplay","background","byline","color","controls","dnt","height","id","interactive_params","keyboard","loop","maxheight","maxwidth","muted","playsinline","portrait","responsive","speed","texttrack","title","transparent","url","width"];function fe(e,t){return de.reduce((function(t,n){var i=e.getAttribute("data-vimeo-".concat(n));return!i&&""!==i||(t[n]=""===i?1:i),t}),1<arguments.length&&void 0!==t?t:{})}function he(e,t){var n;e=e.html;if(t)return null===t.getAttribute("data-vimeo-initialized")&&((n=document.createElement("div")).innerHTML=e,t.appendChild(n.firstChild),t.setAttribute("data-vimeo-initialized","true")),t.querySelector("iframe");throw new TypeError("An element must be provided")}function pe(e,t,n){var i=1<arguments.length&&void 0!==t?t:{},o=2<arguments.length?n:void 0;return new Promise((function(t,n){if(!U(e))throw new TypeError("“".concat(e,"” is not a vimeo.com url."));var r,u="https://vimeo.com/api/oembed.json?url=".concat(encodeURIComponent(e));for(r in i)i.hasOwnProperty(r)&&(u+="&".concat(r,"=").concat(encodeURIComponent(i[r])));var a=new("XDomainRequest"in window?XDomainRequest:XMLHttpRequest);a.open("GET",u,!0),a.onload=function(){if(404===a.status)n(new Error("“".concat(e,"” was not found.")));else if(403===a.status)n(new Error("“".concat(e,"” is not embeddable.")));else try{var i=JSON.parse(a.responseText);403===i.domain_status_code?(he(i,o),n(new Error("“".concat(e,"” is not embeddable.")))):t(i)}catch(i){n(i)}},a.onerror=function(){var e=a.status?" (".concat(a.status,")"):"";n(new Error("There was an error fetching the embed code from Vimeo".concat(e,".")))},a.send()}))}var ve,ye,me,ge=new WeakMap,be=new WeakMap,we={},Ee=function(){function e(t){var n=this,i=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},o=e;if(!((u=this)instanceof o))throw new TypeError("Cannot call a class as a function");if(window.jQuery&&t instanceof jQuery&&(1<t.length&&window.console&&console.warn&&console.warn("A jQuery object with multiple elements was passed, using the first element."),t=t[0]),"undefined"!=typeof document&&"string"==typeof t&&(t=document.getElementById(t)),u=t,!Boolean(u&&1===u.nodeType&&"nodeName"in u&&u.ownerDocument&&u.ownerDocument.defaultView))throw new TypeError("You must pass either a valid element or a valid id.");if("IFRAME"===t.nodeName||(o=t.querySelector("iframe"))&&(t=o),"IFRAME"===t.nodeName&&!U(t.getAttribute("src")||""))throw new Error("The player element passed isn’t a Vimeo embed.");if(ge.has(t))return ge.get(t);this.e=t.ownerDocument.defaultView,this.element=t,this.origin="*";var r,u=new oe((function(e,o){var r;n.i=function(t){var i,r;U(t.origin)&&n.element.contentWindow===t.source&&("*"===n.origin&&(n.origin=t.origin),(t=ce(t.data))&&"error"===t.event&&t.data&&"ready"===t.data.method?((i=new Error(t.data.message)).name=t.data.name,o(i)):(i=t&&"ready"===t.event,r=t&&"ping"===t.method,i||r?(n.element.setAttribute("data-ready","true"),e()):function(e,t){var n,i,o,r,u=[];(t=ce(t)).event?("error"===t.event&&ae(e,t.data.method).forEach((function(n){var i=new Error(t.data.message);i.name=t.data.name,n.reject(i),se(e,t.data.method,n)})),u=ae(e,"event:".concat(t.event)),n=t.data):t.method&&(o=!((r=ae(i=e,o=t.method)).length<1)&&(se(i,o,i=r.shift()),i))&&(u.push(o),n=t.value),u.forEach((function(t){try{"function"==typeof t?t.call(e,n):t.resolve(n)}catch(t){}}))}(n,t)))},n.e.addEventListener("message",n.i),"IFRAME"!==n.element.nodeName&&pe(X(r=fe(t,i)),r,t).then((function(e){var i,o,r=he(e,t);return n.element=r,n.r=t,i=t,o=re.get(i),re.set(r,o),re.delete(i),ge.set(n.element,n),e})).catch(o)}));return be.set(this,u),ge.set(this.element,this),"IFRAME"===this.element.nodeName&&le(this,"ping"),we.isEnabled&&(r=function(){return we.exit()},this.fullscreenchangeHandler=function(){(we.isFullscreen?ue:se)(n,"event:exitFullscreen",r),n.ready().then((function(){le(n,"fullscreenchange",we.isFullscreen)}))},we.on("fullscreenchange",this.fullscreenchangeHandler)),this}var t,n;return t=e,(n=[{key:"callMethod",value:function(e){var t=this,n=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{};return new oe((function(i,o){return t.ready().then((function(){ue(t,e,{resolve:i,reject:o}),le(t,e,n)})).catch(o)}))}},{key:"get",value:function(e){var t=this;return new oe((function(n,i){return e=H(e,"get"),t.ready().then((function(){ue(t,e,{resolve:n,reject:i}),le(t,e)})).catch(i)}))}},{key:"set",value:function(e,t){var n=this;return new oe((function(i,o){if(e=H(e,"set"),null==t)throw new TypeError("There must be a value to set.");return n.ready().then((function(){ue(n,e,{resolve:i,reject:o}),le(n,e,t)})).catch(o)}))}},{key:"on",value:function(e,t){if(!e)throw new TypeError("You must pass an event name.");if(!t)throw new TypeError("You must pass a callback function.");if("function"!=typeof t)throw new TypeError("The callback must be a function.");0===ae(this,"event:".concat(e)).length&&this.callMethod("addEventListener",e).catch((function(){})),ue(this,"event:".concat(e),t)}},{key:"off",value:function(e,t){if(!e)throw new TypeError("You must pass an event name.");if(t&&"function"!=typeof t)throw new TypeError("The callback must be a function.");se(this,"event:".concat(e),t)&&this.callMethod("removeEventListener",e).catch((function(e){}))}},{key:"loadVideo",value:function(e){return this.callMethod("loadVideo",e)}},{key:"ready",value:function(){var e=be.get(this)||new oe((function(e,t){t(new Error("Unknown player. Probably unloaded."))}));return oe.resolve(e)}},{key:"addCuePoint",value:function(e){return this.callMethod("addCuePoint",{time:e,data:1<arguments.length&&void 0!==arguments[1]?arguments[1]:{}})}},{key:"removeCuePoint",value:function(e){return this.callMethod("removeCuePoint",e)}},{key:"enableTextTrack",value:function(e,t){if(e)return this.callMethod("enableTextTrack",{language:e,kind:t});throw new TypeError("You must pass a language.")}},{key:"disableTextTrack",value:function(){return this.callMethod("disableTextTrack")}},{key:"pause",value:function(){return this.callMethod("pause")}},{key:"play",value:function(){return this.callMethod("play")}},{key:"requestFullscreen",value:function(){return we.isEnabled?we.request(this.element):this.callMethod("requestFullscreen")}},{key:"exitFullscreen",value:function(){return we.isEnabled?we.exit():this.callMethod("exitFullscreen")}},{key:"getFullscreen",value:function(){return we.isEnabled?oe.resolve(we.isFullscreen):this.get("fullscreen")}},{key:"requestPictureInPicture",value:function(){return this.callMethod("requestPictureInPicture")}},{key:"exitPictureInPicture",value:function(){return this.callMethod("exitPictureInPicture")}},{key:"getPictureInPicture",value:function(){return this.get("pictureInPicture")}},{key:"unload",value:function(){return this.callMethod("unload")}},{key:"destroy",value:function(){var e=this;return new oe((function(t){var n;be.delete(e),ge.delete(e.element),e.r&&(ge.delete(e.r),e.r.removeAttribute("data-vimeo-initialized")),e.element&&"IFRAME"===e.element.nodeName&&e.element.parentNode&&(e.element.parentNode.parentNode&&e.r&&e.r!==e.element.parentNode?e.element.parentNode.parentNode.removeChild(e.element.parentNode):e.element.parentNode.removeChild(e.element)),e.element&&"DIV"===e.element.nodeName&&e.element.parentNode&&(e.element.removeAttribute("data-vimeo-initialized"),(n=e.element.querySelector("iframe"))&&n.parentNode&&(n.parentNode.parentNode&&e.r&&e.r!==n.parentNode?n.parentNode.parentNode.removeChild(n.parentNode):n.parentNode.removeChild(n))),e.e.removeEventListener("message",e.i),we.isEnabled&&we.off("fullscreenchange",e.fullscreenchangeHandler),t()}))}},{key:"getAutopause",value:function(){return this.get("autopause")}},{key:"setAutopause",value:function(e){return this.set("autopause",e)}},{key:"getBuffered",value:function(){return this.get("buffered")}},{key:"getCameraProps",value:function(){return this.get("cameraProps")}},{key:"setCameraProps",value:function(e){return this.set("cameraProps",e)}},{key:"getChapters",value:function(){return this.get("chapters")}},{key:"getCurrentChapter",value:function(){return this.get("currentChapter")}},{key:"getColor",value:function(){return this.get("color")}},{key:"setColor",value:function(e){return this.set("color",e)}},{key:"getCuePoints",value:function(){return this.get("cuePoints")}},{key:"getCurrentTime",value:function(){return this.get("currentTime")}},{key:"setCurrentTime",value:function(e){return this.set("currentTime",e)}},{key:"getDuration",value:function(){return this.get("duration")}},{key:"getEnded",value:function(){return this.get("ended")}},{key:"getLoop",value:function(){return this.get("loop")}},{key:"setLoop",value:function(e){return this.set("loop",e)}},{key:"setMuted",value:function(e){return this.set("muted",e)}},{key:"getMuted",value:function(){return this.get("muted")}},{key:"getPaused",value:function(){return this.get("paused")}},{key:"getPlaybackRate",value:function(){return this.get("playbackRate")}},{key:"setPlaybackRate",value:function(e){return this.set("playbackRate",e)}},{key:"getPlayed",value:function(){return this.get("played")}},{key:"getQualities",value:function(){return this.get("qualities")}},{key:"getQuality",value:function(){return this.get("quality")}},{key:"setQuality",value:function(e){return this.set("quality",e)}},{key:"getSeekable",value:function(){return this.get("seekable")}},{key:"getSeeking",value:function(){return this.get("seeking")}},{key:"getTextTracks",value:function(){return this.get("textTracks")}},{key:"getVideoEmbedCode",value:function(){return this.get("videoEmbedCode")}},{key:"getVideoId",value:function(){return this.get("videoId")}},{key:"getVideoTitle",value:function(){return this.get("videoTitle")}},{key:"getVideoWidth",value:function(){return this.get("videoWidth")}},{key:"getVideoHeight",value:function(){return this.get("videoHeight")}},{key:"getVideoUrl",value:function(){return this.get("videoUrl")}},{key:"getVolume",value:function(){return this.get("volume")}},{key:"setVolume",value:function(e){return this.set("volume",e)}}])&&B(t.prototype,n),e}(),ke=(G=(Y||(ve=function(){for(var e,t=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],n=0,i=t.length,o={};n<i;n++)if((e=t[n])&&e[1]in document){for(n=0;n<e.length;n++)o[t[0][n]]=e[n];return o}return!1}(),ye={fullscreenchange:ve.fullscreenchange,fullscreenerror:ve.fullscreenerror},me={request:function(e){return new Promise((function(t,n){function i(){me.off("fullscreenchange",i),t()}me.on("fullscreenchange",i);var o=(e=e||document.documentElement)[ve.requestFullscreen]();o instanceof Promise&&o.then(i).catch(n)}))},exit:function(){return new Promise((function(e,t){var n,i;me.isFullscreen?(me.on("fullscreenchange",n=function t(){me.off("fullscreenchange",t),e()}),(i=document[ve.exitFullscreen]())instanceof Promise&&i.then(n).catch(t)):e()}))},on:function(e,t){(e=ye[e])&&document.addEventListener(e,t)},off:function(e,t){(e=ye[e])&&document.removeEventListener(e,t)}},Object.defineProperties(me,{isFullscreen:{get:function(){return Boolean(document[ve.fullscreenElement])}},element:{enumerable:!0,get:function(){return document[ve.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(document[ve.fullscreenEnabled])}}}),we=me,function(e){function t(e){"console"in window&&console.error&&console.error("There was an error creating an embed: ".concat(e))}e=0<arguments.length&&void 0!==e?e:document,(e=[].slice.call(e.querySelectorAll("[data-vimeo-id], [data-vimeo-url]"))).forEach((function(e){try{var n;null===e.getAttribute("data-vimeo-defer")&&pe(X(n=fe(e)),n,e).then((function(t){return he(t,e)})).catch(t)}catch(n){t(n)}}))}(),function(e){var t=0<arguments.length&&void 0!==e?e:document;window.VimeoPlayerResizeEmbeds_||(window.VimeoPlayerResizeEmbeds_=!0,window.addEventListener("message",(function(e){if(U(e.origin)&&e.data&&"spacechange"===e.data.event)for(var n=t.querySelectorAll("iframe"),i=0;i<n.length;i++)if(n[i].contentWindow===e.source){n[i].parentElement.style.paddingBottom="".concat(e.data.data[0].bottom,"px");break}})))}(),function(e){var t=0<arguments.length&&void 0!==e?e:document;window.VimeoSeoMetadataAppended||(window.VimeoSeoMetadataAppended=!0,window.addEventListener("message",(function(e){if(U(e.origin)){var n=ce(e.data);if(n&&"ready"===n.event)for(var i,o=t.querySelectorAll("iframe"),r=0;r<o.length;r++){var u=o[r],a=u.contentWindow===e.source;i=u.src,/^https:\/\/player\.vimeo\.com\/video\/\d+/.test(i)&&a&&new Ee(u).callMethod("appendVideoMetadata",window.location.href)}}})))}()),function(e){function t(t,n,i){return(t=e.call(this,t,n,i=void 0===i?{}:i)||this).state.set(3),t}r(t,e);var n=t.prototype;return n.createPlayer=function(e){var t=this.options,n=void 0===(n=this.options.playerOptions)?{}:n;e=0===e.indexOf("http")?{url:e}:{id:+e};return(e=new Ee(this.target,M(e,{controls:!t.hideControls,loop:t.loop,muted:t.mute},n.vimeo||{}))).on("play",this.onPlay),e.on("pause",this.onPause),e.on("ended",this.onEnded),e.ready().then(this.onPlayerReady,this.onError),e.getMuted()||e.setVolume(R(t.volume,0,1)),e},n.playVideo=function(){var e=this;this.player.play().catch((function(){e.state.is(7)&&e.state.set(5)}))},n.pauseVideo=function(){this.player.pause()},t}(q)),"//www.youtube.com/player_api"),Pe=function(){function e(){}var t=e.prototype;return t.load=function(e){if(window.YT&&b(window.YT.Player))return e();this.attachCallback(e),this.shouldLoad()&&_("script",{src:location.protocol+ke},document.head)},t.shouldLoad=function(){return e=document,!("script"?p(e.querySelectorAll("script")):[]).some((function(e){return e.src.replace(/^https?:/,"")===ke}));var e},t.attachCallback=function(e){var t;E(window.onYouTubeIframeAPIReady)||(t=window.onYouTubeIframeAPIReady),window.onYouTubeIframeAPIReady=function(){t&&t(),e()}},e}(),Se=(Q=function(e){function t(t,n,i){return(t=e.call(this,t,n,i=void 0===i?{}:i)||this).videoId=t.parseVideoId(n),t.videoId&&(t.state.set(2),(new Pe).load(t.onAPIReady.bind(function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(t)))),t}r(t,e);var n=t.prototype;return n.onAPIReady=function(){var e=this.state,t=e.is(4);e.set(3),t&&this.play()},n.createPlayer=function(e){var t=this.options,n=this.options.playerOptions;return new YT.Player(this.target,{videoId:e,host:t.host,playerVars:M({controls:t.hideControls?0:1,iv_load_policy:3,loop:t.loop?1:0,playlist:t.loop?e:void 0,rel:0,autoplay:0,mute:t.mute?1:0},(void 0===n?{}:n).youtube||{}),events:{onReady:this.onPlayerReady.bind(this),onStateChange:this.onPlayerStateChange.bind(this),onError:this.onError.bind(this)}})},n.onPlayerReady=function(){e.prototype.onPlayerReady.call(this),this.player.setVolume(100*R(this.options.volume,0,1))},n.onPlayerStateChange=function(e){var t=(i=YT.PlayerState).PLAYING,n=i.PAUSED,i=i.ENDED;switch(!0){case e.data===t:this.onPlay();break;case e.data===n:this.onPause();break;case e.data===i:this.onEnded()}},n.playVideo=function(){this.player.playVideo()},n.pauseVideo=function(){this.player.pauseVideo()},n.parseVideoId=function(e){return 0===e.indexOf("http")?this.parseUrl(e):e},n.parseUrl=function(e){var t;return(e=(t=function(e){return 0===e.indexOf("v=")},p(e=(e=e.split(/[#?]/)[1]).split("&")).filter(t)[0]))&&e.replace("v=","")},t}(q),function(){function e(e,t){this.event=d(),this.Splide=e,this.slide=t,this.container=C(this.slide,"."+h),this.parent=this.container||this.slide,this.init(),this.create(),this.show(),this.listen()}var t=e.prototype;return t.init=function(){x(this.slide,f+V),x(this.container,h+V)},t.create=function(){this.video=_("div","splide__video",this.parent),this.playButton=_("button",{class:"splide__video__play",type:"button","aria-label":this.Splide.options.i18n.playVideo||"Play Video"},this.video),this.wrapper=_("div","splide__video__wrapper",this.video),this.placeholder=_("div",null,this.wrapper)},t.listen=function(){var e=this;this.parent.addEventListener("click",(function(){e.event.emit("click")}))},t.toggleButton=function(e){F(this.playButton,e?"":"none")},t.toggleWrapper=function(e){F(this.wrapper,e?"":"none")},t.getPlaceholder=function(){return this.placeholder},t.hide=function(){this.toggleButton(!1),this.toggleWrapper(!0)},t.show=function(){this.disabled||this.toggleButton(!0),this.toggleWrapper(!1)},t.disable=function(e){(this.disabled=e)&&this.toggleButton(!1)},t.on=function(e,t){this.event.on(e,t)},t.destroy=function(){I(this.slide,f+V),I(this.container,h+V),P(this.video,(function(e){e&&e.parentNode&&e.parentNode.removeChild(e)})),this.event.destroy()},e}()),xe=[["data-splide-youtube",Q],["data-splide-vimeo",G],["data-splide-html-video",W]],Ce=function(){function e(e,t){this.Splide=e,this.slide=t,this.event=d(e),this.options=L(L({},D),this.Splide.options.video),this.createPlayer(t),this.player&&this.listen()}var t=e.prototype;return t.createPlayer=function(e){var t=this;xe.forEach((function(n){var i=n[0];n=n[1];(i=e.getAttribute(i))&&(t.ui=new Se(t.Splide,e),t.player=new n(t.ui.getPlaceholder(),i,t.options),t.ui.disable(t.options.disableOverlayUI))}))},t.listen=function(){var e=this,t=this.player,n=this.event;this.ui.on("click",this.onClick.bind(this)),t.on("play",this.onPlay.bind(this)),t.on("played",this.onPlayed.bind(this)),t.on("pause",this.onPause.bind(this)),t.on("paused",this.onPaused.bind(this)),t.on("ended",this.onEnded.bind(this)),t.on("error",this.onError.bind(this)),n.on(["move","scroll"],this.pause.bind(this)),n.on(z,this.onVideoClick.bind(this)),n.on("drag",(function(){n.off(c),n.on(c,(function(){e.pause(),n.off(c)}))})),this.options.autoplay&&n.on(["mounted","moved","scrolled"],this.onAutoplayRequested.bind(this))},t.onClick=function(){this.isPaused()?this.play():this.pause(),this.event.emit(z,this)},t.onVideoClick=function(e){this!==e&&this.pause()},t.onPlay=function(){this.ui.hide()},t.onPlayed=function(){this.ui.hide(),this.togglePlaying(!0),this.event.emit("video:play",this)},t.onPause=function(){this.ui.show()},t.onPaused=function(){this.togglePlaying(!1),this.event.emit("video:pause",this)},t.onEnded=function(){this.togglePlaying(!1),this.event.emit("video:ended",this)},t.onError=function(){x(this.slide,"is-error"),this.ui.show(),this.event.emit("video:error",this)},t.onAutoplayRequested=function(){this.Splide.Components.Slides.getAt(this.Splide.index).slide===this.slide&&this.play()},t.togglePlaying=function(e){S(this.Splide.root,"is-playing",e)},t.play=function(){this.player&&!this.disabled&&this.player.play()},t.pause=function(){this.player&&!this.disabled&&this.player.pause()},t.destroy=function(){this.player&&(this.ui.destroy(),this.player.destroy()),this.disable(!1)},t.disable=function(e){this.disabled=e,S(this.Splide.root,"is-video-disabled",e)},t.isPaused=function(){return this.player.isPaused()},e}();"undefined"!=typeof window&&(window.splide=window.splide||{},window.splide.Extensions=window.splide.Extensions||{},window.splide.Extensions.Video=function(e,t){var n=d(e).on,i=t.Slides,o={};function r(){i.forEach((function(t){var n,i,r=t.slide;i=f+V,(n=r)&&n.classList.contains(i)||(o[t.index]=new Ce(e,r))})),i.update()}return{mount:function(){r(),n("refresh",r)},destroy:function(){A(o,(function(e){e.destroy()}))},play:function(t){void 0===t&&(t=e.index),(t=o[t])&&t.play()},pause:function(){A(o,(function(e){e.pause()}))},disable:function(e){A(o,(function(t){t.disable(e)}))}}})},"function"==typeof define&&define.amd?define(o):o()})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+/*!********************************************!*\
+  !*** ./static/resources/scripts/vendor.js ***!
+  \********************************************/
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function r(n, t) {
+  for (var i = 0; i < t.length; i++) {
+    var r = t[i];
+    r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(n, r.key, r);
+  }
+}
+function Jt(n, t, i) {
+  t && r(n.prototype, t), i && r(n, i), Object.defineProperty(n, "prototype", {
+    writable: !1
+  });
+}
+/*!
+ * Splide.js
+ * Version  : 4.1.2
+ * License  : MIT
+ * Copyright: 2022 Naotoshi Fujita
+ */
+var n, t;
+n = undefined, t = function t() {
+  "use strict";
+
+  var v = "(prefers-reduced-motion: reduce)",
+    G = 4,
+    rn = 5,
+    r = {
+      CREATED: 1,
+      MOUNTED: 2,
+      IDLE: 3,
+      MOVING: G,
+      SCROLLING: rn,
+      DRAGGING: 6,
+      DESTROYED: 7
+    };
+  function D(n) {
+    n.length = 0;
+  }
+  function o(n, t, i) {
+    return Array.prototype.slice.call(n, t, i);
+  }
+  function R(n) {
+    return n.bind.apply(n, [null].concat(o(arguments, 1)));
+  }
+  function on() {}
+  var p = setTimeout;
+  function h(n) {
+    return requestAnimationFrame(n);
+  }
+  function u(n, t) {
+    return _typeof(t) === n;
+  }
+  function un(n) {
+    return !c(n) && u("object", n);
+  }
+  var e = Array.isArray,
+    x = R(u, "function"),
+    C = R(u, "string"),
+    en = R(u, "undefined");
+  function c(n) {
+    return null === n;
+  }
+  function m(n) {
+    try {
+      return n instanceof (n.ownerDocument.defaultView || window).HTMLElement;
+    } catch (n) {
+      return !1;
+    }
+  }
+  function y(n) {
+    return e(n) ? n : [n];
+  }
+  function g(n, t) {
+    y(n).forEach(t);
+  }
+  function b(n, t) {
+    return -1 < n.indexOf(t);
+  }
+  function k(n, t) {
+    return n.push.apply(n, y(t)), n;
+  }
+  function A(t, n, i) {
+    t && g(n, function (n) {
+      n && t.classList[i ? "add" : "remove"](n);
+    });
+  }
+  function M(n, t) {
+    A(n, C(t) ? t.split(" ") : t, !0);
+  }
+  function L(n, t) {
+    g(t, n.appendChild.bind(n));
+  }
+  function O(n, i) {
+    g(n, function (n) {
+      var t = (i || n).parentNode;
+      t && t.insertBefore(n, i);
+    });
+  }
+  function cn(n, t) {
+    return m(n) && (n.msMatchesSelector || n.matches).call(n, t);
+  }
+  function S(n, t) {
+    n = n ? o(n.children) : [];
+    return t ? n.filter(function (n) {
+      return cn(n, t);
+    }) : n;
+  }
+  function fn(n, t) {
+    return t ? S(n, t)[0] : n.firstElementChild;
+  }
+  var E = Object.keys;
+  function w(t, i, n) {
+    t && (n ? E(t).reverse() : E(t)).forEach(function (n) {
+      "__proto__" !== n && i(t[n], n);
+    });
+  }
+  function an(r) {
+    return o(arguments, 1).forEach(function (i) {
+      w(i, function (n, t) {
+        r[t] = i[t];
+      });
+    }), r;
+  }
+  function d(i) {
+    return o(arguments, 1).forEach(function (n) {
+      w(n, function (n, t) {
+        e(n) ? i[t] = n.slice() : un(n) ? i[t] = d({}, un(i[t]) ? i[t] : {}, n) : i[t] = n;
+      });
+    }), i;
+  }
+  function sn(t, n) {
+    g(n || E(t), function (n) {
+      delete t[n];
+    });
+  }
+  function P(n, i) {
+    g(n, function (t) {
+      g(i, function (n) {
+        t && t.removeAttribute(n);
+      });
+    });
+  }
+  function I(i, t, r) {
+    un(t) ? w(t, function (n, t) {
+      I(i, t, n);
+    }) : g(i, function (n) {
+      c(r) || "" === r ? P(n, t) : n.setAttribute(t, String(r));
+    });
+  }
+  function j(n, t, i) {
+    n = document.createElement(n);
+    return t && (C(t) ? M : I)(n, t), i && L(i, n), n;
+  }
+  function _(n, t, i) {
+    if (en(i)) return getComputedStyle(n)[t];
+    c(i) || (n.style[t] = "" + i);
+  }
+  function ln(n, t) {
+    _(n, "display", t);
+  }
+  function dn(n) {
+    n.setActive && n.setActive() || n.focus({
+      preventScroll: !0
+    });
+  }
+  function z(n, t) {
+    return n.getAttribute(t);
+  }
+  function vn(n, t) {
+    return n && n.classList.contains(t);
+  }
+  function N(n) {
+    return n.getBoundingClientRect();
+  }
+  function T(n) {
+    g(n, function (n) {
+      n && n.parentNode && n.parentNode.removeChild(n);
+    });
+  }
+  function hn(n) {
+    return fn(new DOMParser().parseFromString(n, "text/html").body);
+  }
+  function F(n, t) {
+    n.preventDefault(), t && (n.stopPropagation(), n.stopImmediatePropagation());
+  }
+  function pn(n, t) {
+    return n && n.querySelector(t);
+  }
+  function gn(n, t) {
+    return t ? o(n.querySelectorAll(t)) : [];
+  }
+  function X(n, t) {
+    A(n, t, !1);
+  }
+  function mn(n) {
+    return n.timeStamp;
+  }
+  function W(n) {
+    return C(n) ? n : n ? n + "px" : "";
+  }
+  var yn = "splide",
+    f = "data-" + yn;
+  function bn(n, t) {
+    if (!n) throw new Error("[" + yn + "] " + (t || ""));
+  }
+  var Y = Math.min,
+    wn = Math.max,
+    xn = Math.floor,
+    kn = Math.ceil,
+    U = Math.abs;
+  function Sn(n, t, i) {
+    return U(n - t) < i;
+  }
+  function En(n, t, i, r) {
+    var o = Y(t, i),
+      t = wn(t, i);
+    return r ? o < n && n < t : o <= n && n <= t;
+  }
+  function q(n, t, i) {
+    var r = Y(t, i),
+      t = wn(t, i);
+    return Y(wn(r, n), t);
+  }
+  function Ln(n) {
+    return (0 < n) - (n < 0);
+  }
+  function On(t, n) {
+    return g(n, function (n) {
+      t = t.replace("%s", "" + n);
+    }), t;
+  }
+  function An(n) {
+    return n < 10 ? "0" + n : "" + n;
+  }
+  var _n = {};
+  function zn() {
+    var c = [];
+    function i(n, i, r) {
+      g(n, function (t) {
+        t && g(i, function (n) {
+          n.split(" ").forEach(function (n) {
+            n = n.split(".");
+            r(t, n[0], n[1]);
+          });
+        });
+      });
+    }
+    return {
+      bind: function bind(n, t, u, e) {
+        i(n, t, function (n, t, i) {
+          var r = ("addEventListener" in n),
+            o = r ? n.removeEventListener.bind(n, t, u, e) : n.removeListener.bind(n, u);
+          r ? n.addEventListener(t, u, e) : n.addListener(u), c.push([n, t, i, u, o]);
+        });
+      },
+      unbind: function unbind(n, t, o) {
+        i(n, t, function (t, i, r) {
+          c = c.filter(function (n) {
+            return !!(n[0] !== t || n[1] !== i || n[2] !== r || o && n[3] !== o) || (n[4](), !1);
+          });
+        });
+      },
+      dispatch: function dispatch(n, t, i) {
+        var r;
+        return "function" == typeof CustomEvent ? r = new CustomEvent(t, {
+          bubbles: !0,
+          detail: i
+        }) : (r = document.createEvent("CustomEvent")).initCustomEvent(t, !0, !1, i), n.dispatchEvent(r), r;
+      },
+      destroy: function destroy() {
+        c.forEach(function (n) {
+          n[4]();
+        }), D(c);
+      }
+    };
+  }
+  var B = "mounted",
+    H = "move",
+    Dn = "moved",
+    Mn = "click",
+    Pn = "active",
+    In = "inactive",
+    Rn = "visible",
+    Cn = "hidden",
+    J = "refresh",
+    K = "updated",
+    jn = "resize",
+    Nn = "resized",
+    Tn = "scroll",
+    V = "scrolled",
+    a = "destroy",
+    Gn = "navigation:mounted",
+    Fn = "autoplay:play",
+    Xn = "autoplay:pause",
+    Wn = "lazyload:loaded",
+    Yn = "sk",
+    Un = "sh";
+  function Q(n) {
+    var i = n ? n.event.bus : document.createDocumentFragment(),
+      r = zn();
+    return n && n.event.on(a, r.destroy), an(r, {
+      bus: i,
+      on: function on(n, t) {
+        r.bind(i, y(n).join(" "), function (n) {
+          t.apply(t, e(n.detail) ? n.detail : []);
+        });
+      },
+      off: R(r.unbind, i),
+      emit: function emit(n) {
+        r.dispatch(i, n, o(arguments, 1));
+      }
+    });
+  }
+  function qn(t, n, i, r) {
+    var o,
+      u,
+      e = Date.now,
+      c = 0,
+      f = !0,
+      a = 0;
+    function s() {
+      if (!f) {
+        if (c = t ? Y((e() - o) / t, 1) : 1, i && i(c), 1 <= c && (n(), o = e(), r && ++a >= r)) return l();
+        u = h(s);
+      }
+    }
+    function l() {
+      f = !0;
+    }
+    function d() {
+      u && cancelAnimationFrame(u), f = !(u = c = 0);
+    }
+    return {
+      start: function start(n) {
+        n || d(), o = e() - (n ? c * t : 0), f = !1, u = h(s);
+      },
+      rewind: function rewind() {
+        o = e(), c = 0, i && i(c);
+      },
+      pause: l,
+      cancel: d,
+      set: function set(n) {
+        t = n;
+      },
+      isPaused: function isPaused() {
+        return f;
+      }
+    };
+  }
+  function s(n) {
+    var t = n;
+    return {
+      set: function set(n) {
+        t = n;
+      },
+      is: function is(n) {
+        return b(y(n), t);
+      }
+    };
+  }
+  var n = "Arrow",
+    Bn = n + "Left",
+    Hn = n + "Right",
+    t = n + "Up",
+    n = n + "Down",
+    Jn = "ttb",
+    l = {
+      width: ["height"],
+      left: ["top", "right"],
+      right: ["bottom", "left"],
+      x: ["y"],
+      X: ["Y"],
+      Y: ["X"],
+      ArrowLeft: [t, Hn],
+      ArrowRight: [n, Bn]
+    };
+  var Z = "role",
+    $ = "tabindex",
+    i = "aria-",
+    Kn = i + "controls",
+    Vn = i + "current",
+    Qn = i + "selected",
+    nn = i + "label",
+    Zn = i + "labelledby",
+    $n = i + "hidden",
+    nt = i + "orientation",
+    tt = i + "roledescription",
+    it = i + "live",
+    rt = i + "busy",
+    ot = i + "atomic",
+    ut = [Z, $, "disabled", Kn, Vn, nn, Zn, $n, nt, tt],
+    i = yn + "__",
+    et = yn,
+    ct = i + "track",
+    ft = i + "list",
+    at = i + "slide",
+    st = at + "--clone",
+    lt = at + "__container",
+    dt = i + "arrows",
+    vt = i + "arrow",
+    ht = vt + "--prev",
+    pt = vt + "--next",
+    gt = i + "pagination",
+    mt = gt + "__page",
+    yt = i + "progress" + "__bar",
+    bt = i + "toggle",
+    wt = i + "sr",
+    tn = "is-active",
+    xt = "is-prev",
+    kt = "is-next",
+    St = "is-visible",
+    Et = "is-loading",
+    Lt = "is-focus-in",
+    Ot = "is-overflow",
+    At = [tn, St, xt, kt, Et, Lt, Ot];
+  var _t = "touchstart mousedown",
+    zt = "touchmove mousemove",
+    Dt = "touchend touchcancel mouseup click";
+  var Mt = "slide",
+    Pt = "loop",
+    It = "fade";
+  function Rt(o, r, t, u) {
+    var e,
+      n = Q(o),
+      i = n.on,
+      c = n.emit,
+      f = n.bind,
+      a = o.Components,
+      s = o.root,
+      l = o.options,
+      d = l.isNavigation,
+      v = l.updateOnMove,
+      h = l.i18n,
+      p = l.pagination,
+      g = l.slideFocus,
+      m = a.Direction.resolve,
+      y = z(u, "style"),
+      b = z(u, nn),
+      w = -1 < t,
+      x = fn(u, "." + lt);
+    function k() {
+      var n = o.splides.map(function (n) {
+        n = n.splide.Components.Slides.getAt(r);
+        return n ? n.slide.id : "";
+      }).join(" ");
+      I(u, nn, On(h.slideX, (w ? t : r) + 1)), I(u, Kn, n), I(u, Z, g ? "button" : ""), g && P(u, tt);
+    }
+    function S() {
+      e || E();
+    }
+    function E() {
+      var n, t, i;
+      e || (n = o.index, (i = L()) !== vn(u, tn) && (A(u, tn, i), I(u, Vn, d && i || ""), c(i ? Pn : In, O)), i = function () {
+        if (o.is(It)) return L();
+        var n = N(a.Elements.track),
+          t = N(u),
+          i = m("left", !0),
+          r = m("right", !0);
+        return xn(n[i]) <= kn(t[i]) && xn(t[r]) <= kn(n[r]);
+      }(), t = !i && (!L() || w), o.state.is([G, rn]) || I(u, $n, t || ""), I(gn(u, l.focusableNodes || ""), $, t ? -1 : ""), g && I(u, $, t ? -1 : 0), i !== vn(u, St) && (A(u, St, i), c(i ? Rn : Cn, O)), i || document.activeElement !== u || (t = a.Slides.getAt(o.index)) && dn(t.slide), A(u, xt, r === n - 1), A(u, kt, r === n + 1));
+    }
+    function L() {
+      var n = o.index;
+      return n === r || l.cloneStatus && n === t;
+    }
+    var O = {
+      index: r,
+      slideIndex: t,
+      slide: u,
+      container: x,
+      isClone: w,
+      mount: function mount() {
+        w || (u.id = s.id + "-slide" + An(r + 1), I(u, Z, p ? "tabpanel" : "group"), I(u, tt, h.slide), I(u, nn, b || On(h.slideLabel, [r + 1, o.length]))), f(u, "click", R(c, Mn, O)), f(u, "keydown", R(c, Yn, O)), i([Dn, Un, V], E), i(Gn, k), v && i(H, S);
+      },
+      destroy: function destroy() {
+        e = !0, n.destroy(), X(u, At), P(u, ut), I(u, "style", y), I(u, nn, b || "");
+      },
+      update: E,
+      style: function style(n, t, i) {
+        _(i && x || u, n, t);
+      },
+      isWithin: function isWithin(n, t) {
+        return n = U(n - r), (n = w || !l.rewind && !o.is(Pt) ? n : Y(n, o.length - n)) <= t;
+      }
+    };
+    return O;
+  }
+  var Ct = f + "-interval";
+  var jt = {
+    passive: !1,
+    capture: !0
+  };
+  var Nt = {
+    Spacebar: " ",
+    Right: Hn,
+    Left: Bn,
+    Up: t,
+    Down: n
+  };
+  function Tt(n) {
+    return n = C(n) ? n : n.key, Nt[n] || n;
+  }
+  var Gt = "keydown";
+  var Ft = f + "-lazy",
+    Xt = Ft + "-srcset",
+    Wt = "[" + Ft + "], [" + Xt + "]";
+  var Yt = [" ", "Enter"];
+  var Ut = Object.freeze({
+      __proto__: null,
+      Media: function Media(r, n, o) {
+        var u = r.state,
+          t = o.breakpoints || {},
+          e = o.reducedMotion || {},
+          i = zn(),
+          c = [];
+        function f(n) {
+          n && i.destroy();
+        }
+        function a(n, t) {
+          t = matchMedia(t);
+          i.bind(t, "change", s), c.push([n, t]);
+        }
+        function s() {
+          var n = u.is(7),
+            t = o.direction,
+            i = c.reduce(function (n, t) {
+              return d(n, t[1].matches ? t[0] : {});
+            }, {});
+          sn(o), l(i), o.destroy ? r.destroy("completely" === o.destroy) : n ? (f(!0), r.mount()) : t !== o.direction && r.refresh();
+        }
+        function l(n, t, i) {
+          d(o, n), t && d(Object.getPrototypeOf(o), n), !i && u.is(1) || r.emit(K, o);
+        }
+        return {
+          setup: function setup() {
+            var i = "min" === o.mediaQuery;
+            E(t).sort(function (n, t) {
+              return i ? +n - +t : +t - +n;
+            }).forEach(function (n) {
+              a(t[n], "(" + (i ? "min" : "max") + "-width:" + n + "px)");
+            }), a(e, v), s();
+          },
+          destroy: f,
+          reduce: function reduce(n) {
+            matchMedia(v).matches && (n ? d(o, e) : sn(o, E(e)));
+          },
+          set: l
+        };
+      },
+      Direction: function Direction(n, t, o) {
+        return {
+          resolve: function resolve(n, t, i) {
+            var r = "rtl" !== (i = i || o.direction) || t ? i === Jn ? 0 : -1 : 1;
+            return l[n] && l[n][r] || n.replace(/width|left|right/i, function (n, t) {
+              n = l[n.toLowerCase()][r] || n;
+              return 0 < t ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+            });
+          },
+          orient: function orient(n) {
+            return n * ("rtl" === o.direction ? 1 : -1);
+          }
+        };
+      },
+      Elements: function Elements(n, t, i) {
+        var r,
+          o,
+          u,
+          e = Q(n),
+          c = e.on,
+          f = e.bind,
+          a = n.root,
+          s = i.i18n,
+          l = {},
+          d = [],
+          v = [],
+          h = [];
+        function p() {
+          r = y("." + ct), o = fn(r, "." + ft), bn(r && o, "A track/list element is missing."), k(d, S(o, "." + at + ":not(." + st + ")")), w({
+            arrows: dt,
+            pagination: gt,
+            prev: ht,
+            next: pt,
+            bar: yt,
+            toggle: bt
+          }, function (n, t) {
+            l[t] = y("." + n);
+          }), an(l, {
+            root: a,
+            track: r,
+            list: o,
+            slides: d
+          });
+          var n = a.id || function (n) {
+              return "" + n + An(_n[n] = (_n[n] || 0) + 1);
+            }(yn),
+            t = i.role;
+          a.id = n, r.id = r.id || n + "-track", o.id = o.id || n + "-list", !z(a, Z) && "SECTION" !== a.tagName && t && I(a, Z, t), I(a, tt, s.carousel), I(o, Z, "presentation"), m();
+        }
+        function g(n) {
+          var t = ut.concat("style");
+          D(d), X(a, v), X(r, h), P([r, o], t), P(a, n ? t : ["style", tt]);
+        }
+        function m() {
+          X(a, v), X(r, h), v = b(et), h = b(ct), M(a, v), M(r, h), I(a, nn, i.label), I(a, Zn, i.labelledby);
+        }
+        function y(n) {
+          n = pn(a, n);
+          return n && function (n, t) {
+            if (x(n.closest)) return n.closest(t);
+            for (var i = n; i && 1 === i.nodeType && !cn(i, t);) i = i.parentElement;
+            return i;
+          }(n, "." + et) === a ? n : void 0;
+        }
+        function b(n) {
+          return [n + "--" + i.type, n + "--" + i.direction, i.drag && n + "--draggable", i.isNavigation && n + "--nav", n === et && tn];
+        }
+        return an(l, {
+          setup: p,
+          mount: function mount() {
+            c(J, g), c(J, p), c(K, m), f(document, _t + " keydown", function (n) {
+              u = "keydown" === n.type;
+            }, {
+              capture: !0
+            }), f(a, "focusin", function () {
+              A(a, Lt, !!u);
+            });
+          },
+          destroy: g
+        });
+      },
+      Slides: function Slides(r, o, u) {
+        var n = Q(r),
+          t = n.on,
+          e = n.emit,
+          c = n.bind,
+          f = (n = o.Elements).slides,
+          a = n.list,
+          s = [];
+        function i() {
+          f.forEach(function (n, t) {
+            d(n, t, -1);
+          });
+        }
+        function l() {
+          h(function (n) {
+            n.destroy();
+          }), D(s);
+        }
+        function d(n, t, i) {
+          t = Rt(r, t, i, n);
+          t.mount(), s.push(t), s.sort(function (n, t) {
+            return n.index - t.index;
+          });
+        }
+        function v(n) {
+          return n ? p(function (n) {
+            return !n.isClone;
+          }) : s;
+        }
+        function h(n, t) {
+          v(t).forEach(n);
+        }
+        function p(t) {
+          return s.filter(x(t) ? t : function (n) {
+            return C(t) ? cn(n.slide, t) : b(y(t), n.index);
+          });
+        }
+        return {
+          mount: function mount() {
+            i(), t(J, l), t(J, i);
+          },
+          destroy: l,
+          update: function update() {
+            h(function (n) {
+              n.update();
+            });
+          },
+          register: d,
+          get: v,
+          getIn: function getIn(n) {
+            var t = o.Controller,
+              i = t.toIndex(n),
+              r = t.hasFocus() ? 1 : u.perPage;
+            return p(function (n) {
+              return En(n.index, i, i + r - 1);
+            });
+          },
+          getAt: function getAt(n) {
+            return p(n)[0];
+          },
+          add: function add(n, o) {
+            g(n, function (n) {
+              var t, i, r;
+              m(n = C(n) ? hn(n) : n) && ((t = f[o]) ? O(n, t) : L(a, n), M(n, u.classes.slide), t = n, i = R(e, jn), t = gn(t, "img"), (r = t.length) ? t.forEach(function (n) {
+                c(n, "load error", function () {
+                  --r || i();
+                });
+              }) : i());
+            }), e(J);
+          },
+          remove: function remove(n) {
+            T(p(n).map(function (n) {
+              return n.slide;
+            })), e(J);
+          },
+          forEach: h,
+          filter: p,
+          style: function style(t, i, r) {
+            h(function (n) {
+              n.style(t, i, r);
+            });
+          },
+          getLength: function getLength(n) {
+            return (n ? f : s).length;
+          },
+          isEnough: function isEnough() {
+            return s.length > u.perPage;
+          }
+        };
+      },
+      Layout: function Layout(t, n, i) {
+        var r,
+          o,
+          u,
+          e = (a = Q(t)).on,
+          c = a.bind,
+          f = a.emit,
+          a = n.Slides,
+          s = n.Direction.resolve,
+          l = (n = n.Elements).root,
+          d = n.track,
+          v = n.list,
+          h = a.getAt,
+          p = a.style;
+        function g() {
+          r = i.direction === Jn, _(l, "maxWidth", W(i.width)), _(d, s("paddingLeft"), y(!1)), _(d, s("paddingRight"), y(!0)), m(!0);
+        }
+        function m(n) {
+          var t = N(l);
+          !n && o.width === t.width && o.height === t.height || (_(d, "height", function () {
+            var n = "";
+            r && (bn(n = b(), "height or heightRatio is missing."), n = "calc(" + n + " - " + y(!1) + " - " + y(!0) + ")");
+            return n;
+          }()), p(s("marginRight"), W(i.gap)), p("width", i.autoWidth ? null : W(i.fixedWidth) || (r ? "" : w())), p("height", W(i.fixedHeight) || (r ? i.autoHeight ? null : w() : b()), !0), o = t, f(Nn), u !== (u = O()) && (A(l, Ot, u), f("overflow", u)));
+        }
+        function y(n) {
+          var t = i.padding,
+            n = s(n ? "right" : "left");
+          return t && W(t[n] || (un(t) ? 0 : t)) || "0px";
+        }
+        function b() {
+          return W(i.height || N(v).width * i.heightRatio);
+        }
+        function w() {
+          var n = W(i.gap);
+          return "calc((100%" + (n && " + " + n) + ")/" + (i.perPage || 1) + (n && " - " + n) + ")";
+        }
+        function x() {
+          return N(v)[s("width")];
+        }
+        function k(n, t) {
+          n = h(n || 0);
+          return n ? N(n.slide)[s("width")] + (t ? 0 : L()) : 0;
+        }
+        function S(n, t) {
+          var i,
+            n = h(n);
+          return n ? (n = N(n.slide)[s("right")], i = N(v)[s("left")], U(n - i) + (t ? 0 : L())) : 0;
+        }
+        function E(n) {
+          return S(t.length - 1) - S(0) + k(0, n);
+        }
+        function L() {
+          var n = h(0);
+          return n && parseFloat(_(n.slide, s("marginRight"))) || 0;
+        }
+        function O() {
+          return t.is(It) || E(!0) > x();
+        }
+        return {
+          mount: function mount() {
+            var n, t, i;
+            g(), c(window, "resize load", (n = R(f, jn), i = qn(t || 0, n, null, 1), function () {
+              i.isPaused() && i.start();
+            })), e([K, J], g), e(jn, m);
+          },
+          resize: m,
+          listSize: x,
+          slideSize: k,
+          sliderSize: E,
+          totalSize: S,
+          getPadding: function getPadding(n) {
+            return parseFloat(_(d, s("padding" + (n ? "Right" : "Left")))) || 0;
+          },
+          isOverflow: O
+        };
+      },
+      Clones: function Clones(c, i, f) {
+        var t,
+          r = Q(c),
+          n = r.on,
+          a = i.Elements,
+          s = i.Slides,
+          o = i.Direction.resolve,
+          l = [];
+        function u() {
+          if (n(J, d), n([K, jn], v), t = h()) {
+            var o = t,
+              u = s.get().slice(),
+              e = u.length;
+            if (e) {
+              for (; u.length < o;) k(u, u);
+              k(u.slice(-o), u.slice(0, o)).forEach(function (n, t) {
+                var i = t < o,
+                  r = function (n, t) {
+                    n = n.cloneNode(!0);
+                    return M(n, f.classes.clone), n.id = c.root.id + "-clone" + An(t + 1), n;
+                  }(n.slide, t);
+                i ? O(r, u[0].slide) : L(a.list, r), k(l, r), s.register(r, t - o + (i ? 0 : e), n.index);
+              });
+            }
+            i.Layout.resize(!0);
+          }
+        }
+        function d() {
+          e(), u();
+        }
+        function e() {
+          T(l), D(l), r.destroy();
+        }
+        function v() {
+          var n = h();
+          t !== n && (t < n || !n) && r.emit(J);
+        }
+        function h() {
+          var n,
+            t = f.clones;
+          return c.is(Pt) ? en(t) && (t = (n = f[o("fixedWidth")] && i.Layout.slideSize(0)) && kn(N(a.track)[o("width")] / n) || f[o("autoWidth")] && c.length || 2 * f.perPage) : t = 0, t;
+        }
+        return {
+          mount: u,
+          destroy: e
+        };
+      },
+      Move: function Move(r, c, o) {
+        var e,
+          n = Q(r),
+          t = n.on,
+          f = n.emit,
+          a = r.state.set,
+          u = (n = c.Layout).slideSize,
+          i = n.getPadding,
+          s = n.totalSize,
+          l = n.listSize,
+          d = n.sliderSize,
+          v = (n = c.Direction).resolve,
+          h = n.orient,
+          p = (n = c.Elements).list,
+          g = n.track;
+        function m() {
+          c.Controller.isBusy() || (c.Scroll.cancel(), y(r.index), c.Slides.update());
+        }
+        function y(n) {
+          b(S(n, !0));
+        }
+        function b(n, t) {
+          r.is(It) || (t = t ? n : function (n) {
+            {
+              var t, i;
+              r.is(Pt) && (t = k(n), i = t > c.Controller.getEnd(), (t < 0 || i) && (n = w(n, i)));
+            }
+            return n;
+          }(n), _(p, "transform", "translate" + v("X") + "(" + t + "px)"), n !== t && f(Un));
+        }
+        function w(n, t) {
+          var i = n - L(t),
+            r = d();
+          return n -= h(r * (kn(U(i) / r) || 1)) * (t ? 1 : -1);
+        }
+        function x() {
+          b(E(), !0), e.cancel();
+        }
+        function k(n) {
+          for (var t = c.Slides.get(), i = 0, r = 1 / 0, o = 0; o < t.length; o++) {
+            var u = t[o].index,
+              e = U(S(u, !0) - n);
+            if (!(e <= r)) break;
+            r = e, i = u;
+          }
+          return i;
+        }
+        function S(n, t) {
+          var i = h(s(n - 1) - (n = n, "center" === (i = o.focus) ? (l() - u(n, !0)) / 2 : +i * u(n) || 0));
+          return t ? (n = i, n = o.trimSpace && r.is(Mt) ? q(n, 0, h(d(!0) - l())) : n) : i;
+        }
+        function E() {
+          var n = v("left");
+          return N(p)[n] - N(g)[n] + h(i(!1));
+        }
+        function L(n) {
+          return S(n ? c.Controller.getEnd() : 0, !!o.trimSpace);
+        }
+        return {
+          mount: function mount() {
+            e = c.Transition, t([B, Nn, K, J], m);
+          },
+          move: function move(n, t, i, r) {
+            var o, u;
+            n !== t && (o = i < n, u = h(w(E(), o)), o ? 0 <= u : u <= p[v("scrollWidth")] - N(g)[v("width")]) && (x(), b(w(E(), i < n), !0)), a(G), f(H, t, i, n), e.start(t, function () {
+              a(3), f(Dn, t, i, n), r && r();
+            });
+          },
+          jump: y,
+          translate: b,
+          shift: w,
+          cancel: x,
+          toIndex: k,
+          toPosition: S,
+          getPosition: E,
+          getLimit: L,
+          exceededLimit: function exceededLimit(n, t) {
+            t = en(t) ? E() : t;
+            var i = !0 !== n && h(t) < h(L(!1)),
+              n = !1 !== n && h(t) > h(L(!0));
+            return i || n;
+          },
+          reposition: m
+        };
+      },
+      Controller: function Controller(o, u, e) {
+        var c,
+          f,
+          a,
+          s,
+          n = Q(o),
+          t = n.on,
+          i = n.emit,
+          l = u.Move,
+          d = l.getPosition,
+          r = l.getLimit,
+          v = l.toPosition,
+          h = (n = u.Slides).isEnough,
+          p = n.getLength,
+          g = e.omitEnd,
+          m = o.is(Pt),
+          y = o.is(Mt),
+          b = R(L, !1),
+          w = R(L, !0),
+          x = e.start || 0,
+          k = x;
+        function S() {
+          f = p(!0), a = e.perMove, s = e.perPage, c = _();
+          var n = q(x, 0, g ? c : f - 1);
+          n !== x && (x = n, l.reposition());
+        }
+        function E() {
+          c !== _() && i("ei");
+        }
+        function L(n, t) {
+          var i = a || (P() ? 1 : s),
+            i = O(x + i * (n ? -1 : 1), x, !(a || P()));
+          return -1 === i && y && !Sn(d(), r(!n), 1) ? n ? 0 : c : t ? i : A(i);
+        }
+        function O(n, t, i) {
+          var r;
+          return h() || P() ? ((r = function (n) {
+            if (y && "move" === e.trimSpace && n !== x) for (var t = d(); t === v(n, !0) && En(n, 0, o.length - 1, !e.rewind);) n < x ? --n : ++n;
+            return n;
+          }(n)) !== n && (t = n, n = r, i = !1), n < 0 || c < n ? n = a || !En(0, n, t, !0) && !En(c, t, n, !0) ? m ? i ? n < 0 ? -(f % s || s) : f : n : e.rewind ? n < 0 ? c : 0 : -1 : z(D(n)) : i && n !== t && (n = z(D(t) + (n < t ? -1 : 1)))) : n = -1, n;
+        }
+        function A(n) {
+          return m ? (n + f) % f || 0 : n;
+        }
+        function _() {
+          for (var n = f - (P() || m && a ? 1 : s); g && 0 < n--;) if (v(f - 1, !0) !== v(n, !0)) {
+            n++;
+            break;
+          }
+          return q(n, 0, f - 1);
+        }
+        function z(n) {
+          return q(P() ? n : s * n, 0, c);
+        }
+        function D(n) {
+          return P() ? Y(n, c) : xn((c <= n ? f - 1 : n) / s);
+        }
+        function M(n) {
+          n !== x && (k = x, x = n);
+        }
+        function P() {
+          return !en(e.focus) || e.isNavigation;
+        }
+        function I() {
+          return o.state.is([G, rn]) && !!e.waitForTransition;
+        }
+        return {
+          mount: function mount() {
+            S(), t([K, J, "ei"], S), t(Nn, E);
+          },
+          go: function go(n, t, i) {
+            var r;
+            I() || -1 < (r = A(n = function (n) {
+              var t = x;
+              {
+                var i, r;
+                C(n) ? (r = n.match(/([+\-<>])(\d+)?/) || [], i = r[1], r = r[2], "+" === i || "-" === i ? t = O(x + +("" + i + (+r || 1)), x) : ">" === i ? t = r ? z(+r) : b(!0) : "<" === i && (t = w(!0))) : t = m ? n : q(n, 0, c);
+              }
+              return t;
+            }(n))) && (t || r !== x) && (M(r), l.move(n, r, k, i));
+          },
+          scroll: function scroll(n, t, i, r) {
+            u.Scroll.scroll(n, t, i, function () {
+              var n = A(l.toIndex(d()));
+              M(g ? Y(n, c) : n), r && r();
+            });
+          },
+          getNext: b,
+          getPrev: w,
+          getAdjacent: L,
+          getEnd: _,
+          setIndex: M,
+          getIndex: function getIndex(n) {
+            return n ? k : x;
+          },
+          toIndex: z,
+          toPage: D,
+          toDest: function toDest(n) {
+            return n = l.toIndex(n), y ? q(n, 0, c) : n;
+          },
+          hasFocus: P,
+          isBusy: I
+        };
+      },
+      Arrows: function Arrows(o, n, t) {
+        var i,
+          r,
+          u = Q(o),
+          e = u.on,
+          c = u.bind,
+          f = u.emit,
+          a = t.classes,
+          s = t.i18n,
+          l = n.Elements,
+          d = n.Controller,
+          v = l.arrows,
+          h = l.track,
+          p = v,
+          g = l.prev,
+          m = l.next,
+          y = {};
+        function b() {
+          var n = t.arrows;
+          !n || g && m || (p = v || j("div", a.arrows), g = S(!0), m = S(!1), i = !0, L(p, [g, m]), v || O(p, h)), g && m && (an(y, {
+            prev: g,
+            next: m
+          }), ln(p, n ? "" : "none"), M(p, r = dt + "--" + t.direction), n && (e([B, Dn, J, V, "ei"], E), c(m, "click", R(k, ">")), c(g, "click", R(k, "<")), E(), I([g, m], Kn, h.id), f("arrows:mounted", g, m))), e(K, w);
+        }
+        function w() {
+          x(), b();
+        }
+        function x() {
+          u.destroy(), X(p, r), i ? (T(v ? [g, m] : p), g = m = null) : P([g, m], ut);
+        }
+        function k(n) {
+          d.go(n, !0);
+        }
+        function S(n) {
+          return hn('<button class="' + a.arrow + " " + (n ? a.prev : a.next) + '" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="' + (t.arrowPath || "m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z") + '" />');
+        }
+        function E() {
+          var n, t, i, r;
+          g && m && (r = o.index, n = d.getPrev(), t = d.getNext(), i = -1 < n && r < n ? s.last : s.prev, r = -1 < t && t < r ? s.first : s.next, g.disabled = n < 0, m.disabled = t < 0, I(g, nn, i), I(m, nn, r), f("arrows:updated", g, m, n, t));
+        }
+        return {
+          arrows: y,
+          mount: b,
+          destroy: x,
+          update: E
+        };
+      },
+      Autoplay: function Autoplay(n, t, i) {
+        var r,
+          o,
+          u = Q(n),
+          e = u.on,
+          c = u.bind,
+          f = u.emit,
+          a = qn(i.interval, n.go.bind(n, ">"), function (n) {
+            var t = l.bar;
+            t && _(t, "width", 100 * n + "%"), f("autoplay:playing", n);
+          }),
+          s = a.isPaused,
+          l = t.Elements,
+          d = (u = t.Elements).root,
+          v = u.toggle,
+          h = i.autoplay,
+          p = "pause" === h;
+        function g() {
+          s() && t.Slides.isEnough() && (a.start(!i.resetProgress), o = r = p = !1, b(), f(Fn));
+        }
+        function m(n) {
+          p = !!(n = void 0 === n ? !0 : n), b(), s() || (a.pause(), f(Xn));
+        }
+        function y() {
+          p || (r || o ? m(!1) : g());
+        }
+        function b() {
+          v && (A(v, tn, !p), I(v, nn, i.i18n[p ? "play" : "pause"]));
+        }
+        function w(n) {
+          n = t.Slides.getAt(n);
+          a.set(n && +z(n.slide, Ct) || i.interval);
+        }
+        return {
+          mount: function mount() {
+            h && (i.pauseOnHover && c(d, "mouseenter mouseleave", function (n) {
+              r = "mouseenter" === n.type, y();
+            }), i.pauseOnFocus && c(d, "focusin focusout", function (n) {
+              o = "focusin" === n.type, y();
+            }), v && c(v, "click", function () {
+              p ? g() : m(!0);
+            }), e([H, Tn, J], a.rewind), e(H, w), v && I(v, Kn, l.track.id), p || g(), b());
+          },
+          destroy: a.cancel,
+          play: g,
+          pause: m,
+          isPaused: s
+        };
+      },
+      Cover: function Cover(n, t, i) {
+        var r = Q(n).on;
+        function o(i) {
+          t.Slides.forEach(function (n) {
+            var t = fn(n.container || n.slide, "img");
+            t && t.src && u(i, t, n);
+          });
+        }
+        function u(n, t, i) {
+          i.style("background", n ? 'center/cover no-repeat url("' + t.src + '")' : "", !0), ln(t, n ? "none" : "");
+        }
+        return {
+          mount: function mount() {
+            i.cover && (r(Wn, R(u, !0)), r([B, K, J], R(o, !0)));
+          },
+          destroy: R(o, !1)
+        };
+      },
+      Scroll: function Scroll(n, c, u) {
+        var f,
+          a,
+          t = Q(n),
+          i = t.on,
+          s = t.emit,
+          l = n.state.set,
+          d = c.Move,
+          v = d.getPosition,
+          e = d.getLimit,
+          h = d.exceededLimit,
+          p = d.translate,
+          g = n.is(Mt),
+          m = 1;
+        function y(n, t, i, r, o) {
+          var u,
+            e = v(),
+            i = (x(), !i || g && h() || (i = c.Layout.sliderSize(), u = Ln(n) * i * xn(U(n) / i) || 0, n = d.toPosition(c.Controller.toDest(n % i)) + u), Sn(e, n, 1));
+          m = 1, t = i ? 0 : t || wn(U(n - e) / 1.5, 800), a = r, f = qn(t, b, R(w, e, n, o), 1), l(rn), s(Tn), f.start();
+        }
+        function b() {
+          l(3), a && a(), s(V);
+        }
+        function w(n, t, i, r) {
+          var o = v(),
+            r = (n + (t - n) * (t = r, (n = u.easingFunc) ? n(t) : 1 - Math.pow(1 - t, 4)) - o) * m;
+          p(o + r), g && !i && h() && (m *= .6, U(r) < 10 && y(e(h(!0)), 600, !1, a, !0));
+        }
+        function x() {
+          f && f.cancel();
+        }
+        function r() {
+          f && !f.isPaused() && (x(), b());
+        }
+        return {
+          mount: function mount() {
+            i(H, x), i([K, J], r);
+          },
+          destroy: x,
+          scroll: y,
+          cancel: r
+        };
+      },
+      Drag: function Drag(e, o, c) {
+        var f,
+          t,
+          u,
+          a,
+          s,
+          l,
+          d,
+          v,
+          n = Q(e),
+          i = n.on,
+          h = n.emit,
+          p = n.bind,
+          g = n.unbind,
+          m = e.state,
+          y = o.Move,
+          b = o.Scroll,
+          w = o.Controller,
+          x = o.Elements.track,
+          k = o.Media.reduce,
+          r = (n = o.Direction).resolve,
+          S = n.orient,
+          E = y.getPosition,
+          L = y.exceededLimit,
+          O = !1;
+        function j() {
+          var n = c.drag;
+          C(!n), a = "free" === n;
+        }
+        function N(n) {
+          var t, i, r;
+          l = !1, d || (t = R(n), i = n.target, r = c.noDrag, cn(i, "." + mt + ", ." + vt) || r && cn(i, r) || !t && n.button || (w.isBusy() ? F(n, !0) : (v = t ? x : window, s = m.is([G, rn]), u = null, p(v, zt, A, jt), p(v, Dt, _, jt), y.cancel(), b.cancel(), z(n))));
+        }
+        function A(n) {
+          var t, i, r, o, u;
+          m.is(6) || (m.set(6), h("drag")), n.cancelable && (s ? (y.translate(f + D(n) / (O && e.is(Mt) ? 5 : 1)), u = 200 < M(n), t = O !== (O = L()), (u || t) && z(n), l = !0, h("dragging"), F(n)) : U(D(u = n)) > U(D(u, !0)) && (t = n, i = c.dragMinThreshold, r = un(i), o = r && i.mouse || 0, r = (r ? i.touch : +i) || 10, s = U(D(t)) > (R(t) ? r : o), F(n)));
+        }
+        function _(n) {
+          var t, i, r;
+          m.is(6) && (m.set(3), h("dragged")), s && (i = function (n) {
+            return E() + Ln(n) * Y(U(n) * (c.flickPower || 600), a ? 1 / 0 : o.Layout.listSize() * (c.flickMaxPages || 1));
+          }(t = function (n) {
+            if (e.is(Pt) || !O) {
+              var t = M(n);
+              if (t && t < 200) return D(n) / t;
+            }
+            return 0;
+          }(t = n)), r = c.rewind && c.rewindByDrag, k(!1), a ? w.scroll(i, 0, c.snap) : e.is(It) ? w.go(S(Ln(t)) < 0 ? r ? "<" : "-" : r ? ">" : "+") : e.is(Mt) && O && r ? w.go(L(!0) ? ">" : "<") : w.go(w.toDest(i), !0), k(!0), F(n)), g(v, zt, A), g(v, Dt, _), s = !1;
+        }
+        function T(n) {
+          !d && l && F(n, !0);
+        }
+        function z(n) {
+          u = t, t = n, f = E();
+        }
+        function D(n, t) {
+          return I(n, t) - I(P(n), t);
+        }
+        function M(n) {
+          return mn(n) - mn(P(n));
+        }
+        function P(n) {
+          return t === n && u || t;
+        }
+        function I(n, t) {
+          return (R(n) ? n.changedTouches[0] : n)["page" + r(t ? "Y" : "X")];
+        }
+        function R(n) {
+          return "undefined" != typeof TouchEvent && n instanceof TouchEvent;
+        }
+        function C(n) {
+          d = n;
+        }
+        return {
+          mount: function mount() {
+            p(x, zt, on, jt), p(x, Dt, on, jt), p(x, _t, N, jt), p(x, "click", T, {
+              capture: !0
+            }), p(x, "dragstart", F), i([B, K], j);
+          },
+          disable: C,
+          isDragging: function isDragging() {
+            return s;
+          }
+        };
+      },
+      Keyboard: function Keyboard(t, n, i) {
+        var r,
+          o,
+          u = Q(t),
+          e = u.on,
+          c = u.bind,
+          f = u.unbind,
+          a = t.root,
+          s = n.Direction.resolve;
+        function l() {
+          var n = i.keyboard;
+          n && (r = "global" === n ? window : a, c(r, Gt, h));
+        }
+        function d() {
+          f(r, Gt);
+        }
+        function v() {
+          var n = o;
+          o = !0, p(function () {
+            o = n;
+          });
+        }
+        function h(n) {
+          o || ((n = Tt(n)) === s(Bn) ? t.go("<") : n === s(Hn) && t.go(">"));
+        }
+        return {
+          mount: function mount() {
+            l(), e(K, d), e(K, l), e(H, v);
+          },
+          destroy: d,
+          disable: function disable(n) {
+            o = n;
+          }
+        };
+      },
+      LazyLoad: function LazyLoad(i, n, o) {
+        var t = Q(i),
+          r = t.on,
+          u = t.off,
+          e = t.bind,
+          c = t.emit,
+          f = "sequential" === o.lazyLoad,
+          a = [Dn, V],
+          s = [];
+        function l() {
+          D(s), n.Slides.forEach(function (r) {
+            gn(r.slide, Wt).forEach(function (n) {
+              var t = z(n, Ft),
+                i = z(n, Xt);
+              t === n.src && i === n.srcset || (t = o.classes.spinner, t = fn(i = n.parentElement, "." + t) || j("span", t, i), s.push([n, r, t]), n.src || ln(n, "none"));
+            });
+          }), (f ? p : (u(a), r(a, d), d))();
+        }
+        function d() {
+          (s = s.filter(function (n) {
+            var t = o.perPage * ((o.preloadPages || 1) + 1) - 1;
+            return !n[1].isWithin(i.index, t) || v(n);
+          })).length || u(a);
+        }
+        function v(n) {
+          var t = n[0];
+          M(n[1].slide, Et), e(t, "load error", R(h, n)), I(t, "src", z(t, Ft)), I(t, "srcset", z(t, Xt)), P(t, Ft), P(t, Xt);
+        }
+        function h(n, t) {
+          var i = n[0],
+            r = n[1];
+          X(r.slide, Et), "error" !== t.type && (T(n[2]), ln(i, ""), c(Wn, i, r), c(jn)), f && p();
+        }
+        function p() {
+          s.length && v(s.shift());
+        }
+        return {
+          mount: function mount() {
+            o.lazyLoad && (l(), r(J, l));
+          },
+          destroy: R(D, s),
+          check: d
+        };
+      },
+      Pagination: function Pagination(l, n, d) {
+        var v,
+          h,
+          t = Q(l),
+          p = t.on,
+          g = t.emit,
+          m = t.bind,
+          y = n.Slides,
+          b = n.Elements,
+          w = n.Controller,
+          x = w.hasFocus,
+          r = w.getIndex,
+          e = w.go,
+          c = n.Direction.resolve,
+          k = b.pagination,
+          S = [];
+        function E() {
+          v && (T(k ? o(v.children) : v), X(v, h), D(S), v = null), t.destroy();
+        }
+        function L(n) {
+          e(">" + n, !0);
+        }
+        function O(n, t) {
+          var i = S.length,
+            r = Tt(t),
+            o = A(),
+            u = -1,
+            o = (r === c(Hn, !1, o) ? u = ++n % i : r === c(Bn, !1, o) ? u = (--n + i) % i : "Home" === r ? u = 0 : "End" === r && (u = i - 1), S[u]);
+          o && (dn(o.button), e(">" + u), F(t, !0));
+        }
+        function A() {
+          return d.paginationDirection || d.direction;
+        }
+        function _(n) {
+          return S[w.toPage(n)];
+        }
+        function z() {
+          var n,
+            t = _(r(!0)),
+            i = _(r());
+          t && (X(n = t.button, tn), P(n, Qn), I(n, $, -1)), i && (M(n = i.button, tn), I(n, Qn, !0), I(n, $, "")), g("pagination:updated", {
+            list: v,
+            items: S
+          }, t, i);
+        }
+        return {
+          items: S,
+          mount: function n() {
+            E(), p([K, J, "ei"], n);
+            var t = d.pagination;
+            if (k && ln(k, t ? "" : "none"), t) {
+              p([H, Tn, V], z);
+              var t = l.length,
+                i = d.classes,
+                r = d.i18n,
+                o = d.perPage,
+                u = x() ? w.getEnd() + 1 : kn(t / o);
+              M(v = k || j("ul", i.pagination, b.track.parentElement), h = gt + "--" + A()), I(v, Z, "tablist"), I(v, nn, r.select), I(v, nt, A() === Jn ? "vertical" : "");
+              for (var e = 0; e < u; e++) {
+                var c = j("li", null, v),
+                  f = j("button", {
+                    "class": i.page,
+                    type: "button"
+                  }, c),
+                  a = y.getIn(e).map(function (n) {
+                    return n.slide.id;
+                  }),
+                  s = !x() && 1 < o ? r.pageX : r.slideX;
+                m(f, "click", R(L, e)), d.paginationKeyboard && m(f, "keydown", R(O, e)), I(c, Z, "presentation"), I(f, Z, "tab"), I(f, Kn, a.join(" ")), I(f, nn, On(s, e + 1)), I(f, $, -1), S.push({
+                  li: c,
+                  button: f,
+                  page: e
+                });
+              }
+              z(), g("pagination:mounted", {
+                list: v,
+                items: S
+              }, _(l.index));
+            }
+          },
+          destroy: E,
+          getAt: _,
+          update: z
+        };
+      },
+      Sync: function Sync(i, n, t) {
+        var r = t.isNavigation,
+          o = t.slideFocus,
+          u = [];
+        function e() {
+          var n, t;
+          i.splides.forEach(function (n) {
+            n.isParent || (f(i, n.splide), f(n.splide, i));
+          }), r && (n = Q(i), (t = n.on)(Mn, s), t(Yn, l), t([B, K], a), u.push(n), n.emit(Gn, i.splides));
+        }
+        function c() {
+          u.forEach(function (n) {
+            n.destroy();
+          }), D(u);
+        }
+        function f(n, r) {
+          n = Q(n);
+          n.on(H, function (n, t, i) {
+            r.go(r.is(Pt) ? i : n);
+          }), u.push(n);
+        }
+        function a() {
+          I(n.Elements.list, nt, t.direction === Jn ? "vertical" : "");
+        }
+        function s(n) {
+          i.go(n.index);
+        }
+        function l(n, t) {
+          b(Yt, Tt(t)) && (s(n), F(t));
+        }
+        return {
+          setup: R(n.Media.set, {
+            slideFocus: en(o) ? r : o
+          }, !0),
+          mount: e,
+          destroy: c,
+          remount: function remount() {
+            c(), e();
+          }
+        };
+      },
+      Wheel: function Wheel(e, c, f) {
+        var n = Q(e).bind,
+          a = 0;
+        function t(n) {
+          var t, i, r, o, u;
+          n.cancelable && (t = (u = n.deltaY) < 0, i = mn(n), r = f.wheelMinThreshold || 0, o = f.wheelSleep || 0, U(u) > r && o < i - a && (e.go(t ? "<" : ">"), a = i), u = t, f.releaseWheel && !e.state.is(G) && -1 === c.Controller.getAdjacent(u) || F(n));
+        }
+        return {
+          mount: function mount() {
+            f.wheel && n(c.Elements.track, "wheel", t, jt);
+          }
+        };
+      },
+      Live: function Live(n, t, i) {
+        var r = Q(n).on,
+          o = t.Elements.track,
+          u = i.live && !i.isNavigation,
+          e = j("span", wt),
+          c = qn(90, R(f, !1));
+        function f(n) {
+          I(o, rt, n), n ? (L(o, e), c.start()) : (T(e), c.cancel());
+        }
+        function a(n) {
+          u && I(o, it, n ? "off" : "polite");
+        }
+        return {
+          mount: function mount() {
+            u && (a(!t.Autoplay.isPaused()), I(o, ot, !0), e.textContent = "…", r(Fn, R(a, !0)), r(Xn, R(a, !1)), r([Dn, V], R(f, !0)));
+          },
+          disable: a,
+          destroy: function destroy() {
+            P(o, [it, ot, rt]), T(e);
+          }
+        };
+      }
+    }),
+    qt = {
+      type: "slide",
+      role: "region",
+      speed: 400,
+      perPage: 1,
+      cloneStatus: !0,
+      arrows: !0,
+      pagination: !0,
+      paginationKeyboard: !0,
+      interval: 5e3,
+      pauseOnHover: !0,
+      pauseOnFocus: !0,
+      resetProgress: !0,
+      easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+      drag: !0,
+      direction: "ltr",
+      trimSpace: !0,
+      focusableNodes: "a, button, textarea, input, select, iframe",
+      live: !0,
+      classes: {
+        slide: at,
+        clone: st,
+        arrows: dt,
+        arrow: vt,
+        prev: ht,
+        next: pt,
+        pagination: gt,
+        page: mt,
+        spinner: i + "spinner"
+      },
+      i18n: {
+        prev: "Previous slide",
+        next: "Next slide",
+        first: "Go to first slide",
+        last: "Go to last slide",
+        slideX: "Go to slide %s",
+        pageX: "Go to page %s",
+        play: "Start autoplay",
+        pause: "Pause autoplay",
+        carousel: "carousel",
+        slide: "slide",
+        select: "Select a slide to show",
+        slideLabel: "%s of %s"
+      },
+      reducedMotion: {
+        speed: 0,
+        rewindSpeed: 0,
+        autoplay: "pause"
+      }
+    };
+  function Bt(n, t, i) {
+    var r = t.Slides;
+    function o() {
+      r.forEach(function (n) {
+        n.style("transform", "translateX(-" + 100 * n.index + "%)");
+      });
+    }
+    return {
+      mount: function mount() {
+        Q(n).on([B, J], o);
+      },
+      start: function start(n, t) {
+        r.style("transition", "opacity " + i.speed + "ms " + i.easing), p(t);
+      },
+      cancel: on
+    };
+  }
+  function Ht(u, n, e) {
+    var c,
+      f = n.Move,
+      a = n.Controller,
+      s = n.Scroll,
+      t = n.Elements.list,
+      l = R(_, t, "transition");
+    function i() {
+      l(""), s.cancel();
+    }
+    return {
+      mount: function mount() {
+        Q(u).bind(t, "transitionend", function (n) {
+          n.target === t && c && (i(), c());
+        });
+      },
+      start: function start(n, t) {
+        var i = f.toPosition(n, !0),
+          r = f.getPosition(),
+          o = function (n) {
+            var t = e.rewindSpeed;
+            if (u.is(Mt) && t) {
+              var i = a.getIndex(!0),
+                r = a.getEnd();
+              if (0 === i && r <= n || r <= i && 0 === n) return t;
+            }
+            return e.speed;
+          }(n);
+        1 <= U(i - r) && 1 <= o ? e.useScroll ? s.scroll(i, o, !1, t) : (l("transform " + o + "ms " + e.easing), f.translate(i, !0), c = t) : (f.jump(n), t());
+      },
+      cancel: i
+    };
+  }
+  t = function () {
+    function i(n, t) {
+      this.event = Q(), this.Components = {}, this.state = s(1), this.splides = [], this.n = {}, this.t = {};
+      n = C(n) ? pn(document, n) : n;
+      bn(n, n + " is invalid."), t = d({
+        label: z(this.root = n, nn) || "",
+        labelledby: z(n, Zn) || ""
+      }, qt, i.defaults, t || {});
+      try {
+        d(t, JSON.parse(z(n, f)));
+      } catch (n) {
+        bn(!1, "Invalid JSON");
+      }
+      this.n = Object.create(d({}, t));
+    }
+    var n = i.prototype;
+    return n.mount = function (n, t) {
+      var i = this,
+        r = this.state,
+        o = this.Components;
+      return bn(r.is([1, 7]), "Already mounted!"), r.set(1), this.i = o, this.r = t || this.r || (this.is(It) ? Bt : Ht), this.t = n || this.t, w(an({}, Ut, this.t, {
+        Transition: this.r
+      }), function (n, t) {
+        n = n(i, o, i.n);
+        (o[t] = n).setup && n.setup();
+      }), w(o, function (n) {
+        n.mount && n.mount();
+      }), this.emit(B), M(this.root, "is-initialized"), r.set(3), this.emit("ready"), this;
+    }, n.sync = function (n) {
+      return this.splides.push({
+        splide: n
+      }), n.splides.push({
+        splide: this,
+        isParent: !0
+      }), this.state.is(3) && (this.i.Sync.remount(), n.Components.Sync.remount()), this;
+    }, n.go = function (n) {
+      return this.i.Controller.go(n), this;
+    }, n.on = function (n, t) {
+      return this.event.on(n, t), this;
+    }, n.off = function (n) {
+      return this.event.off(n), this;
+    }, n.emit = function (n) {
+      var t;
+      return (t = this.event).emit.apply(t, [n].concat(o(arguments, 1))), this;
+    }, n.add = function (n, t) {
+      return this.i.Slides.add(n, t), this;
+    }, n.remove = function (n) {
+      return this.i.Slides.remove(n), this;
+    }, n.is = function (n) {
+      return this.n.type === n;
+    }, n.refresh = function () {
+      return this.emit(J), this;
+    }, n.destroy = function (t) {
+      void 0 === t && (t = !0);
+      var n = this.event,
+        i = this.state;
+      return i.is(1) ? Q(this).on("ready", this.destroy.bind(this, t)) : (w(this.i, function (n) {
+        n.destroy && n.destroy(t);
+      }, !0), n.emit(a), n.destroy(), t && D(this.splides), i.set(7)), this;
+    }, Jt(i, [{
+      key: "options",
+      get: function get() {
+        return this.n;
+      },
+      set: function set(n) {
+        this.i.Media.set(n, !0, !0);
+      }
+    }, {
+      key: "length",
+      get: function get() {
+        return this.i.Slides.getLength(!0);
+      }
+    }, {
+      key: "index",
+      get: function get() {
+        return this.i.Controller.getIndex();
+      }
+    }]), i;
+  }();
+  return t.defaults = {}, t.STATES = r, t;
+}, "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (n = "undefined" != typeof globalThis ? globalThis : n || self).Splide = t();
+function St(t) {
+  if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  return t;
+}
+function qt(t, n) {
+  t.prototype = Object.create(n.prototype), e(t.prototype.constructor = t, n);
+}
+function e(t, n) {
+  return (e = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, n) {
+    return t.__proto__ = n, t;
+  })(t, n);
+}
+/*!
+ * Splide.js
+ * Version  : 0.8.0
+ * License  : MIT
+ * Copyright: 2022 Naotoshi Fujita
+ */
+var t;
+t = function t() {
+  "use strict";
+
+  function n(t, n, e) {
+    return Array.prototype.slice.call(t, n, e);
+  }
+  function r(t) {
+    return t.bind.apply(t, [null].concat(n(arguments, 1)));
+  }
+  function t(t, n) {
+    return _typeof(n) === t;
+  }
+  var q = Array.isArray;
+  function o(t) {
+    return q(t) ? t : [t];
+  }
+  function V(t, n) {
+    o(t).forEach(n);
+  }
+  r(t, "function"), r(t, "string"), r(t, "undefined");
+  var N = Object.keys;
+  function z(s) {
+    return n(arguments, 1).forEach(function (e) {
+      var t = e,
+        n = function n(t, _n2) {
+          s[_n2] = e[_n2];
+        },
+        i = void 0;
+      if (t) for (var r = N(t), r = i ? r.reverse() : r, o = 0; o < r.length; o++) {
+        var u = r[o];
+        if ("__proto__" !== u && !1 === n(t[u], u)) break;
+      }
+    }), s;
+  }
+  function W() {
+    var s = [];
+    function e(t, e, i) {
+      V(t, function (n) {
+        n && V(e, function (t) {
+          t.split(" ").forEach(function (t) {
+            t = t.split(".");
+            i(n, t[0], t[1]);
+          });
+        });
+      });
+    }
+    return {
+      bind: function bind(t, n, o, u) {
+        e(t, n, function (t, n, e) {
+          var i = ("addEventListener" in t),
+            r = i ? t.removeEventListener.bind(t, n, o, u) : t.removeListener.bind(t, o);
+          i ? t.addEventListener(n, o, u) : t.addListener(o), s.push([t, n, e, o, r]);
+        });
+      },
+      unbind: function unbind(t, n, r) {
+        e(t, n, function (n, e, i) {
+          s = s.filter(function (t) {
+            return !!(t[0] !== n || t[1] !== e || t[2] !== i || r && t[3] !== r) || (t[4](), !1);
+          });
+        });
+      },
+      dispatch: function dispatch(t, n, e) {
+        var i;
+        return "function" == typeof CustomEvent ? i = new CustomEvent(n, {
+          bubbles: !0,
+          detail: e
+        }) : (i = document.createEvent("CustomEvent")).initCustomEvent(n, !0, !1, e), t.dispatchEvent(i), i;
+      },
+      destroy: function destroy() {
+        s.forEach(function (t) {
+          t[4]();
+        }), s.length = 0;
+      }
+    };
+  }
+  var i = "dragging",
+    L = "destroy";
+  function u(t) {
+    var e = t ? t.event.bus : document.createDocumentFragment(),
+      i = W();
+    return t && t.event.on(L, i.destroy), z(i, {
+      bus: e,
+      on: function on(t, n) {
+        i.bind(e, o(t).join(" "), function (t) {
+          n.apply(n, q(t.detail) ? t.detail : []);
+        });
+      },
+      off: r(i.unbind, e),
+      emit: function emit(t) {
+        i.dispatch(e, t, n(arguments, 1));
+      }
+    });
+  }
+  function Y(t) {
+    var e = t;
+    return {
+      set: function set(t) {
+        e = t;
+      },
+      is: function is(t) {
+        return t = o(t), n = e, -1 < t.indexOf(n);
+        var n;
+      }
+    };
+  }
+  var s = "splide__slide",
+    e = s + "__container";
+  function c(t, n, e) {
+    return Array.prototype.slice.call(t, n, e);
+  }
+  function a(t) {
+    return t.bind.apply(t, [null].concat(c(arguments, 1)));
+  }
+  function f(t, n) {
+    return _typeof(n) === t;
+  }
+  function h(t) {
+    return !l(t) && f("object", t);
+  }
+  var Q = Array.isArray,
+    U = a(f, "function"),
+    B = a(f, "string"),
+    D = a(f, "undefined");
+  function l(t) {
+    return null === t;
+  }
+  function d(t, n) {
+    (Q(t = t) ? t : [t]).forEach(n);
+  }
+  function v(n, t, e) {
+    n && d(t, function (t) {
+      t && n.classList[e ? "add" : "remove"](t);
+    });
+  }
+  function y(t, n) {
+    v(t, B(n) ? n.split(" ") : n, !0);
+  }
+  function H(t, n) {
+    return t instanceof HTMLElement && (t.msMatchesSelector || t.matches).call(t, n);
+  }
+  function J(t, n) {
+    return n ? (e = n, n = (n = t) ? c(n.children) : [], (e ? n.filter(function (t) {
+      return H(t, e);
+    }) : n)[0]) : t.firstElementChild;
+    var e;
+  }
+  var X = Object.keys;
+  function p(t, n, e) {
+    if (t) for (var i = X(t), i = e ? i.reverse() : i, r = 0; r < i.length; r++) {
+      var o = i[r];
+      if ("__proto__" !== o && !1 === n(t[o], o)) break;
+    }
+  }
+  function $(i) {
+    return c(arguments, 1).forEach(function (e) {
+      p(e, function (t, n) {
+        i[n] = e[n];
+      });
+    }), i;
+  }
+  function G(e) {
+    return c(arguments, 1).forEach(function (t) {
+      p(t, function (t, n) {
+        Q(t) ? e[n] = t.slice() : h(t) ? e[n] = G({}, h(e[n]) ? e[n] : {}, t) : e[n] = t;
+      });
+    }), e;
+  }
+  function K(e, n, i) {
+    h(n) ? p(n, function (t, n) {
+      K(e, n, t);
+    }) : d(e, function (t) {
+      var e;
+      l(i) || "" === i ? (e = n, d(t, function (n) {
+        d(e, function (t) {
+          n && n.removeAttribute(t);
+        });
+      })) : t.setAttribute(n, String(i));
+    });
+  }
+  function w(t, n, e) {
+    t = document.createElement(t);
+    return n && (B(n) ? y : K)(t, n), e && d(t, e.appendChild.bind(e)), t;
+  }
+  function Z(t, n) {
+    var e = "display";
+    D(n) ? getComputedStyle(t)[e] : l(n) || (t.style[e] = "" + n);
+  }
+  function tt(t, n) {
+    v(t, n, !1);
+  }
+  var nt = Math.min,
+    et = Math.max;
+  Math.floor, Math.ceil, Math.abs;
+  function it(t, n, e) {
+    var i = nt(n, e),
+      n = et(n, e);
+    return nt(et(i, t), n);
+  }
+  var rt = "splide__video",
+    m = "--has-video",
+    ot = {
+      hideControls: !1,
+      loop: !1,
+      mute: !1,
+      volume: .2
+    },
+    ut = "video:click",
+    st = function () {
+      function t(t, n, e) {
+        this.state = Y(1), this.event = u(), this.target = t, this.videoId = n, this.options = e || {}, this.onPlay = this.onPlay.bind(this), this.onPause = this.onPause.bind(this), this.onEnded = this.onEnded.bind(this), this.onPlayerReady = this.onPlayerReady.bind(this), this.onError = this.onError.bind(this);
+      }
+      var n = t.prototype;
+      return n.on = function (t, n) {
+        this.event.on(t, n);
+      }, n.play = function () {
+        var t = this.state;
+        if (!t.is(9)) return this.event.emit("play"), t.is(2) ? t.set(4) : t.is(3) ? (this.player = this.createPlayer(this.videoId), t.set(4)) : void (t.is([4, 8]) || t.is(5) && (t.set(6), this.playVideo()));
+        console.error("[splide] Can not play this video.");
+      }, n.pause = function () {
+        var t = this.state;
+        if (!t.is(9)) return this.event.emit("pause"), t.is(4) ? t.set(2) : t.is(6) ? t.set(7) : void (t.is(8) && (this.pauseVideo(), this.state.set(5)));
+      }, n.isPaused = function () {
+        return !this.state.is(8);
+      }, n.destroy = function () {
+        this.event.destroy();
+      }, n.onPlayerReady = function () {
+        var t = this.state,
+          n = t.is(4);
+        t.set(5), n && this.play();
+      }, n.onPlay = function () {
+        var t = this.state,
+          n = t.is(7);
+        t.set(8), n ? this.pause() : this.event.emit("played");
+      }, n.onPause = function () {
+        this.state.set(5), this.event.emit("paused");
+      }, n.onEnded = function () {
+        this.state.set(5), this.event.emit("ended");
+      }, n.onError = function () {
+        this.state.set(9), this.event.emit("error");
+      }, t;
+    }(),
+    ct = function (i) {
+      function t(t, n, e) {
+        return (t = i.call(this, t, n, e = void 0 === e ? {} : e) || this).state.set(3), t;
+      }
+      qt(t, i);
+      var n = t.prototype;
+      return n.createPlayer = function (t) {
+        var n = this.options,
+          e = this.options.playerOptions,
+          e = void 0 === e ? {} : e,
+          t = w("video", {
+            src: t
+          }, this.target),
+          i = t.addEventListener.bind(t);
+        return $(t, {
+          controls: !n.hideControls,
+          loop: n.loop,
+          volume: it(n.volume, 0, 1),
+          muted: n.mute
+        }, e.htmlVideo || {}), i("play", this.onPlay), i("pause", this.onPause), i("ended", this.onEnded), i("loadeddata", this.onPlayerReady), i("error", this.onError), t;
+      }, n.playVideo = function () {
+        var t = this.player.play();
+        t && t["catch"](this.onError.bind(this));
+      }, n.pauseVideo = function () {
+        this.player.pause();
+      }, n.onError = function () {
+        this.state.is(7) ? this.state.set(5) : i.prototype.onError.call(this);
+      }, n.destroy = function () {
+        i.prototype.destroy.call(this);
+        var t = this.player,
+          t = t.addEventListener.bind(t);
+        t("play", this.onPlay), t("pause", this.onPause), t("ended", this.onEnded), t("loadeddata", this.onPlayerReady);
+      }, t;
+    }(st);
+  function at(t, n) {
+    for (var e = 0; e < n.length; e++) {
+      var i = n[e];
+      i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
+    }
+  }
+  var ft = "undefined" != typeof global && "[object global]" === {}.toString.call(global);
+  function ht(t, n) {
+    return 0 === t.indexOf(n.toLowerCase()) ? t : "".concat(n.toLowerCase()).concat(t.substr(0, 1).toUpperCase()).concat(t.substr(1));
+  }
+  function b(t) {
+    return /^(https?:)?\/\/((player|www)\.)?vimeo\.com(?=$|\/)/.test(t);
+  }
+  function lt(t) {
+    var n,
+      t = 0 < arguments.length && void 0 !== t ? t : {},
+      e = t.id,
+      t = t.url,
+      t = e || t;
+    if (!t) throw new Error("An id or url must be passed, either in an options object or as a data-vimeo-id or data-vimeo-url attribute.");
+    if (n = t, !isNaN(parseFloat(n)) && isFinite(n) && Math.floor(n) == n) return "https://vimeo.com/".concat(t);
+    if (b(t)) return t.replace("http:", "https:");
+    if (e) throw new TypeError("“".concat(e, "” is not a valid video id."));
+    throw new TypeError("“".concat(t, "” is not a vimeo.com url."));
+  }
+  var k = void 0 !== Array.prototype.indexOf,
+    g = "undefined" != typeof window && void 0 !== window.postMessage;
+  if (!(ft || k && g)) throw new Error("Sorry, the Vimeo Player API is not available in this browser.");
+  var dt,
+    vt,
+    E,
+    yt = "undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self ? self : {};
+  function T() {
+    if (void 0 === this) throw new TypeError("Constructor WeakMap requires 'new'");
+    if (E(this, "_id", "_WeakMap_" + pt() + "." + pt()), 0 < arguments.length) throw new TypeError("WeakMap iterable is not supported");
+  }
+  function P(t, n) {
+    if (!F(t) || !dt.call(t, "_id")) throw new TypeError(n + " method called on incompatible receiver " + _typeof(t));
+  }
+  function pt() {
+    return Math.random().toString().substring(2);
+  }
+  function F(t) {
+    return Object(t) === t;
+  }
+  (
+  /*!
+     * weakmap-polyfill v2.0.4 - ECMAScript6 WeakMap polyfill
+     * https://github.com/polygonplanet/weakmap-polyfill
+     * Copyright (c) 2015-2021 polygonplanet <polygon.planet.aqua@gmail.com>
+     * @license MIT
+     */
+  k = "undefined" != typeof globalThis ? globalThis : "undefined" != typeof self ? self : "undefined" != typeof window ? window : yt).WeakMap || (dt = Object.prototype.hasOwnProperty, vt = Object.defineProperty && function () {
+    try {
+      return 1 === Object.defineProperty({}, "x", {
+        value: 1
+      }).x;
+    } catch (t) {}
+  }(), k.WeakMap = ((E = function E(t, n, e) {
+    vt ? Object.defineProperty(t, n, {
+      configurable: !0,
+      writable: !0,
+      value: e
+    }) : t[n] = e;
+  })(T.prototype, "delete", function (t) {
+    var n;
+    return P(this, "delete"), !!F(t) && !(!(n = t[this.t]) || n[0] !== t) && (delete t[this.t], !0);
+  }), E(T.prototype, "get", function (t) {
+    var n;
+    return P(this, "get"), F(t) && (n = t[this.t]) && n[0] === t ? n[1] : void 0;
+  }), E(T.prototype, "has", function (t) {
+    var n;
+    return P(this, "has"), !!F(t) && !(!(n = t[this.t]) || n[0] !== t);
+  }), E(T.prototype, "set", function (t, n) {
+    var e;
+    if (P(this, "set"), F(t)) return (e = t[this.t]) && e[0] === t ? e[1] = n : E(t, this.t, [t, n]), this;
+    throw new TypeError("Invalid value used as weak map key");
+  }), E(T, "_polyfill", !0), T));
+  (function (t) {
+    /*! Native Promise Only
+            v0.8.1 (c) Kyle Simpson
+            MIT License: http://getify.mit-license.org
+        */
+    var n, e, i;
+    i = function i() {
+      var n,
+        e,
+        i,
+        r,
+        o,
+        t = Object.prototype.toString,
+        u = "undefined" != typeof setImmediate ? function (t) {
+          return setImmediate(t);
+        } : setTimeout;
+      try {
+        Object.defineProperty({}, "x", {}), n = function n(t, _n3, e, i) {
+          return Object.defineProperty(t, _n3, {
+            value: e,
+            writable: !0,
+            configurable: !1 !== i
+          });
+        };
+      } catch (t) {
+        n = function n(t, _n4, e) {
+          return t[_n4] = e, t;
+        };
+      }
+      function s(t, n) {
+        this.fn = t, this.self = n, this.next = void 0;
+      }
+      function c(t, n) {
+        w.add(t, n), e = e || u(w.drain);
+      }
+      function a(t) {
+        var n,
+          e = _typeof(t);
+        return "function" == typeof (n = null == t || "object" != e && "function" != e ? n : t.then) && n;
+      }
+      function f() {
+        for (var t = 0; t < this.chain.length; t++) {
+          e = n = o = r = i = void 0;
+          var n,
+            e,
+            i = this,
+            r = 1 === this.state ? this.chain[t].success : this.chain[t].failure,
+            o = this.chain[t];
+          try {
+            !1 === r ? o.reject(i.msg) : (n = !0 === r ? i.msg : r.call(void 0, i.msg)) === o.promise ? o.reject(TypeError("Promise-chain cycle")) : (e = a(n)) ? e.call(n, o.resolve, o.reject) : o.resolve(n);
+          } catch (t) {
+            o.reject(t);
+          }
+        }
+        this.chain.length = 0;
+      }
+      function h(t) {
+        var e,
+          i = this;
+        if (!i.triggered) {
+          i.triggered = !0, i.def && (i = i.def);
+          try {
+            (e = a(t)) ? c(function () {
+              var n = new v(i);
+              try {
+                e.call(t, function () {
+                  h.apply(n, arguments);
+                }, function () {
+                  l.apply(n, arguments);
+                });
+              } catch (t) {
+                l.call(n, t);
+              }
+            }) : (i.msg = t, i.state = 1, 0 < i.chain.length && c(f, i));
+          } catch (t) {
+            l.call(new v(i), t);
+          }
+        }
+      }
+      function l(t) {
+        var n = this;
+        n.triggered || (n.triggered = !0, (n = n.def ? n.def : n).msg = t, n.state = 2, 0 < n.chain.length && c(f, n));
+      }
+      function d(t, e, i, r) {
+        for (var n = 0; n < e.length; n++) !function (n) {
+          t.resolve(e[n]).then(function (t) {
+            i(n, t);
+          }, r);
+        }(n);
+      }
+      function v(t) {
+        this.def = t, this.triggered = !1;
+      }
+      function y(t) {
+        this.promise = t, this.state = 0, this.triggered = !1, this.chain = [], this.msg = void 0;
+      }
+      function p(t) {
+        if ("function" != typeof t) throw TypeError("Not a function");
+        if (0 !== this.n) throw TypeError("Not a promise");
+        this.n = 1;
+        var i = new y(this);
+        this.then = function (t, n) {
+          var e = {
+            success: "function" != typeof t || t,
+            failure: "function" == typeof n && n
+          };
+          return e.promise = new this.constructor(function (t, n) {
+            if ("function" != typeof t || "function" != typeof n) throw TypeError("Not a function");
+            e.resolve = t, e.reject = n;
+          }), i.chain.push(e), 0 !== i.state && c(f, i), e.promise;
+        }, this["catch"] = function (t) {
+          return this.then(void 0, t);
+        };
+        try {
+          t.call(void 0, function (t) {
+            h.call(i, t);
+          }, function (t) {
+            l.call(i, t);
+          });
+        } catch (t) {
+          l.call(i, t);
+        }
+      }
+      var w = {
+          add: function add(t, n) {
+            o = new s(t, n), r ? r.next = o : i = o, r = o, o = void 0;
+          },
+          drain: function drain() {
+            var t = i;
+            for (i = r = e = void 0; t;) t.fn.call(t.self), t = t.next;
+          }
+        },
+        m = n({}, "constructor", p, !1);
+      return n(p.prototype = m, "__NPO__", 0, !1), n(p, "resolve", function (e) {
+        return e && "object" == _typeof(e) && 1 === e.n ? e : new this(function (t, n) {
+          if ("function" != typeof t || "function" != typeof n) throw TypeError("Not a function");
+          t(e);
+        });
+      }), n(p, "reject", function (e) {
+        return new this(function (t, n) {
+          if ("function" != typeof t || "function" != typeof n) throw TypeError("Not a function");
+          n(e);
+        });
+      }), n(p, "all", function (n) {
+        var u = this;
+        return "[object Array]" != t.call(n) ? u.reject(TypeError("Not an array")) : 0 === n.length ? u.resolve([]) : new u(function (e, t) {
+          if ("function" != typeof e || "function" != typeof t) throw TypeError("Not a function");
+          var i = n.length,
+            r = Array(i),
+            o = 0;
+          d(u, n, function (t, n) {
+            r[t] = n, ++o === i && e(r);
+          }, t);
+        });
+      }), n(p, "race", function (n) {
+        var i = this;
+        return "[object Array]" != t.call(n) ? i.reject(TypeError("Not an array")) : new i(function (e, t) {
+          if ("function" != typeof e || "function" != typeof t) throw TypeError("Not a function");
+          d(i, n, function (t, n) {
+            e(n);
+          }, t);
+        });
+      }), p;
+    }, (e = yt)[n = "Promise"] = e[n] || i(), t.exports && (t.exports = e[n]);
+  })(g = {
+    exports: {}
+  });
+  var _ = g.exports,
+    C = new WeakMap();
+  function j(t, n, e) {
+    var i = C.get(t.element) || {};
+    n in i || (i[n] = []), i[n].push(e), C.set(t.element, i);
+  }
+  function M(t, n) {
+    return (C.get(t.element) || {})[n] || [];
+  }
+  function x(t, n, e) {
+    var i = C.get(t.element) || {};
+    return !i[n] || (e ? (-1 !== (e = i[n].indexOf(e)) && i[n].splice(e, 1), C.set(t.element, i), i[n] && 0 === i[n].length) : (i[n] = [], C.set(t.element, i), !0));
+  }
+  function wt(t) {
+    if ("string" == typeof t) try {
+      t = JSON.parse(t);
+    } catch (t) {
+      return console.warn(t), {};
+    }
+    return t;
+  }
+  function I(t, n, e) {
+    t.element.contentWindow && t.element.contentWindow.postMessage && (n = {
+      method: n
+    }, void 0 !== e && (n.value = e), 8 <= (e = parseFloat(navigator.userAgent.toLowerCase().replace(/^.*msie (\d+).*$/, "$1"))) && e < 10 && (n = JSON.stringify(n)), t.element.contentWindow.postMessage(n, t.origin));
+  }
+  function mt(e, i) {
+    var n,
+      t,
+      r,
+      o,
+      u = [];
+    (i = wt(i)).event ? ("error" === i.event && M(e, i.data.method).forEach(function (t) {
+      var n = new Error(i.data.message);
+      n.name = i.data.name, t.reject(n), x(e, i.data.method, t);
+    }), u = M(e, "event:".concat(i.event)), n = i.data) : i.method && (t = e, r = i.method, (r = !((o = M(t, r)).length < 1) && (x(t, r, t = o.shift()), t)) && (u.push(r), n = i.value)), u.forEach(function (t) {
+      try {
+        "function" == typeof t ? t.call(e, n) : t.resolve(n);
+      } catch (t) {}
+    });
+  }
+  var bt = ["autopause", "autoplay", "background", "byline", "color", "controls", "dnt", "height", "id", "interactive_params", "keyboard", "loop", "maxheight", "maxwidth", "muted", "playsinline", "portrait", "responsive", "speed", "texttrack", "title", "transparent", "url", "width"];
+  function kt(i, t) {
+    return bt.reduce(function (t, n) {
+      var e = i.getAttribute("data-vimeo-".concat(n));
+      return !e && "" !== e || (t[n] = "" === e ? 1 : e), t;
+    }, 1 < arguments.length && void 0 !== t ? t : {});
+  }
+  function gt(t, n) {
+    var e,
+      t = t.html;
+    if (n) return null === n.getAttribute("data-vimeo-initialized") && ((e = document.createElement("div")).innerHTML = t, n.appendChild(e.firstChild), n.setAttribute("data-vimeo-initialized", "true")), n.querySelector("iframe");
+    throw new TypeError("An element must be provided");
+  }
+  function Et(o, t, n) {
+    var u = 1 < arguments.length && void 0 !== t ? t : {},
+      s = 2 < arguments.length ? n : void 0;
+    return new Promise(function (n, e) {
+      if (!b(o)) throw new TypeError("“".concat(o, "” is not a vimeo.com url."));
+      var t,
+        i = "https://vimeo.com/api/oembed.json?url=".concat(encodeURIComponent(o));
+      for (t in u) u.hasOwnProperty(t) && (i += "&".concat(t, "=").concat(encodeURIComponent(u[t])));
+      var r = new ("XDomainRequest" in window ? XDomainRequest : XMLHttpRequest)();
+      r.open("GET", i, !0), r.onload = function () {
+        if (404 === r.status) e(new Error("“".concat(o, "” was not found.")));else if (403 === r.status) e(new Error("“".concat(o, "” is not embeddable.")));else try {
+          var t = JSON.parse(r.responseText);
+          403 === t.domain_status_code ? (gt(t, s), e(new Error("“".concat(o, "” is not embeddable.")))) : n(t);
+        } catch (t) {
+          e(t);
+        }
+      }, r.onerror = function () {
+        var t = r.status ? " (".concat(r.status, ")") : "";
+        e(new Error("There was an error fetching the embed code from Vimeo".concat(t, ".")));
+      }, r.send();
+    });
+  }
+  function Tt(t) {
+    function e(t) {
+      "console" in window && console.error && console.error("There was an error creating an embed: ".concat(t));
+    }
+    t = 0 < arguments.length && void 0 !== t ? t : document, t = [].slice.call(t.querySelectorAll("[data-vimeo-id], [data-vimeo-url]"));
+    t.forEach(function (n) {
+      try {
+        var t;
+        null === n.getAttribute("data-vimeo-defer") && Et(lt(t = kt(n)), t, n).then(function (t) {
+          return gt(t, n);
+        })["catch"](e);
+      } catch (t) {
+        e(t);
+      }
+    });
+  }
+  function Pt(t) {
+    var s = 0 < arguments.length && void 0 !== t ? t : document;
+    window.VimeoSeoMetadataAppended || (window.VimeoSeoMetadataAppended = !0, window.addEventListener("message", function (t) {
+      if (b(t.origin)) {
+        var n = wt(t.data);
+        if (n && "ready" === n.event) for (var e, i = s.querySelectorAll("iframe"), r = 0; r < i.length; r++) {
+          var o = i[r],
+            u = o.contentWindow === t.source;
+          e = o.src, /^https:\/\/player\.vimeo\.com\/video\/\d+/.test(e) && u && new Ct(o).callMethod("appendVideoMetadata", window.location.href);
+        }
+      }
+    }));
+  }
+  var R,
+    Ft,
+    A,
+    O = new WeakMap(),
+    _t = new WeakMap(),
+    S = {},
+    Ct = function () {
+      function r(o) {
+        var u = this,
+          n = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
+          t = this,
+          e = r;
+        if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+        if (window.jQuery && o instanceof jQuery && (1 < o.length && window.console && console.warn && console.warn("A jQuery object with multiple elements was passed, using the first element."), o = o[0]), "undefined" != typeof document && "string" == typeof o && (o = document.getElementById(o)), t = o, !Boolean(t && 1 === t.nodeType && "nodeName" in t && t.ownerDocument && t.ownerDocument.defaultView)) throw new TypeError("You must pass either a valid element or a valid id.");
+        if ("IFRAME" === o.nodeName || (e = o.querySelector("iframe")) && (o = e), "IFRAME" === o.nodeName && !b(o.getAttribute("src") || "")) throw new Error("The player element passed isn’t a Vimeo embed.");
+        if (O.has(o)) return O.get(o);
+        this.e = o.ownerDocument.defaultView, this.element = o, this.origin = "*";
+        var i,
+          t = new _(function (i, r) {
+            var t;
+            u.i = function (t) {
+              var n, e;
+              b(t.origin) && u.element.contentWindow === t.source && ("*" === u.origin && (u.origin = t.origin), (t = wt(t.data)) && "error" === t.event && t.data && "ready" === t.data.method ? ((n = new Error(t.data.message)).name = t.data.name, r(n)) : (n = t && "ready" === t.event, e = t && "ping" === t.method, n || e ? (u.element.setAttribute("data-ready", "true"), i()) : mt(u, t)));
+            }, u.e.addEventListener("message", u.i), "IFRAME" !== u.element.nodeName && Et(lt(t = kt(o, n)), t, o).then(function (t) {
+              var n,
+                e,
+                i = gt(t, o);
+              return u.element = i, u.r = o, n = o, i = i, e = C.get(n), C.set(i, e), C["delete"](n), O.set(u.element, u), t;
+            })["catch"](r);
+          });
+        return _t.set(this, t), O.set(this.element, this), "IFRAME" === this.element.nodeName && I(this, "ping"), S.isEnabled && (i = function i() {
+          return S.exit();
+        }, this.fullscreenchangeHandler = function () {
+          (S.isFullscreen ? j : x)(u, "event:exitFullscreen", i), u.ready().then(function () {
+            I(u, "fullscreenchange", S.isFullscreen);
+          });
+        }, S.on("fullscreenchange", this.fullscreenchangeHandler)), this;
+      }
+      var t, n, e;
+      return t = r, (n = [{
+        key: "callMethod",
+        value: function value(e) {
+          var i = this,
+            r = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {};
+          return new _(function (t, n) {
+            return i.ready().then(function () {
+              j(i, e, {
+                resolve: t,
+                reject: n
+              }), I(i, e, r);
+            })["catch"](n);
+          });
+        }
+      }, {
+        key: "get",
+        value: function value(e) {
+          var i = this;
+          return new _(function (t, n) {
+            return e = ht(e, "get"), i.ready().then(function () {
+              j(i, e, {
+                resolve: t,
+                reject: n
+              }), I(i, e);
+            })["catch"](n);
+          });
+        }
+      }, {
+        key: "set",
+        value: function value(e, i) {
+          var r = this;
+          return new _(function (t, n) {
+            if (e = ht(e, "set"), null == i) throw new TypeError("There must be a value to set.");
+            return r.ready().then(function () {
+              j(r, e, {
+                resolve: t,
+                reject: n
+              }), I(r, e, i);
+            })["catch"](n);
+          });
+        }
+      }, {
+        key: "on",
+        value: function value(t, n) {
+          if (!t) throw new TypeError("You must pass an event name.");
+          if (!n) throw new TypeError("You must pass a callback function.");
+          if ("function" != typeof n) throw new TypeError("The callback must be a function.");
+          0 === M(this, "event:".concat(t)).length && this.callMethod("addEventListener", t)["catch"](function () {}), j(this, "event:".concat(t), n);
+        }
+      }, {
+        key: "off",
+        value: function value(t, n) {
+          if (!t) throw new TypeError("You must pass an event name.");
+          if (n && "function" != typeof n) throw new TypeError("The callback must be a function.");
+          x(this, "event:".concat(t), n) && this.callMethod("removeEventListener", t)["catch"](function (t) {});
+        }
+      }, {
+        key: "loadVideo",
+        value: function value(t) {
+          return this.callMethod("loadVideo", t);
+        }
+      }, {
+        key: "ready",
+        value: function value() {
+          var t = _t.get(this) || new _(function (t, n) {
+            n(new Error("Unknown player. Probably unloaded."));
+          });
+          return _.resolve(t);
+        }
+      }, {
+        key: "addCuePoint",
+        value: function value(t) {
+          return this.callMethod("addCuePoint", {
+            time: t,
+            data: 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}
+          });
+        }
+      }, {
+        key: "removeCuePoint",
+        value: function value(t) {
+          return this.callMethod("removeCuePoint", t);
+        }
+      }, {
+        key: "enableTextTrack",
+        value: function value(t, n) {
+          if (t) return this.callMethod("enableTextTrack", {
+            language: t,
+            kind: n
+          });
+          throw new TypeError("You must pass a language.");
+        }
+      }, {
+        key: "disableTextTrack",
+        value: function value() {
+          return this.callMethod("disableTextTrack");
+        }
+      }, {
+        key: "pause",
+        value: function value() {
+          return this.callMethod("pause");
+        }
+      }, {
+        key: "play",
+        value: function value() {
+          return this.callMethod("play");
+        }
+      }, {
+        key: "requestFullscreen",
+        value: function value() {
+          return S.isEnabled ? S.request(this.element) : this.callMethod("requestFullscreen");
+        }
+      }, {
+        key: "exitFullscreen",
+        value: function value() {
+          return S.isEnabled ? S.exit() : this.callMethod("exitFullscreen");
+        }
+      }, {
+        key: "getFullscreen",
+        value: function value() {
+          return S.isEnabled ? _.resolve(S.isFullscreen) : this.get("fullscreen");
+        }
+      }, {
+        key: "requestPictureInPicture",
+        value: function value() {
+          return this.callMethod("requestPictureInPicture");
+        }
+      }, {
+        key: "exitPictureInPicture",
+        value: function value() {
+          return this.callMethod("exitPictureInPicture");
+        }
+      }, {
+        key: "getPictureInPicture",
+        value: function value() {
+          return this.get("pictureInPicture");
+        }
+      }, {
+        key: "unload",
+        value: function value() {
+          return this.callMethod("unload");
+        }
+      }, {
+        key: "destroy",
+        value: function value() {
+          var e = this;
+          return new _(function (t) {
+            var n;
+            _t["delete"](e), O["delete"](e.element), e.r && (O["delete"](e.r), e.r.removeAttribute("data-vimeo-initialized")), e.element && "IFRAME" === e.element.nodeName && e.element.parentNode && (e.element.parentNode.parentNode && e.r && e.r !== e.element.parentNode ? e.element.parentNode.parentNode.removeChild(e.element.parentNode) : e.element.parentNode.removeChild(e.element)), e.element && "DIV" === e.element.nodeName && e.element.parentNode && (e.element.removeAttribute("data-vimeo-initialized"), (n = e.element.querySelector("iframe")) && n.parentNode && (n.parentNode.parentNode && e.r && e.r !== n.parentNode ? n.parentNode.parentNode.removeChild(n.parentNode) : n.parentNode.removeChild(n))), e.e.removeEventListener("message", e.i), S.isEnabled && S.off("fullscreenchange", e.fullscreenchangeHandler), t();
+          });
+        }
+      }, {
+        key: "getAutopause",
+        value: function value() {
+          return this.get("autopause");
+        }
+      }, {
+        key: "setAutopause",
+        value: function value(t) {
+          return this.set("autopause", t);
+        }
+      }, {
+        key: "getBuffered",
+        value: function value() {
+          return this.get("buffered");
+        }
+      }, {
+        key: "getCameraProps",
+        value: function value() {
+          return this.get("cameraProps");
+        }
+      }, {
+        key: "setCameraProps",
+        value: function value(t) {
+          return this.set("cameraProps", t);
+        }
+      }, {
+        key: "getChapters",
+        value: function value() {
+          return this.get("chapters");
+        }
+      }, {
+        key: "getCurrentChapter",
+        value: function value() {
+          return this.get("currentChapter");
+        }
+      }, {
+        key: "getColor",
+        value: function value() {
+          return this.get("color");
+        }
+      }, {
+        key: "setColor",
+        value: function value(t) {
+          return this.set("color", t);
+        }
+      }, {
+        key: "getCuePoints",
+        value: function value() {
+          return this.get("cuePoints");
+        }
+      }, {
+        key: "getCurrentTime",
+        value: function value() {
+          return this.get("currentTime");
+        }
+      }, {
+        key: "setCurrentTime",
+        value: function value(t) {
+          return this.set("currentTime", t);
+        }
+      }, {
+        key: "getDuration",
+        value: function value() {
+          return this.get("duration");
+        }
+      }, {
+        key: "getEnded",
+        value: function value() {
+          return this.get("ended");
+        }
+      }, {
+        key: "getLoop",
+        value: function value() {
+          return this.get("loop");
+        }
+      }, {
+        key: "setLoop",
+        value: function value(t) {
+          return this.set("loop", t);
+        }
+      }, {
+        key: "setMuted",
+        value: function value(t) {
+          return this.set("muted", t);
+        }
+      }, {
+        key: "getMuted",
+        value: function value() {
+          return this.get("muted");
+        }
+      }, {
+        key: "getPaused",
+        value: function value() {
+          return this.get("paused");
+        }
+      }, {
+        key: "getPlaybackRate",
+        value: function value() {
+          return this.get("playbackRate");
+        }
+      }, {
+        key: "setPlaybackRate",
+        value: function value(t) {
+          return this.set("playbackRate", t);
+        }
+      }, {
+        key: "getPlayed",
+        value: function value() {
+          return this.get("played");
+        }
+      }, {
+        key: "getQualities",
+        value: function value() {
+          return this.get("qualities");
+        }
+      }, {
+        key: "getQuality",
+        value: function value() {
+          return this.get("quality");
+        }
+      }, {
+        key: "setQuality",
+        value: function value(t) {
+          return this.set("quality", t);
+        }
+      }, {
+        key: "getSeekable",
+        value: function value() {
+          return this.get("seekable");
+        }
+      }, {
+        key: "getSeeking",
+        value: function value() {
+          return this.get("seeking");
+        }
+      }, {
+        key: "getTextTracks",
+        value: function value() {
+          return this.get("textTracks");
+        }
+      }, {
+        key: "getVideoEmbedCode",
+        value: function value() {
+          return this.get("videoEmbedCode");
+        }
+      }, {
+        key: "getVideoId",
+        value: function value() {
+          return this.get("videoId");
+        }
+      }, {
+        key: "getVideoTitle",
+        value: function value() {
+          return this.get("videoTitle");
+        }
+      }, {
+        key: "getVideoWidth",
+        value: function value() {
+          return this.get("videoWidth");
+        }
+      }, {
+        key: "getVideoHeight",
+        value: function value() {
+          return this.get("videoHeight");
+        }
+      }, {
+        key: "getVideoUrl",
+        value: function value() {
+          return this.get("videoUrl");
+        }
+      }, {
+        key: "getVolume",
+        value: function value() {
+          return this.get("volume");
+        }
+      }, {
+        key: "setVolume",
+        value: function value(t) {
+          return this.set("volume", t);
+        }
+      }]) && at(t.prototype, n), e && at(t, e), r;
+    }(),
+    k = (ft || (R = function () {
+      for (var t, n = [["requestFullscreen", "exitFullscreen", "fullscreenElement", "fullscreenEnabled", "fullscreenchange", "fullscreenerror"], ["webkitRequestFullscreen", "webkitExitFullscreen", "webkitFullscreenElement", "webkitFullscreenEnabled", "webkitfullscreenchange", "webkitfullscreenerror"], ["webkitRequestFullScreen", "webkitCancelFullScreen", "webkitCurrentFullScreenElement", "webkitCancelFullScreen", "webkitfullscreenchange", "webkitfullscreenerror"], ["mozRequestFullScreen", "mozCancelFullScreen", "mozFullScreenElement", "mozFullScreenEnabled", "mozfullscreenchange", "mozfullscreenerror"], ["msRequestFullscreen", "msExitFullscreen", "msFullscreenElement", "msFullscreenEnabled", "MSFullscreenChange", "MSFullscreenError"]], e = 0, i = n.length, r = {}; e < i; e++) if ((t = n[e]) && t[1] in document) {
+        for (e = 0; e < t.length; e++) r[n[0][e]] = t[e];
+        return r;
+      }
+      return !1;
+    }(), Ft = {
+      fullscreenchange: R.fullscreenchange,
+      fullscreenerror: R.fullscreenerror
+    }, A = {
+      request: function request(r) {
+        return new Promise(function (t, n) {
+          function e() {
+            A.off("fullscreenchange", e), t();
+          }
+          A.on("fullscreenchange", e);
+          var i = (r = r || document.documentElement)[R.requestFullscreen]();
+          i instanceof Promise && i.then(e)["catch"](n);
+        });
+      },
+      exit: function exit() {
+        return new Promise(function (n, t) {
+          var e, i;
+          A.isFullscreen ? (A.on("fullscreenchange", e = function t() {
+            A.off("fullscreenchange", t), n();
+          }), (i = document[R.exitFullscreen]()) instanceof Promise && i.then(e)["catch"](t)) : n();
+        });
+      },
+      on: function on(t, n) {
+        t = Ft[t];
+        t && document.addEventListener(t, n);
+      },
+      off: function off(t, n) {
+        t = Ft[t];
+        t && document.removeEventListener(t, n);
+      }
+    }, Object.defineProperties(A, {
+      isFullscreen: {
+        get: function get() {
+          return Boolean(document[R.fullscreenElement]);
+        }
+      },
+      element: {
+        enumerable: !0,
+        get: function get() {
+          return document[R.fullscreenElement];
+        }
+      },
+      isEnabled: {
+        enumerable: !0,
+        get: function get() {
+          return Boolean(document[R.fullscreenEnabled]);
+        }
+      }
+    }), S = A, Tt(), function (t) {
+      var i = 0 < arguments.length && void 0 !== t ? t : document;
+      window.VimeoPlayerResizeEmbeds_ || (window.VimeoPlayerResizeEmbeds_ = !0, window.addEventListener("message", function (t) {
+        if (b(t.origin) && t.data && "spacechange" === t.data.event) for (var n = i.querySelectorAll("iframe"), e = 0; e < n.length; e++) if (n[e].contentWindow === t.source) {
+          n[e].parentElement.style.paddingBottom = "".concat(t.data.data[0].bottom, "px");
+          break;
+        }
+      }));
+    }(), Pt()), function (i) {
+      function t(t, n, e) {
+        return (t = i.call(this, t, n, e = void 0 === e ? {} : e) || this).state.set(3), t;
+      }
+      qt(t, i);
+      var n = t.prototype;
+      return n.createPlayer = function (t) {
+        var n = this.options,
+          e = this.options.playerOptions,
+          e = void 0 === e ? {} : e,
+          t = 0 === t.indexOf("http") ? {
+            url: t
+          } : {
+            id: +t
+          },
+          t = new Ct(this.target, $(t, {
+            controls: !n.hideControls,
+            loop: n.loop,
+            muted: n.mute
+          }, e.vimeo || {}));
+        return t.on("play", this.onPlay), t.on("pause", this.onPause), t.on("ended", this.onEnded), t.ready().then(this.onPlayerReady, this.onError), t.getMuted() || t.setVolume(it(n.volume, 0, 1)), t;
+      }, n.playVideo = function () {
+        var t = this;
+        this.player.play()["catch"](function () {
+          t.state.is(7) && t.state.set(5);
+        });
+      }, n.pauseVideo = function () {
+        this.player.pause();
+      }, t;
+    }(st)),
+    jt = "//www.youtube.com/player_api",
+    Mt = function () {
+      function t() {}
+      var n = t.prototype;
+      return n.load = function (t) {
+        if (window.YT && U(window.YT.Player)) return t();
+        this.attachCallback(t), this.shouldLoad() && w("script", {
+          src: location.protocol + jt
+        }, document.head);
+      }, n.shouldLoad = function () {
+        return t = document, !((n = "script") ? c(t.querySelectorAll(n)) : []).some(function (t) {
+          return t.src.replace(/^https?:/, "") === jt;
+        });
+        var t, n;
+      }, n.attachCallback = function (t) {
+        var n;
+        D(window.onYouTubeIframeAPIReady) || (n = window.onYouTubeIframeAPIReady), window.onYouTubeIframeAPIReady = function () {
+          n && n(), t();
+        };
+      }, t;
+    }(),
+    g = function (i) {
+      function t(t, n, e) {
+        return (t = i.call(this, t, n, e = void 0 === e ? {} : e) || this).videoId = t.parseVideoId(n), t.videoId && (t.state.set(2), new Mt().load(t.onAPIReady.bind(St(t)))), t;
+      }
+      qt(t, i);
+      var n = t.prototype;
+      return n.onAPIReady = function () {
+        var t = this.state,
+          n = t.is(4);
+        t.set(3), n && this.play();
+      }, n.createPlayer = function (t) {
+        var n = this.options,
+          e = this.options.playerOptions;
+        return new YT.Player(this.target, {
+          videoId: t,
+          host: n.host,
+          playerVars: $({
+            controls: n.hideControls ? 0 : 1,
+            iv_load_policy: 3,
+            loop: n.loop ? 1 : 0,
+            playlist: n.loop ? t : void 0,
+            rel: 0,
+            autoplay: 0,
+            mute: n.mute ? 1 : 0
+          }, (void 0 === e ? {} : e).youtube || {}),
+          events: {
+            onReady: this.onPlayerReady.bind(this),
+            onStateChange: this.onPlayerStateChange.bind(this),
+            onError: this.onError.bind(this)
+          }
+        });
+      }, n.onPlayerReady = function () {
+        i.prototype.onPlayerReady.call(this), this.player.setVolume(100 * it(this.options.volume, 0, 1));
+      }, n.onPlayerStateChange = function (t) {
+        var n = YT.PlayerState,
+          e = n.PLAYING,
+          i = n.PAUSED,
+          n = n.ENDED;
+        switch (!0) {
+          case t.data === e:
+            this.onPlay();
+            break;
+          case t.data === i:
+            this.onPause();
+            break;
+          case t.data === n:
+            this.onEnded();
+        }
+      }, n.playVideo = function () {
+        this.player.playVideo();
+      }, n.pauseVideo = function () {
+        this.player.pauseVideo();
+      }, n.parseVideoId = function (t) {
+        return 0 === t.indexOf("http") ? this.parseUrl(t) : t;
+      }, n.parseUrl = function (t) {
+        var n,
+          t = t.split(/[#?]/)[1],
+          t = (t = t.split("&"), n = function n(t) {
+            return 0 === t.indexOf("v=");
+          }, c(t).filter(n)[0]);
+        return t && t.replace("v=", "");
+      }, t;
+    }(st),
+    xt = "Play Video",
+    It = function () {
+      function t(t, n) {
+        this.event = u(), this.Splide = t, this.slide = n, this.container = J(this.slide, "." + e), this.parent = this.container || this.slide, this.init(), this.create(), this.show(), this.listen();
+      }
+      var n = t.prototype;
+      return n.init = function () {
+        y(this.slide, s + m), y(this.container, e + m);
+      }, n.create = function () {
+        this.video = w("div", rt, this.parent), this.playButton = w("button", {
+          "class": "splide__video__play",
+          type: "button",
+          "aria-label": this.Splide.options.i18n.playVideo || xt
+        }, this.video), this.wrapper = w("div", "splide__video__wrapper", this.video), this.placeholder = w("div", null, this.wrapper);
+      }, n.listen = function () {
+        var t = this;
+        this.parent.addEventListener("click", function () {
+          t.event.emit("click");
+        });
+      }, n.toggleButton = function (t) {
+        Z(this.playButton, t ? "" : "none");
+      }, n.toggleWrapper = function (t) {
+        Z(this.wrapper, t ? "" : "none");
+      }, n.getPlaceholder = function () {
+        return this.placeholder;
+      }, n.hide = function () {
+        this.toggleButton(!1), this.toggleWrapper(!0);
+      }, n.show = function () {
+        this.disabled || this.toggleButton(!0), this.toggleWrapper(!1);
+      }, n.disable = function (t) {
+        (this.disabled = t) && this.toggleButton(!1);
+      }, n.on = function (t, n) {
+        this.event.on(t, n);
+      }, n.destroy = function () {
+        tt(this.slide, s + m), tt(this.container, e + m), d(this.video, function (t) {
+          t && t.parentNode && t.parentNode.removeChild(t);
+        }), this.event.destroy();
+      }, t;
+    }(),
+    Rt = [["data-splide-youtube", g], ["data-splide-vimeo", k], ["data-splide-html-video", ct]],
+    At = function () {
+      function t(t, n) {
+        this.Splide = t, this.slide = n, this.event = u(t), this.options = G(G({}, ot), this.Splide.options.video), this.createPlayer(n), this.player && this.listen();
+      }
+      var n = t.prototype;
+      return n.createPlayer = function (e) {
+        var i = this;
+        Rt.forEach(function (t) {
+          var n = t[0],
+            t = t[1],
+            n = e.getAttribute(n);
+          n && (i.ui = new It(i.Splide, e), i.player = new t(i.ui.getPlaceholder(), n, i.options), i.ui.disable(i.options.disableOverlayUI));
+        });
+      }, n.listen = function () {
+        var t = this,
+          n = this.player,
+          e = this.event;
+        this.ui.on("click", this.onClick.bind(this)), n.on("play", this.onPlay.bind(this)), n.on("played", this.onPlayed.bind(this)), n.on("pause", this.onPause.bind(this)), n.on("paused", this.onPaused.bind(this)), n.on("ended", this.onEnded.bind(this)), n.on("error", this.onError.bind(this)), e.on(["move", "scroll"], this.pause.bind(this)), e.on(ut, this.onVideoClick.bind(this)), e.on("drag", function () {
+          e.off(i), e.on(i, function () {
+            t.pause(), e.off(i);
+          });
+        }), this.options.autoplay && e.on(["mounted", "moved", "scrolled"], this.onAutoplayRequested.bind(this));
+      }, n.onClick = function () {
+        this.isPaused() ? this.play() : this.pause(), this.event.emit(ut, this);
+      }, n.onVideoClick = function (t) {
+        this !== t && this.pause();
+      }, n.onPlay = function () {
+        this.ui.hide();
+      }, n.onPlayed = function () {
+        this.ui.hide(), this.togglePlaying(!0), this.event.emit("video:play", this);
+      }, n.onPause = function () {
+        this.ui.show();
+      }, n.onPaused = function () {
+        this.togglePlaying(!1), this.event.emit("video:pause", this);
+      }, n.onEnded = function () {
+        this.togglePlaying(!1), this.event.emit("video:ended", this);
+      }, n.onError = function () {
+        y(this.slide, "is-error"), this.ui.show(), this.event.emit("video:error", this);
+      }, n.onAutoplayRequested = function () {
+        this.Splide.Components.Slides.getAt(this.Splide.index).slide === this.slide && this.play();
+      }, n.togglePlaying = function (t) {
+        v(this.Splide.root, "is-playing", t);
+      }, n.play = function () {
+        this.player && !this.disabled && this.player.play();
+      }, n.pause = function () {
+        this.player && !this.disabled && this.player.pause();
+      }, n.destroy = function () {
+        this.player && (this.ui.destroy(), this.player.destroy()), this.disable(!1);
+      }, n.disable = function (t) {
+        this.disabled = t, v(this.Splide.root, "is-video-disabled", t);
+      }, n.isPaused = function () {
+        return this.player.isPaused();
+      }, t;
+    }();
+  function Ot(r, t) {
+    var n = u(r).on,
+      e = t.Slides,
+      o = {};
+    function i() {
+      e.forEach(function (t) {
+        var n,
+          e,
+          i = t.slide;
+        e = s + m, (n = i) && n.classList.contains(e) || (o[t.index] = new At(r, i));
+      }), e.update();
+    }
+    return {
+      mount: function mount() {
+        i(), n("refresh", i);
+      },
+      destroy: function destroy() {
+        p(o, function (t) {
+          t.destroy();
+        });
+      },
+      play: function play(t) {
+        void 0 === t && (t = r.index), (t = o[t]) && t.play();
+      },
+      pause: function pause() {
+        p(o, function (t) {
+          t.pause();
+        });
+      },
+      disable: function disable(n) {
+        p(o, function (t) {
+          t.disable(n);
+        });
+      }
+    };
+  }
+  "undefined" != typeof window && (window.splide = window.splide || {}, window.splide.Extensions = window.splide.Extensions || {}, window.splide.Extensions.Video = Ot);
+}, "function" == typeof define && define.amd ? define(t) : t();
+/******/ })()
+;
