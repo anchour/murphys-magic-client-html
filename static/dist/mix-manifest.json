@@ -2,6 +2,7 @@
     "/main.js": "/main.js",
     "/product.js": "/product.js",
     "/vendor.js": "/vendor.js",
+    "/style.css": "/style.css",
     "/fonts/alternate-gothic/AlternateGothicStd-No2.woff": "/fonts/alternate-gothic/AlternateGothicStd-No2.woff",
     "/fonts/alternate-gothic/AlternateGothicStd-No2.woff2": "/fonts/alternate-gothic/AlternateGothicStd-No2.woff2",
     "/fonts/founders/FoundersGrotesk-Bold.woff": "/fonts/founders/FoundersGrotesk-Bold.woff",
@@ -43,6 +44,5 @@
     "/fonts/pitch-sans/PitchSans-Semibold.woff": "/fonts/pitch-sans/PitchSans-Semibold.woff",
     "/fonts/pitch-sans/PitchSans-Semibold.woff2": "/fonts/pitch-sans/PitchSans-Semibold.woff2",
     "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff": "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff",
-    "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff2": "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff2",
-    "/style.css": "/style.css"
+    "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff2": "/fonts/pitch-sans/PitchSans-SemiboldItalic.woff2"
 }
