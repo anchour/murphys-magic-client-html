@@ -12,8 +12,10 @@
 select.form-select,
 select.form-control {
   appearance: none;
-  background: var(--color-primary-dove) url('/src/images/icons/select-icon.svg') no-repeat right
+  // 
+  background: var(--color-primary-dove) url('/images/icons/select-icon.svg') no-repeat right
     1rem center;
+  background-size: 1rem 1rem;
   border: 1px solid var(--color-primary-smoke);
   display: block;
   height: 3.75rem;
@@ -47,8 +49,10 @@ select.form-control {
   --form-ring-offset-width: 0px;
   --form-ring-offset-color: #fff;
   --form-ring-color: var(--color-primary-smoke);
-  --form-ring-offset-shadow: var(--form-ring-inset) 0 0 0 var(--form-ring-offset-width) var(--form-ring-offset-color);
-  --form-ring-shadow: var(--form-ring-inset) 0 0 0 calc(1px + var(--form-ring-offset-width)) var(--form-ring-color);
+  --form-ring-offset-shadow: var(--form-ring-inset) 0 0 0 var(--form-ring-offset-width)
+    var(--form-ring-offset-color);
+  --form-ring-shadow: var(--form-ring-inset) 0 0 0 calc(1px + var(--form-ring-offset-width))
+    var(--form-ring-color);
   box-shadow: var(--form-ring-offset-shadow), var(--form-ring-shadow), var(--form-shadow);
   border-color: var(--color-primary-smoke);
 }
