@@ -458,9 +458,9 @@
           </div>
         </div>
         <div>
-          <div class="splide splide--slide splide--ltr splide--draggable is-active is-overflow is-initialized" id="splide02" role="region" aria-roledescription="carousel">
-            <div class="splide__track splide__track--slide splide__track--ltr splide__track--draggable" id="splide02-track" style="padding-left: 0px; padding-right: 2rem;" aria-live="polite" aria-atomic="true">
-              <ul class="splide__list" id="splide02-list" role="presentation" style="transform: translateX(0px);">
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
                 <li class="splide__slide">
                   <a href="#" class="card">
                     <div class="card__thumbnail">
