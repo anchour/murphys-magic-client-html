@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 !static/dist
+static/dist/hot
