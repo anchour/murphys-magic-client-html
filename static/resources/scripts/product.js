@@ -90,6 +90,40 @@ function gallery() {
   });
 }
 
+function cardCarousels() {
+  const options = {
+    type: 'loop',
+    rewind: true,
+    autoplay: false,
+    pagination: false,
+    gap: '0.5rem',
+    padding: {
+      left: 0,
+      right: '10%',
+    },
+    arrows: false,
+    mediaQuery: 'min',
+    breakpoints: {
+      768: {
+        padding: {
+          left: 0,
+          right: 0,
+        },
+      },
+      1024: {
+        destroy: true,
+      },
+    },
+  };
+
+  const sliders = document.querySelectorAll('.card-carousel .splide');
+
+  sliders.forEach((slider) => {
+    new Splide(slider, options).mount(window.splide.Extensions);
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   gallery();
+  cardCarousels();
 });
